@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 import json
 
-URL = "https://news.google.com/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNRGxqTjNjd0VnSmxiaWdBUAE?hl=en-US&gl=US&ceid=US%3Aen"
+URL = "https://news.google.com/search?q=china%20AND%20russian%20AND%20cyber%20when%3A24h&hl=en-US&gl=US&ceid=US%3Aen"
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}
 
 # Create necessary directories
