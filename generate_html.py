@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 def generate_html():
-    """Generate HTML page in newsletter/Substack style"""
+    """Generate enhanced visual newsletter with images and duplicate removal"""
     
     # Load the latest news data
     try:
@@ -12,9 +12,12 @@ def generate_html():
     except FileNotFoundError:
         news_data = []
     
+    # Remove duplicates based on title similarity
+    unique_articles = remove_duplicate_articles(news_data)
+    
     # Group articles by category
     categories = {}
-    for article in news_data:
+    for article in unique_articles:
         category = article.get('Category', 'General Cyber')
         if category not in categories:
             categories[category] = []
@@ -43,7 +46,7 @@ def generate_html():
         }}
         
         .container {{
-            max-width: 680px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
             background-color: #ffffff;
@@ -94,71 +97,6 @@ def generate_html():
             border-radius: 4px;
         }}
         
-        .section {{
-            margin-bottom: 45px;
-        }}
-        
-        .section-header {{
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #007acc;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }}
-        
-        .article {{
-            margin-bottom: 30px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #f0f0f0;
-        }}
-        
-        .article:last-child {{
-            border-bottom: none;
-            margin-bottom: 0;
-        }}
-        
-        .article-title {{
-            font-size: 1.2em;
-            font-weight: bold;
-            line-height: 1.4;
-            margin-bottom: 8px;
-        }}
-        
-        .article-title a {{
-            color: #1a1a1a;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }}
-        
-        .article-title a:hover {{
-            color: #007acc;
-        }}
-        
-        .article-meta {{
-            font-size: 0.9em;
-            color: #666666;
-            margin-bottom: 10px;
-        }}
-        
-        .source {{
-            font-weight: 600;
-            color: #007acc;
-        }}
-        
-        .time {{
-            margin-left: 10px;
-        }}
-        
-        .article-summary {{
-            font-size: 1em;
-            line-height: 1.6;
-            color: #444444;
-            margin-top: 8px;
-        }}
-        
         .stats-box {{
             background-color: #f8f9fa;
             border: 1px solid #e9ecef;
@@ -187,6 +125,140 @@ def generate_html():
             letter-spacing: 0.5px;
         }}
         
+        .section {{
+            margin-bottom: 50px;
+        }}
+        
+        .section-header {{
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007acc;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }}
+        
+        .section-description {{
+            color: #666666;
+            margin-bottom: 30px;
+            font-style: italic;
+            font-size: 1em;
+        }}
+        
+        .articles-grid {{
+            display: grid;
+            gap: 25px;
+        }}
+        
+        .article {{
+            display: flex;
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }}
+        
+        .article:hover {{
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }}
+        
+        .article-image {{
+            width: 200px;
+            height: 140px;
+            flex-shrink: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }}
+        
+        .article-image img {{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }}
+        
+        .article-image-placeholder {{
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #007acc, #0056b3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }}
+        
+        .article-content {{
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }}
+        
+        .article-title {{
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            text-decoration: none;
+        }}
+        
+        .article-meta {{
+            font-size: 0.9em;
+            color: #666666;
+            margin-bottom: 12px;
+        }}
+        
+        .source {{
+            font-weight: 600;
+            color: #007acc;
+        }}
+        
+        .time {{
+            margin-left: 8px;
+        }}
+        
+        .article-summary {{
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #444444;
+            flex-grow: 1;
+        }}
+        
+        .category-stats {{
+            background-color: #f1f8ff;
+            border: 1px solid #c8e1ff;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 25px;
+            font-size: 0.9em;
+            color: #0366d6;
+        }}
+        
+        .highlight-box {{
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }}
+        
+        .highlight-title {{
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }}
+        
         .footer {{
             margin-top: 50px;
             padding-top: 30px;
@@ -210,20 +282,6 @@ def generate_html():
             text-decoration: underline;
         }}
         
-        .highlight-box {{
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 6px;
-            padding: 20px;
-            margin: 25px 0;
-        }}
-        
-        .highlight-title {{
-            font-weight: bold;
-            color: #856404;
-            margin-bottom: 10px;
-        }}
-        
         .no-articles {{
             text-align: center;
             padding: 40px;
@@ -231,13 +289,22 @@ def generate_html():
             font-style: italic;
         }}
         
-        @media (max-width: 600px) {{
+        @media (max-width: 700px) {{
             .container {{
                 padding: 20px 15px;
             }}
             
             .title {{
                 font-size: 2em;
+            }}
+            
+            .article {{
+                flex-direction: column;
+            }}
+            
+            .article-image {{
+                width: 100%;
+                height: 200px;
             }}
             
             .stats-box {{
@@ -266,8 +333,8 @@ def generate_html():
         
         <div class="stats-box">
             <div class="stat">
-                <span class="stat-number">{len(news_data)}</span>
-                <span class="stat-label">Articles Today</span>
+                <span class="stat-number">{len(unique_articles)}</span>
+                <span class="stat-label">Unique Articles</span>
             </div>
             <div class="stat">
                 <span class="stat-number">{len(categories)}</span>
@@ -282,23 +349,27 @@ def generate_html():
     
     # Add sections for each category
     if categories:
-        # Define category order and descriptions
+        # Define category order and descriptions with icons
         category_info = {
-            'China Cyber': '🇨🇳 China-related cyber operations and digital policy developments',
-            'Russian Cyber': '🇷🇺 Russian cyber activities and state-sponsored operations', 
-            'Iran Cyber': '🇮🇷 Iranian cyber capabilities and regional digital warfare',
-            'General Cyber': '🌐 Broad cybersecurity developments and industry news',
-            'Cybersecurity': '🔒 Enterprise security, defense technologies, and best practices',
-            'Cyber Attacks': '⚠️ Recent incidents, breaches, and threat actor activities'
+            'China Cyber': ('🇨🇳', 'China-related cyber operations and digital policy developments'),
+            'Russian Cyber': ('🇷🇺', 'Russian cyber activities and state-sponsored operations'), 
+            'Iran Cyber': ('🇮🇷', 'Iranian cyber capabilities and regional digital warfare'),
+            'General Cyber': ('🌐', 'Broad cybersecurity developments and industry news'),
+            'Cybersecurity': ('🔒', 'Enterprise security, defense technologies, and best practices'),
+            'Cyber Attacks': ('⚠️', 'Recent incidents, breaches, and threat actor activities')
         }
         
-        for category, description in category_info.items():
+        for category, (icon, description) in category_info.items():
             if category in categories:
                 articles = categories[category]
                 html_content += f"""
         <div class="section">
-            <h2 class="section-header">{category}</h2>
-            <p style="color: #666666; margin-bottom: 25px; font-style: italic;">{description}</p>
+            <h2 class="section-header">{icon} {category}</h2>
+            <p class="section-description">{description}</p>
+            <div class="category-stats">
+                <strong>{len(articles)}</strong> articles found in this category
+            </div>
+            <div class="articles-grid">
 """
                 
                 for article in articles:
@@ -314,43 +385,54 @@ def generate_html():
                     elif pub_time == 'Recent':
                         pub_time = 'Recently published'
                     
-                    # Create article summary (first 150 chars of title as description)
+                    # Create article summary from title
                     title = article['Title']
-                    summary = ""
-                    if len(title) > 80:
-                        # Create a brief summary from the title
-                        words = title.split()
-                        if len(words) > 12:
-                            summary = " ".join(words[8:]) + "..."
+                    summary = create_summary(title)
+                    
+                    # Get placeholder icon for category
+                    placeholder_icon = get_category_icon(category)
+                    
+                    # Check if article has an image
+                    article_image = article.get('img', '')
+                    image_html = ""
+                    
+                    if article_image and article_image.startswith('http'):
+                        image_html = f'<img src="{article_image}" alt="Article image" loading="lazy">'
+                    else:
+                        image_html = f'<div class="article-image-placeholder">{placeholder_icon}</div>'
                     
                     html_content += f"""
-            <div class="article">
-                <h3 class="article-title">
-                    <a href="{article['Link']}" target="_blank" rel="noopener noreferrer">{title}</a>
-                </h3>
-                <div class="article-meta">
-                    <span class="source">{article['Source']}</span>
-                    <span class="time">• {pub_time}</span>
-                </div>
-                {f'<div class="article-summary">{summary}</div>' if summary else ''}
-            </div>
+                <a href="{article['Link']}" target="_blank" rel="noopener noreferrer" class="article">
+                    <div class="article-image">
+                        {image_html}
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">{title}</h3>
+                        <div class="article-meta">
+                            <span class="source">{article['Source']}</span>
+                            <span class="time">• {pub_time}</span>
+                        </div>
+                        {f'<div class="article-summary">{summary}</div>' if summary else ''}
+                    </div>
+                </a>
 """
                 
-                html_content += """        </div>"""
+                html_content += """            </div>
+        </div>"""
         
-        # Add highlight box for key developments
-        if len(news_data) > 0:
-            html_content += f"""
+        # Add intelligence summary
+        duplicate_count = len(news_data) - len(unique_articles)
+        html_content += f"""
         <div class="highlight-box">
             <div class="highlight-title">📊 Today's Intelligence Summary</div>
-            <p>Our monitoring systems identified <strong>{len(news_data)} relevant developments</strong> across <strong>{len(categories)} categories</strong> in the past 24 hours. Key focus areas include nation-state cyber activities, security incidents, and policy developments affecting the global threat landscape.</p>
+            <p>Our monitoring systems identified <strong>{len(news_data)} total developments</strong> across <strong>{len(categories)} categories</strong> in the past 24 hours. After deduplication, <strong>{len(unique_articles)} unique articles</strong> remain for analysis. {f'<strong>{duplicate_count} duplicate articles</strong> were filtered out to ensure content quality.' if duplicate_count > 0 else ''}</p>
         </div>
 """
     else:
         html_content += """
         <div class="no-articles">
             <h3>No Intelligence Gathered Today</h3>
-            <p>Our monitoring systems did not identify any relevant cyber intelligence in the past 24 hours matching our collection criteria. This could indicate quiet threat actor activity or collection system maintenance.</p>
+            <p>Our monitoring systems did not identify any relevant cyber intelligence in the past 24 hours matching our collection criteria.</p>
         </div>
 """
     
@@ -375,15 +457,16 @@ def generate_html():
             location.reload();
         }}, 1800000);
         
-        // Add click tracking
-        document.querySelectorAll('.article-title a').forEach(link => {{
-            link.addEventListener('click', function() {{
-                console.log('Article clicked:', this.textContent);
+        // Handle image loading errors
+        document.querySelectorAll('.article-image img').forEach(img => {{
+            img.addEventListener('error', function() {{
+                this.parentElement.innerHTML = '<div class="article-image-placeholder">📰</div>';
             }});
         }});
         
-        console.log('Cyber Intelligence Brief loaded');
-        console.log('Articles:', {len(news_data)});
+        console.log('Enhanced Cyber Intelligence Brief loaded');
+        console.log('Total articles collected:', {len(news_data)});
+        console.log('Unique articles after deduplication:', {len(unique_articles)});
         console.log('Categories:', {len(categories)});
     </script>
 </body>
@@ -394,8 +477,63 @@ def generate_html():
     with open("docs/index.html", "w", encoding="utf-8") as f:
         f.write(html_content)
     
-    print("Newsletter-style HTML page generated successfully!")
-    print(f"Generated briefing with {len(news_data)} articles across {len(categories)} categories")
+    print("Enhanced visual newsletter generated successfully!")
+    print(f"Generated briefing with {len(unique_articles)} unique articles (filtered {len(news_data) - len(unique_articles)} duplicates)")
+    print(f"Categories: {list(categories.keys())}")
+
+def remove_duplicate_articles(articles):
+    """Remove duplicate articles based on title similarity"""
+    if not articles:
+        return []
+    
+    unique_articles = []
+    seen_titles = []
+    
+    for article in articles:
+        title = article['Title'].lower().strip()
+        title_words = set(title.split())
+        
+        # Check if this title is too similar to existing ones
+        is_duplicate = False
+        for seen_title in seen_titles:
+            seen_words = set(seen_title.split())
+            if len(title_words) > 0 and len(seen_words) > 0:
+                # Calculate word overlap
+                common_words = title_words.intersection(seen_words)
+                similarity = len(common_words) / max(len(title_words), len(seen_words))
+                
+                # If more than 70% similarity, consider it a duplicate
+                if similarity > 0.7:
+                    is_duplicate = True
+                    print(f"Filtering duplicate: {article['Title'][:60]}...")
+                    break
+        
+        if not is_duplicate:
+            seen_titles.append(title)
+            unique_articles.append(article)
+    
+    return unique_articles
+
+def create_summary(title):
+    """Create a brief summary from article title"""
+    words = title.split()
+    if len(words) > 12:
+        # Take middle portion of title as summary
+        summary_words = words[6:min(len(words), 15)]
+        return " ".join(summary_words) + "..."
+    return ""
+
+def get_category_icon(category):
+    """Get emoji icon for category"""
+    icons = {
+        'China Cyber': '🇨🇳',
+        'Russian Cyber': '🇷🇺',
+        'Iran Cyber': '🇮🇷',
+        'General Cyber': '🌐',
+        'Cybersecurity': '🔒',
+        'Cyber Attacks': '⚠️'
+    }
+    return icons.get(category, '📰')
 
 if __name__ == "__main__":
     generate_html()
