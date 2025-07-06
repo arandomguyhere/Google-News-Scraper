@@ -38,6 +38,26 @@ def define_date(date):
     except:
         return datetime.now()
 
+def process_image_url(img_src):
+    """Process and validate image URL from Google News"""
+    if not img_src:
+        return None
+    
+    # Handle different URL formats from Google News
+    if img_src.startswith('//'):
+        return 'https:' + img_src
+    elif img_src.startswith('/'):
+        return 'https://news.google.com' + img_src
+    elif img_src.startswith('data:'):
+        # Skip data URLs as they're usually tiny placeholders
+        return None
+    elif img_src.startswith('http'):
+        # Already a full URL
+        return img_src
+    else:
+        # Relative URL, make it absolute
+        return 'https://news.google.com/' + img_src.lstrip('/')
+
 class MultiSearchGoogleNews:
     def __init__(self, lang="en"):
         self.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -171,20 +191,16 @@ class MultiSearchGoogleNews:
                     if not media or media == title or len(media) > 50:
                         media = f"{search_name} News"
                     
-                    # Extract image - try multiple methods with debug info
+                    # Extract image - try multiple methods
                     img = None
                     try:
-                        print(f"    Looking for images in article...")
-                        
                         # Method 1: Look for figure/img tags
                         img_elem = article.find("figure")
                         if img_elem:
-                            print(f"      Found figure element")
                             img_tag = img_elem.find("img")
                             if img_tag and img_tag.get("src"):
                                 img_src = img_tag.get("src")
                                 img = process_image_url(img_src)
-                                print(f"      Method 1 - Figure img: {img_src[:50]}... -> {img}")
                         
                         # Method 2: Look for any img tag in article
                         if not img:
@@ -192,17 +208,14 @@ class MultiSearchGoogleNews:
                             if img_tag and img_tag.get("src"):
                                 img_src = img_tag.get("src")
                                 img = process_image_url(img_src)
-                                print(f"      Method 2 - Any img: {img_src[:50]}... -> {img}")
                         
                         # Method 3: Look for img with specific Google News classes
                         if not img:
                             img_candidates = article.find_all("img", class_=True)
-                            print(f"      Found {len(img_candidates)} img elements with classes")
                             for img_candidate in img_candidates:
                                 if img_candidate.get("src"):
                                     img_src = img_candidate.get("src")
                                     img = process_image_url(img_src)
-                                    print(f"      Method 3 - Class img: {img_src[:50]}... -> {img}")
                                     if img:
                                         break
                         
@@ -212,10 +225,6 @@ class MultiSearchGoogleNews:
                             if img_tag and img_tag.get("data-src"):
                                 img_src = img_tag.get("data-src")
                                 img = process_image_url(img_src)
-                                print(f"      Method 4 - Data-src: {img_src[:50]}... -> {img}")
-                        
-                        if not img:
-                            print(f"      No images found in this article")
                         
                     except Exception as e:
                         print(f"    Error extracting image: {e}")
@@ -295,26 +304,6 @@ class MultiSearchGoogleNews:
         self.all_results = unique_articles
         return unique_articles
 
-def process_image_url(img_src):
-    """Process and validate image URL from Google News"""
-    if not img_src:
-        return None
-    
-    # Handle different URL formats from Google News
-    if img_src.startswith('//'):
-        return 'https:' + img_src
-    elif img_src.startswith('/'):
-        return 'https://news.google.com' + img_src
-    elif img_src.startswith('data:'):
-        # Skip data URLs as they're usually tiny placeholders
-        return None
-    elif img_src.startswith('http'):
-        # Already a full URL
-        return img_src
-    else:
-        # Relative URL, make it absolute
-        return 'https://news.google.com/' + img_src.lstrip('/')
-
     def remove_duplicates(self, articles):
         """Remove duplicate articles based on title similarity"""
         if not articles:
@@ -359,6 +348,7 @@ def scrape_google_news_multi():
             "Source": article['media'] or "Google News",
             "Published": article['date'] or "Recent",
             "Category": article.get('search_category', 'General'),
+            "img": article.get('img'),  # Include image data
             "Scraped_At": datetime.now().isoformat()
         })
     
