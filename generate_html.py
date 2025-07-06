@@ -321,7 +321,7 @@ def generate_html():
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="title">Cyber Intelligence Brief</h1>
+            <h1 class="title">Bob's Brief</h1>
             <p class="subtitle">Daily cybersecurity intelligence from global sources</p>
             <p class="date-info">{date_formatted}</p>
             <p class="issue-number">Issue #{day_of_year}</p>
