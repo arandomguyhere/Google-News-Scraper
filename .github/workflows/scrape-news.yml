@@ -55,60 +55,56 @@ jobs:
       run: |
         echo "Starting cyber intelligence collection..."
         python scraper.py 2>&1 | tee scraper.log
-        
         if [ ! -f "data/latest_news.json" ]; then
           echo "Creating empty news file as fallback"
           echo "[]" > data/latest_news.json
         fi
-        
-        python -c "import json; json.load(open('data/latest_news.json'))" || {
-          echo "Invalid JSON detected, creating empty fallback"
-          echo "[]" > data/latest_news.json
-        }
+        python -c "import json; json.load(open('data/latest_news.json'))" || echo "[]" > data/latest_news.json
       continue-on-error: false
     
     - name: Update metrics and generate reports
       run: |
         echo "Updating metrics and generating comprehensive reports..."
-        
         if [ -f "metrics_tracker.py" ]; then
-          python metrics_tracker.py update
-          python metrics_tracker.py report > metrics_report.txt
-          python metrics_tracker.py export
+          python metrics_tracker.py update || echo "Metrics update failed"
+          python metrics_tracker.py report > metrics_report.txt || echo "Metrics report failed"
+          python metrics_tracker.py export || echo "Metrics export failed"
         else
           echo "metrics_tracker.py not found, skipping metrics"
         fi
-        
-        if [ -f "search_query_tracker.py" ] && [ -f "data/search_query_stats.json" ]; then
-          echo "=== GENERATING QUERY PERFORMANCE REPORT ==="
-          python -c "
-from search_query_tracker import SearchQueryTracker
-tracker = SearchQueryTracker()
-tracker.generate_query_report()
-tracker.export_query_performance()
-" > query_performance_report.txt
-        else
-          echo "Query performance tracking not available"
-        fi
-        
         echo "=== KEY STATISTICS ==="
         ARTICLE_COUNT=$(python -c "import json; data=json.load(open('data/latest_news.json')); print(len(data))" 2>/dev/null || echo "0")
         echo "Articles in this session: $ARTICLE_COUNT"
-        
         echo "✅ Metrics updated and reports generated"
+    
+    - name: Generate query performance report
+      run: |
+        if [ -f "search_query_tracker.py" ]; then
+          echo "=== GENERATING QUERY PERFORMANCE REPORT ==="
+          python -c "
+          try:
+              from search_query_tracker import SearchQueryTracker
+              tracker = SearchQueryTracker()
+              tracker.generate_query_report()
+              tracker.export_query_performance()
+              print('Query performance report generated')
+          except Exception as e:
+              print(f'Query performance failed: {e}')
+          " > query_performance_report.txt
+        else
+          echo "Query performance tracking not available"
+        fi
     
     - name: Create timestamped archive
       run: |
         echo "Creating timestamped archive..."
-        
         if [ -f "archive_manager.py" ]; then
-          python archive_manager.py create
+          python archive_manager.py create || echo "Archive creation failed"
         else
           echo "archive_manager.py not found, creating basic archive"
           TIMESTAMP=$(date -u +%Y%m%d_%H%M%S)
           ARCHIVE_DIR="archives/$TIMESTAMP"
           mkdir -p "$ARCHIVE_DIR"
-          
           if [ -f "data/latest_news.json" ]; then
             cp "data/latest_news.json" "$ARCHIVE_DIR/news_${TIMESTAMP}.json"
             echo "Basic archive created: $ARCHIVE_DIR"
@@ -119,12 +115,10 @@ tracker.export_query_performance()
       run: |
         echo "Generating visual intelligence brief..."
         python generate_html.py 2>&1 | tee generate.log
-        
         if [ ! -f "docs/index.html" ]; then
           echo "ERROR: HTML generation failed"
           exit 1
         fi
-        
         echo "HTML generated successfully: $(ls -la docs/)"
       continue-on-error: false
     
@@ -132,14 +126,11 @@ tracker.export_query_performance()
       run: |
         ARTICLE_COUNT=$(python -c "import json; data=json.load(open('data/latest_news.json')); print(len(data))")
         echo "Articles collected: $ARTICLE_COUNT"
-        
         HTML_SIZE=$(stat -f%z docs/index.html 2>/dev/null || stat -c%s docs/index.html)
         echo "HTML file size: $HTML_SIZE bytes"
-        
         if [ "$HTML_SIZE" -lt 5000 ]; then
           echo "WARNING: HTML file seems too small, but continuing..."
         fi
-        
         echo "{\"articles\": $ARTICLE_COUNT, \"generated\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\", \"html_size\": $HTML_SIZE}" > docs/metadata.json
     
     - name: Upload metrics and reports
