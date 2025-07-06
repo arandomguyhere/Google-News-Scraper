@@ -261,19 +261,23 @@ class MultiSearchGoogleNews:
     def run_all_searches(self):
         """Run all the individual searches"""
         print("Starting multi-search Google News scraping...")
-        print("Searches: China Cyber, Russian Cyber, General Cyber, Iran Cyber, and Premium Sources")
+        print("Searches: China Cyber, Russian Cyber, General Cyber, Iran Cyber + Site-specific searches")
         
-        # Define all searches with expanded keywords from Bob's analysis
+        # Define all searches with expanded keywords from Bob's analysis + site-specific queries
         searches = [
             # Core cyber operations
             ("China cyber when:24h", "China Cyber"),
-            ("Russian cyber when:24h", "Russian Cyber"), 
+            ("Russian cyber when:24h", "Russian Cyber"),
+            ("DPRK cyber when:24h", "DPRK Cyber"),
+            ("North Korea cyber when:24h", "North Korea Cyber"), 
+            ("state-sponsored hackers when:24h", "state-sponsored Cyber"), 
             ("Iran cyber when:24h", "Iran Cyber"),
             ("cybersecurity when:24h", "Cybersecurity"),
+            ("Hackers when:24h", "Hackers"),
             ("cyber attack when:24h", "Cyber Attacks"),
             
             # APT Groups and Threat Actors
-            ("APT when:24h", "APT Groups"),
+            ("Advanced Persistent Threat when:24h", "APT Groups"),
             ("Salt Typhoon when:24h", "Advanced Threats"),
             ("ransomware when:24h", "Ransomware"),
             
@@ -451,7 +455,7 @@ def main():
     print("Starting Comprehensive Multi-Search Google News scraper...")
     print("Searches: 39 categories covering Nation-state actors, APTs, Critical Infrastructure,")
     print("Zero-days, AI Security, Geopolitical Cyber, Attack Methods, Industry Sectors,")
-    print("and Premium News Sources (FT, WSJ, Forbes, Reuters, Bloomberg, etc.)")
+    print("and Premium News Sources (FT, WSJ, Forbes, Register, etc.)")
     print("Timeframe: Last 24 hours for each search")
     print("Based on analysis of Bob's Newsletter keywords and threat intelligence")
     
