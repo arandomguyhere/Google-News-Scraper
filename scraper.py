@@ -171,16 +171,20 @@ class MultiSearchGoogleNews:
                     if not media or media == title or len(media) > 50:
                         media = f"{search_name} News"
                     
-                    # Extract image - try multiple methods
+                    # Extract image - try multiple methods with debug info
                     img = None
                     try:
+                        print(f"    Looking for images in article...")
+                        
                         # Method 1: Look for figure/img tags
                         img_elem = article.find("figure")
                         if img_elem:
+                            print(f"      Found figure element")
                             img_tag = img_elem.find("img")
                             if img_tag and img_tag.get("src"):
                                 img_src = img_tag.get("src")
                                 img = process_image_url(img_src)
+                                print(f"      Method 1 - Figure img: {img_src[:50]}... -> {img}")
                         
                         # Method 2: Look for any img tag in article
                         if not img:
@@ -188,15 +192,19 @@ class MultiSearchGoogleNews:
                             if img_tag and img_tag.get("src"):
                                 img_src = img_tag.get("src")
                                 img = process_image_url(img_src)
+                                print(f"      Method 2 - Any img: {img_src[:50]}... -> {img}")
                         
                         # Method 3: Look for img with specific Google News classes
                         if not img:
                             img_candidates = article.find_all("img", class_=True)
+                            print(f"      Found {len(img_candidates)} img elements with classes")
                             for img_candidate in img_candidates:
                                 if img_candidate.get("src"):
                                     img_src = img_candidate.get("src")
                                     img = process_image_url(img_src)
-                                    break
+                                    print(f"      Method 3 - Class img: {img_src[:50]}... -> {img}")
+                                    if img:
+                                        break
                         
                         # Method 4: Look for data-src or other lazy loading attributes
                         if not img:
@@ -204,6 +212,10 @@ class MultiSearchGoogleNews:
                             if img_tag and img_tag.get("data-src"):
                                 img_src = img_tag.get("data-src")
                                 img = process_image_url(img_src)
+                                print(f"      Method 4 - Data-src: {img_src[:50]}... -> {img}")
+                        
+                        if not img:
+                            print(f"      No images found in this article")
                         
                     except Exception as e:
                         print(f"    Error extracting image: {e}")
