@@ -343,7 +343,7 @@ def save_to_csv(news):
 def main():
     """Main function to run the scraper"""
     print("Starting Multi-Search Google News scraper...")
-    print("Searches: China Cyber, Russian Cyber, General Cyber, Iran Cyber, Cybersecurity, Cyber Attacks")
+    print("Searches: China Cyber, Russian Cyber, Cyber, Iran Cyber, data leak, Drones, Satelites, Cybersecurity, Cyber Attacks")
     print("Timeframe: Last 24 hours for each search")
     
     try:
