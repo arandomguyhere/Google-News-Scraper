@@ -302,7 +302,7 @@ def scrape_google_news():
     print("Starting Google News scraping...")
     
     searcher = GoogleNewsSearcher()
-    query = "china AND russia AND cyber"
+    query = "china AND russia AND cyber when:24h"
     
     # Try direct Google News search first
     articles = searcher.search_google_news_direct(query)
