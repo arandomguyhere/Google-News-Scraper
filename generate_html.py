@@ -1,32 +1,88 @@
+#!/usr/bin/env python3
+"""
+Comprehensive Metrics Dashboard Generator for Bob's Brief
+Creates an HTML dashboard showing all metrics, sources, and query performance
+"""
+
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
+from pathlib import Path
 
-def generate_html():
-    """Generate enhanced visual newsletter with images and duplicate removal"""
+def generate_metrics_dashboard():
+    """Generate comprehensive HTML dashboard with all metrics"""
     
-    # Load the latest news data
-    try:
-        with open("data/latest_news.json", "r", encoding="utf-8") as f:
-            news_data = json.load(f)
-    except FileNotFoundError:
-        news_data = []
+    # Load all metrics data
+    data_files = {
+        'metrics': Path("data/metrics_tracking.json"),
+        'sources': Path("data/source_statistics.json"),
+        'categories': Path("data/category_performance.json"),
+        'queries': Path("data/search_query_stats.json")
+    }
     
-    # Remove duplicates based on title similarity
-    unique_articles = remove_duplicate_articles(news_data)
+    # Load data with fallbacks
+    metrics_data = load_data_safe(data_files['metrics'], {"sessions": {}, "totals": {}})
+    source_data = load_data_safe(data_files['sources'], {"sources": {}, "sessions": {}})
+    category_data = load_data_safe(data_files['categories'], {"categories": {}, "sessions": {}})
+    query_data = load_data_safe(data_files['queries'], {"queries": {}, "sessions": {}})
     
-    # Group articles by category
-    categories = {}
-    for article in unique_articles:
-        category = article.get('Category', 'General Cyber')
-        if category not in categories:
-            categories[category] = []
-        categories[category].append(article)
+    # Generate timestamp
+    current_time = datetime.now()
+    timestamp = current_time.strftime('%Y-%m-%d %H:%M:%S')
     
-    # Get current date for newsletter header
-    current_date = datetime.now()
-    date_formatted = current_date.strftime("%B %d, %Y")
-    day_of_year = current_date.timetuple().tm_yday
+    # Calculate key statistics
+    total_sessions = len(metrics_data.get('sessions', {}))
+    total_articles = metrics_data.get('totals', {}).get('total_articles', 0)
+    total_sources = len(source_data.get('sources', {}))
+    total_categories = len(category_data.get('categories', {}))
+    
+    # Get recent performance
+    recent_sessions = get_recent_sessions(metrics_data.get('sessions', {}), 7)
+    avg_articles_recent = sum(s.get('total_articles', 0) for s in recent_sessions) / len(recent_sessions) if recent_sessions else 0
+    
+    # Top sources
+    top_sources = sorted(
+        source_data.get('sources', {}).items(),
+        key=lambda x: x[1].get('total_articles', 0),
+        reverse=True
+    )[:10]
+    
+    # Category performance
+    category_performance = []
+    for cat, data in category_data.get('categories', {}).items():
+        hit_rate = 0
+        if data.get('total_sessions', 0) > 0:
+            hit_rate = (data.get('times_hit_target', 0) / data['total_sessions']) * 100
+        
+        category_performance.append({
+            'name': cat,
+            'total_articles': data.get('total_articles', 0),
+            'hit_rate': hit_rate,
+            'avg_per_session': data.get('average_per_session', 0)
+        })
+    
+    category_performance.sort(key=lambda x: x['hit_rate'], reverse=True)
+    
+    # Query performance
+    top_queries = []
+    failing_queries = []
+    
+    for query_key, data in query_data.get('queries', {}).items():
+        query_info = {
+            'category': data.get('search_name', 'Unknown'),
+            'query': data.get('query', ''),
+            'success_rate': data.get('success_rate', 0),
+            'total_uses': data.get('total_uses', 0),
+            'avg_articles': data.get('average_articles', 0)
+        }
+        
+        if query_info['success_rate'] >= 70:
+            top_queries.append(query_info)
+        elif query_info['success_rate'] < 30 and query_info['total_uses'] >= 3:
+            failing_queries.append(query_info)
+    
+    top_queries.sort(key=lambda x: x['success_rate'], reverse=True)
+    failing_queries.sort(key=lambda x: x['success_rate'])
     
     # Generate HTML
     html_content = f"""<!DOCTYPE html>
@@ -34,286 +90,239 @@ def generate_html():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Intelligence Brief - {date_formatted}</title>
+    <title>Bob's Brief - Metrics Dashboard</title>
     <style>
         body {{
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background-color: #ffffff;
+            color: #333;
+            background-color: #f5f5f5;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }}
         
         .container {{
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #ffffff;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
         }}
         
         .header {{
+            background: linear-gradient(135deg, #007acc, #0056b3);
+            color: white;
+            padding: 30px;
             text-align: center;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e6e6e6;
         }}
         
-        .title {{
+        .header h1 {{
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }}
+        
+        .header p {{
+            margin: 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }}
+        
+        .dashboard-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }}
+        
+        .metric-card {{
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }}
+        
+        .metric-card h3 {{
+            margin: 0 0 15px 0;
+            color: #007acc;
+            font-size: 1.3em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 8px;
+        }}
+        
+        .big-number {{
             font-size: 2.5em;
             font-weight: bold;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-        }}
-        
-        .subtitle {{
-            font-size: 1.2em;
-            color: #666666;
-            margin-bottom: 15px;
-            font-style: italic;
-        }}
-        
-        .date-info {{
-            font-size: 0.95em;
-            color: #888888;
-            margin-bottom: 5px;
-        }}
-        
-        .issue-number {{
-            font-size: 0.9em;
-            color: #888888;
-            font-weight: 500;
-        }}
-        
-        .intro {{
-            font-size: 1.1em;
-            line-height: 1.7;
-            color: #333333;
-            margin-bottom: 40px;
-            padding: 25px;
-            background-color: #f8f9fa;
-            border-left: 4px solid #007acc;
-            border-radius: 4px;
-        }}
-        
-        .stats-box {{
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 30px;
-            text-align: center;
-        }}
-        
-        .stat {{
-            display: inline-block;
-            margin: 0 15px;
-        }}
-        
-        .stat-number {{
-            font-size: 1.8em;
-            font-weight: bold;
             color: #007acc;
-            display: block;
+            margin: 10px 0;
         }}
         
-        .stat-label {{
+        .metric-label {{
+            color: #666;
             font-size: 0.9em;
-            color: #666666;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }}
         
-        .section {{
-            margin-bottom: 50px;
-        }}
-        
-        .section-header {{
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #1a1a1a;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #007acc;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }}
-        
-        .section-description {{
-            color: #666666;
-            margin-bottom: 30px;
-            font-style: italic;
-            font-size: 1em;
-        }}
-        
-        .articles-grid {{
-            display: grid;
-            gap: 25px;
-        }}
-        
-        .article {{
-            display: flex;
-            background: #ffffff;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: box-shadow 0.2s ease, transform 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-        }}
-        
-        .article:hover {{
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }}
-        
-        .article-image {{
-            width: 200px;
-            height: 140px;
-            flex-shrink: 0;
-            background-color: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }}
-        
-        .article-image img {{
+        .progress-bar {{
             width: 100%;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }}
+        
+        .progress-fill {{
             height: 100%;
-            object-fit: cover;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.3s ease;
         }}
         
-        .article-image-placeholder {{
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #007acc, #0056b3);
-            border-radius: 8px;
+        .source-list {{
+            max-height: 300px;
+            overflow-y: auto;
+        }}
+        
+        .source-item {{
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
         }}
         
-        .article-content {{
+        .source-name {{
+            font-weight: 500;
             flex: 1;
-            padding: 20px;
+        }}
+        
+        .source-count {{
+            background-color: #007acc;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }}
+        
+        .category-item {{
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
         }}
         
-        .article-title {{
-            font-size: 1.2em;
-            font-weight: bold;
-            line-height: 1.4;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-            text-decoration: none;
-        }}
-        
-        .article-meta {{
-            font-size: 0.9em;
-            color: #666666;
-            margin-bottom: 12px;
-        }}
-        
-        .source {{
-            font-weight: 600;
-            color: #007acc;
-        }}
-        
-        .time {{
-            margin-left: 8px;
-        }}
-        
-        .article-summary {{
-            font-size: 0.95em;
-            line-height: 1.5;
-            color: #444444;
-            flex-grow: 1;
+        .category-name {{
+            font-weight: 500;
+            flex: 1;
         }}
         
         .category-stats {{
-            background-color: #f1f8ff;
-            border: 1px solid #c8e1ff;
-            border-radius: 6px;
-            padding: 15px;
-            margin-bottom: 25px;
-            font-size: 0.9em;
-            color: #0366d6;
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }}
         
-        .highlight-box {{
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 6px;
-            padding: 20px;
-            margin: 25px 0;
-        }}
-        
-        .highlight-title {{
+        .hit-rate {{
             font-weight: bold;
-            color: #856404;
-            margin-bottom: 10px;
         }}
         
-        .footer {{
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #e6e6e6;
-            text-align: center;
-            color: #888888;
+        .hit-rate.good {{ color: #28a745; }}
+        .hit-rate.medium {{ color: #ffc107; }}
+        .hit-rate.poor {{ color: #dc3545; }}
+        
+        .query-item {{
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 8px 0;
+            border-left: 4px solid #007acc;
+        }}
+        
+        .query-category {{
+            font-weight: bold;
+            color: #007acc;
             font-size: 0.9em;
         }}
         
-        .footer-links {{
-            margin-top: 15px;
+        .query-text {{
+            font-family: monospace;
+            background: #e9ecef;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin: 5px 0;
+            font-size: 0.85em;
         }}
         
-        .footer-links a {{
+        .query-stats {{
+            display: flex;
+            gap: 15px;
+            font-size: 0.85em;
+            color: #666;
+        }}
+        
+        .warning-card {{
+            border-left: 4px solid #dc3545;
+            background: #fff5f5;
+        }}
+        
+        .success-card {{
+            border-left: 4px solid #28a745;
+            background: #f8fff8;
+        }}
+        
+        .info-card {{
+            border-left: 4px solid #17a2b8;
+            background: #f0f9ff;
+        }}
+        
+        .tabs {{
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+            margin: 20px 30px 0 30px;
+        }}
+        
+        .tab {{
+            padding: 12px 24px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            color: #666;
+            font-weight: 500;
+        }}
+        
+        .tab.active {{
             color: #007acc;
-            text-decoration: none;
-            margin: 0 10px;
+            border-bottom-color: #007acc;
         }}
         
-        .footer-links a:hover {{
-            text-decoration: underline;
+        .tab-content {{
+            padding: 30px;
+            display: none;
         }}
         
-        .no-articles {{
+        .tab-content.active {{
+            display: block;
+        }}
+        
+        .timestamp {{
             text-align: center;
-            padding: 40px;
-            color: #666666;
-            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
         }}
         
-        @media (max-width: 700px) {{
-            .container {{
-                padding: 20px 15px;
+        @media (max-width: 768px) {{
+            .dashboard-grid {{
+                grid-template-columns: 1fr;
+                padding: 20px;
             }}
             
-            .title {{
-                font-size: 2em;
-            }}
-            
-            .article {{
+            .tabs {{
                 flex-direction: column;
-            }}
-            
-            .article-image {{
-                width: 100%;
-                height: 200px;
-            }}
-            
-            .stats-box {{
-                padding: 15px;
-            }}
-            
-            .stat {{
-                display: block;
-                margin: 10px 0;
             }}
         }}
     </style>
@@ -321,280 +330,74 @@ def generate_html():
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="title">Bob's Brief</h1>
-            <p class="subtitle">Daily cybersecurity intelligence from global sources</p>
-            <p class="date-info">{date_formatted}</p>
-            <p class="issue-number">Issue #{day_of_year}</p>
+            <h1>📊 Bob's Brief Metrics Dashboard</h1>
+            <p>Comprehensive analytics for automated cyber intelligence collection</p>
         </div>
         
-        <div class="intro">
-            <strong>Welcome to today's cyber intelligence briefing.</strong> This automated digest aggregates the latest cybersecurity developments, threat intelligence, and geopolitical cyber activities from the past 24 hours. Our system monitors multiple categories including nation-state activities, cyber attacks, and security industry developments.
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('overview')">Overview</div>
+            <div class="tab" onclick="showTab('sources')">Sources</div>
+            <div class="tab" onclick="showTab('categories')">Categories</div>
+            <div class="tab" onclick="showTab('queries')">Query Performance</div>
         </div>
         
-        <div class="stats-box">
-            <div class="stat">
-                <span class="stat-number">{len(unique_articles)}</span>
-                <span class="stat-label">Unique Articles</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">{len(categories)}</span>
-                <span class="stat-label">Categories</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">{current_date.strftime('%H:%M')}</span>
-                <span class="stat-label">Last Updated</span>
-            </div>
-        </div>
-"""
-    
-    # Add sections for each category
-    if categories:
-        # Define category order and descriptions with icons - expanded from Bob's analysis
-        category_info = {
-            # Core Nation-State Actors
-            'China Cyber': ('🇨🇳', 'China-related cyber operations and digital policy developments'),
-            'Russian Cyber': ('🇷🇺', 'Russian cyber activities and state-sponsored operations'), 
-            'Iran Cyber': ('🇮🇷', 'Iranian cyber capabilities and regional digital warfare'),
-            
-            # Threat Intelligence
-            'APT Groups': ('🎭', 'Advanced Persistent Threat groups and sophisticated actors'),
-            'Advanced Threats': ('⚡', 'Elite threat actors and nation-state campaigns'),
-            'Ransomware': ('🔒', 'Ransomware attacks and criminal groups'),
-            
-            # Critical Infrastructure
-            'Critical Infrastructure': ('🏭', 'Power grids, water systems, and essential services'),
-            'Energy Security': ('⚡', 'Power grid and energy infrastructure threats'),
-            'Supply Chain': ('🔗', 'Supply chain attacks and vendor compromises'),
-            
-            # Vulnerabilities & Exploits
-            'Zero Days': ('🚨', 'Zero-day exploits and undisclosed vulnerabilities'),
-            'Vulnerabilities': ('🔓', 'CVEs and security flaws in software systems'),
-            'VPN Security': ('🔒', 'VPN vulnerabilities and enterprise access threats'),
-            
-            # Emerging Technologies
-            'AI Security': ('🤖', 'Artificial intelligence security and AI-powered attacks'),
-            'Quantum Threats': ('⚛️', 'Quantum computing impact on cybersecurity'),
-            'Blockchain Security': ('⛓️', 'Cryptocurrency and blockchain vulnerabilities'),
-            
-            # Geopolitical Cyber
-            'Taiwan Security': ('🇹🇼', 'Taiwan-focused cyber threats and geopolitical tensions'),
-            'Ukraine Conflict': ('🇺🇦', 'Ukraine-Russia cyber warfare and digital conflict'),
-            'Middle East Cyber': ('🇮🇱', 'Middle East cyber operations and regional threats'),
-            
-            # Attack Methods
-            'Phishing': ('🎣', 'Email phishing and social engineering campaigns'),
-            'Malware': ('🦠', 'Malicious software and payload analysis'),
-            'Social Engineering': ('🎭', 'Human-factor attacks and manipulation tactics'),
-            
-            # Industry Sectors
-            'Healthcare Security': ('🏥', 'Medical device security and healthcare data breaches'),
-            'Financial Security': ('💳', 'Banking, fintech, and financial system threats'),
-            'Maritime Security': ('⚓', 'Port systems and maritime infrastructure cybersecurity'),
-            
-            # Technology & Infrastructure
-            'Tech Companies': ('📱', 'Technology vendor security and corporate espionage'),
-            '5G Networks': ('📡', '5G infrastructure security and telecommunications threats'),
-            'IoT Security': ('📟', 'Internet of Things and connected device vulnerabilities'),
-            
-            # General Categories
-            'Cybersecurity': ('🛡️', 'Enterprise security, defense technologies, and best practices'),
-            'Cyber Attacks': ('⚠️', 'Recent incidents, breaches, and threat actor activities')
-        }
-        
-        for category, (icon, description) in category_info.items():
-            if category in categories:
-                articles = categories[category]
-                html_content += f"""
-        <div class="section">
-            <h2 class="section-header">{icon} {category}</h2>
-            <p class="section-description">{description}</p>
-            <div class="category-stats">
-                <strong>{len(articles)}</strong> articles found in this category
-            </div>
-            <div class="articles-grid">
-"""
-                
-                for article in articles:
-                    # Format published time
-                    pub_time = article.get('Published', 'Unknown')
-                    if pub_time and pub_time != 'Unknown' and pub_time != 'Recent':
-                        try:
-                            if 'T' in pub_time:
-                                dt = datetime.fromisoformat(pub_time.replace('Z', '+00:00'))
-                                pub_time = dt.strftime('%I:%M %p')
-                        except:
-                            pass
-                    elif pub_time == 'Recent':
-                        pub_time = 'Recently published'
-                    
-                    # Create article summary from title
-                    title = article['Title']
-                    summary = create_summary(title)
-                    
-                    # Get placeholder icon for category
-                    placeholder_icon = get_category_icon(category)
-                    
-                    # Check if article has an image and log it
-                    article_image = article.get('img', '')
-                    image_html = ""
-                    
-                    print(f"  Processing article: {title[:40]}...")
-                    print(f"    Image URL: {article_image if article_image else 'None'}")
-                    
-                    if article_image and article_image.startswith('http') and not article_image.startswith('data:'):
-                        # Use real image from Google News
-                        image_html = f'<img src="{article_image}" alt="Article image" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=&quot;article-image-placeholder&quot;>{placeholder_icon}</div>\'">'
-                        print(f"    Using real image: {article_image[:60]}...")
-                    else:
-                        # Use placeholder
-                        image_html = f'<div class="article-image-placeholder">{placeholder_icon}</div>'
-                        print(f"    Using placeholder icon: {placeholder_icon}")
-                    
-                    html_content += f"""
-                <a href="{article['Link']}" target="_blank" rel="noopener noreferrer" class="article">
-                    <div class="article-image">
-                        {image_html}
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title">{title}</h3>
-                        <div class="article-meta">
-                            <span class="source">{article['Source']}</span>
-                            <span class="time">• {pub_time}</span>
+        <div id="overview" class="tab-content active">
+            <div class="dashboard-grid">
+                <div class="metric-card">
+                    <h3>📈 Collection Overview</h3>
+                    <div class="big-number">{total_articles:,}</div>
+                    <div class="metric-label">Total Articles Collected</div>
+                    <hr>
+                    <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                        <div>
+                            <div style="font-size: 1.5em; font-weight: bold;">{total_sessions}</div>
+                            <div class="metric-label">Total Sessions</div>
                         </div>
-                        {f'<div class="article-summary">{summary}</div>' if summary else ''}
+                        <div>
+                            <div style="font-size: 1.5em; font-weight: bold;">{avg_articles_recent:.1f}</div>
+                            <div class="metric-label">Avg/Session (7d)</div>
+                        </div>
                     </div>
-                </a>
-"""
+                </div>
                 
-                html_content += """            </div>
-        </div>"""
-        
-        # Add intelligence summary
-        duplicate_count = len(news_data) - len(unique_articles)
-        html_content += f"""
-        <div class="highlight-box">
-            <div class="highlight-title">📊 Today's Intelligence Summary</div>
-            <p>Our monitoring systems identified <strong>{len(news_data)} total developments</strong> across <strong>{len(categories)} categories</strong> in the past 24 hours. After deduplication, <strong>{len(unique_articles)} unique articles</strong> remain for analysis. {f'<strong>{duplicate_count} duplicate articles</strong> were filtered out to ensure content quality.' if duplicate_count > 0 else ''}</p>
-        </div>
-"""
-    else:
-        html_content += """
-        <div class="no-articles">
-            <h3>No Intelligence Gathered Today</h3>
-            <p>Our monitoring systems did not identify any relevant cyber intelligence in the past 24 hours matching our collection criteria.</p>
-        </div>
-"""
-    
-    html_content += f"""
-        <div class="footer">
-            <p><strong>Cyber Intelligence Brief</strong> | Automated Intelligence Collection</p>
-            <p>Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} UTC</p>
-            <div class="footer-links">
-                <a href="#" onclick="location.reload()">Refresh Report</a>
-                <a href="https://github.com/arandomguyhere/Google-News-Scraper" target="_blank">View Source</a>
+                <div class="metric-card">
+                    <h3>🌐 Source Diversity</h3>
+                    <div class="big-number">{total_sources}</div>
+                    <div class="metric-label">Unique News Sources</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {min(100, (total_sources / 50) * 100)}%"></div>
+                    </div>
+                    <div style="font-size: 0.8em; color: #666;">Target: 50+ sources</div>
+                </div>
+                
+                <div class="metric-card">
+                    <h3>📂 Category Coverage</h3>
+                    <div class="big-number">{total_categories}</div>
+                    <div class="metric-label">Categories Monitored</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {min(100, (total_categories / 25) * 100)}%"></div>
+                    </div>
+                    <div style="font-size: 0.8em; color: #666;">Target: 25+ categories</div>
+                </div>
+                
+                <div class="metric-card">
+                    <h3>🎯 Recent Performance</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div>
+                            <div style="font-size: 1.3em; font-weight: bold; color: #28a745;">{len([s for s in recent_sessions if s.get('total_articles', 0) >= 100])}</div>
+                            <div class="metric-label">High Sessions (100+)</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 1.3em; font-weight: bold; color: #ffc107;">{len([s for s in recent_sessions if s.get('total_articles', 0) < 50])}</div>
+                            <div class="metric-label">Low Sessions (&lt;50)</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p style="margin-top: 20px; font-size: 0.8em; color: #aaa;">
-                This briefing is generated automatically from public news sources. 
-                Information is for situational awareness purposes only.
-            </p>
         </div>
-    </div>
-    
-    <script>
-        // Auto-refresh every 30 minutes
-        setTimeout(function() {{
-            location.reload();
-        }}, 1800000);
         
-        // Handle image loading errors
-        document.querySelectorAll('.article-image img').forEach(img => {{
-            img.addEventListener('error', function() {{
-                this.parentElement.innerHTML = '<div class="article-image-placeholder">📰</div>';
-            }});
-        }});
-        
-        console.log('Enhanced Cyber Intelligence Brief loaded');
-        console.log('Total articles collected:', {len(news_data)});
-        console.log('Unique articles after deduplication:', {len(unique_articles)});
-        console.log('Categories:', {len(categories)});
-    </script>
-</body>
-</html>
-"""
-    
-    # Save HTML file
-    with open("docs/index.html", "w", encoding="utf-8") as f:
-        f.write(html_content)
-    
-    print("Enhanced visual newsletter generated successfully!")
-    print(f"Generated briefing with {len(unique_articles)} unique articles (filtered {len(news_data) - len(unique_articles)} duplicates)")
-    print(f"Categories: {list(categories.keys())}")
-    
-    # Debug: Count articles with images
-    articles_with_images = sum(1 for article in unique_articles if article.get('img'))
-    print(f"Articles with images: {articles_with_images}/{len(unique_articles)}")
-    
-    if articles_with_images > 0:
-        print("Sample image URLs:")
-        for article in unique_articles[:3]:
-            if article.get('img'):
-                print(f"  - {article['Title'][:40]}... -> {article['img'][:60]}...")
-    else:
-        print("No images found - will use placeholders")
-
-def remove_duplicate_articles(articles):
-    """Remove duplicate articles based on title similarity"""
-    if not articles:
-        return []
-    
-    unique_articles = []
-    seen_titles = []
-    
-    for article in articles:
-        title = article['Title'].lower().strip()
-        title_words = set(title.split())
-        
-        # Check if this title is too similar to existing ones
-        is_duplicate = False
-        for seen_title in seen_titles:
-            seen_words = set(seen_title.split())
-            if len(title_words) > 0 and len(seen_words) > 0:
-                # Calculate word overlap
-                common_words = title_words.intersection(seen_words)
-                similarity = len(common_words) / max(len(title_words), len(seen_words))
-                
-                # If more than 70% similarity, consider it a duplicate
-                if similarity > 0.7:
-                    is_duplicate = True
-                    print(f"Filtering duplicate: {article['Title'][:60]}...")
-                    break
-        
-        if not is_duplicate:
-            seen_titles.append(title)
-            unique_articles.append(article)
-    
-    return unique_articles
-
-def create_summary(title):
-    """Create a brief summary from article title"""
-    words = title.split()
-    if len(words) > 12:
-        # Take middle portion of title as summary
-        summary_words = words[6:min(len(words), 15)]
-        return " ".join(summary_words) + "..."
-    return ""
-
-def get_category_icon(category):
-    """Get emoji icon for category"""
-    icons = {
-        'China Cyber': '🇨🇳',
-        'Russian Cyber': '🇷🇺',
-        'Iran Cyber': '🇮🇷',
-        'General Cyber': '🌐',
-        'Cybersecurity': '🔒',
-        'Cyber Attacks': '⚠️'
-    }
-    return icons.get(category, '📰')
-
-if __name__ == "__main__":
-    generate_html()
+        <div id="sources" class="tab-content">
+            <div class="dashboard-grid">
+                <div class="metric-card">
+                    <h3>🏆 Top News Sources</h3>
+                    <div class="source-list">"""
