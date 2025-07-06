@@ -2,8 +2,11 @@
 
 > **Automated cybersecurity news aggregation and intelligence reporting system**
 
-[![Scraping Status](https://github.com/your-username/your-repo-name/actions/workflows/scrape-news.yml/badge.svg)](https://github.com/your-username/your-repo-name/actions/workflows/scrape-news.yml)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://your-username.github.io/your-repo-name/)
+[![Scraping Status](https://github.com/arandomguyhere
+/Google-News-Scraper/actions/workflows/scrape-news.yml/badge.svg)](https://github.com/arandomguyhere
+/Google-News-Scraper/actions/workflows/scrape-news.yml)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://arandomguyhere
+.github.io/Google-News-Scraper/)
 
 An automated system that continuously monitors cybersecurity news sources, processes intelligence data, and generates comprehensive reports deployed as a live newsletter.
 
