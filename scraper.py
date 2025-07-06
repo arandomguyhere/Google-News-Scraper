@@ -101,7 +101,7 @@ class MultiSearchGoogleNews:
             valid_articles = []
             
             for i, article in enumerate(articles):
-                if len(valid_articles) >= 5:  # Limit per search to avoid overwhelming
+                if len(valid_articles) >= 3:  # Reduced limit to handle more searches
                     break
                     
                 try:
@@ -263,14 +263,54 @@ class MultiSearchGoogleNews:
         print("Starting multi-search Google News scraping...")
         print("Searches: China Cyber, Russian Cyber, General Cyber, Iran Cyber")
         
-        # Define all searches
+        # Define all searches with expanded keywords from Bob's analysis
         searches = [
-            ("China Cyber when:24h", "China Cyber"),
-            ("Russian Cyber when:24h", "Russian Cyber"), 
-            ("cyber when:24h", "General Cyber"),
-            ("iran cyber when:24h", "Iran Cyber"),
+            # Core cyber operations
+            ("China cyber when:24h", "China Cyber"),
+            ("Russian cyber when:24h", "Russian Cyber"), 
+            ("Iran cyber when:24h", "Iran Cyber"),
             ("cybersecurity when:24h", "Cybersecurity"),
-            ("cyber attack when:24h", "Cyber Attacks")
+            ("cyber attack when:24h", "Cyber Attacks"),
+            
+            # APT Groups and Threat Actors
+            ("APT when:24h", "APT Groups"),
+            ("Salt Typhoon when:24h", "Advanced Threats"),
+            ("ransomware when:24h", "Ransomware"),
+            
+            # Critical Infrastructure
+            ("critical infrastructure cyber when:24h", "Critical Infrastructure"),
+            ("power grid cyber when:24h", "Energy Security"),
+            ("supply chain attack when:24h", "Supply Chain"),
+            
+            # Vulnerabilities and Exploits
+            ("zero day exploit when:24h", "Zero Days"),
+            ("CVE when:24h", "Vulnerabilities"),
+            ("Ivanti when:24h", "VPN Security"),
+            
+            # Emerging Technologies
+            ("AI security when:24h", "AI Security"),
+            ("quantum computing cyber when:24h", "Quantum Threats"),
+            ("blockchain security when:24h", "Blockchain Security"),
+            
+            # Geopolitical Cyber
+            ("Taiwan cyber when:24h", "Taiwan Security"),
+            ("Ukraine cyber when:24h", "Ukraine Conflict"),
+            ("Israel cyber when:24h", "Middle East Cyber"),
+            
+            # Attack Methods
+            ("phishing when:24h", "Phishing"),
+            ("malware when:24h", "Malware"),
+            ("social engineering when:24h", "Social Engineering"),
+            
+            # Industries and Sectors
+            ("healthcare cyber when:24h", "Healthcare Security"),
+            ("financial cyber when:24h", "Financial Security"),
+            ("maritime cyber when:24h", "Maritime Security"),
+            
+            # Technology Targets
+            ("Huawei security when:24h", "Tech Companies"),
+            ("5G security when:24h", "5G Networks"),
+            ("IoT security when:24h", "IoT Security")
         ]
         
         all_articles = []
@@ -385,9 +425,11 @@ def save_to_csv(news):
 
 def main():
     """Main function to run the scraper"""
-    print("Starting Multi-Search Google News scraper...")
-    print("Searches: China Cyber, Russian Cyber, General Cyber, Iran Cyber, Cybersecurity, Cyber Attacks")
+    print("Starting Comprehensive Multi-Search Google News scraper...")
+    print("Searches: 27 categories covering Nation-state actors, APTs, Critical Infrastructure,")
+    print("Zero-days, AI Security, Geopolitical Cyber, Attack Methods, and Industry Sectors")
     print("Timeframe: Last 24 hours for each search")
+    print("Based on analysis of Bob's Newsletter keywords and threat intelligence")
     
     try:
         # Run the multi-search scraper
