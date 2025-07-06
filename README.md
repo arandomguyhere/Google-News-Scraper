@@ -1,4 +1,4 @@
-# 🔒 Cyber Intelligence Brief
+# 🔒 Bob's Daily Brief
 
 > **Automated cybersecurity news aggregation and intelligence reporting system**
 
