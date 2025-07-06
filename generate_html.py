@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 def generate_html():
-    """Generate HTML page from scraped news search results"""
+    """Generate HTML page in newsletter/Substack style"""
     
     # Load the latest news data
     try:
@@ -12,9 +12,18 @@ def generate_html():
     except FileNotFoundError:
         news_data = []
     
-    # Search query info
-    search_query = "china AND russian AND cyber"
-    timeframe = "Last 24 hours"
+    # Group articles by category
+    categories = {}
+    for article in news_data:
+        category = article.get('Category', 'General Cyber')
+        if category not in categories:
+            categories[category] = []
+        categories[category].append(article)
+    
+    # Get current date for newsletter header
+    current_date = datetime.now()
+    date_formatted = current_date.strftime("%B %d, %Y")
+    day_of_year = current_date.timetuple().tm_yday
     
     # Generate HTML
     html_content = f"""<!DOCTYPE html>
@@ -22,358 +31,222 @@ def generate_html():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google News Search: {search_query}</title>
+    <title>Cyber Intelligence Brief - {date_formatted}</title>
     <style>
-        * {{
+        body {{
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }}
-        
-        body {{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
         }}
         
         .container {{
-            max-width: 1200px;
+            max-width: 680px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px 20px;
+            background-color: #ffffff;
         }}
         
         .header {{
-            background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
-            color: white;
-            padding: 40px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e6e6e6;
         }}
         
-        .header::before {{
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }}
-        
-        @keyframes pulse {{
-            0%, 100% {{ transform: scale(1); opacity: 0.5; }}
-            50% {{ transform: scale(1.1); opacity: 0.8; }}
-        }}
-        
-        .header-content {{
-            position: relative;
-            z-index: 2;
-        }}
-        
-        .header h1 {{
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            font-weight: 700;
-        }}
-        
-        .search-info {{
-            font-size: 1.2em;
-            opacity: 0.95;
-            margin-top: 15px;
-        }}
-        
-        .search-query {{
-            background: rgba(255,255,255,0.2);
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-family: 'Courier New', monospace;
-            font-weight: 600;
-            margin: 0 8px;
-            display: inline-block;
-        }}
-        
-        .main-content {{
-            padding: 40px;
-        }}
-        
-        .search-controls {{
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border-left: 5px solid #1a73e8;
-        }}
-        
-        .search-controls h3 {{
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }}
-        
-        .current-search {{
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }}
-        
-        .current-search strong {{
-            color: #1a73e8;
-        }}
-        
-        .stats {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }}
-        
-        .stat {{
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }}
-        
-        .stat:hover {{
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }}
-        
-        .stat-number {{
+        .title {{
             font-size: 2.5em;
             font-weight: bold;
-            color: #1a73e8;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }}
+        
+        .subtitle {{
+            font-size: 1.2em;
+            color: #666666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }}
+        
+        .date-info {{
+            font-size: 0.95em;
+            color: #888888;
             margin-bottom: 5px;
-            background: linear-gradient(45deg, #1a73e8, #4285f4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }}
         
-        .stat-label {{
-            color: #6c757d;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .issue-number {{
             font-size: 0.9em;
+            color: #888888;
+            font-weight: 500;
         }}
         
-        .news-container {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 25px;
-        }}
-        
-        .news-item {{
-            background: white;
-            border-radius: 15px;
+        .intro {{
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #333333;
+            margin-bottom: 40px;
             padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border-left: 4px solid #1a73e8;
-            position: relative;
-            overflow: hidden;
+            background-color: #f8f9fa;
+            border-left: 4px solid #007acc;
+            border-radius: 4px;
         }}
         
-        .news-item::before {{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #1a73e8, #4285f4, #34a853, #fbbc04);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+        .section {{
+            margin-bottom: 45px;
         }}
         
-        .news-item:hover {{
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }}
-        
-        .news-item:hover::before {{
-            transform: scaleX(1);
-        }}
-        
-        .news-title {{
-            margin: 0 0 20px 0;
-            font-size: 1.3em;
-            line-height: 1.4;
-            font-weight: 600;
-        }}
-        
-        .news-title a {{
-            color: #2c3e50;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }}
-        
-        .news-title a:hover {{
-            color: #1a73e8;
-        }}
-        
-        .news-meta {{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #e9ecef;
-        }}
-        
-        .news-source {{
-            background: linear-gradient(135deg, #1a73e8, #4285f4);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
+        .section-header {{
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007acc;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }}
         
-        .news-time {{
-            color: #6c757d;
+        .article {{
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }}
+        
+        .article:last-child {{
+            border-bottom: none;
+            margin-bottom: 0;
+        }}
+        
+        .article-title {{
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }}
+        
+        .article-title a {{
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }}
+        
+        .article-title a:hover {{
+            color: #007acc;
+        }}
+        
+        .article-meta {{
             font-size: 0.9em;
-            font-weight: 500;
+            color: #666666;
+            margin-bottom: 10px;
         }}
         
-        .no-results {{
+        .source {{
+            font-weight: 600;
+            color: #007acc;
+        }}
+        
+        .time {{
+            margin-left: 10px;
+        }}
+        
+        .article-summary {{
+            font-size: 1em;
+            line-height: 1.6;
+            color: #444444;
+            margin-top: 8px;
+        }}
+        
+        .stats-box {{
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
             text-align: center;
-            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
-            padding: 50px;
-            border-radius: 15px;
-            border: 2px dashed #fc8181;
         }}
         
-        .no-results h3 {{
-            color: #e53e3e;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }}
-        
-        .no-results ul {{
-            text-align: left;
+        .stat {{
             display: inline-block;
-            color: #744c4c;
-            margin: 20px 0;
+            margin: 0 15px;
+        }}
+        
+        .stat-number {{
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #007acc;
+            display: block;
+        }}
+        
+        .stat-label {{
+            font-size: 0.9em;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }}
         
         .footer {{
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e6e6e6;
+            text-align: center;
+            color: #888888;
+            font-size: 0.9em;
+        }}
+        
+        .footer-links {{
+            margin-top: 15px;
+        }}
+        
+        .footer-links a {{
+            color: #007acc;
+            text-decoration: none;
+            margin: 0 10px;
+        }}
+        
+        .footer-links a:hover {{
+            text-decoration: underline;
+        }}
+        
+        .highlight-box {{
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }}
+        
+        .highlight-title {{
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }}
+        
+        .no-articles {{
             text-align: center;
             padding: 40px;
-            margin-top: 50px;
+            color: #666666;
+            font-style: italic;
         }}
         
-        .footer-content {{
-            max-width: 800px;
-            margin: 0 auto;
-        }}
-        
-        .refresh-btn {{
-            background: linear-gradient(135deg, #28a745, #20c997);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-top: 25px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
-        }}
-        
-        .refresh-btn:hover {{
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
-            background: linear-gradient(135deg, #218838, #1cc88a);
-        }}
-        
-        .debug-info {{
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #6c757d;
-            border-left: 4px solid #17a2b8;
-        }}
-        
-        .status-indicator {{
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-            animation: blink 2s infinite;
-        }}
-        
-        .status-success {{
-            background: #28a745;
-        }}
-        
-        .status-warning {{
-            background: #ffc107;
-        }}
-        
-        .status-error {{
-            background: #dc3545;
-        }}
-        
-        @keyframes blink {{
-            0%, 50% {{ opacity: 1; }}
-            51%, 100% {{ opacity: 0.3; }}
-        }}
-        
-        @media (max-width: 768px) {{
-            body {{
-                padding: 10px;
+        @media (max-width: 600px) {{
+            .container {{
+                padding: 20px 15px;
             }}
             
-            .header {{
-                padding: 30px 20px;
-            }}
-            
-            .header h1 {{
+            .title {{
                 font-size: 2em;
-                flex-direction: column;
-                gap: 10px;
             }}
             
-            .main-content {{
-                padding: 30px 20px;
+            .stats-box {{
+                padding: 15px;
             }}
             
-            .news-container {{
-                grid-template-columns: 1fr;
-            }}
-            
-            .stats {{
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }}
-            
-            .news-meta {{
-                flex-direction: column;
-                align-items: flex-start;
+            .stat {{
+                display: block;
+                margin: 10px 0;
             }}
         }}
     </style>
@@ -381,177 +254,137 @@ def generate_html():
 <body>
     <div class="container">
         <div class="header">
-            <div class="header-content">
-                <h1>
-                    🔍 Google News Search
-                </h1>
-                <div class="search-info">
-                    Searching for: <span class="search-query">{search_query}</span>
-                    <br>Timeframe: {timeframe} • Updated automatically every 6 hours
-                </div>
-            </div>
+            <h1 class="title">Cyber Intelligence Brief</h1>
+            <p class="subtitle">Daily cybersecurity intelligence from global sources</p>
+            <p class="date-info">{date_formatted}</p>
+            <p class="issue-number">Issue #{day_of_year}</p>
         </div>
         
-        <div class="main-content">
-            <div class="search-controls">
-                <h3>🎯 Current Search Parameters</h3>
-                <div class="current-search">
-                    <strong>Query:</strong> {search_query}<br>
-                    <strong>Time Range:</strong> {timeframe}<br>
-                    <strong>Last Search:</strong> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}<br>
-                    <strong>Search URL:</strong> <code>https://news.google.com/search?q=china AND russian AND cyber when:24h</code>
-                </div>
+        <div class="intro">
+            <strong>Welcome to today's cyber intelligence briefing.</strong> This automated digest aggregates the latest cybersecurity developments, threat intelligence, and geopolitical cyber activities from the past 24 hours. Our system monitors multiple categories including nation-state activities, cyber attacks, and security industry developments.
+        </div>
+        
+        <div class="stats-box">
+            <div class="stat">
+                <span class="stat-number">{len(news_data)}</span>
+                <span class="stat-label">Articles Today</span>
             </div>
-            
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">{len(news_data)}</div>
-                    <div class="stat-label">Articles Found</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">{datetime.now().strftime('%H:%M')}</div>
-                    <div class="stat-label">Last Updated</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">{"✓" if news_data else "✗"}</div>
-                    <div class="stat-label">Status</div>
-                </div>
+            <div class="stat">
+                <span class="stat-number">{len(categories)}</span>
+                <span class="stat-label">Categories</span>
             </div>
-            
-            <div class="news-container">
+            <div class="stat">
+                <span class="stat-number">{current_date.strftime('%H:%M')}</span>
+                <span class="stat-label">Last Updated</span>
+            </div>
+        </div>
 """
     
-    # Add news items or no results message
-    if news_data:
-        status_class = "status-success"
-        for item in news_data:
-            # Format published time
-            pub_time = item.get('Published', 'Unknown')
-            if pub_time and pub_time != 'Unknown' and pub_time != 'Recent':
-                try:
-                    # Try to format the time nicely
-                    if 'T' in pub_time:
-                        dt = datetime.fromisoformat(pub_time.replace('Z', '+00:00'))
-                        pub_time = dt.strftime('%B %d, %Y %I:%M %p')
-                except:
-                    pass
-            elif pub_time == 'Recent':
-                pub_time = 'Recently published'
-            
-            html_content += f"""
-            <div class="news-item">
-                <h3 class="news-title">
-                    <a href="{item['Link']}" target="_blank" rel="noopener noreferrer">{item['Title']}</a>
+    # Add sections for each category
+    if categories:
+        # Define category order and descriptions
+        category_info = {
+            'China Cyber': '🇨🇳 China-related cyber operations and digital policy developments',
+            'Russian Cyber': '🇷🇺 Russian cyber activities and state-sponsored operations', 
+            'Iran Cyber': '🇮🇷 Iranian cyber capabilities and regional digital warfare',
+            'General Cyber': '🌐 Broad cybersecurity developments and industry news',
+            'Cybersecurity': '🔒 Enterprise security, defense technologies, and best practices',
+            'Cyber Attacks': '⚠️ Recent incidents, breaches, and threat actor activities'
+        }
+        
+        for category, description in category_info.items():
+            if category in categories:
+                articles = categories[category]
+                html_content += f"""
+        <div class="section">
+            <h2 class="section-header">{category}</h2>
+            <p style="color: #666666; margin-bottom: 25px; font-style: italic;">{description}</p>
+"""
+                
+                for article in articles:
+                    # Format published time
+                    pub_time = article.get('Published', 'Unknown')
+                    if pub_time and pub_time != 'Unknown' and pub_time != 'Recent':
+                        try:
+                            if 'T' in pub_time:
+                                dt = datetime.fromisoformat(pub_time.replace('Z', '+00:00'))
+                                pub_time = dt.strftime('%I:%M %p')
+                        except:
+                            pass
+                    elif pub_time == 'Recent':
+                        pub_time = 'Recently published'
+                    
+                    # Create article summary (first 150 chars of title as description)
+                    title = article['Title']
+                    summary = ""
+                    if len(title) > 80:
+                        # Create a brief summary from the title
+                        words = title.split()
+                        if len(words) > 12:
+                            summary = " ".join(words[8:]) + "..."
+                    
+                    html_content += f"""
+            <div class="article">
+                <h3 class="article-title">
+                    <a href="{article['Link']}" target="_blank" rel="noopener noreferrer">{title}</a>
                 </h3>
-                <div class="news-meta">
-                    <span class="news-source">{item['Source']}</span>
-                    <span class="news-time">📅 {pub_time}</span>
+                <div class="article-meta">
+                    <span class="source">{article['Source']}</span>
+                    <span class="time">• {pub_time}</span>
                 </div>
+                {f'<div class="article-summary">{summary}</div>' if summary else ''}
             </div>
-            """
+"""
+                
+                html_content += """        </div>"""
+        
+        # Add highlight box for key developments
+        if len(news_data) > 0:
+            html_content += f"""
+        <div class="highlight-box">
+            <div class="highlight-title">📊 Today's Intelligence Summary</div>
+            <p>Our monitoring systems identified <strong>{len(news_data)} relevant developments</strong> across <strong>{len(categories)} categories</strong> in the past 24 hours. Key focus areas include nation-state cyber activities, security incidents, and policy developments affecting the global threat landscape.</p>
+        </div>
+"""
     else:
-        status_class = "status-error"
         html_content += """
-            <div class="no-results">
-                <h3>🚫 No articles found</h3>
-                <p>The search didn't return any valid news articles. This could be because:</p>
-                <ul>
-                    <li>The search terms are too specific for the last 24 hours</li>
-                    <li>Google News structure has changed</li>
-                    <li>The scraper is being blocked or rate-limited</li>
-                    <li>Navigation items are being detected instead of articles</li>
-                </ul>
-                <div class="debug-info">
-                    <strong>🔧 Debug Info:</strong> Check the GitHub Actions logs for detailed scraping information, 
-                    including what elements were found and why they were filtered out.
-                </div>
-            </div>
-        """
+        <div class="no-articles">
+            <h3>No Intelligence Gathered Today</h3>
+            <p>Our monitoring systems did not identify any relevant cyber intelligence in the past 24 hours matching our collection criteria. This could indicate quiet threat actor activity or collection system maintenance.</p>
+        </div>
+"""
     
     html_content += f"""
-            </div>
-        </div>
-        
         <div class="footer">
-            <div class="footer-content">
-                <p><span class="{status_class} status-indicator"></span><strong>🔍 Search Results from Google News</strong></p>
-                <p>Query: "<strong>{search_query}</strong>" | Timeframe: <strong>{timeframe}</strong></p>
-                <p>Last updated: <strong>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</strong> UTC</p>
-                
-                <button class="refresh-btn" onclick="location.reload()">
-                    🔄 Refresh Results
-                </button>
-                
-                <div class="debug-info">
-                    <strong>🔧 Technical Details:</strong><br>
-                    • Search URL: <code>https://news.google.com/search?q=china AND russian AND cyber when:24h</code><br>
-                    • Scraping Strategy: Multi-level article detection with navigation filtering<br>
-                    • Update Frequency: Every 6 hours via GitHub Actions<br>
-                    • Articles Found: {len(news_data)} valid articles after filtering
-                </div>
+            <p><strong>Cyber Intelligence Brief</strong> | Automated Intelligence Collection</p>
+            <p>Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} UTC</p>
+            <div class="footer-links">
+                <a href="#" onclick="location.reload()">Refresh Report</a>
+                <a href="https://github.com/arandomguyhere/Google-News-Scraper" target="_blank">View Source</a>
             </div>
+            <p style="margin-top: 20px; font-size: 0.8em; color: #aaa;">
+                This briefing is generated automatically from public news sources. 
+                Information is for situational awareness purposes only.
+            </p>
         </div>
     </div>
     
     <script>
-        // Auto-refresh every 10 minutes to show any new results
+        // Auto-refresh every 30 minutes
         setTimeout(function() {{
             location.reload();
-        }}, 600000);
+        }}, 1800000);
         
-        // Add click tracking and smooth scrolling
-        document.querySelectorAll('.news-title a').forEach(link => {{
+        // Add click tracking
+        document.querySelectorAll('.article-title a').forEach(link => {{
             link.addEventListener('click', function() {{
                 console.log('Article clicked:', this.textContent);
-                
-                // Add a visual click effect
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {{
-                    this.style.transform = 'scale(1)';
-                }}, 150);
             }});
         }});
         
-        // Add hover effects for stats
-        document.querySelectorAll('.stat').forEach(stat => {{
-            stat.addEventListener('mouseenter', function() {{
-                this.style.transform = 'translateY(-5px) scale(1.02)';
-            }});
-            
-            stat.addEventListener('mouseleave', function() {{
-                this.style.transform = 'translateY(0) scale(1)';
-            }});
-        }});
-        
-        // Display current time
-        function updateTime() {{
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('en-US', {{
-                hour12: false,
-                hour: '2-digit',
-                minute: '2-digit'
-            }});
-            
-            // Update the time display if it exists
-            const timeElements = document.querySelectorAll('.stat-number');
-            if (timeElements.length >= 2) {{
-                timeElements[1].textContent = timeString;
-            }}
-        }}
-        
-        // Update time every minute
-        setInterval(updateTime, 60000);
-        
-        // Add loading animation for refresh button
-        document.querySelector('.refresh-btn').addEventListener('click', function() {{
-            this.innerHTML = '⏳ Refreshing...';
-            this.disabled = true;
-        }});
-        
-        // Console info for debugging
-        console.log('Google News Search Results Page Loaded');
-        console.log('Articles found:', {len(news_data)});
-        console.log('Last updated:', '{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}');
+        console.log('Cyber Intelligence Brief loaded');
+        console.log('Articles:', {len(news_data)});
+        console.log('Categories:', {len(categories)});
     </script>
 </body>
 </html>
@@ -561,12 +394,8 @@ def generate_html():
     with open("docs/index.html", "w", encoding="utf-8") as f:
         f.write(html_content)
     
-    print("HTML page generated successfully for search results!")
-    print(f"Generated page with {len(news_data)} articles")
-    if news_data:
-        print("Sample articles:")
-        for i, article in enumerate(news_data[:3]):
-            print(f"  {i+1}. {article['Title'][:60]}...")
+    print("Newsletter-style HTML page generated successfully!")
+    print(f"Generated briefing with {len(news_data)} articles across {len(categories)} categories")
 
 if __name__ == "__main__":
     generate_html()
