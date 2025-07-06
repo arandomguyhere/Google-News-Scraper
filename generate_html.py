@@ -396,9 +396,11 @@ def generate_html():
                     article_image = article.get('img', '')
                     image_html = ""
                     
-                    if article_image and article_image.startswith('http'):
-                        image_html = f'<img src="{article_image}" alt="Article image" loading="lazy">'
+                    if article_image and article_image.startswith('http') and not article_image.startswith('data:'):
+                        # Use real image from Google News
+                        image_html = f'<img src="{article_image}" alt="Article image" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=&quot;article-image-placeholder&quot;>{placeholder_icon}</div>\'">'
                     else:
+                        # Use placeholder
                         image_html = f'<div class="article-image-placeholder">{placeholder_icon}</div>'
                     
                     html_content += f"""
@@ -480,6 +482,18 @@ def generate_html():
     print("Enhanced visual newsletter generated successfully!")
     print(f"Generated briefing with {len(unique_articles)} unique articles (filtered {len(news_data) - len(unique_articles)} duplicates)")
     print(f"Categories: {list(categories.keys())}")
+    
+    # Debug: Count articles with images
+    articles_with_images = sum(1 for article in unique_articles if article.get('img'))
+    print(f"Articles with images: {articles_with_images}/{len(unique_articles)}")
+    
+    if articles_with_images > 0:
+        print("Sample image URLs:")
+        for article in unique_articles[:3]:
+            if article.get('img'):
+                print(f"  - {article['Title'][:40]}... -> {article['img'][:60]}...")
+    else:
+        print("No images found - will use placeholders")
 
 def remove_duplicate_articles(articles):
     """Remove duplicate articles based on title similarity"""
