@@ -2,9 +2,9 @@ name: Cyber Intelligence Brief - Automated Scraping
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Run every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
-    - cron: '0 9 * * 1-5'  # Additional run at 9 AM UTC on weekdays for business hours
-  workflow_dispatch:  # Allow manual triggering
+    - cron: '0 */6 * * *'  # Run every 6 hours
+    - cron: '0 9 * * 1-5'  # Additional run at 9 AM UTC on weekdays
+  workflow_dispatch:
     inputs:
       debug_mode:
         description: 'Enable debug mode (saves additional logs)'
@@ -27,13 +27,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 1  # Only fetch latest commit for faster checkout
+        fetch-depth: 1
     
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VERSION }}
-        cache: 'pip'  # Cache pip dependencies
+        cache: 'pip'
     
     - name: Install system dependencies
       run: |
@@ -44,9 +44,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install requests beautifulsoup4 pandas lxml urllib3
-        # Add archive manager as executable
-        chmod +x archive_manager.py
-        # Verify installations
         python -c "import requests, bs4, pandas; print('All dependencies installed successfully')"
     
     - name: Create required directories
@@ -76,18 +73,17 @@ jobs:
       run: |
         echo "Updating metrics and generating comprehensive reports..."
         
-        # Update metrics with latest data
-        python metrics_tracker.py update
+        # Only run metrics if the file exists
+        if [ -f "metrics_tracker.py" ]; then
+          python metrics_tracker.py update
+          python metrics_tracker.py report > metrics_report.txt
+          python metrics_tracker.py export
+        else
+          echo "metrics_tracker.py not found, skipping metrics"
+        fi
         
-        # Generate comprehensive metrics report
-        echo "=== GENERATING METRICS REPORT ==="
-        python metrics_tracker.py report > metrics_report.txt
-        
-        # Export metrics to CSV for analysis
-        python metrics_tracker.py export
-        
-        # Generate query performance report if tracking data exists
-        if [ -f "data/search_query_stats.json" ]; then
+        # Only run query performance if files exist
+        if [ -f "search_query_tracker.py" ] && [ -f "data/search_query_stats.json" ]; then
           echo "=== GENERATING QUERY PERFORMANCE REPORT ==="
           python -c "
 from search_query_tracker import SearchQueryTracker
@@ -96,7 +92,7 @@ tracker.generate_query_report()
 tracker.export_query_performance()
 " > query_performance_report.txt
         else
-          echo "No query performance data found"
+          echo "Query performance tracking not available"
         fi
         
         # Display key statistics
@@ -104,20 +100,26 @@ tracker.export_query_performance()
         ARTICLE_COUNT=$(python -c "import json; data=json.load(open('data/latest_news.json')); print(len(data))" 2>/dev/null || echo "0")
         echo "Articles in this session: $ARTICLE_COUNT"
         
-        # Show first few lines of metrics report
-        echo "=== METRICS SUMMARY ==="
-        head -20 metrics_report.txt
-        
         echo "✅ Metrics updated and reports generated"
     
     - name: Create timestamped archive
       run: |
         echo "Creating timestamped archive..."
-        python archive_manager.py create
         
-        # Verify archive was created
-        TIMESTAMP=$(date -u +%Y%m%d_%H%M%S)
-        LATEST_ARCHIVE=$(ls -1 archives/ | grep -E '^[0-9]{8}_[0-9]{6}
+        # Only run archive manager if it exists
+        if [ -f "archive_manager.py" ]; then
+          python archive_manager.py create
+        else
+          echo "archive_manager.py not found, creating basic archive"
+          TIMESTAMP=$(date -u +%Y%m%d_%H%M%S)
+          ARCHIVE_DIR="archives/$TIMESTAMP"
+          mkdir -p "$ARCHIVE_DIR"
+          
+          if [ -f "data/latest_news.json" ]; then
+            cp "data/latest_news.json" "$ARCHIVE_DIR/news_${TIMESTAMP}.json"
+            echo "Basic archive created: $ARCHIVE_DIR"
+          fi
+        fi
     
     - name: Generate enhanced HTML newsletter
       run: |
@@ -135,11 +137,9 @@ tracker.export_query_performance()
     
     - name: Validate generated content
       run: |
-        # Check if we have reasonable content
         ARTICLE_COUNT=$(python -c "import json; data=json.load(open('data/latest_news.json')); print(len(data))")
         echo "Articles collected: $ARTICLE_COUNT"
         
-        # Check HTML file size
         HTML_SIZE=$(stat -f%z docs/index.html 2>/dev/null || stat -c%s docs/index.html)
         echo "HTML file size: $HTML_SIZE bytes"
         
@@ -147,10 +147,9 @@ tracker.export_query_performance()
           echo "WARNING: HTML file seems too small, but continuing..."
         fi
         
-        # Save metadata
         echo "{\"articles\": $ARTICLE_COUNT, \"generated\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\", \"html_size\": $HTML_SIZE}" > docs/metadata.json
     
-    - name: Upload metrics and reports
+    - name: Upload metrics and reports (if they exist)
       uses: actions/upload-artifact@v4
       with:
         name: metrics-reports-${{ github.run_number }}
@@ -162,7 +161,8 @@ tracker.export_query_performance()
           data/source_statistics.json
           data/category_performance.json
           data/search_query_stats.json
-        retention-days: 365  # Keep metrics for a full year
+        retention-days: 365
+      continue-on-error: true  # Don't fail if files don't exist
     
     - name: Upload archives as artifacts
       uses: actions/upload-artifact@v4
@@ -170,7 +170,8 @@ tracker.export_query_performance()
         name: intelligence-archive-${{ github.run_number }}
         path: |
           archives/
-        retention-days: 90  # Keep archives for 90 days
+        retention-days: 90
+      continue-on-error: true
     
     - name: Upload debug logs (if enabled)
       if: ${{ github.event.inputs.debug_mode == 'true' }}
@@ -199,11 +200,6 @@ tracker.export_query_performance()
         echo "Deployment completed successfully!"
         echo "Site URL: ${{ steps.deployment.outputs.page_url }}"
         echo "Articles processed: $(python -c "import json; print(len(json.load(open('data/latest_news.json'))))")"
-        
-        # Optional: Send notification (uncomment and configure webhook if needed)
-        # curl -X POST "${{ secrets.DISCORD_WEBHOOK_URL }}" \
-        #   -H "Content-Type: application/json" \
-        #   -d "{\"content\": \"🤖 Cyber Intelligence Brief updated with $(python -c "import json; print(len(json.load(open('data/latest_news.json'))))") articles\"}"
     
     - name: Cleanup temporary files
       if: always()
@@ -211,7 +207,6 @@ tracker.export_query_performance()
         rm -f *.log
         echo "Cleanup completed"
 
-  # Optional: Add a health check job that runs after deployment
   health-check:
     needs: scrape-and-deploy
     runs-on: ubuntu-latest
@@ -219,135 +214,13 @@ tracker.export_query_performance()
     
     steps:
     - name: Wait for deployment
-      run: sleep 30  # Give Pages time to update
+      run: sleep 30
     
     - name: Check site accessibility
       run: |
         SITE_URL="${{ needs.scrape-and-deploy.outputs.page_url || 'https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/' }}"
         echo "Checking site: $SITE_URL"
         
-        # Basic HTTP check
-        HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL" || echo "000")
-        echo "HTTP Status: $HTTP_STATUS"
-        
-        if [ "$HTTP_STATUS" = "200" ]; then
-          echo "✅ Site is accessible"
-        else
-          echo "❌ Site check failed with status: $HTTP_STATUS"
-        fi | tail -1)
-        
-        if [ -n "$LATEST_ARCHIVE" ]; then
-          echo "✅ Archive created: $LATEST_ARCHIVE"
-          echo "Archive contents:"
-          ls -la "archives/$LATEST_ARCHIVE/"
-          
-          # Verify archive files exist
-          ARCHIVE_DIR="archives/$LATEST_ARCHIVE"
-          if [ -f "$ARCHIVE_DIR/news_$LATEST_ARCHIVE.json" ] && [ -f "$ARCHIVE_DIR/news_$LATEST_ARCHIVE.csv" ]; then
-            echo "✅ Archive files verified"
-          else
-            echo "❌ Archive files missing"
-            exit 1
-          fi
-        else
-          echo "❌ Failed to create archive"
-          exit 1
-        fi
-    
-    - name: Generate enhanced HTML newsletter
-      run: |
-        echo "Generating visual intelligence brief..."
-        python generate_html.py 2>&1 | tee generate.log
-        
-        # Verify HTML was generated
-        if [ ! -f "docs/index.html" ]; then
-          echo "ERROR: HTML generation failed"
-          exit 1
-        fi
-        
-        echo "HTML generated successfully: $(ls -la docs/)"
-      continue-on-error: false
-    
-    - name: Validate generated content
-      run: |
-        # Check if we have reasonable content
-        ARTICLE_COUNT=$(python -c "import json; data=json.load(open('data/latest_news.json')); print(len(data))")
-        echo "Articles collected: $ARTICLE_COUNT"
-        
-        # Check HTML file size
-        HTML_SIZE=$(stat -f%z docs/index.html 2>/dev/null || stat -c%s docs/index.html)
-        echo "HTML file size: $HTML_SIZE bytes"
-        
-        if [ "$HTML_SIZE" -lt 5000 ]; then
-          echo "WARNING: HTML file seems too small, but continuing..."
-        fi
-        
-        # Save metadata
-        echo "{\"articles\": $ARTICLE_COUNT, \"generated\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\", \"html_size\": $HTML_SIZE}" > docs/metadata.json
-    
-    - name: Upload archives as artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: intelligence-archive-${{ github.run_number }}
-        path: |
-          archives/
-        retention-days: 90  # Keep archives for 90 days
-    
-    - name: Upload debug logs (if enabled)
-      if: ${{ github.event.inputs.debug_mode == 'true' }}
-      uses: actions/upload-artifact@v4
-      with:
-        name: debug-logs-${{ github.run_number }}
-        path: |
-          *.log
-          data/
-        retention-days: 7
-    
-    - name: Setup GitHub Pages
-      uses: actions/configure-pages@v5
-    
-    - name: Upload to Pages
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: './docs'
-    
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-    
-    - name: Post-deployment verification
-      run: |
-        echo "Deployment completed successfully!"
-        echo "Site URL: ${{ steps.deployment.outputs.page_url }}"
-        echo "Articles processed: $(python -c "import json; print(len(json.load(open('data/latest_news.json'))))")"
-        
-        # Optional: Send notification (uncomment and configure webhook if needed)
-        # curl -X POST "${{ secrets.DISCORD_WEBHOOK_URL }}" \
-        #   -H "Content-Type: application/json" \
-        #   -d "{\"content\": \"🤖 Cyber Intelligence Brief updated with $(python -c "import json; print(len(json.load(open('data/latest_news.json'))))") articles\"}"
-    
-    - name: Cleanup temporary files
-      if: always()
-      run: |
-        rm -f *.log
-        echo "Cleanup completed"
-
-  # Optional: Add a health check job that runs after deployment
-  health-check:
-    needs: scrape-and-deploy
-    runs-on: ubuntu-latest
-    if: success()
-    
-    steps:
-    - name: Wait for deployment
-      run: sleep 30  # Give Pages time to update
-    
-    - name: Check site accessibility
-      run: |
-        SITE_URL="${{ needs.scrape-and-deploy.outputs.page_url || 'https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/' }}"
-        echo "Checking site: $SITE_URL"
-        
-        # Basic HTTP check
         HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL" || echo "000")
         echo "HTTP Status: $HTTP_STATUS"
         
