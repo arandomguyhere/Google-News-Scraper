@@ -7,6 +7,7 @@ import time
 from datetime import datetime, timedelta
 import json
 import re
+import random
 
 # Create necessary directories
 os.makedirs("data", exist_ok=True)
@@ -37,16 +38,19 @@ def define_date(date):
     except:
         return datetime.now()
 
-class GoogleNewsSearcher:
+class MultiSearchGoogleNews:
     def __init__(self, lang="en"):
         self.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         self.lang = lang
         self.headers = {'User-Agent': self.user_agent}
-        self.results = []
+        self.all_results = []
 
-    def search_google_news_direct(self, query):
-        """Search Google News using direct search method"""
-        print(f"Searching Google News for: {query}")
+    def search_single_query(self, query, search_name):
+        """Search Google News for a single query"""
+        print(f"\n{'='*50}")
+        print(f"Searching: {search_name}")
+        print(f"Query: {query}")
+        print(f"{'='*50}")
         
         # Build Google News search URL
         encoded_query = urllib.parse.quote(query.encode('utf-8'))
@@ -55,28 +59,33 @@ class GoogleNewsSearcher:
         print(f"URL: {url}")
         
         try:
+            # Add random delay to be respectful
+            time.sleep(random.uniform(2, 4))
+            
             # Make request
             req = urllib.request.Request(url, headers=self.headers)
             response = urllib.request.urlopen(req, timeout=30)
             page = response.read()
             content = Soup(page, "html.parser")
             
-            # Save debug HTML
-            with open("debug_direct_search.html", "w", encoding="utf-8") as f:
-                f.write(str(content))
-            print("Saved debug HTML file")
+            # Save debug HTML for first search
+            if search_name == "China Cyber":
+                with open("debug_multi_search.html", "w", encoding="utf-8") as f:
+                    f.write(str(content))
+                print("Saved debug HTML file")
             
-            # Find articles using the method from your code
+            # Find articles
             articles = content.select('article')
             print(f"Found {len(articles)} article elements")
             
             valid_articles = []
             
             for i, article in enumerate(articles):
-                print(f"\nProcessing article {i+1}:")
-                
+                if len(valid_articles) >= 5:  # Limit per search to avoid overwhelming
+                    break
+                    
                 try:
-                    # Extract title using your method
+                    # Extract title using multiple methods
                     title = None
                     try:
                         # Method 1: article.findAll('div')[2].findAll('a')[0].text
@@ -100,17 +109,20 @@ class GoogleNewsSearcher:
                             except:
                                 title = None
                     
-                    if not title or len(title) < 10:
-                        print(f"  ✗ No valid title found")
+                    if not title or len(title) < 15:
                         continue
                     
-                    # Check if title contains our keywords
+                    # Skip navigation items
                     title_lower = title.lower()
-                    if not any(keyword in title_lower for keyword in ['china', 'russia', 'cyber', 'ukraine', 'security']):
-                        print(f"  ✗ Title not relevant: {title[:50]}...")
+                    nav_terms = ['home', 'for you', 'following', 'u.s.', 'world', 'local', 
+                                'business', 'technology', 'entertainment', 'sports', 
+                                'science', 'health', 'google news', 'more']
+                    
+                    if any(nav_term == title_lower.strip() for nav_term in nav_terms):
+                        print(f"  ✗ Skipping navigation: {title}")
                         continue
                     
-                    # Extract link using your method
+                    # Extract link
                     link = None
                     try:
                         link_elem = article.find('div').find("a")
@@ -125,7 +137,7 @@ class GoogleNewsSearcher:
                     except:
                         link = url  # Fallback to search URL
                     
-                    # Extract date using your method
+                    # Extract date
                     date = None
                     datetime_obj = None
                     try:
@@ -137,7 +149,7 @@ class GoogleNewsSearcher:
                         date = "Recent"
                         datetime_obj = datetime.now()
                     
-                    # Extract media/site using your method
+                    # Extract media/source
                     media = None
                     try:
                         media = article.find("time").parent.find("a").get_text(strip=True)
@@ -154,10 +166,10 @@ class GoogleNewsSearcher:
                                         if final:
                                             media = final.get_text(strip=True)
                         except:
-                            media = "Google News"
+                            media = f"{search_name} News"
                     
-                    if not media or media == title:
-                        media = "Google News"
+                    if not media or media == title or len(media) > 50:
+                        media = f"{search_name} News"
                     
                     # Extract image
                     img = None
@@ -176,9 +188,7 @@ class GoogleNewsSearcher:
                     except:
                         img = None
                     
-                    print(f"  ✓ Valid article: {title[:60]}...")
-                    print(f"    Source: {media}")
-                    print(f"    Date: {date}")
+                    print(f"  ✓ Found: {title[:60]}... (Source: {media})")
                     
                     valid_articles.append({
                         'title': title,
@@ -189,7 +199,8 @@ class GoogleNewsSearcher:
                         'img': img,
                         'media': media,
                         'site': media,
-                        'reporter': None
+                        'reporter': None,
+                        'search_category': search_name
                     })
                     
                 except Exception as e:
@@ -198,147 +209,93 @@ class GoogleNewsSearcher:
             
             response.close()
             
-            print(f"\nTotal valid articles found: {len(valid_articles)}")
-            self.results = valid_articles
+            print(f"✓ {search_name}: Found {len(valid_articles)} valid articles")
             return valid_articles
             
         except Exception as e:
-            print(f"Error during search: {e}")
+            print(f"✗ {search_name}: Error during search: {e}")
             return []
 
-    def search_google_regular(self, query):
-        """Fallback: Search using regular Google search with news filter"""
-        print(f"\nTrying fallback method: Regular Google search")
+    def run_all_searches(self):
+        """Run all the individual searches"""
+        print("Starting multi-search Google News scraping...")
+        print("Searches: China Cyber, Russian Cyber, General Cyber, Iran Cyber")
         
-        # Build regular Google search URL with news filter
-        encoded_query = urllib.parse.quote(query.encode('utf-8'))
-        url = f'https://www.google.com/search?q={encoded_query}&tbm=nws&hl={self.lang}'
-        
-        print(f"Fallback URL: {url}")
-        
-        try:
-            req = urllib.request.Request(url, headers=self.headers)
-            response = urllib.request.urlopen(req, timeout=30)
-            page = response.read()
-            content = Soup(page, "html.parser")
-            
-            # Save debug HTML
-            with open("debug_regular_search.html", "w", encoding="utf-8") as f:
-                f.write(str(content))
-            print("Saved fallback debug HTML file")
-            
-            # Look for news results in regular Google
-            results = content.find_all("a", attrs={'data-ved': True})
-            print(f"Found {len(results)} potential results")
-            
-            valid_articles = []
-            
-            for i, item in enumerate(results[:20]):  # Limit to first 20
-                try:
-                    # Extract title
-                    title = None
-                    h3_tag = item.find("h3")
-                    if h3_tag:
-                        title = h3_tag.get_text(strip=True).replace("\n", "")
-                    
-                    if not title or len(title) < 10:
-                        continue
-                    
-                    # Check relevance
-                    title_lower = title.lower()
-                    if not any(keyword in title_lower for keyword in ['china', 'russia', 'cyber', 'ukraine', 'security']):
-                        continue
-                    
-                    # Extract link
-                    link = item.get("href", "")
-                    if link.startswith('/url?'):
-                        # Clean Google redirect URL
-                        link = link.replace('/url?esrc=s&q=&rct=j&sa=U&url=', '')
-                        link = urllib.parse.unquote(link)
-                        if '&' in link:
-                            link = link.split('&')[0]
-                    
-                    # Extract other info
-                    media = "Google News"
-                    date = "Recent"
-                    
-                    # Try to find date and source
-                    parent_divs = item.find_all_previous('div')
-                    for div in parent_divs[:10]:  # Check nearby divs
-                        text = div.get_text(strip=True)
-                        if any(word in text.lower() for word in ['ago', 'hour', 'day', 'minute']):
-                            date = text
-                            break
-                        elif len(text) < 50 and any(word in text.lower() for word in ['news', 'times', 'post']):
-                            media = text
-                    
-                    print(f"  ✓ Found: {title[:50]}... (Source: {media})")
-                    
-                    valid_articles.append({
-                        'title': title,
-                        'desc': None,
-                        'date': date,
-                        'datetime': define_date(date),
-                        'link': link,
-                        'img': None,
-                        'media': media,
-                        'site': media,
-                        'reporter': None
-                    })
-                    
-                except Exception as e:
-                    continue
-            
-            response.close()
-            print(f"Fallback method found {len(valid_articles)} articles")
-            return valid_articles
-            
-        except Exception as e:
-            print(f"Fallback method failed: {e}")
-            return []
-
-def scrape_google_news():
-    """Main scraping function"""
-    print("Starting Google News scraping...")
-    
-    searcher = GoogleNewsSearcher()
-    query = "china AND russia AND cyber when:24h"
-    
-    # Try direct Google News search first
-    articles = searcher.search_google_news_direct(query)
-    
-    # If no results, try fallback method
-    if not articles:
-        print("Direct method failed, trying fallback...")
-        articles = searcher.search_google_regular(query)
-    
-    # If still no results, create demo articles
-    if not articles:
-        print("All methods failed, creating demo articles...")
-        articles = [
-            {
-                'title': 'China-Russia Cyber Cooperation Raises Security Concerns',
-                'desc': None,
-                'date': 'Recent',
-                'datetime': datetime.now(),
-                'link': 'https://example.com/demo-1',
-                'img': None,
-                'media': 'Demo News Source',
-                'site': 'Demo News Source',
-                'reporter': None
-            },
-            {
-                'title': 'Cybersecurity Experts Monitor China-Russia Digital Alliance',
-                'desc': None,
-                'date': 'Recent', 
-                'datetime': datetime.now(),
-                'link': 'https://example.com/demo-2',
-                'img': None,
-                'media': 'Demo Security Weekly',
-                'site': 'Demo Security Weekly',
-                'reporter': None
-            }
+        # Define all searches
+        searches = [
+            ("China Cyber when:24h", "China Cyber"),
+            ("Russian Cyber when:24h", "Russian Cyber"), 
+            ("cyber when:24h", "General Cyber"),
+            ("iran cyber when:24h", "Iran Cyber"),
+            ("cybersecurity when:24h", "Cybersecurity"),
+            ("cyber attack when:24h", "Cyber Attacks")
         ]
+        
+        all_articles = []
+        
+        for query, search_name in searches:
+            articles = self.search_single_query(query, search_name)
+            all_articles.extend(articles)
+            
+            # Add delay between searches
+            time.sleep(random.uniform(1, 3))
+        
+        # Remove duplicates based on title similarity
+        unique_articles = self.remove_duplicates(all_articles)
+        
+        print(f"\n{'='*50}")
+        print(f"FINAL RESULTS")
+        print(f"{'='*50}")
+        print(f"Total articles found: {len(all_articles)}")
+        print(f"Unique articles after deduplication: {len(unique_articles)}")
+        
+        # Show breakdown by category
+        categories = {}
+        for article in unique_articles:
+            cat = article.get('search_category', 'Unknown')
+            categories[cat] = categories.get(cat, 0) + 1
+        
+        print(f"\nBreakdown by category:")
+        for cat, count in categories.items():
+            print(f"  {cat}: {count} articles")
+        
+        self.all_results = unique_articles
+        return unique_articles
+
+    def remove_duplicates(self, articles):
+        """Remove duplicate articles based on title similarity"""
+        if not articles:
+            return []
+        
+        unique_articles = []
+        seen_titles = set()
+        
+        for article in articles:
+            title = article['title'].lower().strip()
+            
+            # Check if title is too similar to existing ones
+            is_duplicate = False
+            title_words = set(title.split())
+            
+            for seen_title in seen_titles:
+                seen_words = set(seen_title.split())
+                if len(title_words) > 0 and len(seen_words) > 0:
+                    # If more than 70% of words are the same, consider it a duplicate
+                    similarity = len(title_words.intersection(seen_words)) / max(len(title_words), len(seen_words))
+                    if similarity > 0.7:
+                        is_duplicate = True
+                        break
+            
+            if not is_duplicate:
+                seen_titles.add(title)
+                unique_articles.append(article)
+        
+        return unique_articles
+
+def scrape_google_news_multi():
+    """Main scraping function for multiple searches"""
+    searcher = MultiSearchGoogleNews()
+    articles = searcher.run_all_searches()
     
     # Convert to expected format
     formatted_articles = []
@@ -348,8 +305,15 @@ def scrape_google_news():
             "Link": article['link'] or "https://news.google.com",
             "Source": article['media'] or "Google News",
             "Published": article['date'] or "Recent",
+            "Category": article.get('search_category', 'General'),
             "Scraped_At": datetime.now().isoformat()
         })
+    
+    # Sort by datetime if available
+    try:
+        formatted_articles.sort(key=lambda x: article.get('datetime', datetime.now()), reverse=True)
+    except:
+        pass
     
     return formatted_articles
 
@@ -362,7 +326,7 @@ def save_to_csv(news):
         return None
     
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    filename = f"data/google_news_pure_{timestamp}.csv"
+    filename = f"data/google_news_multi_{timestamp}.csv"
     df = pd.DataFrame(news)
     df.to_csv(filename, index=False)
     
@@ -378,24 +342,29 @@ def save_to_csv(news):
 
 def main():
     """Main function to run the scraper"""
-    print("Starting Pure Google News scraper based on your working code...")
-    print("Target: china AND russia AND cyber")
+    print("Starting Multi-Search Google News scraper...")
+    print("Searches: China Cyber, Russian Cyber, General Cyber, Iran Cyber, Cybersecurity, Cyber Attacks")
+    print("Timeframe: Last 24 hours for each search")
     
     try:
-        # Run the scraper
-        news = scrape_google_news()
+        # Run the multi-search scraper
+        news = scrape_google_news_multi()
         
         if news:
             save_to_csv(news)
             print(f"\nSuccessfully processed {len(news)} articles")
             
-            # Print articles found
-            print(f"\nArticles found:")
-            for i, article in enumerate(news):
+            # Print sample articles found
+            print(f"\nSample articles found:")
+            for i, article in enumerate(news[:5]):
                 print(f"{i+1}. {article['Title']}")
                 print(f"   Source: {article['Source']}")
-                print(f"   Link: {article['Link']}")
+                print(f"   Category: {article['Category']}")
+                print(f"   Link: {article['Link'][:60]}...")
                 print()
+                
+            if len(news) > 5:
+                print(f"... and {len(news) - 5} more articles")
         else:
             print("No articles found!")
             with open("data/latest_news.json", "w") as f:
