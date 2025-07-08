@@ -101,7 +101,7 @@ class MultiSearchGoogleNews:
             valid_articles = []
             
             for i, article in enumerate(articles):
-                if len(valid_articles) >= 3:  # Reduced limit to handle more searches
+                if len(valid_articles) >= 10:  # Reduced limit to handle more searches
                     break
                     
                 try:
