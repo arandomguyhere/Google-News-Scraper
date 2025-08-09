@@ -1,1110 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DEBUG: Cyber Intelligence Brief - August 09, 2025</title>
-<style>
-body{font-family:Arial,sans-serif;margin:20px;background:#f5f5f5}
-.container{max-width:900px;margin:0 auto;background:white;padding:20px;border-radius:8px}
-.debug-info{background:#e8f4fd;padding:15px;border-radius:6px;margin-bottom:20px;border-left:4px solid #007acc}
-.article{border:1px solid #ddd;margin:10px 0;padding:15px;border-radius:6px}
-.article-title{font-weight:bold;color:#007acc;margin-bottom:8px}
-.article-meta{color:#666;font-size:0.9em;margin-bottom:10px}
-.category-header{background:#007acc;color:white;padding:10px;margin:20px 0 10px 0;border-radius:4px}
-.small{font-size:.85em;color:#555}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CyberSec Daily — Live Brief</title>
+  <meta name="description" content="THN-style cybersecurity news front page powered by GitHub Actions feed.json" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='black'/%3E%3C/svg%3E"/>
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}</style>
+  <!-- React 18 UMD + Babel for a single-file drop-in -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body>
-<div class="container">
-  <h1>🔍 DEBUG: Bob's Brief</h1>
-  <p><strong>Debug Mode:</strong> August 09, 2025</p>
-  <div class="debug-info">
-    <h3>🔍 Debug Information</h3>
-    <p><strong>Total articles loaded from JSON:</strong> 269</p>
-    <p><strong>Unique after dedupe:</strong> 269</p>
-    <p><strong>Categories found:</strong> 47</p>
-    <p><strong>Generated at:</strong> 2025-08-09 19:48:28 UTC</p>
-    <p class="small">Also wrote <code>docs/feed.json</code> for the THN-style front page.</p>
-  </div>
-<div class="category-header">📂 China Cyber (9 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi3gFBVV95cUxNeG5nNnJycGcycXFmV2RlWUhLa21hLTh3d2xQcWRwS091UF9Jc1k3MkNiMG9YWEpGLXdZNGEydm9JUWdIVzhibzNVaWFZMzFXa0J2RjBQWWZ5M0NRVkQtek9NZU1DN0d0OThqNnp4RkFrY2tPejNKTXMyTXRqSmNYTUppTVJoZlVNbHRFN0hEQWY4em9zRnlKYzJlT2hyOG9OMlV3eUFQUXAxVlBPalBZdnRsdlpIYjdrVlYxVHZydmNOLWZoU1UwN3FyNG0xdkZIMmJBVDBjMzdBNTJMd1E?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Chinese Cyberattack on U.S. Nuclear Agency Highlights Importance of Cyber Hygiene</a></div>
-  <div class="article-meta">RealClearDefense | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiswFBVV95cUxPQ0MyLUc4Sl9ldDU5Mk9LY0s4aDJwX21sUTJaLXl2dmFBcERSa1lRQ2pPU1o5SUpESG5aXzZtRzVYdkVNTTBOb3NkdXZoNDc1Q2ttQWNtNUdTUjFHekxEUG4xTDVOdWtrMFVWN0stSkhBSUtZYVFCMG9MWmlDekdzc2diaGtHNm5tS01nT19vYklMZDhBcVhFTmJOdElPM1BsekhwUTAzNVdieVhGSkNBVU11dw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Women in China 'secretly filmed' with videos posted on Telegram</a></div>
-  <div class="article-meta">Australian Broadcasting Corporation | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi0wFBVV95cUxNLW40M19mdjBfSUg2U1JDeXcwRmpaaFhPMUlZOU9JVlNCcUJ6b1d3b3VTOFh4UFRRMGNfMjJfdW1xaGpORFF0OUQ0VEtaYjhNVUx0Zkw2cG5yY2RGWFNnaGloNk5UTUcyLUs2LWQwdk56dVNxTGt3X0FiZVBXYS1HSTZSWTdjdU1Dd2FXRUt2emVuaTduTHdpbEVwVXAwUWxxejVQejhXbmk0dEJTc0RoX3ltVFVQY2czWDBkbzBvdE5Xb0k3VjNxRkdYWUR3aVJzX0dB?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Microsoft identifies Chinese hacking groups behind persistent SharePoint server attacks</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikwFBVV95cUxPN1FwXzJHNGc4WlRHdTRVZXdManNxLVlNNVpIT0ZYaVpZZjNYanJCdTE0bHlKOXQwaW56Q28tUlk3NWRMU21qU2hDejNqb00xVnJ6aVBDNlBhNnJreENLYnZWUmtZWmtZQVNLN2xackx0VUdfeVE2N2Z6cVRLMDlNVXpIWTBfcHdtaGdhaTNMeHNoVUU?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Data Dump From APT Actor Yields Clues to Attacker Capabilities</a></div>
-  <div class="article-meta">Dark Reading | Security | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiwAFBVV95cUxPWWtLN1BuUll2b1dyUTNyVUNvNGxqQjZGSWdIcnhtdzNUMUpWcGFuQWkySjVZZHBZYlJEVVN0Ym5tQXc1bGFxOXZQdFJyX21uWkg3akROQjJmODZ1bEdYRVU1SUl1dmxramZxOVdxajNCMG9TdFlJcGJCbEVnR0RybUxnMFVCZDNDMnp2a1VKTzlhZjBoMlJ1V2FKU3Z6V0swczQ4TFM4WmZmZzVqWkg1alRlM2hNQXRKWGtRWHF3WGrSAcABQVVfeXFMTkl2RXFLVzFneG1nd0JvbllHR1NOSDR3cXdfUkVwdW50c1hKQ1NrUVhOS09OOTZlVTVSWURYeDRIYlFmV0FKYnIwTE9XcmRUdGhFOXBoblJlNlpsQy1JanRrd0g4TlFUaE1VVmMzNXdtV2RhY1QxNmVTcmNrb0FDeHVXQ1VVeVJsSzFibGNUQzBTRlZpWGhCZ1ZYWmptQjZzbFFnd19hUEJIa2pyVW9aeDY4OTI3OVgwS1QyalJOdjRK?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">How a US$1.5 billion North Korean hack exposed Asia’s crypto weaknesses</a></div>
-  <div class="article-meta">South China Morning Post | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMia0FVX3lxTE1TdVJBUTBLcTUzN01iWVFDV2JLX3ZPa0IwRDVJei1qeXVOZUVsQVhiTVJsa1JYd0xaTkFWTWlVckZVQllFR2tCMnhyZTF0c1haa3pQMllUWGw3LXZoTFM0M1ExS1llaTF1eExj?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Chinese biz using AI to hit US politicians, influencers with propaganda</a></div>
-  <div class="article-meta">theregister.com | </div>
-</div>
-<div class="category-header">📂 Russian Cyber (8 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMizgFBVV95cUxOZ3NTeWtnNDROdHZrcExJbzdQU3BueTNwY3FyQmdsTDNldk45R0ZEWU9Rckp0T09xWWY4Zm9zN3h0aDFyX3Y1WFdWeHRadmc4S3lSX3VtWkdFTjlORjdaNVVNQzJ1cFlpOERUeGJCOEJ0VUFxRmFJRGN4NzRMOUlqZUxldVo5bUx5SHBianhsTWV3VXJqTTA4WHVyV3B1bFpWbzJaRWVCYVNXTVRwRkdDb2xjU3ZZRWNWR1B5U3JzbDJBbWlHSEM3MGVvQUU3UQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Ukraine's intel attacks Russian air defense missile brigade in Krasnodar Krai - Sources</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMifkFVX3lxTE92X05LcjlXU205WGdQM2hPNVBKVUZZTVJDaDhXQXFRVEJnRWtQSldOTHdXR3ZpM3d2Q1RYbmxhVmRzZklnc0VBNnJPZWNQSlY3dS0wbG5DQlRGZTdNdnJfRXl0bFpuSnU5WHRoQWRFUDlCaVpyZzBGQlh1NmZkZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">WinRAR Zero-Day CVE-2025-8088 Exploited to Spread RomCom Malware</a></div>
-  <div class="article-meta">Hack Read | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMid0FVX3lxTE5jNHFlVFFORkpnbzNXQTlua0JSWTdKS2xTTy1hNE5OamtIcjBWN3pONWdyZkRPXzVaRkxEaTQ2eEdCTmgzR3c4Qng2Nkl6el94YzJSNFZuZ25yWXF3dXlWT0pseWwxZUtDcHVJMi1fM3RUR1hCX2Rr0gF8QVVfeXFMTVl1bUZvc0xGVFdPbHpvMXlwOU03TEQxRVNhSk9iUVdZV0dtX09tTjc1eGJ2WFhHTjVPVVBHaUwxdkhVRGloeXUzbzZXeXkyYTRTc243cjNNMWNYMjJuOWwxSjVUMUd0enFVVS1oenptVHdBaTE0WVp1UEFKMg?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Over 28,000 Microsoft Exchange Servers Exposed Online to CVE-2025-53786 Vulnerability</a></div>
-  <div class="article-meta">GBHackers News | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi1wFBVV95cUxPQldKNXNfS0hRSjVYbmtrSHY4SmJSUjhpblBLRzF5Smpsek9OQW1QV2xhcEdGamQ2V2Z0ZEZhcGdwNUUzOWh4ZlJHc2Q1WnFnMHRWS3NrOWJ0VldrMEkybzVtUlJpREJpTFl0WUtrZnI5eWJ6cGJJa25zQ3Nqd2tJallGbzN6U2Vpa3pLY1RhN2RRTU9UaFN6cGxYV3JCR2VYRi0xcUdQRmtsMDY2RFVleHl3VTBTcjcxNFVzYW1iN0xXLTlKWGxTdURaYnlyLWdwVkFTSFJTaw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Zelenskyy rejects giving up land to end war</a></div>
-  <div class="article-meta">politico.eu | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi6AFBVV95cUxQUzlGYTVBZTNPczhIdXA3a196eU9oY3BRemxWbGtzZlRtWlJmWGxQaW5oaE5ZTU9wd3Z6T2lfSGNFT0JlRXVXSmR5LXVhRXN1YzNlQnhtcnYtNUdVNF9qRHpobFFRWGhwMGU2YlhiY0NPTlBXR0tjbHZ4S3NzMFFpc2dOVUdFUi1BTkhwd3VleFVoWXNMbWNmUm93RW8xaWZ2SmgyeWpfNVAxNWNjNERKZFBxLU1HZnQ5WEFRR1BOTUZzb3RNSTcwVW5rbkJKaXFCc0xlSWxkanBRc1E0OUM0UUgxdDBRLTB6?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The Korean Peninsula's Calculated Gambit: Geopolitical De-escalation and Emerging Investment Opportunities in Infrastructure and Defense</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiowFBVV95cUxPelZvRjNJOXJ4OWJZeTJLcTIxZ2IxWlN3U3RkcVFFZlJOeW5Yc0Z2ZDFfbEY5R3R5R2UzT1VpMnhOYlZIWEw1TEwtbHMtSW85d2NKRmJEVzduVXZUajlRRXkxcEx4dmVXNXpPLV9FUm1FRzJQLUhVY3M0QkE2YXNWeHNwa2lJa3ZQb0lyZXF4cFc4NDRFd3AzUjJjZkVtbEl6cE5Z?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">New Instagram location sharing feature sparks privacy fears</a></div>
-  <div class="article-meta">Space War News | </div>
-</div>
-<div class="category-header">📂 North Korea Cyber (6 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMijgJBVV95cUxPZWlmUUpjbGFoeW5icXk2X3pFQ2R3TXQwb0RNeGZyaVlRVEdXS2l6OXg1N3BMQXFMSFZFS1lUV2ZGUS1XVzdlOGRFaWJmcGZNLXlPOTRwMHQ3bW9QVkFTMWY3Y2lSd1RNV1VfYmRZdDJOVTFZaXNRd0Q5Q3VjM25YVVVCbG1CWU9vZjdOVExOWnhDTWdOaTRZRTdnZ0lGcVUyekZPRTY5a2NwSk1CbFF0YnVIVkxEaWlYM010QW52aWdXQ3RfZWxWU3BleW8ya0s0elJvdDZDMDBwZjc1aEd3cm1VRTdqTjV3UHI0S1RJMHI3YXRsalU0Z1NfcnozZm5tc1FOMnp4Vms2M1ptNmc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">North Korean IT worker infiltrations exploded 220% over the past 12 months, with gen AI weaponized at every stage of the hiring process</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMirgFBVV95cUxNNW5iNm1xZ1FnX2lQWDZEMThGLTYtbkM5eEU2SDBsRzBqN3JYY0NRUlZINFNRMmRrWlVwcUZQYjg3VlN0djBMTFM3OUZ3eEdvRzJWTHRua3VaYmpTXzg5MGZhb0dpUGIxOGFoTHViQ3d5OVVyVjFpUlpNeXBtMXdOb2ppVGtXdWk4RGRpT00zLTdTRTNEZUtvbmJlQkpxU0taaGF3SWlHdG9xR1hfZ2c?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">South Korea emerging as strategic defense partner as NATO spending surges</a></div>
-  <div class="article-meta">Indo-Pacific Defense FORUM | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMisAFBVV95cUxOa2UyR3BEN3pnVVNNRFNtbFNzSFNSelhadS0xcnhaRER3Q19CeHRBWERQR19BY3V0S1hoTDdQSW9ORmZSREowdXdVZEJ5SVdaQmt2Ui1iTHpPNXdKSDM4ZVpLSHFHUnZuU1pGVnJyT3lVVjd6STZ4aTdGbGJtQjRuQ2c2U1dpXzFCQnRMcnBiM0ZCWDdOSFl5b3E3czN5Sjc5M0tRcEtYS2pGeU5OY1ZlbNIBtgFBVV95cUxPd01reVI0d05ncGpzNjE0RVA0NF9EVzljQ2xWSGVVSzkzYWMtck9XQk5vby1sVDZhZ01BVTZybV81akp3V0RDNXdMUm9BTmtDR3k2dVBOdVhYZi1hd2l0WHk0SkhaanBXUnlhOWV6NlNWajdLVmVxRmI0akN1dlZsU3gtc3BIMDhqV3Zxd2t4X2VBWE1pY29TTXF5U3JaZ0dzaG1PZi1hc2gtaVZuVThnSXVaTm5fQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Dark AI: The technology of cyber-evil</a></div>
-  <div class="article-meta">The Manila Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikgFBVV95cUxQZ3Nua2t1WndCbGJZYlFaQWNzUUVDaFBEM3pmNV9kZllGd1FIRlRURkx2UkVVTjJjb1Z5OUVFakN5TXY3ZWUtZlFJenhEeEJXYXJ1WTlPdzRLLVV5cTJaYkMxRXhHSGt5aTJtSXBNNl9tdWxNWHlHaENyWkt6dENUTm9JMm10R2FpUFNEX0R3REtoZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Ex-NSA Chief Paul Nakasone Has a Warning for the Tech World</a></div>
-  <div class="article-meta">WIRED | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMixwFBVV95cUxOVVVfZUJOVkFNR2I3Y2pSVFdoaXRlSGUtMFNXNDlxM0x6UjFKcWJJMnlTTzd6d1ZNWUl3SUVsbVhuWHNyWm10TFZneGU2T0lvNGpTX0tmM2FnQU1zaEFCM3J1NW9tMDhVbktwb1pZclBKQmN1MnVsWDVweVh6Y1U3VmE5VXlaQjJoV3JvcThRSThnNy14ME1HTmFoU0syaFhiVHUzanREdndRZUlhVXRucE9ldWdFcUcwYnQ4aExlUFpOS2UzMG5v?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cyberwarfare and the call to reform international law</a></div>
-  <div class="article-meta">Hindustan Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiugFBVV95cUxPazgtLXBnWFVVdkNyUjZXZTJLc0tlQXVzWUVSRWZZRE4zRVE0dXFKNHJQcnBmNzJSUWJoWl9rZkNIbVBVOE5WdXdjVE9JU2lTTzd3dlllelQwODdwS01XaHY1RUc3S2NGZGZLU1hvTzFSNHRRYTFkTDNMa0Y4eU1JVk9NWGViQ2pPSWNfNFBKQ2VHY21DcGpWU3JJUDY0S25reGVhTVhYdVNVTlNVQ3Z2TVhzSHJ5RjZsSlE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">2016 intel report was tasked to probe Chinese election meddling, but instead focused just on Russia</a></div>
-  <div class="article-meta">justthenews.com | </div>
-</div>
-<div class="category-header">📂 state-sponsored Cyber (3 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi2gJBVV95cUxQMDA4VGl1RmlYY2xQZ1FGMGZwUXBIeUVwS01KcnNwaEp0UTJSVTlXQU5nODFUVmZiVk5zRlVZci1QMEZFeFZLZkFkZ3J5TDQwdFZvaWZka0ZTRHlyMDBRSFd0WFRoZEdCaktXOUdHTDVubm5Qczk5Nmo0dGRIeEVnai10Si1heVBJMENBN0JBcVNRVDFZdGFYbDkwbllwZGg1cTJGdFhabWhYSzBmTDdGVEZXR1ZOSHdEdTV6bV9QaEpxcUdXVkZleDVHY1VkeEhDS0dVNV9ScmxmeXFqR0g1eENUbW92bnpfS1NNMlotV3pnYzgyN1BwWG0waE9JOVVtZENQY0pBdFRKQ1RWaFJNd3FhWDVZTFMxTEpocVZxNHRJOVMzTGxUSEVYdUo1ekswVXVLT1hyWDB3VzlZdzY2dzJJVmd0UmcweXRpQ2pDS1lVbUd1OTNnNVB3?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Top Canadian telecom firms may have been hit by Chinese Salt Typhoon hackers</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikAFBVV95cUxORGpQVW5GZWxqOXZycm9JOHdoY3oxbU8weFF6S0ZpbFFYTWVGMjFHcTNTV1JQcEVQMEdFMjZqZGU3RkVoeXdtbFd5dFVDMjRCcWNaR1FIdUVtR1EwMFp1SE1Id0JkdDdDNTBWWU9TTHhYSVhSalV6MUR0ZlJ5amNlSktVZUF6ZmVERzFWXy1ROHU?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Brian Krebs Stars in HBO Max’s 2025 Cyber Series ‘Most Wanted</a></div>
-  <div class="article-meta">WebProNews | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi3AJBVV95cUxNdzBwTzhuS0lMUjIyNHNEMkNxbGk4cU9NZjF2WGc0V3cyNkN4OEJJTkk4MnhiMks1MFVqMTlqUk84SWlNdC1OYzM3OG8wNVhJYnFYSTZ0VzVNWElXQ0RqSmdqVlRoQ3RXQmNxaFAyT2pnVjI5aUNQSkxvNmk4UzJXdkMyaXpqR21neWZPR0JfSEZmcU9HdE9td25ibmNLV3Q0U1RoUXljZGtQN3YxNm9VWVhZZklKcXpNN2pkckhWaGxXbWc2VUJwWTZLeVpuaFVEXzhQWXVGdVhCSXQtVVJ6UG5jT0JhNEZDTVJZX2dLM2I0NmVVekF4ZFRWZ0gxZnFkM21Td2U3Z2JiX2tUSmJLZmlRcmZ4UmZfUEtrWTNYZUZza3V6ZUYyQWFhcWZxdnBpUDZYMW4tOXFSM3FtbVdOX2U5a2M3TldLcHJQUHpmbUVVRXh4QXZ3eTU5a28?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">French government hit by Chinese hackers exploiting Ivanti security flaws</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-<div class="category-header">📂 Iran Cyber (7 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiUkFVX3lxTE5GVnpPZVFCc0JaUUp5LWRXTTdBRG9RcnN3OUc1dDAweDRKV0Y2QUdlLV9DVFZqdWt0VGdzOGluaXJPQ3YybXdmX3NtV2Nna3F4bVE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">IRGC leadership gaps persist weeks after war with Israel</a></div>
-  <div class="article-meta">ایران اینترنشنال | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMinAFBVV95cUxOQkxIakhIX0pMNzJEeTlQbFRwSDVlOC1mMUF2TlRSSllZLW5ZM2QzTVR5UHVZWU9BVng4YXBQMWVsTnBWcGt0MDF1NzBBZkZEV2pIWldabHlPbVYyckVWOTdSdV81QnBpdWZiVFJ3WEZlWUdORjE3XzRNc3hVM3RIMkptekVJcnoxZF9jWDlNc0p6ZGMzeW85U1k1ZFc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Iranian Nuclear Question and Israel’s Threat Perceptions</a></div>
-  <div class="article-meta">MP-IDSA | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi2gFBVV95cUxPdUMxb1pXU1YxSHhKck9UeTNsVWFWSm15NVRIbnRGR0gzSUR4TmlxTGRCZ09FZmZwUHUxeURpX2dHV1RRdzZlUXB1N2oyOXdBYnZYdTlzSnVKY0xJWWdUMTQ1MHdxS2ZDaTdnZ21GSVlMT09vMHZ4SHBoOEJxQVk0WG1xWElSb1FNa1Bob3AwZ2FxX2lZZkZUNkhLeE9BSVE0M2JpMEZSS1BmVVktdGx4Mm9WR09fV0Mzc2wwUERkOENjQTRPekJXQlNPUWNzb3dQaThVTW1xdmlNdw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">No cash to spare: Reconstructing Iran after Israel war could cost $500 b., Mideast expert says</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiiAFBVV95cUxQZk5wTFRxOXlwLXVPczhiTXktS3hsZ0lwRHZyb0RiYVgyQXVZOUI3cTlBZjBIU0pENU0xWjhlaEEtVmE4d0I5SGR2NzNoUmo5OHF5RjB3MzFqd2RNaUhaOS1TZGtDZHVrODJheDlPdWFOUTdUTVlMUXllMjQ5dkc5MnJIVENuY25B?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Iran arrests 20 alleged spies of Israel</a></div>
-  <div class="article-meta">bangkokpost.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiuwFBVV95cUxObl9EcDhKbzN6UTdjc3BnNUNQakRudkQwQnYtZDhfUHRZcUp0RTVFd2U2YUgzc3Z1Z2tjUjlWRjJCUU9UaU5keGMtYzAzVmt2Tk12Z3QwdzNHTGs2SU42QlNaVDVHc19nRDBMM0NUWHdRbjVabF82UkZxTjNJNzlqVXBmamNKU2dYaUdzZFYtSl9ITG9IT0NQeFUxZnVjRF8zZlBQRWkzNmlwNXF6YUxMR0RmN1dTbE42Ql93?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Hacktivist Group Deletes Database of Israeli Company|تسنیم</a></div>
-  <div class="article-meta">خبرپو | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiqAFBVV95cUxQY2hIZ21lN242TE5MdmQ5V2o0Z3lab2U2V0h5UXRLMDRySkVTOEc4NmVtT1RRaUs4LVlXSWV5d2VmRFFudDdlcFUxQTBkbVl0WmVqd2RaX09ZLTB1R19kaC1sTTJjLUxmVHZiSDRqcXVsQkQwTFhYZlJQcWJyaVRnd0MyX1dNeTZ4akdKLThaeWJBemloRnJjOHAtYm9LdER3QkpRUlRnVi3SAZwBQVVfeXFMUDJnNmJyN2xqN3BSUktTa0E4RHdNXzVrb1NaV1V4V0ZqYVU2bllxMjRTUFVmbDBDVV9FTlVQWm4tM0hrNU9LNjNlaWNzYTI2X1R4aDl6cjQ1djBBRFZIeGZ3RGtTdVRUZmpQWVV6cUpPX3hlaWNqaFQ3czR4dDRuLUNZd3dldkcxaDM2RksxSzNkTEJkVlBxX2M0alIx?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">​Iran "condemns" Albania's decision to cut diplomatic relations</a></div>
-  <div class="article-meta">Telegrafi | </div>
-</div>
-<div class="category-header">📂 Cybersecurity (10 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMibEFVX3lxTE1fOUkyLVJCdG9VOGVyelBLVUtmVFVQeXpEWjJTU01qSEdtaDRVM1BFQmFldzlCV3lIRm1YU1NoVFMtcXJFQmhIQmZLdjE2Z3FvaktDekJOLTJ4Z2tjbjBzXzRKcUl6OXg4dnBmcg?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">2025 Cybersecurity – AI and Tech Summit</a></div>
-  <div class="article-meta">Providence Business News | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMixgFBVV95cUxPNnpFUEZwcHB6emhCQ2tVOTc3WDF2WGNGdzY1Q0FvYUd6bkxtS2FGRUVhTjByNk9tUUZjdk84YlFSQ0JGUFdGdXhVM2lXWHR6QUNobVBZZFRCOGdrd3prWW5qOC14SWp3RnVzejRrLW5OdFY3YXBZQVcycXFSMG9xRDVEandkT3VuVHhzMzBDa2hkcUFNdXlnNmFYSWtwQzY2U1lHNzNvV2tudGlMbzhLM3NvYlVtMHg3d09rZ2t1ZVBzRzIzV2c?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cybersecurity threats are growing. Here are 3 ways to protect your small business.</a></div>
-  <div class="article-meta">Daily Herald | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiuAFBVV95cUxONUYyOE9JaDI1YnBMNEloN1lHbE5mODgzZnR2LVpQXzFieEZ1MWxDUHNNTGJVMzdqNzl1S1dLaGhBZGFIeGpFSG5LT0tzelQ3OW1LbGtwM3k1Z1kxcms0RE50cXMwRnpxVjFTbXEwOFV0NGhjNExITkd1QVFNdHV2UnN3RlV6bzUwUndOZFRpWXdGTW1kMTZJSVVrSmRPTGVoOTh2MWRyUi1ySEptUHQzVDBPekhHSjlr?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">CyberproAI, Ivy Tech South Bend-Elkhart Launch Hands-On Cybersecurity Training</a></div>
-  <div class="article-meta">InkFreeNews.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMipwFBVV95cUxQblBDNHYxQTZ0dXM3MjdQX2lIRVpvRWhwOWZJSVdDdHFRS0djbVl2TFEyQXktbUg0NEtheEQwM3BlQVByc0s4MWpnZXVhRFdJYy0wWnY3dl9iMUl6aENKRGNiUDBMVHJxR0dFU0pkRWE0T2tVLW5hQXFqSk1VSGpHZEhwNmgzZW9PVDQwWi0tNGVad2M1dUp3S0gtV0xHRlA5NVg0RXBkbw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Inside Microsoft’s Real-Time War Against Cybersecurity Threats</a></div>
-  <div class="article-meta">eSecurity Planet | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMivwFBVV95cUxQcG1IMGFsVzdSUlNIOGd2dWctQlpMTVl3dW9Vc0pNZ2FTRm4yWjUyb1ZtaTRRVVZmTXlsZ2JXNWY4VmxXZkY0NDNEZUxCSjdZd1R0bGhGQl9hdHA4VTNsdWNuRzR4TTloQVowbE13YWcxUHlOaUgyZ1NPbEFsUUpCbldjcDBDQmR3eUw1YkFyY1RCeUNManFydmgtUEZyZXBfTTZLM09id2xDZHZkaG5LbkF2cVlLVUhoYnpWLUsxcw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Securing the Future: How Cybersecurity and Resilience Technologies Are Reshaping Energy Grid Investments</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMizAFBVV95cUxPT1RKN01aZC1sVk5lMFVSZ0tHXzhHSHlRSmxRdUx3cmYwRjJrZEhXd0NMLXh6UzZ4bjZkNmlvRmFnTzhab0dzOVhOa1B3N09ZbHlILWxmM0FheGdya2FlM0NTTVhYdl9adWg5SEVTYzFxVGttb0V1MnhFSWVtUTRWV2ptdGp3N21qR3JjOVJ2emJQYTE4ZmROUDR5dlBYemEzaGtpbFBkYWpjUVhmRlczT0RKLWJlTDFIMFI1c0pKRlgtRDNWMER6bmJhbmnSAdIBQVVfeXFMUGt0ZU1lMnp1bmVxV0RrMHd5R2V6SzFLV1ExaDhCUjNMMFZCM1BrQ2trSmJWaDg2VTJWUWtzQllxVnM1UkY4c3BBTVo5QU02OWZ0ZGNjSjlaWkdwR2J3N3pYUlBzYlRwWi0wXzUyaVg5VHJxLTN4a3Z6OFRuSm85Zi1tWkpLZklJYTVodC1aTE5YaUZNckpMbkFBUjJ6MG1yZk9VdktYVUVpZ282ekpOb2xKQkZxY3VnckdEdXk3bnBiaTR2Q205enVERjdHWHNUaUFR?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Did Visa’s (V) $12 Billion Cybersecurity Push Redefine Its Investment Story?</a></div>
-  <div class="article-meta">simplywall.st | </div>
-</div>
-<div class="category-header">📂 Hackers (10 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMihAFBVV95cUxPdmFiT3VhY1BKakYyNTNvZGFsUzhsZ2E1dGRBS3N2c20zY1d1Z0J6eC1XUlMxVGJISHRxT0FieEJhNHpSYm5FeWNPd0VwVXhfZnpVU0Z5eFdHZEZVcGVGZTlGeDZKOUViR1ZjR0g0ZkpXdzMtX1VLemFXMnNVaDVqV0ZfNnA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">6 ways hackers hide their tracks</a></div>
-  <div class="article-meta">csoonline.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiygFBVV95cUxORG00M2RWYVkyUVZJUElqYUtweWJ3Q2xCUWV5N2otdmh0QVdnZ1JZWGtoT2hzdmxZR2lMQS10MlhtV2JIRlVlZWJob0ZwYnlnYnRUUlZFT1k3WlZvaFY4bnpXTHp6cnh6MEJ4WE1yVGp2Slh6SmRYN1JNekgtdmhyc3NDRk1jQmxYVXNsOHJpNF9nUHdpMnlUZFgyT1k5bHRQZkZuckR3a21zNHRsRzQyaEVMaU1tbDFkZUdMS0VXbjZkMlZnbmRhWEZR?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Google says a group of hackers broke into one of its internal Salesforce systems</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMia0FVX3lxTE15UDdpSEZJVkhtVlo1NWp0cUxnTFpUSFQ2dFFnYVN0eFVzMUtwS1psZmdWVTJ5UGoyRUNvOXptQzR3bHVYeEgyaTRmd2lNb2RGbG5MS1FMZnZPSEtBb2t4Mzd3R0xSc1hfamlj?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Security News This Week: The US Court Records System Has Been Hacked</a></div>
-  <div class="article-meta">WIRED | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiigFBVV95cUxOSEgzWHk5cEk0YlJIeXJmZVQydlNvZFp3RUNiRVA4RTcyUDY1RFE5RTg2MHhuaTJVVHFYZlhiMzJ3bGtZaDkyYVRvVlkwcnBERlRIS2ZIeXF3VXg4ZmlzYWJfZU40R0JRdjRUaEllZHdYZjdEUVZvOG0wV2xnS0Q1MHJUVjlYVTNxVUHSAY8BQVVfeXFMUDhkRHdmektyd2ZkTUNKWGo1ZDFzZFRFMFpWMVR5MzAwaXcwVm5GYlhlOTlOSzNsZDlncTc2U095a3B4YjN5dy1LdUVoakdRbVpHY0ZjRGR0XzJrQlpvbVp2MmRtQzNiRGl4VXNheEFiS0V2TVhodUVTb1NaMTZCTDg4TE1IM3BYZXdHTmtYeGs?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Free Wi-Fi Leaves Buses Vulnerable to Remote Hacking</a></div>
-  <div class="article-meta">SecurityWeek | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiygFBVV95cUxNaS1Id0tzSXIwbG5hRGlOUGZ6akViTGxfNUk3YmZraXJfTkhZaTA1eHJlXzZZb3QzaEctamhfNnZ0VWVhcmh2ek5UTEQydm1aVXVUak9RTk5zdnM5LTlqUlBRckJLRWJBZWpYeVZoRVVnZTdNbzZBTmNEeUlJM2NEVnBra29aZ3BER0ZfemRpYjdJQkNMdFQ5Sm80bGJwU25VTG9DRjRRakRNeWlVclpJRHY1Mk1QdmpCSFBVOF9RV1NWc09uaUhSTENB?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">In pitch to hacker community, Trump’s NSC cyber lead says AI key to future of cyberdefense</a></div>
-  <div class="article-meta">Nextgov/FCW | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiqgFBVV95cUxOdDYzZ3lyMVc3d0tKQnRpRzN4WU4xWjNzX3ZUS3B6MXVhbHpGYzZLelJCTkU1Z3E1MWVpWTQ4ZlF1bEx1OTBzcnB0ckN3Xzh6ZEZWa0tZUzJ4SUpwa2liZTlDRDA1dGQwSzNydEJaaHpIZG9SWVZtczVENEhpWVFyUW5mMVJqeUpVcVZURUZsUzMtak9pMnVzWVdXQ2dTLS1yNDBab243dFh5dw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Google Confirms It Has Been Hacked — What User Data Has Been Stolen?</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-<div class="category-header">📂 Cyber Attacks (8 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMigAFBVV95cUxPMWJOak1hck5kaWlxWndtamhqNVp4M3RySV9lN29fMjdRSlFPendHMnRWSmxlTHl6bmNUa3FmbWJjbV8xamdkUGV1LUVkbmlGZXZFWUpHWEI3MmFPVzZYemNGa1QtTmQ2ek1abFcwMXd5UDJsemhneTZfNkRieFBQRNIBgAFBVV95cUxPMWJOak1hck5kaWlxWndtamhqNVp4M3RySV9lN29fMjdRSlFPendHMnRWSmxlTHl6bmNUa3FmbWJjbV8xamdkUGV1LUVkbmlGZXZFWUpHWEI3MmFPVzZYemNGa1QtTmQ2ek1abFcwMXd5UDJsemhneTZfNkRieFBQRA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">ChatGPT Connectors '0-click' Vulnerability Let Attackers Exfiltrate Data From Google Drive</a></div>
-  <div class="article-meta">CyberSecurityNews | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMilwFBVV95cUxQM1BuZHJMbF83WlQ4amFzR1BWWTFnWVpTQmFkQU16ZDA5RjVaTkRzZEdkSWtIOXBnNGY2OGVTY2FoUm5ySWtpRE9BWC1QcjgtVzFQeDJsTnNfZkVWY0JVaDJPOWRpVjVFWGI2UmFEekotSF80MmhkODBlOEtJVmlkVFloZld5aEkxQU1VbmxYUEVnQmsyU2sw0gGcAUFVX3lxTE1OeGd0N2pHMlZ2VnVSdkZWazRKcF9RS0hNOXB4ak5yaWpUMk5vZHJSdGNlenlyeU0wSlZUSGxZbUphZ2czVGxiRUdtaV9hbXFaSG56Y3ZWWGw4MUprOHo0c1d0YUxJNXNUWDFZTW1pY1lKQ2F4RHZnVi1iWlJxVDVKMm52Z0QxTTlER2o4bDB5X3RzUTd3akNGWGh3VQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Multiple Zero-Day Exploits Discover That Bypass BitLocker, Exposing All Encrypted Data</a></div>
-  <div class="article-meta">GBHackers News | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMipgFBVV95cUxQUjQ5NHBFQmg1Y1VLSEhUWUhLN2pmYzM4YkJ1Y1k3a25WeEtHdllfVkNBaW4xYjRmMFoydDdOdmQzbEtDaWx2ZldjOUJmZzZILVU2cUVfMFl0SjZWc20zYms0enZYSXZ4aWszYnczd3BUbWxDUnZVMlJTUnlMOUxxbGtzUW5INWdGWGdUMjU3RXlUdUZxVWxrVXFCU0VjTXA4VUF1cjJR?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Ransomware Evolution: The Changing Landscape of Cyber Extortion</a></div>
-  <div class="article-meta">Arctic Wolf | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMivwFBVV95cUxOOXJ3Wm9kMV9uLWEySVNRSEc3dU5BM1RYOHVPUV9KM2hfZjVvdHJnQ0ZVYml3azRmMWl0OHd0LVVjamt2SjMtTk13LU1fbU1QZmdPZnFYcXRyV2o0eTNqYW56Yi1MajZ0UHRSUlNXN01zSFhfQTZ1Vlk1YU5TN1dCNUtuX1BQOFgxd2FsTG9aVnpmSE40NWtCQ2pZU1p4S3BpXzduQmF2ZkJpaWpkU29zRWRzYjlaNEhwejRoN2x3QQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Minnesota GOP leaders demand details on cyberattack from St. Paul mayor</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMitgFBVV95cUxPSG5KLXJ1TTZ4blNSWWxzN3NSelN4S1Z4Mkk5c24yQVRod3RZdXpZMG5kSHN2YTEzR3hwTEhDeU4xWWY1U3hOX253emNaWkRGdVNnNVpBWTVPRXNHSG5ZLVl5NkNtTXBPNDJzTGM1b29iY200alh5QlVNd2hXZGpCVmJEVV9IaE9nUUZZajlqejFIdGNHT1ROYTREUmNVdmQ2TGVDd0xoTmFBOVpfWkMtUW81SUpXZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">M&S click and collect finally returns months after cyberattack</a></div>
-  <div class="article-meta">The Independent | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMimgFBVV95cUxNMEFCUlhYNlR5YWVqUEpfSDhzTHdkZGpYR24yRnA4LVdhNHQxcnhuMUZUTXNsZWJfYktSc0s1cnVvTmRxejJIRkxFdGI0ejFnWFZtV2sxemtsaE9OaG5GRnMzb0RTNUJ2TUxpaDdGR3JYQnk3ZzVMS1Q5YnJkQ1Vyczk5RWdZRlNMTE1UN3ZKeUNUaXdYcXdmdTRR?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">'Dealing with unethical people': Cyber breach threatens Maryland survivors of child sexual abuse</a></div>
-  <div class="article-meta">WBAL-TV | </div>
-</div>
-<div class="category-header">📂 APT Groups (2 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi3gFBVV95cUxOS0xiVi1UVE1BbFE1aVVmYWhXbHptT0dVSFctV1FUVHlJUTlqYkh4eG9rclVKUFdiZTVQbVZmR3hKVktmTm8yM1JzLTF0Q1hyS0xERlIyYTFZVmxqcFdzdnZuZ1VnMDluWW1fY05NWGFKT2UzcFlqTF81WHlYQm5KQjJqRkFzekw5WERNNTQ4VGZ2SmVjOEVYNk80ZG1LVzcxYTBab2xPQjBhOWQ5QjZaV0lVQ3N2ZGwtUkVHVURPRk1FdXlWdDJUTUJxR1NVbzVmMHRiSEdGNlQ2WGhKb2c?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">New Backdoor ‘GhostContainer’ Targets Microsoft Exchange Servers In Suspected Cyber-Espionage Campaign</a></div>
-  <div class="article-meta">BusinessToday Malaysia | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMioAFBVV95cUxQenBWd0ZRaFpKWk1aQXlxXzVTeXI1UmZvS1dBSmxkVFp4MzJSNkw2dFVmejJYUE44WHp3RUtSbTBVenpxdWNHMGo1UTNiT3cyMUtsbzQ2UlRZZzlBTTd2c3BCY0JEOVotMXlJWTladzhNbWktUGxQTkhSemhhaGhINWhtbXRwLXVTS1diRjRoSnhzQWdndHlPYWlYMW9xella?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">New DarkCloud infostealer campaign leverages ConfuserEx obfuscation</a></div>
-  <div class="article-meta">SC Media | </div>
-</div>
-<div class="category-header">📂 Advanced Threats (6 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiugFBVV95cUxQZmJUeHRxUGZvOHI4ckgxY0JrcWswUmlOLUFIM1c1X3RNcXUyU2lwZS00RVZUdU0tX200ZWY0clVwZHBKSkxYVDBXYTFINEhhMUtJOFI2VnBWQXlJX3BlRFNHOW1JMjEtejBHNTlfalVDcmN2X3B1eURXZlJZMmdQU0xaamctSkh5aXU4ZDZjczF3dVdhTmo1WTZiQVI1cktoVVBXTGNnMlJlb3V0MEYxRlFCOTZoV00xQlE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">During an 'Island Storm,' two kids on an adventure ask — 'Do we try for more?'</a></div>
-  <div class="article-meta">Maine Public | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMixwFBVV95cUxPbGdaRW9wRTFxdGJ1d05KN3ZrbzNrRkpYRXlKekFlYnBGbXZKMUsxbjhqaXlLV3FJZENzQTdYZzBzdnA5MEl4LXdONHJSaGFGWjd3N2ktdk44RDE3YkpObDhXU2xzT0pWS3lJNjIzZUxlSW9WQ3UzaWVRX0F0RmxZUzFJRnl1RnJMQ28wYmdyY25HRHhPWlhIWWlzMVRLQmhzVUtfN1ZLb3lzQUhaY25WMzJmd3h5dkhQbkEzeGZuUERnWWZNQ09R0gHMAUFVX3lxTE9kZ2ljR1E3VF85SjhrU1hCWC1BakpqeEVrR0U4dldzZHRuZFVqN0hVU0h3dnMwTkJLZE1jTGUzOGU3Qk9HWk96TkU4TlZRNE9RUmlRVWFfaDZSS1pKbnZRYUlpbFJoMUdkV0VjekwwNGhJYnRZdVp0Q2VfQmdkb0RzTTVrLXNVX2JUaC02MkU3MFFjZnh2T09reUFMZUhXUWpvcVZBaUI4Z2k3aG52eFIyWFlUc2N0ZUw0dVdsNHNQOFhwbDZhbDdkOEg2cg?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">French firm Bouygues Telecom suffered a data breach impacting 6.4M customers</a></div>
-  <div class="article-meta">Security Affairs | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi0gFBVV95cUxNSmpPQkJfcVVJVmIxeFFUZmxadG00S2xPVk1kYXp0ZEVGTVZvX0xsb2FCNVROYzkxbkhqSDRFck1Sd1Mxd2J4TUVrdkpkNVZvcjhncERZZ3BUSjhUcDNqN1NhZE1heVhQY2MtNGZlNGMxc3dscEw1RTgyM3BRbEFCSUpKN0ZTVGxQek9QVklOMm9FZktsV3dIa2ZHUlZ5VG1tVUt1TzhwbmFzeDRyblBQVEk2SnlEaklKUUxHUzlmdEVqdTA5RTIzNEx2UDN0UVQ0eWc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Bouygues Telecom data breach could affect millions of customers - here's what we know</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi6AFBVV95cUxNeThENWJMSXg1bXpiampFV19mM3FoV2RlVEpqZjdsendnbnE1LXBMS2hOdDVGLU1iTjBPMVlxQmMtOTFaUmJvWU5iV3hfcW5oQkVkR204aDhxeXdqX2VJUlJJVEZGb0VjYjBUZWtaNEQ1XzlRdWRHVC1UaEQteUl2RUw2Vy1lS2RyNnFoeDZJaEtWVzBzMkVIWjIyeU9UeHRtSnRfbHJhUjBfOWNocWhWUExQamljSjA2Y2R1VFVhdVBfVEkyZWtLQjRWX0xhdmFWcGlRQ0J2dWJCZ3ZObzNNRHZvMVNSWGpO?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">That Viral 10-Day Hurricane Forecast On Your Feed May Not Just Be Wrong - It Can Also Be Dangerous</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMifkFVX3lxTE5YdWFqZkt6YnRkRjF1LVBvY3dVZnUtT2FMOGNqQnYyaElSOVNPWWdyaDRoaE9rbDJRUGdZNGhrRjNiRk0zWTdPNnRRcXY3ZWFlX29jX3JoTGFETi11TlNHTXplS1ZEVnFYVjZuZUM2LWo2UVFqWXFERHFnbXhKQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Hackers Went Looking for a Backdoor in High-Security Safes—and Now Can Open Them in Seconds</a></div>
-  <div class="article-meta">WIRED | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMioAFBVV95cUxQVW5rOGdQVnJuSTFzQmRVREhBWTJqUWdoZ3dEb0tlcUZEM3JtNVc4dVZnOEF6aFpWQkpQYjhFMk1jenh2Y2doNWNVM0R3Q0Q0OEhZQy1ZdU56TFAwM3JFek0xMnE3dVV6YlMxd1A4Skd2ZjdveEctbjVKeXVTTzFwMjd3NVE2V0FHV0JqS0JHMVhzaHM4Snl5bG1IWkdiYnM3?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">DHS transfers FEMA staff to ICE amid hurricane season</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-<div class="category-header">📂 Ransomware (8 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMirAFBVV95cUxOR1h5UHZRa01QOW5RNGNCV2ZXRG1SYXBhLWQxR0JSNmYwUVFCR0tWdEpBUGt4dl9XYmw3LXhLNkZWYmhFeGQwOUNUNEt6SF9GdnYwUnMzTnJBNXhybE9YdjRBR1FmOE1DSDUyLUdjVHBTY2RVcFEyOFU3dDE5MVVrcDJkRGgxOFdlUGgyR1lnYXh0bVo0TWVqaFZpdnA2S2tBdUtEaWo5TlM4cVB30gGyAUFVX3lxTE5NVTZaNDA0TzFzTTMyOF9LNVJkM01TSjJIZ2RlUkliNkZFUGZfYUVwR0hzejRmalcxRzZ2ZHVmRHhFWlNBZWt0RXdlY1hVak1iYmQxSUg2V2VpaFJrYktJbXZaMlVEQmJ4TmJkWVFxSzVVSndWeHN3VGpMb1RrUTctaFFuLW9ZRnR0aGNHcnlodEo4UjRzWFlGRUItUm8xUU9nLW1SRzJ1VGdXRzV2aDVqNmc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Embargo Ransomware nets $34.2M in crypto since April 2024</a></div>
-  <div class="article-meta">Security Affairs | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMijgFBVV95cUxOTDJfZmpiTHdZY3FEMmhPUWV0Q1pNb19KeTRQM0N4SU5iak9zNm9nUnBlZFJCX1hsTXNsMmUwSHAyUkk1NUp3ZWJrTmw5dVVFcDlVbU9QazN3SDVqaWJfQi1YWHRqUDhnNkhyVHlBVjkzYVFXYWlUaG5KbzAxek91SXllVGpMZDdvUERWRkxB?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Ransomware Hits 5,289 in 2024, but Many Victim Companies Won’t Talk About It</a></div>
-  <div class="article-meta">CCN.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi0gFBVV95cUxOa2hZYWtLbDUweDFGVnh2M1VOVkN2eWJZN0RRMV9ibHg4QzNoaGg3Wm1lck1DZFdqMThPbXlCSVFPUWlXWkxjaTIwcVZDTkwwODR0SkZNajBnTmlyS3IxQWxaQkdCQzVTWlBNLUdjcjlkTHBCazBCMVZtMUZkLXVTYVNaNWNrV3doNTZxdm1oTFo5T1NGb1lSeUE2N3JMVm9xamxqMWt6SUZVUXVvZjluVlBMOG41NWNCSmk3TjNNSndQMjF1RE94LTJrbmwxWFhhQlE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cybercrime : Ransomware Group Embargo's Tactics Examined In Blockchain Intelligence Report</a></div>
-  <div class="article-meta">Crowdfund Insider | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi1AFBVV95cUxQREptRlhjdFFsVFVWM0JMS2hWeXpIWHZJcjJCT1VhOVhsNGJjMi1CV3B2Q2NQenppYm9VTjJ0OFlhWmtMVkVxMXBBb3ZVYklkTTNadUZXYmwwcnJHSkFXclRNQmk2YmExMjVvZFBySmlVbDVHa0Zaa1lpZXAtSlVYVF9sOEZ6b19vbk0tb2ZhRElLSWI4ZGFGM3FTT3hPMldZb2tKNE5TWFA4SDdEb0pwYTNQSUVwZzB6akFyZjFIa1V5MkFoV0ZUajJrQ0U2R0JrTjJsRg?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">This devious ransomware is able to hijack your system to turn off Microsoft Defender</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMilAFBVV95cUxPTDc0TDZxVDRXeDJ4M3JROHUwTFJlUktJdlpHc3dCY2tJN3lqZGdVNm1vd3kzeVM1YmlpX242ZmtTdjFWeTlCdUF6RlVFNmp2TDhKRnlqRzB6bTNWTHB5Z2FfODYwc243WFlSUFNsbTRqWGVvQVNENWllcks1NDNaVlduUE1LZU8xekdTZWhLaVJVbS1a?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Boeing, Northrup Grumman parts supplier Jamco Aerospace claimed in ransomware attack</a></div>
-  <div class="article-meta">Cybernews | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMibkFVX3lxTE5SaHRSVzViTmlQVlVFUVV2T2dwRGMtRzRsRDRVNk1FMHpYeTh4YnJXd0t4ZnhfYVMtOVF6Q0NnOW5oVzduNkRubUF3T2QyZ1M4elp2eEhwNlVTNE1qaHkxWm02ZzhiRDBSREZNQWJ30gFzQVVfeXFMTTE2TXM4b2w1MkZGczZnY3owb2tqTFRULXBVMnc1dXFvTGZyVVl4UjA0SFhrUXhKbVM1VzJXS1ZNWkpuZFhDVmFjYi1sbnpmVm9rNk1KQnBpQmhNVHdRSFNuTjFZc0FJSHZHaG1PYVk5M1dwTQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">CastleBot Malware-as-a-Service Deploys Range of Payloads Linked to Ransomware Attacks</a></div>
-  <div class="article-meta">CyberSecurityNews | </div>
-</div>
-<div class="category-header">📂 Critical Infrastructure (5 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMizAFBVV95cUxPMjAtYmt3SlRNc21oVkJKdUxGd1d1UFhjVGhTamRZV3gtc3V5QVNLSWhCZFJ3VXVUbUNocFpoNHdUOTRDREt5R25WLTBKNnpEQWd6Ym1hVzlqZ1VxNzZ5emRyTUFwY3Y1ZjY2dGFMS3gxSXR5dUhmdHZZVElUSTB6YnJLa0Qtb1BOUnc1LWxuU21QMGdmdVpSUFR6UkozQ1hoTGp6WHQ5MGhzWWRmRlRpeGM0VGI4VVFyZXI5RERkMTQ5T2syQjhOZ1lhNlE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">DARPA unveils winners of AI challenge to boost critical infrastructure cybersecurity</a></div>
-  <div class="article-meta">Nextgov/FCW | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi7wFBVV95cUxNeGxNNl9fSFlUNzdXRjFkUVBFRDA5WmdMeWJLOWRma0lyeVVEcklqNG12aDBBb1hTUzlWMGxJUmFsMkEtcWduTkFGMGd0UklyRUt6TVVZTDE3UmxacFVjdC1fMkRSM0liUXE5Ni1ZaHZ1V2RLcVgtT0c3eWltaldILUJYTEwtX091bGdubFR0M1kwREF3VUN2dXdfQUxXZDJDekpVX3hsZ3NFR1hNS2VwYTJoc2phbnJEdlR6Z0NHNWJkR3gteHMxdjl0aGdmNE41MkljaG9NU2VMRDBaRDhGS1IwMGEyeVFvaFhlSVJSUQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Local Government Groups Implore Congress to Restore Funding for Cyber Info-Sharing Center</a></div>
-  <div class="article-meta">VitalLaw.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMieEFVX3lxTE14SzhHUWFBQl9DMlotXzFzTjJKTTdWdHJld3lvcXIweENBN3JOUnVHdF9FWTRqTWt5QTdWUDMwaXN1T0I5TEJXWWNfek1SOFlmX0p6RkxsYm9GZVdQX05xZ0lMd2tFSnV0UFd2eE45TEROLUNSQmlQXw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">DARPA’s AI Cyber Challenge reveals winning models for automated vulnerability discovery and patching</a></div>
-  <div class="article-meta">CyberScoop | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi5gFBVV95cUxOVVpad3RXY1pvakRURE9nR0lWV1FqT2V5M3R0RFN0b29NYkpZckJzNVdsY0JVc0xMT0djRmp0ejBGLUt1X2VmWXcyMllIaHNvY0VFZmUxcklwM0tNZ2lkeHVnU29sMUdoUnhyMWREMFF2ajgxbFBsQUxYY2M3UlpVdzdlTXM0bGZXRXpmUmJheDlIMWMzd0dFM0tXbDNrVTdoUWpHT3RQUTdGYjZaeFJjYkNhV0Zfd1JLbWdVZ2Vaa25tNGNyZlhkLXdVd0ZXVVNDN0hyTWtzMWU0cVB1YWt3cllqZ0dyQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cybersecurity Snapshot: CISA Analyzes Malware Used in SharePoint Attacks, as U.K. Boosts Cyber Assessment Framework</a></div>
-  <div class="article-meta">Security Boulevard | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi4wFBVV95cUxNa1RjWExubTdzUlZzd0I2RTlPbzlDU3hta3liWG51QVBQUlZtMXVvX0lVckJ4c3BRbWs4X1BSSzRBTTBNdXFYT2hxNG1sOVJkcVZ4TUt5LUVwSUNocGJ0UHFBaUx6OTJER1hHNjdIdWs3Rm9nWDkxdTF4cDM4MkFvYkljRFZYbkJCLVhMZUo3WWxTZFBCSXBNOVYzNFU3cktlTTNqZFVybS1zb01PTzlJUFJlVE0teHptbGdIeURNZksyTTlRUTJYbUNRbVk3ckk1VXpOUGMyVlR1NU05N1dhdzNiOA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Post-Crisis Resilience: Strategic Investment Opportunities in Public Health, Cybersecurity, and Mental Health Infrastructure</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-<div class="category-header">📂 Energy Security (2 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikwFBVV95cUxQcFFQd1pHUGI3YkVwekF2c3pYVDNURlNoNDYta0phRWxjSDlieDJvbWxtLW9memxzRF83TVBBZHAxYWVDelU2WHdfbGFZM1ZkQW4wQVFBU2NXTUlrUEV0N3VscmVyZWRCQUg3RlQ2WnFlcDBxNzlHZkhxdTZRems3RVFaWWhzTmY3RUVEb3IyTU9POUE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">UK Science Minister calls on tech experts to help cut energy bills</a></div>
-  <div class="article-meta">Cybernews | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMipAFBVV95cUxNMmcxN1ZRYWozWWlTOUVXR0lCTkdxazlGSWV6VElJbW0tU1d3bkU1Rk01Qks1N3VFYWlTcllYWEFocG5WRkJsYnVKcnVnMUkzNE1fZTBEeElOU0dUR2VYS2ktX0RQM1BLeEZhNEpfRmg3d2lYMUFPVHJsYTdjY19MdklUNHVHY2ZuRHhrTGNEcFR4ZzItVC1vUGFrWjkyQlZwaE1EbQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Zero Day Review: Cyber Threat and Political Turmoil Clash in a Riveting Thriller</a></div>
-  <div class="article-meta">OtakuKart | </div>
-</div>
-<div class="category-header">📂 Supply Chain (8 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMigwFBVV95cUxQWDdKVjVBT1FXZG1nbzk0LTNlcTVsZktPX3JzT0x3VGt4c1hDSzFjVkp0RERQWmJhekd3ZjhFSXMyWGxkZ181QkU5c1VPZ3BzclhEOFpxNjlfRUhBVVlMcF91TjUxbjBfZTFBY0QyYlRLUWhuaTZ3WnlXUDdvMmowQjVwbw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Linux-Based Lenovo Webcams’ Flaw Can Be Remotely Exploited for BadUSB Attacks</a></div>
-  <div class="article-meta">The Hacker News | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiswFBVV95cUxPU2htdGpzSWtLT0ZRUTFOV3FpR1gwQkdRblI3MHBFaFFqQ0toa1VVM3NjZGYzN2pYMkhqelZPZHdYc3JOMFdKczhOMnJ3bFJ1ZVNhNmtxYU13d0lsaXc4MWp3a1ZPMmc0eEppTDRSWjg2RUg2Vi1HcXZnTk56MFd6TnZrOGE5ajVxd3JPQWFiZXZOUFVvWlI3bnRCS2diMlNPdmMyTVFVNmg2b1NCU0hFdVBaSdIBuAFBVV95cUxNSHhudnlNeGpmcWh0U0dFY1A3LXJxYnU0dFN6R0Zya1dzR281SjZkYXFsUEs0Yk0zTHVyVnpIYlBnem1tQk9zekY2anF5UzlqZFJ6OFN0Nll6Q2szMkxOY3R2eV9ZQXlWbTFnMWpuRVppVXlsX1dKTUZWcm9OOWlOaExZOUtyUzduZ3g3dDNISENhM2FIMGlvQzR5LTNfNnRXWGZ4akdMZU5WZXdlYzRrNG1vV1NFdjRi?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">60 malicious Ruby gems downloaded 275,000 times steal credentials</a></div>
-  <div class="article-meta">BleepingComputer | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMihAFBVV95cUxQUGxHUXdlS245eUZmeEdWbFdZMldGai1vRnNJSkFOWkREM01YemVTWWtiQ2pRNlZmY1MxNFJiX1FIdUZYYnJwRXpvNVlGTS1WTzY1TXdXaG5TaVhCVG9hdWJzeDB3eTJObHJYUVB1WWxhRld5emFfSVREak43LVdmS3FNc1I?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Researchers Uncover GPT-5 Jailbreak and Zero-Click AI Agent Attacks Exposing Cloud and IoT Systems</a></div>
-  <div class="article-meta">The Hacker News | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMixAFBVV95cUxNTUo0MUZFQzJxNWVJdC1OSjR1QXV2cWdQZjNNc3pxdWpNdFdkS21WUG9yRi1qNnRpMjlFWjlxd1dVbVE4R1Q1TS0zX0dmSGJnYVZBQnBKUUh0akxHR2x3ZWZkYTNGdElFVFVOUi1rcmFHbENVU0xWeWJ1NzRmdjF3c0lJSEZ3TlE4enZsSF9ET1YxZTY4aDROdzViRHZLWldzUGVlblRIank0YWZWQjlyTmx6TzFRbzNnZjBtT2V2Yi0waW1j?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Apollo 13 captain who announced 'Houston, we have a problem' dies at age 97</a></div>
-  <div class="article-meta">thenationalnews.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMitgFBVV95cUxOVzlVZTZ2X2NNSGtJWldpQ18zbDFZWmNvX1BkSnVzc05sbEsxU2F5alFwc1VZLTBDWDFVVlhsS3pUTzJLRXVIUGxhOHZTaDcwT29SODJBaWRod1lsSWpXX3hvUC0tYlAzZVlhb21WM0lkYjcxSldDaUZqRWdqVG42OEtNa3VDRkhPRjk5YkxDUFNwb2swZXhiX3VFczU3YnM5bnB6bkdvczhFNmZ4ckZlSFpGZ0tYZ9IBvAFBVV95cUxQek9kQWxwQkJ3OUZ5WmxOeXNURTVKM0YwdXAxelhYdExqMG1LYk9KdUtJcEJfU3VZa3dyMEJVeDlaRjFUMG1GTmpPaFY0ZDQ2endWZW04YmktTXVQRF9xc2U4ekJqUlA2MXNLaHlkLXJkeUVDNGwyWmNpR25TUVBVcjJPOVZhR0h4RVVuRnNVak5ZMTQwc3lFMnRDUkt2UFpsUWE2ZEFDY2xqbEwyTW1IeGJhLWdKd2lWVWs1Nw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Teen gunman wounds three in Times Square shooting: Police</a></div>
-  <div class="article-meta">The Hindu | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMif0FVX3lxTE9GS0NxR0VKcV9zQnIzNFZ5TWxHY3VOWTVfbnpkUURRLURiQmUweTEzV3lUM3ItVXpnRndma0RpbW5jQmJXekxzMG90Wmw4cXdYSEpLRWxtSEJkcVl4MnBVaFdnYVh4OXk3MHMtbTk3UnJWRnZYQWxiOWU3RU1Na2c?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">CyberArk and HashiCorp Flaws Enable Remote Vault Takeover Without Credentials</a></div>
-  <div class="article-meta">The Hacker News | </div>
-</div>
-<div class="category-header">📂 Zero Days (6 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMitwFBVV95cUxQY2VrRTQzd3E0MkJYdHowOG1xQ3hhTjhMRE0tWXBfUVQ3UWExdVRWMWIwM2ZaamFuV0dJdWMzOWdlemV0cXlvSzJtT1FkalI3OGJxcURKak1JUjgtTFBPYVJaXy03Y0s4SnJZdVJRSFExRXpfbGFVVzZadVpEWExRdG1STW13THd6NEVfeU1BYlg0MTJUSzBlRHlKcExHdkFZdzdQUkFaX3YzMnVISjc1bFE3RGhLeGfSAbwBQVVfeXFMUFFCS2h4OUw0QlJRbUk4a2c1dmwyT2RpOExqOE52N2F5elpsMGI2MEU4UE1wajE5SG9pNVpldFpYc1FZdVJVQXBDUmVQVTFPRTEybjliUjBmN1g0S2s5YnRiTklLSF9CM0xTNjA2NjNZWUR2RUY1aXpUZF9ZZEdHLTNFR1BhNTdVVG9RYnE4bjhFU0lZSFB4ekgybUg4dTQ3OE1RN2dZOF9QenU5aWlybzd1TG5obXh3OUNiTEs?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Phishing attacks exploit WinRAR flaw CVE-2025-8088 to install RomCom</a></div>
-  <div class="article-meta">Security Affairs | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiygFBVV95cUxOa3drV1MwTWtmTUJOV3p6WEN6RnJfYlZpNUtNRzRuTE5NNnNYbVJzQVMxR1hYNjF3UjAwNDYzSklKcGRYRHpEdjYySUJMWWVhYVUySDlYaTRnX1Q2QWR4N3lsOE1aaTNqU29JS0NSUTF3TzltbWJYX3A5UFZ2WDVBY1daM09LMWZ5VGhpWXFzZk5EaDFtUkdUVEZtdFVGWHRiTVdLd3BxUEM3ZktQalMwSllZSVVSM3BkTzlGWGZxYkZhN2Y4Vk9EdE5n?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Microsoft SharePoint zero-day breach hits 75 servers: Here’s what the company said on the attack</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMia0FVX3lxTE1PMFh0N1FpOElJRm5YSG9QdHJIakdvb0oxbDZsRmJMT0UwbUo3T2lkc3R0NGZQQkE5SmhURWpVYkEtVXJaakU0STRHa0huaHhLbTFvREtuOVpTY09nQ0puZWZoOHBXOVVMTmtv0gFwQVVfeXFMUFpURzR3OFNXQW55T0VDWjg4c3ZueWxHQk9VaWFsZHY5cXJ6RXlkX2VKRmdNTlJIaGZSbmFOWkpQalZROWY4MXJyNGkyVnpRQlRxSm5pMXFfcXNySnNlVzE2NmxiOGVKVXVMSG1FcU9sXw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">BitUnlocker - Multiple 0-days to Bypass BitLocker and Extract All Protected Data</a></div>
-  <div class="article-meta">CyberSecurityNews | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMitgFBVV95cUxQSnIwbXdSang4NVN4ZkJGbzZJRktZVUlqaG1oVzN5OGdyZWtYWUxRaDRkVmR0YWhNTU5CZHRrZTl5NzBleUhzSS1XUXM4OFE0WkxmU0l6X1dqRkRSTTU4OXFTUC1HVkFxY3UzOV9mUDJNWkpVUUgtOHZ5X3k2Q3BvVEc3UElBMXk2WXg3S2RQS1BaUjNLV055NUxYSUtyN0VIS01xX28wNWUtNkJDMnNWS3FTcUUxZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Unlocking the Full Potential of iOS 18.6: 10 Essential Settings to Revive Your iPhone Experience</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMidkFVX3lxTE1rUjVxcmpTeGpZRjBxVWJUcTh3VFFlYksxUDlyMmRsMEpiOEl0ZGk1TlZRaDFkcGxDanlWVTBYMkdoMWU4cXZzODlHUXBySngxRVZaUGpGdkktSXRZdUkzMTFOUnZQZ0VFcHNHbzRlckU5OGRKcVE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">iOS 18.6: What’s New and When Can You Get It?</a></div>
-  <div class="article-meta">Vocal | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMic0FVX3lxTE5MOWRFUEZXekJYV3FLZndtOUhxcTR5djNhaXRYWHVlUE5sZjZod2IzMHdxZnNsT1h3QndkVmJIajUydE0yUlR5QnQwZ2owMTJQejR5ZEIzZVRUWkVQd3VveGZMX1I3aEZYVXRiVXpTMmloMW_SAXNBVV95cUxOTDlkRVBGV3pCWFdxS2Z3bTlIcXE0eXYzYWl0WFh1ZVBObGY2aHdiMzB3cWZzbE9Yd0J3ZFZiSGo1MnRNMlJUeUJ0MGdqMDEyUHo0eWRCM2VUVFpFUHd1b3hmTF9SN2hGWFV0YlV6UzJpaDFv?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">New Linux Kernel Vulnerability Directly Exploited from Chrome Renderer Sandbox Via Rare Linux Socket Feature</a></div>
-  <div class="article-meta">CyberSecurityNews | </div>
-</div>
-<div class="category-header">📂 Vulnerabilities (6 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiswFBVV95cUxNbmFaRHVtdDB4dzRjODd6eTNQVkFCNTdWMjhNc0E2UTFBMTJDSDJwRkw2aDY4ZjFhbG1wbWx0LVU3UTNsenVHSVlhX2pCNjdHcGFmdlBIME9NZktzUlV2cnJMUUU3endwMm1JekdBeU1CajBuX05xS1RQVWJMcG92ZzliY0Q1eTE5enh2bUo3UUdta2hBM2xkWWlzSXYzS3ZkdW1ybUNtcmx2cmRGR3RQM2hudw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Emergency Microsoft Security Warning Confirmed — Act Now, CISA Says</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMid0FVX3lxTE5aU0o2Y2gyMmtsaVJ2TUZFcFk3VkFjUHppazNiVmpKcjNPZEVDSFJEdVNfRE9XY2FLaFFjVGpERkdpT0lDLTRpX0hhSG9XaXRyNVI1VXY1YkdpZ1I3WHFmWk41aURfaDJlYWhKcUNtX214STVqaHR30gF8QVVfeXFMUC1PRGpLak9ZcFlmUXF5MU1rVGJCV3ZyVU9fY1FDSWR2cmFMQ294czlwT3BhcnNkd2k3aVNlRVBtTnlHY2Zkb0F2SGgyNHZfb1VBZnZiSTlGY2szT0Z5MG9fYkNvcWFJU1pya0lCQTVNVnN2NTJyQUpQQ2RTeQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">28,000+ Microsoft Exchange Servers Vulnerable to CVE-2025-53786 Exposed Online</a></div>
-  <div class="article-meta">CyberSecurityNews | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMigAJBVV95cUxNTTBtSDVSRGR5NS1pX0dudDdlUnF0NFVvS0c5cE9KM2VzREhkUzJkOVZXMUwySlFyNFp5TmJvaWp5ZE5NNU92c2ZJQXBwNk5XaDBlTGlIaTdOQ19sYVdmR2tnckRoVndnd2x5T3RSZzNFWVcwOURtQ3FVWnl2M0cxeGJ5NFZIRlNpUkRHenBmYXhXYjlCR3F4c09GQjhiSkYyLTRLVjJRdnduS0NuVzhZcUZFU29PYXltdXFpWVJtMDNDLU93b3daTGFTUDBhVnd1Nk5Uamx6dlVqeHJNQTVuMUxWeE40UzVYYU1BTTJIQWE3OFpqN3VNM2lBeGlVWW1C?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">CVE-2025-53786: U.S. CISA Issues Emergency Directive for Post-Authentication Vulnerability in Microsoft Exchange Hybrid Configurations</a></div>
-  <div class="article-meta">Arctic Wolf | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMisAFBVV95cUxQTGpVaFQwWTRPWE01bVYwbmxTNUQ2ZHJQQ1VEVFYxTkd3X0RRNkRPRzM3RWtUUmEwelZmNzZMQ0tkenJlSmIyRm1OMlJjR2NFRllGLTFQUkYwSEZGRXFYNGFyLVQ3eTVJajNTanRNRFhoWEYtbjVLaFM3YjhIczhUbnlfb0NWRTlUWm5iMzRFdU5oNENra2p5QzBqQUtaOE5HVzNWaWt2UVVHUUE0QVlhNA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Mako Mining (CVE:MKO) Sets New 1-Year High - Should You Buy?</a></div>
-  <div class="article-meta">MarketBeat | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMisAFBVV95cUxQUXBNNDRlZ1Q1czRwZGJ5Sm5rVVJnRzkyQnN2YkY5WlFvRWlDczkxWTZiYWF4MWNKRW1INlB5RkN0LV9Ld0llaG5LSHZwN3RDOVctVTNnNHhLbEo0Y0dfcEtBN2Z1VGhvSVVfRDVHYlhkR2h2R1M5RjdaMHZLcU90U0VvZVJjZkFKZ0o3MGxKbEFNSy1qRzhHczBqb00tVi0yUVNXejl2ZmRDalpHVkNPRA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Over 28,000 unpatched hybrid Exchange instances (CVE-2025-53786) still online</a></div>
-  <div class="article-meta">BornCity | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi3gFBVV95cUxQd3RhMi1DNHZLazZHTFZUbnpmLXNYcmxCb09jV2VPZkVSYnhUT0x5WGNIdTl0dF92Zy16eXZqakpaeFQ2Yi05eGVkbm5LSndKbUdwSkJ2M3lnd3dqb2dmVXVvcjA0NUJ5UTl6V2haT0QwQlBxcGd2ZUl2WEhFYUVZRFZBQ0R2eFpVNUtZZFJvYXZ1blJ2LVdfSkV2YWFWN3lNeFUwaE9YbDRWUmlCV08yU1o0ODdKbS1ZMHByQjllOWswam5mdWxTQzg4eFd6OVpmT245OE5lQklmbTZTUnc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Raymond James Raises Cenovus Energy (CVE) PT to C$30 Amid Q2 Earnings</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-<div class="category-header">📂 VPN Security (1 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi2gFBVV95cUxNUjd2OEFHQnd4UkgwTDA5RzVHNUpuOE9YUjNBWVNoZGZ2OEhWcVpzb1RXRHJoN0FWOW9OSGpKSVAyaXNUS1RRSjA3SmZyMHNYekR2b213VGxNSzNPdW0xUmJETk5PN0YzaEZneTJscXIxTGl3M3V6cjZLWUM4LVdJdmptc2o3ZndHeFg3VW9FOFVRVUtpWDdHc3VUUDQxYV8tRXdlM09VaVc3b1c2czFvbXQxNE1fSDZSdnYwb3NiSGh2Y2FKek9STTV0d3htWjBCVXhZN0NxZ1dzdw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Investigating the Ivanti Endpoint Manager Mobile Vulnerabilities</a></div>
-  <div class="article-meta">Darktrace | </div>
-</div>
-<div class="category-header">📂 AI Security (8 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMihgFBVV95cUxQTExPeS1FSUtodFRGMDJsRGZYM3hGRjU2YWhHeHgzUWZ1MUJ0Qm9URWlHX05velFiVF9NY3dGTXZDanowVWlzb0JNZ0llSEFXQjdFZjRvU01kQnJ3RjMxQ3dPazAzTnRKd09LRWhWRWtvMTNKOV9ibE1HRWNGMUlyS0NOcnpMdw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Experts Split on AI Reviewing Its Own Code for Security</a></div>
-  <div class="article-meta">The New Stack | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiuAFBVV95cUxOSml0ZzNBTzh3bWdaNUh5VzZXNHplQjRvLUEzWWRJOWYyNkVSLXBRS2V0QndYMnNkbWZ2MGJMS1RKTU9ZVjBmQXdSTUYtY3NMd213WVFCMktZUlNPdVFiX3M2Z2ZxQnFXekgtTlU2OFVLVjZaekFycXREVF90ajZ3R2VIbTBtd05PcXVLQ19mWXRHLXRzSUpVLVd0UnpLMy1mWnpuZnVFM3AweEJUaHhpT0FkcmpZaDlh?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Samsung Electronics Claims First Place in U.S. Government-Sponsored AI Cyber Challenge</a></div>
-  <div class="article-meta">Samsung Newsroom | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiwgFBVV95cUxOY2RualY2ZG5xQUFOZW5qYUFHdWh3OGVvRjBkMnBOdlJvSklNR1NJOVZLMXU1Q2NGOUNfbm1EQkVsYk9BcWRoVU1kWjA1OXVGZnpLMjc1U1dBYjE2YllJYkhjVURsMVRZMkhWUzdvLVdGeTZ6SDExUjU2VE0yamdDR2U5S0ZhT1NyNGxBWDNCcXM2Rng0RmdSb2F0LWlqeVBsT1RzRDNLc0lEcUlkQ1ZyUFdkaU9VTmNGYTNlUlJEd3pUQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">HPE introduces new AI security and data protection offerings</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMilgFBVV95cUxQU3JpcG9WR3JFdE1IclVSVzFPT2YxQm91LW9WSi1EQ1JZN3FQUlJJejI4RGJJYlBld2c4aUdfbV9OYkV0cGdwY25EcVlFb0FLZlF6Ri15Tl9XZk1kODAtQnU2dEcwSUU1NUU3eFk0ajJ1OE5yX19ZSTcwdTQwbEhvT3c4QmZRNUY2X0hHU3Z2QTdWbWVYbFE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">4 Devices That Offer AI Home Security Monitoring for Free</a></div>
-  <div class="article-meta">CNET | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMixwFBVV95cUxOZ3Nqa2REYnJuOTI1Z2ptMmV5VkgyUThXRzI1XzVBbkV5MG5lZTFPc0FVcWZ0Yy00bDBrbjBMWHBnMUhHTHdYbjJ0N0p1V1JPU1prZ0M5Rmxfa0x4ME5leDhIdHN6Uk5OLXdKX2JuMHZwUzRjcDhaWEh6M1RuSUFCQ1NPUEFPWkppbjBHellUU2swaE5nQjh0Yy1ndmNFT0loRWJnNllzUHdBbzFlQTJRNGd3QzR5RWN0VEVwOERLMDBYbE93emYw0gHMAUFVX3lxTE82N2RMWW15aGgybmNfc2NFUGd0N3p3Y2VFWTcxaWhYQ3hVSkxNajRVemo4ZXRWalJTcTV2cFV6bm1ReHVsTmpYbkN4OXdiRWRUQmRRTHl0bTJIenN3ZjJIUlM1Z0dMQTdLTXY2bHJkSS1YU0FGYmtYOF9rUzVmb2ozT1liNUx0dkhfb3ZOelVWcXRIYXJGWUE5Y19KbzJpUzV3MEY1emdxcW9LLVVOaEFTLTl2Qkp4WlhmX2NRMUJndDBabkswWTVoU0xaNw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Is Cisco’s (CSCO) New SAFE Integration the Next Step Toward Defining Its AI Security Advantage?</a></div>
-  <div class="article-meta">simplywall.st | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMilwFBVV95cUxNSm5KblZSMmpwaUllZUEtTUxPemc4UFV0RnFfNUNqR3RWZnZXcFcwZUszdEdxMGF4Z2V3U0UxaWhhMTZuamVuNXhucFdnOFBMWVJXZXFRQ0NUTkFXSFdwSkpfallwdWF0MlRBTllLR01LQjZldktwbXZTQVFqcWs5c2hkUlZCS3A3YVlVQTFZeG1TMHJ4b0dF?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">CrowdStrike’s 49th Volume Rank Amid AI Security Expansion Slumps</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-<div class="category-header">📂 Quantum Threats (7 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMixgFBVV95cUxNSlo0Vjl3emlWTkozM0ppUDFpSW9wQVJUSU5TbnhrUU96THNjNG81TktJMVF2bUt1VXZBRFdqWkpJMHNGcXZaN0FhMGdGSmhFem5FeDBPQWFIaXBjZ1g5dXRKbTJfdk8zYjJOUlNNdW9IRkd0dlB0cTNkZk9aZVpqSFJ4U2c4ZlBEdmdXSEM5LXF0OHFtOExGVm02RUN1Um00YWcycGhpTG1JNm5yM0h6ZlZLa2dWZS0xSlBZb0YtUzZIM3hNNGc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">IBM Shares Plunge 3.15% with 1.66 Billion Volume Ranking 42nd Amid Cybersecurity and Quantum Computing Push</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMitAFBVV95cUxPNGJVWldLalFyS0pRVHRwYng2Yk1teHFGMFByRExVQnpWZmRFcmNFZTg1eU1QTFV3Q2VGSEkzQ1V6VmxRMDJaVGlqemdCYjJCU3hoRFJra2w1aXNXbHl2UmJKX1V2RUpqQ2hsNmgwMTRqNHVYY3JmSFdxaGNHaDFBdzRzWnVPck5SdnVMMTFDdmoxU2JSVnZCSDJBckU4OUc1UXh2NE5iZW1ENUw4Z3VhSXFNS1Q?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Quantum Computing (NASDAQ:QUBT) Stock Price Down 4.5% - What's Next?</a></div>
-  <div class="article-meta">MarketBeat | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikwFBVV95cUxOYmYxUjFNeTFDa19vd0FZR1pyem9UZ3paYWlQVi1lMnVqQkRTRVRwc2tzT2VUNFI5X00xM2pOR0g1YjhUdWt6dWFoUkxidWFHQ1VPSU5pQnl5V3p3am5YZFN1YnE3VEhzYjlUVmFaZV9OMzM5akdZZ2w2LTdYdFhwOEdRRHFUOWlKdndGWkJjRXdLVHc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Why Rigetti Computing Stock Soared 9.3% This Week</a></div>
-  <div class="article-meta">富途牛牛 | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMijwFBVV95cUxQY2EwZURNWHBabG5XdVZkMlFLZWp4QmI3WU1sZ2ZEeHpoaVJySnZQMXdUNlVUSUhHZUc5RGktSWxfcFNNYnFNVzA0Z21UVTBPRUlXZTdlWW91TkZUcDk0TWx5OUF1Wlh5cjNTamNPYnFnSm93eWYwN2Zta01vbDdENmVZS0V1TG90STMwOWNJWQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cyber security specialist awarded prestigious fellowship</a></div>
-  <div class="article-meta">uk.news.yahoo.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMisAFBVV95cUxQRlhMRjRMYUVlR2wweEhpX3hBZ0NGV2xuLWVPd1lGQkU2R3Y2bXZxUkpQSkp4N05QbFNJTjRQME1URHphckpRU25Qa192dEVVNGFSSFQ2TmJheGJUUkNSUU1yUDhOazdRM3RDNGlFUXp5RldQZk05SThEcXpjU0ZwalgzZWtaQXRFMWlldTkyd2lRakNXTUNSZG01ZVBRblRsdThtT3BLTXlSSHZMX0dNcQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Quantum Computing (NASDAQ:QUBT) Stock Price Up 5.5% - Still a Buy?</a></div>
-  <div class="article-meta">MarketBeat | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi6AFBVV95cUxPd3NkUkgtdjliV3NxaFVWTmxoWURWdHE5ZUZsVGVPaGhLeGZGdW5GZW5weDNQYTc5SzJjYl8tOE1Jb1EzOEVtaFN5SHZRZ2dnZDVrWV9zdV9wUGp6TmtHNFFPNklQQ1pObkVYNHhzVHZQT1o0dDM4U2pNTnJKQzNjTHEyQjJ5MlZIVXhBckszdW5RZXZJTV9GZ3ZsdFZ6RDAyYmhlblZBUEoxMzY1SXprVWo5ZUJNZ0VCeURKRzFaWFJGclhSOUxkaUFwM3dENlJWX0I2RUFrTEZFVkhmbUttV3R1aFNlNEE5?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">19,554 Shares in Quantum Computing Inc. (NASDAQ:QUBT) Acquired by Bank of New York Mellon Corp</a></div>
-  <div class="article-meta">MarketBeat | </div>
-</div>
-<div class="category-header">📂 Blockchain Security (10 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiqwFBVV95cUxPRXJfY2l6M0dnUmNCMUY3cG42NnlXLXJQR2tqQmxqcTd5M2ZlZ3FjNFJXY1pic0U5Y2t1bll3MDEwbm41Q1ZZS05ESDdkM3RxWTA1Q0RjV1FKaDZ2MzFwbDAyeVRVeDdCRVZ4TVg4Q2JnUGxxc2NBV0xTSklWVnQ4dkZ5aEhrTVI4V2RnOEtPc1FGVlNvUXdiYkpoMVJRaGVvWW9tbjEyX01yZ0U?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Bitcoin News Today: South Africa Crypto Casinos Focus on Security and Trust in 2025</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMid0FVX3lxTE9ka002bG5DQjBuLWFwT19Vc0VISjJ2T1A3MmIwckNUR2tRQmlWYTk0OVFxcVp2MjBYeVlEMGhLMXpfQWhHeXRLRmx6NGlFUFZ2aG1OMlZtRGdiVTUyQTVSNDNZeXRPM202UHY5a0ZwWTZRY19Qemlz?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cyber Security Salary for Beginners and Experienced</a></div>
-  <div class="article-meta">Blockchain Council | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiuwFBVV95cUxONUstUHhkZ0pzdmVyRVdQZE1CTnpWWVA4LTdoaGVIZlBua2ZlYzg3bnE3RHl2WFhvZnljVHV6RmlRRWZhLWtTY0h1UFI2aWN3QjljZzBveE1taWVPTDBleEFxa3lUWU9iS05nZFdYYVU2UlZpdklIUzZPTllJUFMteGhucFFLZVJJNlF4bmFyUWNHTUlwanNWOG5Kc19LUkI0bkZ3UW52aGhUQU8wdUV0anJRdnRBRnFyMmpV?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Hoskinson Declares ADA Staking Non-Security Following SEC Liquid Staking Guidance</a></div>
-  <div class="article-meta">CryptoRank | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMirAFBVV95cUxPTUYwSmFoQmVFd0RtRll1bGVFV0tZWlE2SGFGNXItSnktcHJkSTRSYXBGYXJWZE1nYkZvRkV4Ml81NWhQV1MyM3NtcmtKSG55WGpKZG1TZkV3X01zY0k5Y3I1UGNCa0JuLV93TVpiZE5EemhON3l6TEFldFF3TFhyWmNwQndoOWJja3lqVjlRLThDSlp3Q0ZpcmVUek5Wd2JiWWNOalE5UWtvSHpJ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">BlockchainFX vs. BlockDAG: Why BlockchainFX is the Best Crypto Presale for 100x Gains</a></div>
-  <div class="article-meta">CoinCentral | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMipwFBVV95cUxNdG1JcC02dzhDazEyVU8tTlhkUkZ6cFNZSzlER0RBUTRUTW5pTWxZdC1TcGg5OVJGX21yMDRFQXlPRDJwcDJVRGV4c21vOVFRLVRJdER3NGVRSTBGWll2bW85b0Fmc3ItLWNNLVRZZk45ZWhXdTJ1NnJSbVNFekVGbmEyQ2lBT2lFY0ZDbWF6blZkMEloSnFjRzM1UzJmcUNSVzNGZDMxZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cloud Mining for USDT: HashJ Leads the 2025 Wave, Signing Up for a $118 Trial Bonus Opens a New Era of Passive Income</a></div>
-  <div class="article-meta">Digital Journal | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMihgFBVV95cUxPR19faFBvTW5PNFptNHA0dFZQcENwUXRLUmp0OE5uQlVsdzVMM2ZtM19wT1k4cFNQWEhMRUxKOTBBRlROSnBKTEMweGQ1eF9yZWdrWGE3Q0x5T3FVWk1TU21JUnVTeXBfc1NsTzBKUHJnb3ZOZ056cW9MbXBiZW5OajNlU0FfQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Simplicity Enhances Liquid Network with Secure Smart Contract Capabilities</a></div>
-  <div class="article-meta">Blockchain News | </div>
-</div>
-<div class="category-header">📂 Taiwan Security (8 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMimAFBVV95cUxPcjdsa0NiUXFFQ2dIUWp1aXFtSjdDQ2lRTWp3QjhwV05KcEFMYldCbkphdV9mUFM4aXNTSXlZbE5Sbl81NGplZmE1LWdaZGZNemozUm0tU3kxc3ZBbkFIblV1eWRvV3FCZmx3QVMxcC1HcmJlNUw5b3ZMaVhYSGlLSHJ0UGpqbG5ZdHN3UU1lLVN5bVgyekh0bw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Exein expands globally to address IoT security challenges, leveraging Taiwan's advanced manufacturing ecosystem</a></div>
-  <div class="article-meta">digitimes | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiiAFBVV95cUxOY1FKMHg5WUNoTU0tTDJ0SXpyOFNTTjd5X0VlUThoWmhsbWlWX2lCY3lpTVhFckxpdVN1OEdHNHRFdW1xcVFuMThpTUdyUENqZVprT1U5Y2tsZ2JhVlV3bkJuTTdnNTZUcW1OandXUFdGWjdxbUF4RmF3OE0xMUpza0I5dGNLQU9h?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Why ELLO stock attracts strong analyst attention - High Return Idea With Technical Filter</a></div>
-  <div class="article-meta">Newser | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMickFVX3lxTE9ZZkNiVzhHU1pHVG1iVS1uMjZzblFzLVlHUWtfaDVCZm1vclM4aklJSTFzak54ZEtyOWktR1Y0ajAxTUljRkJqMEtVSVExZ2xKclVBYmlWRmhVVnZKZGFGMnJXVkJuQ1k1UXp1TkQxTUtZZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Trend analysis for EVGO this week - Capital Protection Strategy With Risk Analysis</a></div>
-  <div class="article-meta">Newser | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMizAFBVV95cUxONjNhUnBGdzg5MkNkbFUwdFJ6X01Hay1WR1RNMWNSZUNiUWw5b2JjMkxPRGdCc2xoaVlGc3JpTGdzMEptTW1mOXlIaWltMnhzamxwa1BoNVUtSzFoSW5BaGNJOVpVQjd3azdMd2FsdldnZVVzSGNRM1hVN2RPQlFzNTNjUkFjWkVIbjlYaFNneHJLZ3ZqT1lqWEo3N3NDbXlFNmlnemh0cFFXRTFKTWJJbU1oT2pQcTA2WlFuOXRhOURPc1JKWGd3ZDNpUzY?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">When ACNB stock expected to show significant growthIs BASE stock a good long term investment option - Daily Swing Candidate Analysis with Chart Patterns</a></div>
-  <div class="article-meta">Newser | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMizwFBVV95cUxNc3Z3RG5lRjhxZS1PWmJyNDhtOHVQb1RhTVFCOHRQUjFJeWZneWxoVXd0Y3Q4WUNjZF8zOEdjT0xnTkstZEU3Vk1la0xlNVRoN19FNng1ZUt1UVRSODFNRmV4NTRONHJLckZHczZ3c2hxOUlFVUh5eFJXcktpeFNTbUhWQ3JsRFd5YUhCNGk4ZERmb2JjWHQzRnp5ejhfY2U1aG5VX0FpRUlYUTZ1UHh5bk1WWERhLUZTUVgxeGFRMlRSekgtejJOejVlQ3FlWVU?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Colombier Acquisition Corp. II Debt Equity Composite Units’s volatility index tracking explained - Free Stable Entry High Return Opportunities</a></div>
-  <div class="article-meta">Newser | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiekFVX3lxTFBDdmszV0ZheVAwdVEzdGdGRF9ZWGl2LXhtY0VDazhPRlZTSEttYnhZR2Q1QW5Sd3lCa1RHNTNIS0F4cmtWWFNUcXE5SVZEMUhBaWFBemJiRVZLV1owV2pRenlERWRwUXg3ZW1FOFYtbGs0bmQyN1JDZE5R?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Sentiment analysis tools applied to STRA - Day Trading Setup Forecast with Trend Model</a></div>
-  <div class="article-meta">Newser | </div>
-</div>
-<div class="category-header">📂 Ukraine Conflict (5 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiuAFBVV95cUxPVHdqRWNhcVJwYnI2SDh5aDQxRjB2cWxQZEhzM0xGUkZWNGNvOVFtNTdGTm5zUk9OTHhhZ01Ka1p1b0Y3elJDS25vemFoUG15Vld5ajREemZFVjlFdjh6Ukhka0ZDdGQ2MU85SzhYdWlFOEpHQXdXNE1PX3pRVGt5ZTh1UEo0NTk2Q05OckJGRzNZQ1lSN3lEYXBMWVJIQWRQVjJlM3c4bzJyV1hoSVpaSld0OVltVjdN?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Putin Tells U.S. He’ll Halt War in Exchange for Eastern Ukraine</a></div>
-  <div class="article-meta">RealClearDefense | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiX0FVX3lxTE1lVWNmUzZQdXRDcHdyanlfTVF5emVHYlVnWnMwMGJWdHpHM1I1S2ZWd1BuWnhrMjdSN2tXMHRJT2haTTk0eV9lcDNRVWE1by15dF81T25hZ0dmTjFaUHMw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">News: NATO to participate at World Expo 2025 in Osaka, Japan , 01-Aug.-2025</a></div>
-  <div class="article-meta">NATO - Homepage | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi1gFBVV95cUxNemFvaXAtT1lIQTRZRVM5UFRhbVJBOVdoWFJMQlRmMWZKTkx3ZFVkYXd3QmdpRk82MnZSMlBNdlhhU28wcl9XaGNUOFVxbW85ZS1OY1hMUldObGdrQ2hZaGRRWm9Ic0N0UExuY2NsXzkxLTBGb0hoQ3NzcTVvY1YyOTM0N1JwSG0wa194TWdqaUp5a25QVmlzc0xNbzF1LW5zZmlDLXhKclhSYWZLNVJEZUZqd2huN21aMEVuSTJvRGNXakR6VkllY3RTeUhHWGdTMDR4YXlR?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Ukrainian Resilience and Geopolitical Stability: A New Era for Defense, Energy, and Infrastructure Investments in Eastern Europe</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiygFBVV95cUxNY2FQRjFlQzh1SHVRM1hfMjdTalhvNFgwNEswc2hHdHpLNDZ6YXRYTlVYRjB2UjllVzdubU95c0t0WlNpelJ5MC12eDcyX2VQWUN2ejhZZE5Za1FDZFAwWEhfNDE1Z1VMenBNbUMtQU9Xd0pQSE1UMUFaWDI2OHdtYTNhdDBTTi1FSHRadFFCcWl0bGdZOXUwQmkwbjRCNDh3bVZ5TWN5N0pmdFJoY1hrNVc2RGtZaWdYekhRUDVGWDExT3MtU2VPUUt3?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Putin's billionaire pal will see his $325m superyacht sold by US to support Ukraine</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiygFBVV95cUxPWk5tM2p1ZkRtOEJuaVRWQ09mZW9IQUx0OVV6RzhrclBiMTNoTEE3SHp6Q0xjbUZCLWpDVEtMUG9NcGZxSW40UVJrYlhqcnczQmtubnJUTW51eVY5RGpFcm95dEt0Q3Rsbjc2bVVDVWJRRnNmNXY0NVM4X1k3TEFXaDltdXlZZmExY1lxeGNGcGdrWnBkUTFzU1ptTklDMzRRZk1zdDhJalVmSUJEYWlpZ2tQVm41WE5oTmdwUkREYXJ0SzRMOFNoSGtn?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">1 ‘Strong Buy’ Defense Stock to Snag Instead of Palantir</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-<div class="category-header">📂 Middle East Cyber (5 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMihgFBVV95cUxNZEEtT0l2cEU5bmxoek5DeHdVSlEyWjZsby05WHJkWUxyS3hOaTRYVFZLRVF5VmVlcjhFc1BVZ2hfRmVQUWNHemtubmJ2bVZxTmoyTXVMbXZKeE5uaXZlMTR4ZlQtY05zR05vSTlBcVM1NlpJVTItUWlVblM2ODBEa1NjZ05qZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Inside Palo Alto's massive $25b. deal for Israeli CyberArk</a></div>
-  <div class="article-meta">The Jerusalem Post | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMisAJBVV95cUxPS0E5T2tJRFBpQTZpTm94YXlraWlidG9yS0ZUbnVaWEU4bzVCQlBOc2t6dlp2TFplalRET1IyS3lwb2lldnctS3Q4LXhWclVHUDE5SXFYZXdJejduTlVyRFRTZ1R6aVNVOUkyZjdGOVFWZEZjRzZpMXE5N2RDYTZsYncxQ0trSGxyekNmUi1XallnSGxhbEYyZlFncGpYQWwzSGpYX3VxNktMMGk3YmU5YzIwX05YVmZYbkhod0w5anVOSWUwdERtYWtMSUlGVzRqZU5VTkJrc1NJQS14dXVud2g2aWM5c3l1SXNvck5lbkVJY215Sng0enhWcVh3OVNRcWphdkRQak0yanpCYW81aV9teHpWemNwejJpdkV1QjhUeTAzSDkzVnFxTDdIRTh1?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">How Berlin's embargo can block Israeli firms in Germany from selling weapons to Israel</a></div>
-  <div class="article-meta">Haaretz | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiigFBVV95cUxNZlUwVGI3S3c5MlI1VVBmQUE4SDF6TGE0N0hGbldOWGpPNmlPaUhTcENVNXRzUU1YaW1VcmlmUnVqUG5ic3lzRUFrU1Jwc1lyM0dmT3l4LWVsU21GbERadVJUaV9JY3E3Y0V4UngwUEhSdlR4dFl2WFl2ejJUVUpsQXZvX2t4eW1wb3c?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The Lioness of Judea: Celebrating Women in the IDF</a></div>
-  <div class="article-meta">The Times of Israel | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi9wJBVV95cUxQaklBX0pQY3hhZ1BWTHNvVWU2OWRNd3BfYllZakswQ2xUbkNXQTRtUDZDYWlGXzItek9YaVZiUlp2eUYyWHJsVFpIbTNxeTgzek1XN09EQTJ4ajRkTThQblowX0xZY2k5d040QkIyclU2VklQUS14aTZIei1MbkNqcXRVYjdVNkZ3cU1NWW1ZcUNWZEVGUVNLTmdFa3g1M3V4aTZkbmMyeE5hVmVDQXhSd29jbEVaRkxWeEVQWW9kekV1amZpbjEzb0hqOWJZdmU5NDRydWNvcXFBNk1UMFFuM0NUM0ZSVld6WC1fLVFDY0laOHByTVZGUDBZdkxoOUFnRHk4TF9IUW5LdjFYUEI4MUJOUzloQlY5b2dxSEx1NVRPR05Vekk4QzM3MFl1ckxHcDZYeVB6cF91TmpPWGdJeXhENVk1S2lpNkhrRXNfd3pGczFCdlFRRmg4QkhWT0FlNFYtXzFlZkd4TW5Hc2FUbF9qWndqbVE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Palo Alto Networks buying CyberArk in cash-and-stock deal valued at about $25 billion</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiqgFBVV95cUxNQkNSakNoYlREb0tSUlo1NEFlRmVNVzVFSEI3UUlvSlh1VjR0Q2hocVowalJneXI4OVdUTkpZbVlkZEZtc2kzRXAxWlBIRUkzbk5zWThGUzljQ3NEWUFaR1dyUGtJSHpSMGY3WXQ3bjhrcUxOMXJUSGZmY1NJTXQwTHRNU0FWTnJPZUQwRUJ1OS1lQlBSckh2WWJhTVhPNll2c21WRDNsa3QyUQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The Trump-Putin Summit: Geopolitical Crossroads and Investment Implications for 2025</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-<div class="category-header">📂 Phishing (9 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiwwFBVV95cUxOSlBxUlJsSzVWUlM0WWZoLUxfVFBJMHZsQlhjLUJfNUd1QVhkQ3k5YmpqRVd0T0NkUUdCMW50NEMxZGhKT3poZGVhVzM3MHFCc3VqZkh5TjdvNHRXRWpEaWZTUWFzaUNPQ0dyYlJfUndsbTZ1MW15N2Jzd1RORUIzMVhieWZmcWNHRjlRc05ZcndEclc1anIwd3hQSHVHWW5xMmhTQk1hR0otT2FvNG1TRG9wY0Njb3dyM0ZBNzVhRms4MkU?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">4 exotic phishing scams are surging. Here’s how to catch them in the act</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiZ0FVX3lxTE8wbWp1MDAtNWZ3RXJSaExxdWZmNjFqNTlwd29lTUQ0SjV3NlNaNHV2a3diLTJJY0FHcTdieTBaTzB1UnpNdlBkN01OV2JjbjIxVGx2YXhrZlJ4Uk45Y2NFZGZvR0s4TXM?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The $25 Million Wake-Up Call</a></div>
-  <div class="article-meta">Vocal | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMitwFBVV95cUxNa214RktVOUQzSEI0aW5idWtYMFBEZnpKUkdoRzJCTmZJN3ZNZnY0VktsMjZUOFNDSlQteEpUZTBrdlVwNUxHLXA0enBid2VtTWFmRHRXS0lrMEFvSUJJdkVFQWhEa0xiMTE2T05oTVhMOGc2M1FtZTFMSEI0MFd0RExTQjFSbUZ1MVMwN0lVUFUyVF84bV9mU1BZN3JIWlJGQm9rbkw1VC1VQzlrcWxJMWlCVWw5VGPSAbwBQVVfeXFMTlRRRndXWFJNQ3YzejRMdGJaTFpBQTl6UmV0S2dYU2ZGS0VXaDgyRGJOZ2ZHR241TDFDUFI0SVJnNmZoRHpwWm0tNXpZLUIxM0JCSEVHOTQzRThEY1lHai1DV1NhOTJYcFZmN2o5UnJkMDczM2o4U1c5YUtGTG9SVExMU000WGNlUFpMbFg0S1JhWVY2WVpnT2ZKY28wWFFWdzJlLUhvNld3bjRiNjdiNVk5a1BfN3dqTUtTaWU?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">WinRAR zero-day exploited to plant malware on archive extraction</a></div>
-  <div class="article-meta">BleepingComputer | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMisAFBVV95cUxQUE80UDdvWDRuU0tqR3dvYWtpS2Flbl9LRm9IRFp3M3lPQkFkalNBUlllbTlUd01OT1BXM2ZNeXpSVjJ0NUhWSHpmZnExSC1GRlNabENwbmcydlRzZGwtZ0plYXZLYjNqNjhIRU0wWTV3Qi1lQVg1Qko1ZUlDWVR3ZWZrRVU2MmtQM2wzUk42THRXMkVUVGptYjNqVjBjTTF2ZFJQM1NHeDBBNHVMZUZTUw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Ladysmith RCMP warn of Facebook Marketplace phishing scam</a></div>
-  <div class="article-meta">Ladysmith Chemainus Chronicle | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi8gFBVV95cUxNOFdrUWRycVBQdHBrWDdSV2ZsLWt3aVMzMUFhNzFSZkZOZ3RKUmN2MWFDRHBRV2prNVQ5YnotSUw4UHhFN1NGLXZQTHk5czdhU19VLW80Z1pZbHpiYWQ1MXRXRlZqckF4eG03c3ZwWDdxZTc4SERGbGNxWVNJZC1NSnJySkt5TzNwWlRPX1BHT3VUYnlBTERiNzVvNHI1cTNXQVFsa2s3NUs1OWd3V1N3SGdyVmlEekRmcG1UNk9MRU9Vdi1ud0J3OFd4b3BYZkdvX3BPWmFhWkVOY29xeEdGa0RsX1hSUnRLTzgyWkluVTNpQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Scammers are impersonating these big-name companies</a></div>
-  <div class="article-meta">WTHR | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi6wFBVV95cUxNa0dFUzNoTzZDSndNWDR1aUJWaVFtNkNyRWRFTGNZbTVqYnJ1N2xsU29HWVpxNkJPOGpjY1hrb2F3MVAwa2N2N09qQ1pWSkxqWTQxaHJCeTF3dzlsb0JvdkE5Mjhrc1R6eFR1RkVaWmVKNzk0cDdQckt1YXFMZU5tclZQZ1c5alY3eEtqVEdHNlBGcDNhczZYUXhRblNoS3dDT0ROS3RGTk1TZUtpQktieFZQaV9fcWJ1MDZCWUlfM1ZYRmxBVDRFZEJvOFhoa3VQUF80QmdPZ2xfMWU0YmNmNHhGWE1jdm9yNGtB?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">A crypto investor has lost over $3 million through a malicious phishing attack</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-<div class="category-header">📂 Malware (4 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMirgFBVV95cUxOMVVISkktcnJsdERVY0Fza0ljV2hRMXkteW5UUmdnWkxuWTZiVzlrNmhFVWVCRXNyRHlOamt1dEVXRjBrXzF5RnFkWk9xYzhab3FoVmxLTDJvTkdpckF4NGp6WE1sT21STENaWFR6cjFIajBFWi03NE1hc3NrclozekJhb1IteF82UWtpTl8tdjBrMXg0UnhSZFFsV1pabTFEVHh4MVM0Q3h5VHFQQkE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">CISA releases malware analysis for Sharepoint Server attack</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMibkFVX3lxTE1BTkVlMDdQcUJSSHFOUFhtYWlMNTlIdVBiS0lqX1lkOWdSN2VQcG5RQ1o2VWRXVzhFRlNHT01PUmhZYk52S3AwbnFwWm5VSXNhVlhZVWY1ZHhnR2hvNjVvdWROSU5vN1VVbjdlWnNB?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Your TV could have malware on it right now</a></div>
-  <div class="article-meta">Pocket-lint | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiywFBVV95cUxONTBoQlNJbVQ0YlhhVEVDQ2E5ZTB0eVpYM3pGblBNdUZiY05WQnF3TUhkMXRzUFpHZlMyUUtPeGdUbzZvczF0dHJ0TkM4emFUMGcwTmdlQTNZSnhIVlJ6VEtWX3ZnTHVXV2s1UHVxd3pYZVlNUzJMQm16RHBTRnBsWGZReHppRzF4ODJORUdsRGJEZFhTNjlPLXhkWXRqVHUzcks4NUJRcEVaRTNKdDhPSEJsVXhBTEFmdWlVSVR0QnBYRGNUZXJHUFBDMA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Malware camouflages itself better: one in 14 threats remains undetected</a></div>
-  <div class="article-meta">it-daily | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiS0FVX3lxTE1UY1ZyMlBybnJUb3otcS1iWHBJSmJld2FUeGNrQ3E5TkROMzFyTUVfYnR0Vzl5QzVQUU9mcEUzckJweTI4cmh6TnFaSdIBQkFVX3lxTE9pLW9WMFlQU3pxWnBNUWktR0UxMDl1ZFFaQTBUcXNXNFp6TEdRX3lBSS1mWEdkd2ZvZDlvcmFwOWtFQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Characteristics Of Infected Android Devices Badbox 2.0 Malware To Avoid Being A Crime Victim</a></div>
-  <div class="article-meta">VOI.ID | </div>
-</div>
-<div class="category-header">📂 Social Engineering (4 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMitAFBVV95cUxQMl9MS2taZHlxTV82TXpYZjRkWEg5dHlfdkFyWldHVEF2QkhuMXVWcG5ORnhVeVQydHJCdGNfUmozc3hhb2NwWUJ1WVItSm9XWDJJRVRLUFFiWjdRLXVfcFBqZnAtWFZ1WmRGTFRxTHNtVnlsOWM5ZERkY2tCU3dtYl9HNFR6aWNIWDJFczN4QjJ6aWJPSWUzM3l2TDFKNXEtajNFVzhNalA4ZVNQTmROdDBneWs?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">UAE Cybersecurity Alert: Discover six social engineering scams threatening your online privacy</a></div>
-  <div class="article-meta">Gulf News | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMilAFBVV95cUxNQVN5QzlOR2tJV1h5R0dlNl9keEtyTWlsRGx0R3U4STM5UVpVU2RucDdRTHJxMTEydUM1RGtfbmhrYmdRSHRxb09LSjU0akpzaHFybWFGQTNfcThibnlXVHVYaFBlbXV4ajlyYlEwYW5tXzU1V0dLaTRaUUtMbmpTVUpxNHZmbGlEV0JKWURYQzlTRVdn?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Huge Wave of Malicious Efimer Malicious Script Attack Users via WordPress Sites, Malicious Torrents, and Email</a></div>
-  <div class="article-meta">CyberSecurityNews | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMihgFBVV95cUxPbms4VzJ3d2R0NnVMeWt1VHlFS2FLejM5b3QzNlNuZXhOamQwVXItZ2xib2dNYVI5SDZtVjZtb01JVXYxTmhCckliQUY4eUx5enhkenZjNURHX21XWWhFb0hIdzZNSzF4TE1rd0RhVkFqLWpLLTVsWGNBMVJ0UWdCZkt0QzU1Zw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Black Hat 2025: What Keeps Cyber Experts Up at Night?</a></div>
-  <div class="article-meta">eWEEK | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiZkFVX3lxTFBXcTVXRVRHbnVBZHVEeWtEb1JBQ21tdnlHazVub0VQOGNXOGctanN2VzFLZHhhd0Vwc01GZzJtOEFQb1RsVkxZWDloMEhuX2pzMWlBS2dkM0FLZUQ5UV9VQWN2bDNXQdIBa0FVX3lxTFBkMkdOa2llUFdFclFlLXVWTDNjYUVGblA2SVNkMXVjY3V1dmhpYVRXR3dEUElqdFRPR0RxOUVYUEtGYUp3bVQ2LXRmUS14SzVDVjd1SFd6TFBHTjZaSEp6cnlXRlV1WE43QjUw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Over 5,000 Fake Online Pharmacies Caught Selling Counterfeit Medicines</a></div>
-  <div class="article-meta">GBHackers News | </div>
-</div>
-<div class="category-header">📂 Healthcare Security (3 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMingFBVV95cUxPY0U0YmVJVzlOaHBxS3ZaY2MxS25uMURZTnFoRUpkaTNnak94WVZyUWwyOXZRT1cyaEIxdC1UTUVrNHF6eGNkTF9EZWtHSm9yM3piMHBobTBIR0hadm1wRWlIbmJ6cjc2dDNjOXpvdnJheWEtdlJjSGN3ei1YWmFXa0J4dTNkOFVHYWRlZU5HSnA5UGlKWWduOVBvV2ZBZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">In letter, US senators admonish UnitedHealth after second major cyberattack in a year</a></div>
-  <div class="article-meta">The Spokesman-Review | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiwgFBVV95cUxOSlRsV1pGZHhET3JHV0dxN0d4Rms4cTVRaFRVVkF1Mm44emUyQlAzWGw5N3BGdkJQOFUzXzRiUHBUaEM5MTZ4dmVpMnM1b0w1aGZWSmVUWTlqa0k1eEJBdERwNUtIUnBWdWs1VTlxRWNGZ2NGLWlBeXpFN3M3dDRDd3FFSmU3QWQ4MThIYUFhNWg5U0Y1WW5MNlpTX0lKQU8zSUN1R3E3WUludUNaMjRJUngyX1JZM3F5cWpuYUxhV3V1dw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The Rising Cost of Insecurity: Why Public Safety and Healthcare Campuses Demand Resilient Investment in 2025</a></div>
-  <div class="article-meta">AInvest | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMimgFBVV95cUxOZnFhX1kwbmlBMVE4UlZkbGNVZURndW8tXzNaUjZ5R3RvdmE2cjQxNVJIenlpRkEwQURndjFQVnh3bjVMdndRd29lcFhuaW5SUnN0Yks3Q2pybWt1aDFOU01OYjU0WWhOQUZFY1pDMHIyUzBtWGNveWhuZlFkZm9TNUZuUHp2RFdhLS1xbU53N282dVFsUDlWVHlR?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Insurance Firm Notifies 156K Victims - 1 Year After the Hack</a></div>
-  <div class="article-meta">GovInfoSecurity | </div>
-</div>
-<div class="category-header">📂 Financial Security (5 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMivgFBVV95cUxOZU1ncWJ1ZnZNOTR2ZV85d3lsWUtJY2tjX2h6NW1SOU1QNktQdVlPWThJWnVkNnFxTDNNbzlNOWk4eUJZNUhsUmZfR19abFBCZHhUZ1JRbVFvZEEzRFQ3OWMzWWQzMDRLMEJ0eWo3bXVhYWttbjFDMG1QbnFTZVJycndoSHQ3LUFVTVFBMHdRX0NTZ3YzRUhDN1hWZXNsM0NveGNMNGktNEFRUm11V3U3LTFtX3FCWEdTM2ZHN01n0gHDAUFVX3lxTE9fQ0VYWTl6TUlDamI4aTJtajhMZXp1R0xuTXZOdzRmbUwyc0Jrall6aGdSckFOdEZrbXdHQWxaa2JJLXlPYVN6QXBneXNPWGlwSmtQTThycEYxYlAwV0ExS0oycG1fOWE4aXhVbjRsZTRKZHFPUWdQUDlqOGtTYUNDSExyLWs2WkVEMFA5NHBOclg1c1dyRkFibGRMUlVxZ3A5N3hWZ2tZOEI4MWJXQzkzN3lodk9NM1BqR1pGS1lmemgwSQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">One cyber fraud every two hrs in Guj: LS data</a></div>
-  <div class="article-meta">Times of India | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMie0FVX3lxTE5tbnAxeEZITWZZcFlwd1ZadEhVTlNoTG5oSDVpbEJZVXBGaWgwcUpDQmRqV0VKRUhfT2JpeEtYazRsNDBCZnhDWms3M2Fvcng4c1FWcDN4eWNmZEZMTXBqbDJBSjc0S1ZiTHZab3lkZjZaNzVfWGNQZ21CVdIBe0FVX3lxTE5tbnAxeEZITWZZcFlwd1ZadEhVTlNoTG5oSDVpbEJZVXBGaWgwcUpDQmRqV0VKRUhfT2JpeEtYazRsNDBCZnhDWms3M2Fvcng4c1FWcDN4eWNmZEZMTXBqbDJBSjc0S1ZiTHZab3lkZjZaNzVfWGNQZ21CVQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">5,000+ Fake Online Pharmacies Websites Selling Counterfeit Medicines</a></div>
-  <div class="article-meta">CyberSecurityNews | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiuAFBVV95cUxPTWI1bGxBQWJUSmN5dE9BWWhmTjJBdFRfbTBfeWFZZ3hhOUhKSTBGZ3Z3T1c5Y3dXUWZuWWx2WEpkZWZidVY0cjV1MWFUd0JlRmF5WmI0WGpGSkJ1bkJOS2IyQnF3ZFR4X2lrVS1HTk1Vdjl4YTN4SlFFbnJWSTIzODUydG05emw3Q0FTTEJXZmVvNzFFQjA4ZEZtMDFFTnN4YTRGMnlSazZmNFFrOV9ieFdKbDA3cmxy?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Spike in cyber frauds: Chandigarh police, stakeholders get into huddle</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi1gFBVV95cUxNV2stdWdvWUpBZ1hEYlpIUWd4dENtZEVxNlpzWkdKMmw5eWoxRV9oMXd5WmM3OTkxT185OTV6QlRWdzFMMTZ6X3NTeXRtNkRjYUYzWVljM1pvNHNhNm9uN3dWdTc3Um5GSzhQazIxbWF0UjRHQTlVSWRya0lyYXEza1B6Tl9weWxWVUV4djFxMHI0T0F5eEJ4N0pJMHZNTzVpQTNFY2hweFMtV28wV2ZFV09PVGhTMFBzVF85cGQ0d2hZV3RjTVRLc3lYTHN2UUtjbjYtZm1n0gHqAUFVX3lxTE5hck9WRm9KX2c1SF9nNlpuRzZ3T2JtMzZRaFByck5KUnFEQmxEVm52Rm5ST1VWc041LXkxekFSQlZVOEViSml0TkJJaFZHeG5hMFZfdmlFREpGWXZRYm5QTm9OenpyTEhqY21udmk3VF9JOXFqbFRtUVpjak1QbWs1U0xWdkZMbVJBWmNlOWVtdHFsOGR0NTVXVjdQeU9XeTBMY1hhQzJqRTh4VGlDZWZlZ2RUaS1tTVktMjZZWmYtN0xWLUFXZ3BwU3d0emJiXy1ybUNOM0hMQVM3anNENmxtakRoZDZ5ZVItdw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Tired of getting online scams? These are the most vulnerable groups and financial impact of internet crimes</a></div>
-  <div class="article-meta">Diario AS | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiuwFBVV95cUxNNzc1SW04N3lpa0lWbVBsb3RqbTlUTmtHdTFtQi1kOVlzMGlWRzc0WHo3eGU3VVNqZW1hRXJ0Z055VjQybC12UFE2R3BpQ1hrZXB6czJhTWp6WWtNTFlvM0NZandzQUFTS0hhQVAxdzVjaFZXM09Jd0RhNGZ1RzExSzBmbUdwUUxiZ2FJbEJoRURHYUpJR3ZKUnJVS01OZEpfdVBzMzJIRWd2MGpab2wtTmpTVGR2S3ZQSTdF0gHLAUFVX3lxTE4xY0FSeHNhRm1zdnZNTlNMX1NmNjF6cGtJd0dVTFZWS29BVUdGTkN4bUh1VkhMT0JUV0hKQ2ZFMC0wZlQ5M0x2VnpXdS1EcmJmT3dLVHB1azNwY1hBYWlkeWFETVRWeERES1hWZm1XOWVFMEJNWm5jYTl5WmZVUGw0N1J2M0pCV1VaVXo4MlFHUEpkdDUwbGxWbnBjNlk4MEsyMG44VUFCbmJSUXpGTENtQVlyaG13cE9HZWlaamoyak5QV0xQOV9zMGNB?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cyber security capacity building training for financial, fintech sectors concludes</a></div>
-  <div class="article-meta">nation.com.pk | </div>
-</div>
-<div class="category-header">📂 Maritime Security (2 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMioAFBVV95cUxOZGRVZ0hfZGhkRUFuTGVoc29KMmhPbkNjVXZqVi1NM09yM2pvOVRoQ0pqazVWQmNPc2tXNzdDWVhIZ3VsUG9nNEdZdWV2UzZiT0FKYWVqc0lOdTJWMFVldlN1MzRvWl9VSkFDb3BXdW9QUWxOalpOQ2JXeklqdTVwMTBqbkV2R0Z2SEtwU0F6RHhFTUt4Z1BlUWc4Tnc1RVZF?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Coast Guard to commission Coast Guard Cutter Storis in Juneau</a></div>
-  <div class="article-meta">Alaska Native News | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMic0FVX3lxTE50VnEwSUpoT25kRERqRmgtNUdHMnRhcTFKMHFMZmxJV2xWZUlVNTdFNEVvMUlSQjRaSlN0ZUozYWlXNkktaXZkbk40dmlOWVpYQUJtRWdSNnEycHgwYjVGc1E3Q0NfYUxYdzBUWVV0Z3lkRVE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">FG saves N4bn daily through IPPIS — AGF</a></div>
-  <div class="article-meta">businessamlive.com | </div>
-</div>
-<div class="category-header">📂 Tech Companies (10 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikgFBVV95cUxQYkVPVFpMZHVnWU9IU0dLcVlUSWRBbDNYak42dUpxeENTaVBjYjk0YUxRd0RHeGt4dnZYMDBPd1FnYmhBSDF3X3BWQXBMZno2QjVOS1REcGFWQmQyYmh0OHZnYWwzV3NvUGdnb3RfcFlVWVFVT2NIaC1PRFpkTG5CcV9iZEdyRkNSQTRyYTJzX1VGQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Trump expands use of tariffs to reach national security goals</a></div>
-  <div class="article-meta">The Washington Post | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi8gFBVV95cUxQSVBSYTFYNHBMNlVkN3lhQWdPbGs1Skp1NnJrV3lBY0hZemJ2ZHVIeG9QRFVHRGllY2hYM1dYMmpGM1pBdGp5ZVJOTWZaYTJkbnJIdHB4dzI3Um1ucXdlZXBDM3RQV1pIZzlNTE9wZEtac0JYLWY5bWpQc2plR01Ua0tRSnN3ZXN0eFU2RlpLd2Q0eWZtUmpZQ1ltdkJENE5RQ1hWU0JqX3dEekU3cmtVWFBMUTdzb1c4b0laMjZUZGhBZXh0RUZzMlczR1VRbnVWNmUzRzYzUUNlU3UxNjFtOTJoOHJTckxXd0pnRkRjVHRlQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Huawei’s AI semiconductor output limited to 200,000 in 2025, US commerce official says</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiT0FVX3lxTFB4RnF0eGVFWFVlcDhzZVB0RU8zdU5ac2JRMEdyMnpRWVVoamp0cVlraWhsS29IemNONEVYclNJaW5PbEh0a2JMd2tXbVJkNE0?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Taliban Installs Over 200 Security Cameras At Customs Posts Across Afghanistan</a></div>
-  <div class="article-meta">افغانستان اینترنشنال | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMivAJBVV95cUxPeVcxZk1RUkxTZDVMeWdNSmNDZzA2cjBfb09wREpQUXJtYnBUZFNrbW5DZExpRlFCTjhsQ3ZHbHEzbVo1ZUJxMWxpeHV0dUVla0lfOXJyN0JkRkdUNlBhWEZtQjl3YmVLU2NHajQ1OW10aThfQW9hbVNOX25hbUppZVBzdGhYZU1NWW10VDdoWkFzYXBVcVNwXzhSZDFSRE9kQWE3WDNVZ1ZoSXdWbmE4MXdndU9zX3JZX21YSTFEMnUzb2pQMFlJTG8xUDROaGpTRjlJNHQwTGRpdk9zWFg4NmVOVmw4SDUtUVJDMnlSbFlXVU5CN2F1Z200b2tGY3BLSVNaa1ZMc1V6NnA2alROUVpZM2JfblNrNVBBWlh4dlRBRE50QkdPMkxyVnFMU2RncXRBVG9tdWlUM1Vu0gHCAkFVX3lxTE5uVFJIV3hHVlZ1VFBvNkNZX1h6Y0VtSi1jbkE3Q29nNVpmSnZUUFJ5UWtoMTM0cmMzVVNoeVUySU41Z3FfNi1QRXJsTHNTTUJvYk1xNUdQRVc0Z0VYSDV5bFJ5UEpjR3d1T2N4dkJpdUh3QTdfSE9KTDNLMmVEZTFSZF9STXpLMVptTVJlRjl5cldSWUNuU1UtT09TeWhtaFBnMWoxc3ExQV9xNTROczVGV1RxZFRBWmlQRzhDdDNaZFhUdmpXZjN3Wm1RUnV0V18xT0JOdWhMYkpHRmEwUmZRVG03ZndmbElVcnRuTnBQYzJhNENxTHI1YWQ4Z1hkVXZxdTh1X21lUmlhZ2tNQnlJT3FnRnFFXzFqVmFBNVN6SXhQaW80ajNnRVdnUmtVTWpMTGZXZWxjYzlSd3FCWU8zM3c?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Nvidia CEO visits White House to seek licenses for 'designed-for China' AI chips, here's what made him pe</a></div>
-  <div class="article-meta">Times of India | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiogFBVV95cUxOclBpOUpUcDZWVko5QmdzTHB1dkVZMkRsaVVuaUI5VFk2ZWF1LTFqRUVoUkhtYmxVUjNrYzYzbU1hQVFXRFlkY1g0V1Z1UXFWc0VsVFA2azM0ZnZvbEQxaDNzQlh4T0NLMnc5Qjh0QUxWbU9TTkdhejNsTVB4bVR3NDlxWWVDYTZvRks3ZGx3SkhwV25rWUwzbmswQ1d5dE5uSVE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Nvidia rejects US demand for backdoors in AI chips</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMilAFBVV95cUxQaXZZN0tuWUVHcjhDTVZaUlRoT3JwNnJOcDlKNDlrdlo5OW5IWkJoT0NzS3B3ZF9iV200TE5STmdJWE8zUURLQno0aTZ3UU1ZSGFHU3ltdW1taURHcFdoaVN6NlBweGhTR3pTWlRYUUh3SEVlWGQxZzRqZXh4Qk9KdkNQMHlYTWM4eXZydi1nd0lsZ0Vk?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">People with either an iPhone or Android urged 'don't click'</a></div>
-  <div class="article-meta">Bristol Live | </div>
-</div>
-<div class="category-header">📂 5G Networks (8 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMipAFBVV95cUxOTlA1aUtab2NHLTJ1Ri1WbE5XVnJzTHh6aHpuWmM3bjJoSkhERk9NTUM2ck1XWS04Y0tRRXlwcXZFTGpoV1pOSW8tSXBTaXd4ZFV5Ml9hMTZtOExna2wwd0I2dUFRYXJLQ1RLT2FBSDlROUVDaWE0dTB6VDhWeDd1NXpnN0xYWWtHX3dFRElLWlNkUWtWaVpQWnhUbHQ5QmhVSUQ2OA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Inside Black Hat's Network Security Operation: Humans Are Still a Problem</a></div>
-  <div class="article-meta">PCMag | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikwFBVV95cUxNSHk3TmVmMjd6cElCbnFsSF8xNVFMelhmc2tadkxfZ21FM0FlY3U2Y3ZTM1U0THdCUGZoOHRzTUtmalB6cnFCQ1FQTkpfZlBnM08tTDI5Sy1GOWVXRzBiZ0Q1TEhUUkZQeGZYQzUzRnJNMkZwTHhlOTdhYUZqbmd0V0Q1eVBrS3BoYkV1N0tzUFh2bTg?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">What Is a Cloud Access Security Broker (CASB)?</a></div>
-  <div class="article-meta">Trend Micro | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMioAJBVV95cUxNemlDZXJhWkdXajhQUVZhNUI5SzV5V3h2TmRYNHhyampOUzF2cmpyYWFQLTBwU0pqbHZWenhMR2hwZkg4Q0VBTldHLUdTSHlUdTMxdDJ4Ymo5SWgwaTdNNGtCOHZZemRJRGxhOURNblc1d181ZXpfdloxYVU5bzFFb1dQelRWZUZBTllEbTZCci1DdWhlSk1sME9oY3JacjBzM18weDRxNk1xdkl1dVdXUV9GOHk0RnRzU3pwa296VHZiSlE3Um5DdzRDSUhBSktnZU9McDloSjlKcUZncUJ1VUEzUnVUTXJGLUh0STlFcDlKaDNIS3VEWk95YlpYdHlTNVVubms5dXBJcHZQWld6OEZRTnJFYWVuRXFsX21WWjbSAaYCQVVfeXFMTV93RllVU00zR2xTZ21NTE53ajJqWTd1N0c5dVNVUEstbHgyaHdWUnM2emh6bE5BSkFncXMyS2FlMldLeDBfd0ZVdmdvalRBNi1TV3JYa29zanQ1MGJJei1vX0ZiUDg2Z05DQ3NwN3duaUNXa182UE5SQ2swVnA5THF5cTFGd1dBbUtFeEY0U3ZNQzF1MHBCSFZiVFM4RGpPcFZqYWkyU1NpaDV5b0hwRjZJZi0tZElFU2ZSc1d2T0pWWk9kSTRQWUxMT1NzZ1lGS091STZHblBBR3lwQ2hNeWludklnOTVOQkU4Ym9lTnc1bUlxWUtBYVdPRmlsUFNEM2NSRjE3T3dvdk9xVjBMYnprNkRJTl9YaVp0emw2ZXh1cFN5Sk1R?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Three 'Big Questions' on national security that made Donald Trump ask Intel CEO to resign, saying 'no oth</a></div>
-  <div class="article-meta">Times of India | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi5gFBVV95cUxPY3l6MndBcmplRnk1Ym9GcGZkZ1A2VnFQR2ZXNmhwSFllNWk2Y1p3UE94NTQ1bldxMXdnUFM5WXVhOW40THBIRXdvZXBHbUd6dXJLVHpCS1U0T3ZWelpvU0hRMjAyaGJ4b0NrRmVzZWh1bDUzRS0xQWhieGoyUWNFaGhubHRVQXRtX0RDMHltTDkxUERuem1EMkFuSnkzbkR1ckZUck91bXpidnI0eDN2WU1JREM0TEpTTV9xWWFFbjBtOXRkaGNxXzFFV2Vmd256NVpweG9WYWpuMFZqZmRKLWVwSEpDQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Vivo Y400 5G Launched in India: Mid-range powerhouse with AMOLED display, 90W fast charging—Details here</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiSkFVX3lxTE0yVnF3S2J5Y3ZocnVVMFoxenZDd3R1eWlFakV6ckIzQjVWRVI0T2xCYW5BdU50NFY0V3JfZ2Rtb0ZydzN5c2NpQWh30gFCQVVfeXFMUFFjUzBzbEt6ZmVWZWdjT20yZmxBREJKRGo2Vmt2R2t2WTc5b3UyMlF0Vm1MOHBvNXJ0R1RUYmg3dm93?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Samsung Secretly Stops Support For These 4 Galaxy Phones, Is Your Phone Included?</a></div>
-  <div class="article-meta">VOI.ID | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMizgFBVV95cUxQeVo3aG1BUDVyLVdXNDE2ekQ5cFZRQ0p2aERKSWl2dWJLdlV0WHptaElNUk8yV2p2bTdDMXFLUEhvUWdFSnVkZlZZSkY5VE9lODN0NlJta3VlczRNQV9sTGdubDhhWTBhVjFuT0Eyb1VxamtPaHlYRUFseWxFOGc0SFViZFhCOTI1SERJRXR6Qk9WSVV0R2ZVckRCWlFoWXVEYzdSX1BXY2FGck5zR210WnhvUDY4UnY2WTUxTHNKNUhtMzFmd2xxU2I1eDh0Zw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">iValue Partners with Cnergee to Provide Scalable and Secure SD-WAN Solutions for Indian Enterprises</a></div>
-  <div class="article-meta">Machine Maker | </div>
-</div>
-<div class="category-header">📂 IoT Security (6 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMihgJBVV95cUxOcEkwLVU4UjBqXzBVYmY5RTJVckxPZ2VhS2Z1ZW9BZ2FvUXYwaGRzWkhPWUM4NkYzZWMyQVN3M3BzUFpJUThJckMyamZ2OTNaWE05dkFTazBCaEEwWmRNamw3aERQMUl3a3lFUG5jd1JvOEdlOHoxVW9kd0I1X3pZalBsNUlRUTI0RHNYYVFqX3AyVWlCRkQzZUtqUHBsZG45NVA0UG94UnZRc0lzWE9qWXpDWmtNWG5SemUzRmtIT1lQQ1I4ZFIyNHJxakE5X3VpbFhhcm5MMGdFSU5rbVR4NThJMmRiNldaRVFqZWgxSTNSN0hBWU5admpDelVHdVJjdW1Ka2VR?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Fortinet’s Fabric-Ready Technology Alliance Partner Program Exceeds 3,000 Integrations</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiogFBVV95cUxNcGdoRmZyVGRUZFEyRWRPTzUzNXRYeVJDRnpaT09EN3Jkdk9iR1lLWWpocTZvU0RMeVVvR3lHZWFDQ201bWRhd2Z2R2RvUUZGdjZkRkdWVHJCaU5DY3BXdUdHLUdfNmJaa3hkYjdYU19RUkt5NHkxaF9iZ2hiUS1MMzFMaFVLb0ptaWRIMURwMU84SWZHNWJLa202cllHNXp2SWc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Critical Vulnerabilities in Securam Locks Enable Bluetooth Safe Breaches</a></div>
-  <div class="article-meta">WebProNews | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi9AFBVV95cUxPQ21VWURidnVhaFFjNktWYXlXXzl1UTBhVHZJdmFMaWQ3VHJuOVlnQnFRazJzQTVIb0tfZkYzTUppU29tTlhqZmdGZnNiYlNoWkdDZGdzN3E4bnZpc3B2MTdPNHNDa1dRMXdnc3JMY21jNzA2S1ZPTGxWU1FHb2NYcjJxem41S1NsNUJLbDlMRnJ4RnZJcjBlR3RtbUJqY0w1cE5WdGhvLXpYSWZWNzZiWGdBNDFKd3I4STg1MHl1OUFCQ2Y1SC1NdWFxaDRXbktVbEJWNEI5Z3dYS0VBQ0w0dlJWOUFxVXgwR1lNa1FibDVGcThz0gH6AUFVX3lxTE9DelNGTXowNmpwb3FJejJ3dHJjTkZvdmNBNldNOTVEd2FudFUtSmRqNVptZF9JQmkySm0xMVBOUFlKSVNZX29QQ1BkaFJRSm1VdjM2OFlfWUxzaFBfZ1ZKRjVFRlJaQktVRDVrZTd2Rzh6Z2dHUHZFZjZqUE01MmxEVnIwa0dZME1IWmJFZ1pjR1pIYVNrTV9jWXdoNkVpRjJtSXBmUm1SMlBqM2k0SXIyRVp3UjEzVkRFRExVQk5samhMM1liNVhOSjExR01uaWd4Zm15YXo4V1QyeFdIUGtWVnVweVYwMk5yYWozMFpJTzVWRlEtU2xWX0E?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Vodafone Idea’s enterprise unit exploring IoT-enabled smart meter business in multiple sectors</a></div>
-  <div class="article-meta">ET Telecom | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMif0FVX3lxTFB5eUdWeG5adS1vSElfYjVqNEp6aEJwLUtVTGtBWFg4VnE2aFRhdGtaVjh0czE5MGZlNTgzaF9PSm9CMXpZRUhqc09MZWN4VUVncFhRVC1aUEZyTW95ZUxDX0hxTlRZQXJJRWRETWJLbmJweENWdEtJV3VPTnJ2VVk?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Circuit: DIY PIC-Based Radiation Meter</a></div>
-  <div class="article-meta">Elektor Magazine | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMitwJBVV95cUxNQXB5a2ljRDNEM19wUWpUXzlXOWFoeG1vZXZ3UjFkR3NMaGNDV1pTTHNGMGxMVVQ0bl9iU1RXeXFiSGRiUkZMWTY2WmNQck9MZnJIdnNELWE2NkpyeGZhbU8yRzQ0SVpoc3lBME5IZTMwemJ5S2JwNHU0WmdiNGQxRUs3V2VIMjBBNEFIY1ItbWNxdWQtWVc4d1c3bW1lNnppemt4SFRBOFZUaUVjUjBJNGNwQ3dkX3puQzFGVFU2WjZPZ0RsWXhHTGRhMjk1bF9aOUxSeFRIaHNmOFJ1ZEc0QV9wZ0xtSnJHcFVKUElpN2hCV3pkZER5dkFNaWxLZjdKcFlyejItbW43OEhzY3FMdXZxWmRzVHpGTlhuOEJvM0dIcUlNekdydEJyUHp0eEQwSkFMUzEzaw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">What Happened to BlackBerry (BB) Stock This Year?</a></div>
-  <div class="article-meta">MSN | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikgFBVV95cUxPb0hvazB3b0FlM2ZTNkJFREpMR2dkSW9RZUdtQkJ1Z2U5eV9ocGFIYlRFaTcwUW1jTVc4V0M5a2dBVWpMTjdQN1BucU5iMWwzVERJaWhUWHNaN05NandTWWxfZ3UtS2VsaXF4enJaNFRfWWNmZ2kya2VOZHd3anp6N2RqQXBaZDJLUEhQeDZNMnNoZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Advantages Of Smart Farming 2025: Proven Benefits</a></div>
-  <div class="article-meta">Farmonaut | </div>
-</div>
-<div class="category-header">📂 Financial Times (9 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTFBheHY3dEUtMHdORENHLUJDMzQ1NERpeHducUJIV0pNSV9vaTRzMi1KbkMyZjdNR25OZUo1ZFJKSUg4VGZndVhQeFpQa0FfWDlVU3g1dDExQ21EV0ZXOG5DNkJFM1lfRUN4eENUNGI1MUg?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Donald Trump to meet Putin in Alaska as he signals Ukraine may need to cede land</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTE9nd3pGam5YdlNLY2xYZFUxaG9JeDY0UkZfWkZsaW9sVjBpaHQzcVNjSVV4dXdHeEhOdllwaUpVU3I4V05fVXoyVDZoZGJKWHBXdzlYaHZmQ2E0Ul9LdWxlUGxhS2pNNnpLR0JfbkpBZzU?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">China reopens Covid toolbox in battle against Chikungunya virus</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTFBUY2w4NXp3VjQxYlJkdk40bE1fMnhwN2I0SklrMmdrNWUzTUNoRnRIbVVNUEJmR0hhcXktcUF3SHNuQXFIcWJRYTlsaE1WV2RzOWNTVVBDbklZbDg1ZWotbkxSRUV6VWpVNzMyTW03M0s?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Zelenskyy looks to European allies to stop handover of territory to Russia</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTE5ONnc1Um5wN0ZaWW1LcGUyLVZ5STVkdVo1cDRLblZEQkVaeFBra0hVQWpuZ3BnQjRRbDBNSjFheW81LVhRTVd3LW1UcjFFazhBMmdfWnN1WUk1N3E1LTBZQmI3UVdTZ3NGRmdmN3NudUk?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The futile loneliness of a crypto short</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTFA3TkhyZXdlekNEQlo2MU8yVWlVSTgtMzl2NENDWllpOGpsR2NUR1VVYnRwVnU4WlhhMzFoUXAtN215N0NteE1iNFFhRnNPNG5TaEhGNGs3Q2JReGUwRWFjMEdwekZfRl8xbmhUYmczM2g?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The problem with Sydney Sweeney is you</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTE9HUVlhbC1iVUlWSWZVOXY4VVZEQ0V5RzhRcFVLRVcwQmdvTm5Nd3NUcU9QcDJVcVo1LXJqbUVvOWE0Q1FvSVU1cDdOSHdzUGdLNnRLb0ZPQ3BjVHBweW5XRUNlSHZJelJ2QTZ0RVF6TFE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The importance of slowing down</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-<div class="category-header">📂 The Register (7 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiekFVX3lxTE54VC12Tzh6N3NaLUNJV3Jiem5lRlJ6R2wzZkljTGN6aU9lcHlTMW5lSHdxZWluMnJBTWdVa2lmWUZ3VFdGSERMM0NSbzJCMXdFOFl2M01JdVV4S1JLVlQtUU1sUTk4Si1iRzhENFliWDBKRUE0VnY3V3l3?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The dead need right to delete their data so they can't be AI-ified, lawyer says</a></div>
-  <div class="article-meta">theregister.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiX0FVX3lxTFB4ZVFWZWI0TGxfeElUZkwyMzZJUFNzT0N1WGJOb0l5ZU9SNl96MTNOZ0pWMEZtak9OeGsyY3ZqcjZzemY1dEFSWm02VDFxRzQ4MVJBUllVUUU4ejFpZzNj?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The International Obfuscated C Code Contest is back for 2024</a></div>
-  <div class="article-meta">theregister.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiakFVX3lxTE5yVEd0SVNLNFhUektMY3I4eUc2eldFOEdLSEVseF9YMTVIR25LNWVRM1Z0M2QzUFZ1TF9USFo2Xy13SnR3Vm9wbzFWalRldEpWSFFId3g2OHA4ZUVRZkpubHlnNWdJUkFPN1E?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">UK unveils plans to 'transform' the consumer smart meter experience</a></div>
-  <div class="article-meta">theregister.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMihwFBVV95cUxNdE4wcEV5RnJyeHM3eDZIaUpScVl5X1JmeVJid0hPNmdsV2p3REFSSEhSTG5NcDc5ekhfNUdUdzlfRXhuTl8zOXRSM28zWDB3cFNFY1NyR05NaHA1Yld1d2hBOVNJQ25iREliMGdkTnBDblZ3RTBxcnk4WEh6RVhiSEFwZkJsOWM?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Humans outperform AI models for brand safety, but cost more</a></div>
-  <div class="article-meta">theregister.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiQkFVX3lxTE13WFJOSTBSU3k2QlNHZ3lVRllMWjFxeWNnREU0M29CR3hycFBHLXg5TF9ZY1c0TGpkT0kyT3d5YnVnQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The Register: Enterprise Technology News and Analysis</a></div>
-  <div class="article-meta">theregister.com | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiS0FVX3lxTE95dFNJaTdkQ2s0bUxyX2JRZlFLb0lIUGZGamRidGlqSHdGY0syaEZJcXZsM2ZMckFkVkhRRHhDR0RyYVdXbnB6WUhjMA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">AI • Page 1 • Tag</a></div>
-  <div class="article-meta">theregister.com | </div>
-</div>
-<div class="category-header">📂 Forbes (9 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiwAFBVV95cUxPcExhQWEtYVZVazVJa25OcWZuSDRqWFR2Q0tpdkVQTzhfOTFwMTRxMjVya05MQmdSMkZVMXpQN0dUM2dNc0ZmSGhRR291QnlQOTNKOHBleWV0R2prMEVvTmpWMlVXaWRYMnFLMHJzTjhtOEV4NEppX2NWVWhJenJndms0UGFicGJZTkxpYjdqMExXcGVtWm5VTUh1Y3YtcndxWUhaUlRUYWFBMl9qQWlxTXNLRkd4QmhqYk1HVFhxVjQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Canyon Fire: Evacuation Orders Lifted After ‘Minimal’ Overnight Activity</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiqAFBVV95cUxQdXRSSFpMSU1QZmt6Rl9fZ1F0bzFtUmhEWHhQX0o0Q3M1Y1lJdG9hWWh6VUxtWlp2cTI4ZEJjMVc0OVV0UGZ0aERFVU1JMFU3TGxiTHpNbThkNGNfOUFtRnFCWUhraFBRWjdleXRGOWkyY1lYTmdONk1Mb0xJOVlmSlV5SnMyb0pCM242UVBsUUNKaHFub3ZTZkN0aTZ5YXVTZy1lOTlaMEE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Apple iPhone 17, iPhone 17 Pro Release Date: Your Complete Countdown</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi8gFBVV95cUxNdk43Q1d1RTVta18weFpvLVZMN1dYQnZabG9aWjhYajZrelU2OU5QajcyRXQ3NVh6dTV3MVV4U0NuNURnX2dla2x2eGNrMVlwcE5iYzN5dEtrZVN2aE1La1dLTlExS3piMjFJbGRTc3JnT0VGY0lzMDRDbFc5YXlINE5ndlY0SGJoejRkWjNsN09nc1NQUUVqVWtJMVh1S1lwWW1UVWlkVXA1a1pUNEpnd0xueFFBRTZ0MWZlZjU3dUxBMEM5WjBVdThkNmtENFBxOVppQ29yYmJuLVI1b3MtVXNFY3RvbXZPeEVRUzBBc3FNUQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Trump Just Dropped A $12.2 Trillion Crypto Price Bombshell—Sending Bitcoin, Ethereum And XRP Sharply Higher</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi-gFBVV95cUxOUEloRFpVc05PUnNDbThNck5tZGlxZVdGZDZmSVFWRDdUc19TSm1Ocjk2T0xBaWw3eWFhaEJGYW4xcmltYWxsU0ltTW1vY2NPTm5ZNDBTeFczR09zV2JWR3JsZ2ExaDVueU1oQ0FzenBfUFRNLTJHaHBqczd3MUxNNG5ZMEczT245Tm9MeFlNWjFXcF9scjhXXzdfR2xzSXR0WXNFb1VyMmJnNWpGaXhsZnhzMXNfSGhETmpWVV9IV1FwZlNNLUdCZXpJSDRkSXV3RWNHa3FpbHhhREpOSUhsU25qWnlDNVVyczVIT29pZm1kLXh2eVhzb3BR?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Trump Says White House Press Conference Will ‘Stop Violent Crime’ In D.C.</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiuwFBVV95cUxQcXB3ck83a3lxTVpFX0ZaaXFvd2NqTVpCa3RvSTdzUXNwd0lVczZxVGpRQmprRFJEZk5jSDFwVlVfQ2xjTVhnU3kzeTJXVlMzNG5VUEN0NTB3aG5OZkpjWlFlSVVETzhEWU9pVzBiX1RHeXM0UmE2Y3pHbmZCZ1FvN1VuRmVkNHM5OU5ZNlpaby14VlZoVzkxQnVLQXAxaURTWlVEbS1RRjhSdjJLc3VLZVlINzRCSmxVYnBJ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">As Meme Stocks Make A Comeback, Beware This Tax Trap</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiwgFBVV95cUxPalYtRWNLdG5LVlVqcDZBLXJIQWhheE5Od2ZEWllJQkg5UFR5eXRVeFBvRmxpQ2tiekRMWks3QmtQemczbkc0cnlCZXJvd1I3MmtrYmZtUFJiaHN6dmhOQTNVZUpUZEMxR1JuenZkOEZPNFZiRmFQWU8zaHpzUXlYRW4wVHVlY0xQTk9UanhLUFJjLV9HdkFTT0lScVpLcVJ6TDRuU3J0dFZVSEhrWlNnbk16T2JkTUVaVGdGai0wdWlhdw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Billionaire Rented Trump Mansion As Federal Tax-Evasion Case Heated Up</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-<div class="category-header">📂 Wall Street Journal (10 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMilwNBVV95cUxQTDBfZDVjZkRYWFBNRGdvejRkMTlTZWZfUWZTWmw4QWNTOTZjUXczZFpZc2R1QkFRVHI2djN2aGdzaVhkZ3l6VlBKOE1YYzhVOW13bmxFbWdqbTFhX1VvbmJQRjhqNUZXWVVjN3J0ZmFBdlpwRTc0Y0xJM2hTNjdmYlpBMXFoSGQ2cm1ORDJSVlNKd2lYdHJvMmVFbUxmWm1ndW9MSEM5NjQyRjJGamZiQlBoRXplc1UyNUp3VTNLcWJtSjhpS1l2NWo5cjY4YnF4eVZWSFdRTTdNR0lyZGpzWXV1Q3JaNTI1U0RGRFVhdzFzdUFDWlpHdzVhR0s1SGVZREltSWk5bjFtLUVqVVZ2c2hJLVQyanBmSm1INkpmN2NzNHZNczVUc0NMTDdVYkZrSFhDTm5PaDNHM3hnSmhvNjRwTWFySmwzNkctV3NJNkxveFI3M1E2ZkwzZDU4SDZsZEFlSi1LSGlBS2tKanpyenJxZVJEU1EzQ3dZMVZaSXlaSEhZU3JZR0tFUUhwa3F2RVM3WERtUQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Ukraine and Europe Counter Putin’s Cease-Fire Proposal</a></div>
-  <div class="article-meta">The Wall Street Journal | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi_AJBVV95cUxPbXFTUWRVT1VUcDlpajBuVFFfVkgyZWxDdElhYjB0UFZqOTA1Rm9mNzdKM3Y5eHFqaE8tMk1UMEMtME5lWkRidE11NkhFeE1FV2lXX3BXcFFMdVBSSFdDemhGM2ZtTjMxdUFBVlJfVjRUeTFLSTRfWThQRGhkOTJyakthTEFqaUsyMEdHTUljZloyUnJoaVdOSXhHTFRKTWhWekJndEZmc3VWbDVJYjhuTnlIb2lSLV9SbU00T3hDNzNVY0ZJVU9QS3ZQdDdPU0djejMxNjRJX0w5RnlzV3B3ZlVYeS1aOXJfZXUyZjY1NDFOWGhsQlIyWnVJTTRLVENhRjVZeDNHTGs4cXhGYk1mWjRIcGR5S2x0MkYzeWdEdkUwb3E3cGJXYUkxbUdpdFBUSmlLUHpHdGNNcFhnSEFYS0pWZ3hfTkdMa0I5ZWZzUDFwUWtmakpjU1RmZ0hFZ3BkMS1xOTNaSW51MGlhaG9fblB2TE1LdGpSUkoyLQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">News Quiz for Aug. 9, 2025</a></div>
-  <div class="article-meta">The Wall Street Journal | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiigNBVV95cUxNNXVxSXR6S2g3TjB5MWltY0tQcUxSaHI3LWl4Rmp2NzFyWUhsWUhZRXk2SldCLVU3N0Nma3hPWlh2cm9GT0lsbmRpX3pxQXRTZF9SaTVoUjJRUVFyWkt4REJiTDJPN0V2X0JKekVhb2dZTndUUE90VGpVajVoSWh5NFRqanZYWjh3ZHlLLW9WQ2c2TWp4OUUyRWt6OWRfTFBfbVVlaVU1eWlranhTVGxMRVRsYXZHejBoS0hMcHdhVmNDb3F1eV9vOTBYRzdKOXBGV2Jib0xXdUFZOUZycHJCM0l2UXY1M3g4a0NBUnhGZ05FQXVHZ1NtTFBFbm1yX3JsOW1MVUJIRXZUN2E4TmV2NE16VWFNSk1qMXh3TlhQX045U1ZNX2ZfUVRGVXl2YXJfeC16eHYyZ2NZTmZlYWZycXZReFY3YnlPQ2lqX1FfR2xmNFpIbGhCVGQtcWZLanUtZ2laczR6SGg1UnNkbzJ6SU5tYy1tcmVMdHh4NmNUMjdRblFuVWZldEZ3?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Why These 12 Republicans Want the Epstein Files Released</a></div>
-  <div class="article-meta">The Wall Street Journal | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMimwNBVV95cUxPSkFuU1ZVOHUzUWN5RzBRZlkzX0luZ0hIZ2VoV0xOazhVd3IyUHc1M0x3bUJPY004VUhubUF0SWtLT0lpY1FtcHJhM3paR0g5cG5XYXMtZkRlT2hjaWs2ZWU3M05JMGVhOXlBTXlqTDVTZ0JENmVSZS1wZHkyejdubC10UXFSZHRsRDREaENvUERjYUMtTVFOdENlbEdqdTd2RWd2aTFRV25vbWxlTnB1dDNPcWgwdzV4ektHMnpjaE85X3JOelY0UzkzYXVFUnZNdHpCOER6cThUZkRYeDg3QmhsaGhiVWJ2NFJPaHZRRmFHWlFSZm5vSHIyT1k0THQxVDlMQU1Zd1pyZjluRk1OaDNuMG03R2tVSjhnQjdfQV9pZWgydkpCcTJQMFl3MmtwWEtqa3dJTHlRblcwRTFLTmpGbWFBdkJyS3MwQVZBU25ud3pveTVpS1BnSE9PU3ZrX3g0WThNZWlSdHdYS2VfbzFkU21BN1FfdnRqRnV1X1J0QWdWVE05bXM4YXYwS1U4Wm5mRXFIV28zYlE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Fed’s Bowman Backs a September Rate Cut</a></div>
-  <div class="article-meta">The Wall Street Journal | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMi-wJBVV95cUxPNU1PcVpUQ3dCWDZDbGFsVmdyMUNfQjVMY0lMdlhlYml1cE9FT01sekhJcXVONi1VVEtMSFJ1OTB5NnJrN3owZWFoOE5WWkp5M1gxZ3dURHBBcHFhZDRrLURTZHgzeDE5S1VNLUdiay1QNmlueVFjSWJuNWpKd0FkRjZpRFItOWI4Rk16di0wLUh2dUEwV0pxWFVYVzhKdXVsSWl4c2txUS1RamE5S2tiVndCaG9EZzItTTVIX09Eb1VZT25idk9pX054ZGdZaVFsTUlDWmJ0UmVMd3NXSktIZ2hZS3VTaWc0WlpwcXBKNnhNOS1xNnB1NW13dU1Zc0NvdDBoRU1wVmFWcXctSm1ObUhfdXFINHZ0S3lmSGEyQjBKSWpWX1FkbzBZZWVuelhiWnVIRmVJQVltcjBMNVRBckpDZ092eVJFUExHNWZXcjdOU21SRXI1Y0pYa0k4SjU5OV9OdHdzcGtSTnFpamUyTllTYkNpdWtaeE9J?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Chatbot Conversations Never End. That’s a Problem for Autistic People.</a></div>
-  <div class="article-meta">The Wall Street Journal | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMilwNBVV95cUxQcW90M292TzI0QnVHOWdOdjRIZlg3cUdCX0JhalczcXBTZV9XaDBQeHVjcUg0Y3NFbVdwN2hxeWljdFZvM0tVZWVJTVgtcXhFbzNzeXBfRmtsOXZIMU5BYnYySmRIZHZ3c2dFbGQyLUhxdFE3TFFpWkVUTE82Y1YtSVBkQU16NzU3NmdqTDdQa1d6RzZWc2tZV2Q5akIyOEpyaHdQRHpkaEg2TTczeE8yWFlJUWhoOEtzdmlDWXVOS200N01ZLUpBRHgxTmNBalBuY0tBdGJRS3lldHlXNWNiQkdYVzJBU1FjVHZtTDZqM055c0tTSzRpcllUN0VTMlZMTkRZWUd0Q2Njb1R2Qm5oamg4bGh4N0YwcFJFSUdiR3pzRTR1aWRZM0hTWHBETGlHa2ZWNXlVU2dkaTZ6ckt0elRqLUxDRjZSMkpGUzJBMldGU1R0WEFTY2VMbVVxd0xHM3h6MzIydlVIclR0VFh5QjduZDJnWWNZUWhGTko5YUlKTEV0Y0FKVnd2c3MxRmYtaExrajZsUQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Exclusive | Trump Weighs Reclassifying Marijuana as Less Dangerous Drug</a></div>
-  <div class="article-meta">The Wall Street Journal | </div>
-</div>
-<div class="category-header">📂 FT Cyber (8 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiNkFVX3lxTE04T1d2QWFkS3BlS042NlZ0bThVc3hFeU5xTFF0d25TdDFhSURHT00tRWhSOGVpZw?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Financial Times</a></div>
-  <div class="article-meta">FT Cyber News | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTE5DWEdSY0l1VDJjT2pEVDNQcmtpajlCNlZXSlMyTFptY2xub0xDbzUxUUZwOGpXcUNXazliLUNXMkZkQ0FuQU10MDNQcU9Bb2gwRXRRQ3RzVlhsZktQU0NzQjgwOHFIa1ZHRFA1anBmRDE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">A grand new government quarter glimpsed through the Delhi haze</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTFBmT3Z4SkpCVVVzYzl4VUZvUy1vczFkTXFMdkdzT3hZeFFHMk1WS2EwSWotc3lvOUtaeEM2M2l5YVVESXFNd2l0bk1jc2NrUk5iWl9pQkpFYWRacjlhbTVSWkJOSTgtZ2tETVFEeFZ2NjQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Swiss gold industry in crosshairs after US tariff debacle</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTE83VjZ0bGlmRWQ2UnBHa3NTSVdPdHpTUkFTekxHUnRldjhXLWNGdTRuYmZoc2VjdmQteFFQR29NcUxCUVJRR0FseTkwMW9rS0x2a0hEd3hkaW1pMWxDWUQ5VU1na09telh2VTdqS1FHMTc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Flip-flops, fruit and the new rat pack: hot takes from Copenhagen Fashion Week SS26</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTFBMdHVRTUo2dk15bjl1bW85NVg2d3hZMmhpdlJGaWxBTmVKUXJvUDdxd2EwaUliT2Z0dFBFa2RlQUlUV3lGNEhiMzMwclFOeUNlc0Vyc3pfMU03SEl0RG5wZG1VSGF2RGdnU09rQnFHZTY?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">‘When I fled Russia, I knew it was one-way’ — director Kirill Serebrennikov on exile, uncertainty and Josef Mengele</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMicEFVX3lxTE5odVNPc0pjNk5CZFNOcWJsa2tsdnc4UjdMQ0luYkxFRmxYc1NPYlBzQjNhS0xESWg2TDFsNmhJTXFLTTdQcEdZQVp3S1cwZy1kMnNNdERoQ3ZMaHhJRzRBQjFKMjA0Ylh3SHRfMDdtV0k?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Don’t mourn the golden age of TV</a></div>
-  <div class="article-meta">Financial Times | </div>
-</div>
-<div class="category-header">📂 Register Security (1 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiTEFVX3lxTFA2ekhhdTlIdm9IeWNpdGRONy1LMUkxY0FLazd5WFhiRmFiVGVNTXpnRDFBVXJJdE12a256YUNOZWU2VkpvRFRFNno2VHQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Popular Stories</a></div>
-  <div class="article-meta">theregister.com | </div>
-</div>
-<div class="category-header">📂 Forbes Cyber (3 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiqgFBVV95cUxNbnBVbE5TUkxuUEZ1X2Iya09ib1VlVFM3NnUzZUZGOVFvN1hyRExnV1RWUWFGVHJsR1lpSGtuaWNyOE9FTkVaM24xbHhCSW0zTDM0TXBIZHBQVTBfd3NJRURkRmdDVG9hUEpfLVZ0ZDBDUGtYVkdXYlZ3c1hUNlQyNVh6U0tLT1FrRTdDM3dsR1I0MkZJQmVhek0xVDhiOWVKdUFDYjV0YWlFUQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">‘It Was Very Sudden’: ChatGPT Users Mourned The Loss Of GPT-5’s Predecessor</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiwwFBVV95cUxPUnFtNzV4T25sVTd5a3ZvaDlOY1U0eUpETTFJektqOW1tMmg2S1BHekdpeDhab3dvOE9vaVlaT3JvRE5Pd0xPNGZRYXMtNFBDUi1UWFUtOTVGUmtzY1lrSkxtb0NTTzQ0c3RYLXBraUxxMnZHRU9TOFpicW03eDRvLXpNUS1WbEQ2aE9pTUM2QjZyT3RkT0VzUWVBODdmQ1pUeFp2VHdLM1R1OElia0FmeTdTY2d0S050eWNjN1FfeTJMcnM?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Billy Long Out As IRS Commissioner Just Weeks After He Was Sworn In</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMijwFBVV95cUxPSnFOakNqSTRDWVlJRVl3SkVxUHpMWnBzLU1UTnd4MVgxckZRR1pmT29PaUVkaEY3bl9mZnhyX2ZINnpnWF9UUEpmSUhUdjVpbkxWdzZ2TWZJOFNJazljMnV5QU9MRDlVRFVUTmhNVWZVWHd3R2FFZm9vLUZmMnpXT1E3aXI4LVR4aldnNjV1TQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">The AI Commerce Wars Have Begun</a></div>
-  <div class="article-meta">Forbes | </div>
-</div>
-<div class="category-header">📂 WSJ Cyber (1 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMixANBVV95cUxNZ2hpb1dPajdJRnpobmNqZmNXRHBoQng1STBqcUJEMXdTc0hDN2lNR0hjRFFhM1JCS3BmaERwcWllZWxSTXhBZGE1cmkyQnhoNGNVQUhGQ2lpcHlGNjNZTE9qVlY1emx3VWRfZF9zOE5hSlNsaFlta0tHejc3SmVuZTRkWm1pMlVlUVFONlJOSTlRNjFEaTVXa3l4ZUtIRkxoT1dQX18xY1RETFY3QkF5a2ZobnFQbGFOZW81ZmRlYUM2WDgwaHlGSUthREI0T1lKZVZUemNSRkROeS0wMmhNdXlmMkplNHIya3l6ZFNhSDFCbEJxY0VVR1gwWGZrYlM5RndjZUFEVkVrdmhHWVNZOFl6Tno1bmZqS2ktMDlIX1k2WXNDcmFHeU8tajVfWU5nX1FiS1E4Q2JkSG5aY0YwOVlnSUtHbG5CVFQyNW4yRkhCRFBDZmxRa1JNaWVBS0xKQTE4ekt1RGNWZExkSW5OTWx3X3J6SnA5YV9BQUpubXBNOEoxblozaWtXckcwYnRBdkhDU0NzclJrVmVteUZabGlrZEtqd05TcmVYNEJ6NUNzV3dzSVZYYk5fWkdwNi1qdjJIVQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Are Fannie Mae and Freddie Mac Set for an IPO? - What’s News - WSJ Podcasts</a></div>
-  <div class="article-meta">The Wall Street Journal | </div>
-</div>
-<div class="category-header">📂 Reuters Cyber (3 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMizgFBVV95cUxPNHlST1NxaENFeG5FOVZYMnN5NUJVTmh5WFRGc1N4UDNKRjhaQ3ZmY3VYNGRjRHBZZjV2OUViOVdxcVl6cUYtWGhOQ2FoNFJFdFp1bjhRU2dRcEU4Ul9qU3Flb2lHcEpKMGNnT2VtbzZjUFBtUktYYTZHU2hZMkVLZzBucnJVUkZEbXhudno3MENzRURXVmxhemV2TlpybHI1bVNkZURmNmVkNkhaUTdla25IRkNKdzV5d3lJZlBjblNLTmxpQjlkNTUteFVlQQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Syria will not take part in meetings with Kurdish-led SDF in Paris, state TV says</a></div>
-  <div class="article-meta">Reuters | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiWEFVX3lxTFA4aXBFbXllYTVJa0ZueFpKRjViQ1ZHWGFncWZRcGhENzdDVmNwSzNVUmFUeG9tazJHSGdTWjNKbVEwMHBfRG5DX3lfWThmdVRKYXoxUjFNNzE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Articles sitemap of 2025-08-08</a></div>
-  <div class="article-meta">Reuters | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiY0FVX3lxTE5BRmZVc3lWNjhvaDdxVWVwZTZPVzdkOUt5VXE5WEcyY0pzWXNGcnFpSC1STkpPQUFoR3JwcDIzV1FwQW9HYk1GczNOVzc2OFNuN3d2dnZwNVVQaXgyT2xVc3NTTQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Magnificent Seven News | Today's Latest Stories</a></div>
-  <div class="article-meta">Reuters | </div>
-</div>
-<div class="category-header">📂 Bloomberg Cyber (1 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiY0FVX3lxTFBCOVhDdGxUSFY4OE9nZmZBM2F6aXVGM09XSnMxNW4xNDd2Q3BESzIzWENVOUM1QW55Y0dMZnphVmdwdW5oZmxoamZlN2U2cHZ3NXNGSlBUNjNWMlpVRFZGTlV5NA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Empirical Security Inc</a></div>
-  <div class="article-meta">Bloomberg.com | </div>
-</div>
-<div class="category-header">📂 TechCrunch Security (4 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMipAFBVV95cUxNQVFTQ3lVQXQ0ak9EMmlxZDJsVlkxMVRVRlFiVWVRQnhDZkpXRDluV0pYLXRxZXlpRXpCUXBDd0h1ZF9TbGxZNmprTUZ3NUJKRFkxV3ExajRCYVZMYjRoZzU5VW9DbThTcTJRQnE3WkowbC1nX253T254cVJjT1phd2dncHVxanRSdkNoOXJBcUdxdXZyUEtkVkt3d2FnZDJPX09KaQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Impersonators are targeting companies with fake TechCrunch outreach</a></div>
-  <div class="article-meta">TechCrunch | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMisgFBVV95cUxPNGVBZHBBdlVSZXZxV015Mng1aDQxSWxsd1BndDBtU2xZM2hVbm9rSGFwREgxQ3JRSjA4UjN1QkhoMm8zRnkzUkljVmMxYVY5VmtvZ0ZLUUlNZDNncDZBMWxyNjVYb19oNDQxbmV4ajJyWGI5NVVtekx0Mnl6RHF4NHB5aDRkX1NYbGJFZGc4SlhGTmh2MHlFSG1jdklraUlHOHlVd3dLbUh5UFJZSnFZZWd3?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Sam Altman addresses ‘bumpy’ GPT-5 rollout, bringing 4o back, and the ‘chart crime’</a></div>
-  <div class="article-meta">TechCrunch | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMioAJBVV95cUxNN2EtTnhicXpCTXdIOXdMaTdLSjBfR0VyRVBnNW5MS3R1cWg3dUJod1JpbE42STFOOGJ4QktsdEpCZU5PcnpzeEJXbWxqNnNMUEMtNUljb3o2MXN4bG0zdmZIVl9sanUwWXVKOWQ2UW5UNjFnSVBNQmJQQjZrZEZuZ0VjdzhhOGpxTEpzUGpuYVdBbmFtaGQ1M1Q2MGpvcmNOTmFiR0V5dHhIRXN6Y0F5MTRxZHRUUWU3NXRHRGxxUnpOWmU4RHZQQkkxZzgyY0VKRnFBWE9BYUlyVTdNUkVLN2J5aFU0NVNZLXVENW5qcXU0cHVpMnZXVXBTSEk4RlQ3VFY5ZW5WbU1LTE94SEJ3dm43c2N2UVNFcXBtZGZxLS0?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Maxwell Zeff, Author at TechCrunch | Page 14 of 15</a></div>
-  <div class="article-meta">TechCrunch | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiW0FVX3lxTE9XbzFabS0wVno5UEVDcGRFTm1UUTExalhnTnJ4NVpvYXNfTHdBTE9WME94WnUtaHB6Q0Z1R2xPelNsT0hmbXdjWkZCMTJ0cmU5QWMxYmdpQXpFVVE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Equity Archives</a></div>
-  <div class="article-meta">TechCrunch | </div>
-</div>
-<div class="category-header">📂 Wired Cyber (2 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikAFBVV95cUxPdEZnZXhaSnU2STljRXRFTi1RbGltNzNzaXlCaktFWTVBRzZOS0lwNEk5LWpvV2xZRUQzZFQyZnNQVURWWFhoQ3RuUHdSMDFZMDdkWEF3WjdEa3A3LXZFYTBUNFlrWFV0Qnh6M0ZZNkNxYl9tbFVDRlprV2kzSUVKMjQ1Wlc2WlJBWV94Z2ZEOG4?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Truth Social's New AI Chatbot Is Donald Trump's Media Diet Incarnate</a></div>
-  <div class="article-meta">WIRED | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiX0FVX3lxTFBuYUZDSENPQWIxWk9pU3c4eUQ4V0d5WXMtSWlNMkc2VnVobmRacXVTMDVNa05GQXFHZEVzLS1rcGtEdlZoWkRIUE92T09HQ1NGMzBPVjQyYU96ZWtqSEpv?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cyberattacks and Hacking News</a></div>
-  <div class="article-meta">WIRED | </div>
-</div>
-<div class="category-header">📂 Krebs Security (1 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMijwFBVV95cUxQRk44b0NmVm9XVWxFV1hGZzFGNWlZd25IV1Iwc1YwUU1fUkYtcGVaNnJFbnNJbkpYc3ZQa1ZnSnc2RmV5dy1tQmprZzJWaWN3TDVHWThySVB0VUlTWHhyOTl4ZDlzTWZQdHFmOHh2Z3Bfdl9sREFIdWpuNHlLYXh0bmdVbDlrakJnOGw0M2hHMA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">KrebsOnSecurity in New ‘Most Wanted’ HBO Max Series</a></div>
-  <div class="article-meta">Krebs on Security | </div>
-</div>
-<div class="category-header">📂 Dark Reading (9 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMioAFBVV95cUxOSFVCM0NYa3dJOWo0dDVldzV1Vk1jYUNyUzFUWWxQelZ6WkRoVzZ3eVUybm5FSmphVkFsb29YYlNSNkdJc2lWdk5taFFjUEwxX2J4WUpyRlZRS2t3Q1hXNXhjbWR6Wnpjd2pyY2hnemI2bTgyY2NoaWMtNGRWWnlUWERvMURJV193UHNtenlNeXI4OTQxSGNmYmJNYVRiakpO?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Darktrace Acquires Mira Security for Network Visibility</a></div>
-  <div class="article-meta">Dark Reading | Security | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiYEFVX3lxTFBJRkpRRnVSRVBhSnA3YUFsUkROYmZVYU94Yl9QUUY4bTZNU3ZxcEJOM3VBYTlHRGFZNUJqODRFdmtpY2NxcHFRTmVqSFo2c0gxWElhX3JlRkJRWnA5Ui00cg?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Vulnerabilities & Threats recent news</a></div>
-  <div class="article-meta">Dark Reading | Security | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiZEFVX3lxTE1SV1ZOVFBESjczRXZxdndMMkUwUUNmMGE5YlJ1SmVUSkhfMEVCU3lEcGRtbnJkWXlTZG03OVJ0M3hYR1VMTnhjaUdPMk40cDBmY1ZJTXBaeXZxZUE4cGdLLThLNEc?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cyberattacks & Data Breaches recent news</a></div>
-  <div class="article-meta">Dark Reading | Security | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiW0FVX3lxTE9qUW5TZzBwd3o0b3dmcHBadmx3X2JOVTFyQjRKMGpJaW1RQ3VNZFNQeG9tSEJCLVNxbFFLVDM0dHFSdEk5amRJVzB6S3pvZkNGOENEUWVpc29KTzg?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Threat Intelligence recent news</a></div>
-  <div class="article-meta">Dark Reading | Security | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMikwFBVV95cUxNVVI2aXRuU3JtYTRjNW05Q2JPMnJTWHN6NlUxbHZBRktaNjRZM25vQVVUSUV5S2FCMGVZODUtdkY0UDVmM1JXMkFPa3duTWNoaTRlMGdLT0Jpc1ZrbmgtOVo5V01vYlc4Vk9HeHdULUhBS0c3WVpPWTU0dDFfMzFUMkZuMkNIR1pUMVpJMGlpeXVsZVk?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Zscaler Announces Deal to Acquire Red Canary</a></div>
-  <div class="article-meta">Dark Reading | Security | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMif0FVX3lxTFBCRG1kanlIaTZBRjJUeXRWYW13VTk2b2NJTjFsOVduUHVkX3B3eXZMdFFzcmdYcUR5RHdLR19yNmQ3UEFVSGNqOTRES2RzT2VDNkxxYldmX3hsOGpwMVlZOXBMWDI3NHd0ODA0TWw2ZElTYlJOU1RSTEx6WmY3WEU?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">Cybersecurity Careers recent news</a></div>
-  <div class="article-meta">Dark Reading | Security | </div>
-</div>
-<div class="category-header">📂 Security Week (2 articles)</div>
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiUkFVX3lxTFBiem95SXpHLURrMm1fLWZUcy1GWnR4aWRhRDVBV09UVUY0V3pocDZWTC04d283LUU0RXpyLTg0cEdhMnNjOGJybEFWYWdDamhFdUE?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">All posts tagged "bus"</a></div>
-  <div class="article-meta">SecurityWeek | </div>
-</div>
-
-<div class="article">
-  <div class="article-title"><a href="https://news.google.com/read/CBMiV0FVX3lxTFBYSlBvSTVXaEFYS2N6a0hEMklIa3lvQU05Z01hRWZRelI4bzFLX3lqcGpUNlV4Q1otYmFuWmFkVFhqeW5XRHMxalNLc1pMSjRTcjZna2pWNA?hl=en-US&gl=US&ceid=US%3Aen" target="_blank" rel="noopener">CodeSecCon 2025</a></div>
-  <div class="article-meta">register.securityweek.com | </div>
-</div>
-
-</div>
-<script>
-console.log('DEBUG: HTML page loaded');
-</script>
+<body class="bg-gray-50 text-gray-900">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const Badge = ({ children }) => (
+      <span className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium">{children}</span>
+    );
+
+    const Header = () => (
+      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/80 border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-3">
+              <span className="w-6 h-6 rounded bg-black inline-block"></span>
+              <span className="text-xl font-extrabold tracking-tight">CyberSec Daily</span>
+            </div>
+            <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+              <a className="hover:text-gray-900 text-gray-600" href="#">Malware</a>
+              <a className="hover:text-gray-900 text-gray-600" href="#">Vulnerabilities</a>
+              <a className="hover:text-gray-900 text-gray-600" href="#">Threat Intel</a>
+              <a className="hover:text-gray-900 text-gray-600" href="#">Cloud</a>
+              <a className="hover:text-gray-900 text-gray-600" href="#">Privacy</a>
+            </nav>
+            <div className="flex items-center gap-3">
+              <button id="darkToggle" className="hidden md:inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm">Theme</button>
+              <button className="md:hidden rounded-full border p-2">≡</button>
+            </div>
+          </div>
+        </div>
+        <div className="border-t bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center gap-2 text-sm">
+            <Badge><span className="flex items-center gap-1">🔥 Live Feed</span></Badge>
+            <div className="flex-1 overflow-hidden">
+              <div className="whitespace-nowrap" style={{animation:'marquee 20s linear infinite'}}>
+                <span className="mr-8">Stories auto-populate from feed.json</span>
+                <span className="mr-8">Drop this file and feed.json in the same folder</span>
+                <span className="mr-8">Served by GitHub Pages</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+
+    function useFeed(url = 'feed.json') {
+      const [data, setData] = useState({ generated_at: null, items: [] });
+      const [loading, setLoading] = useState(true);
+      const [error, setError] = useState(null);
+      useEffect(() => {
+        let cancelled = false;
+        (async () => {
+          try {
+            const res = await fetch(url, { cache: 'no-store' });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const json = await res.json();
+            if (!cancelled) setData(json);
+          } catch (e) { if (!cancelled) setError(e); }
+          finally { if (!cancelled) setLoading(false); }
+        })();
+        return () => { cancelled = true; };
+      }, [url]);
+      return { data, loading, error };
+    }
+
+    const formatDate = (iso) => {
+      if (!iso) return '';
+      try {
+        const d = new Date(iso);
+        return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+      } catch { return String(iso); }
+    };
+
+    const Featured = ({ items }) => {
+      const featured = (items || []).filter(i => i.image).slice(0, 3);
+      const slides = featured.length ? featured : (items || []).slice(0,3);
+      const [idx, setIdx] = useState(0);
+      if (!slides.length) return <div className="rounded-2xl border bg-white p-8 text-center text-gray-500">No featured items yet.</div>;
+      const item = slides[idx];
+      return (
+        <div className="relative overflow-hidden rounded-2xl shadow-sm">
+          {item.image ? <img src={item.image} alt={item.title} className="w-full h-80 object-cover"/> : <div className="w-full h-80 bg-gray-200"/>}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"/>
+          <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <div className="mb-2"><Badge>{(item.topics && item.topics[0]) || item.source || 'Featured'}</Badge></div>
+            <h2 className="text-2xl md:text-3xl font-extrabold leading-tight">
+              <a href={item.url} target="_blank" rel="noopener">{item.title}</a>
+            </h2>
+            <p className="mt-2 text-sm md:text-base text-white/90 max-w-3xl">{item.summary || item.source}</p>
+            <div className="mt-3 text-xs text-white/80">{item.source} · {formatDate(item.published)}</div>
+          </div>
+          {slides.length > 1 && (
+            <>
+              <button onClick={()=>setIdx((i)=>(i-1+slides.length)%slides.length)} className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow">‹</button>
+              <button onClick={()=>setIdx((i)=>(i+1)%slides.length)} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow">›</button>
+            </>
+          )}
+        </div>
+      );
+    };
+
+    const Card = ({ item }) => (
+      <article className="group rounded-2xl border bg-white overflow-hidden hover:shadow-md transition-shadow">
+        <div className="relative">
+          {item.image ? <img src={item.image} alt={item.title} className="w-full h-48 object-cover"/> : <div className="w-full h-48 bg-gray-100"/>}
+          <div className="absolute top-3 left-3"><Badge>{(item.topics && item.topics[0]) || item.source}</Badge></div>
+        </div>
+        <div className="p-4">
+          <h3 className="text-lg font-bold leading-snug group-hover:underline"><a href={item.url} target="_blank" rel="noopener">{item.title}</a></h3>
+          <p className="mt-2 text-sm text-gray-600 line-clamp-2">{item.summary || ''}</p>
+          <div className="mt-3 flex items-center justify-between text-xs text-gray-500"><span>{item.source}</span><span>{formatDate(item.published)}</span></div>
+        </div>
+      </article>
+    );
+
+    const Footer = () => (
+      <footer className="mt-16 border-t bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div className="flex items-center gap-2 mb-2"><span className="w-5 h-5 rounded bg-black inline-block"></span><span className="font-extrabold">CyberSec Daily</span></div>
+            <p className="text-sm text-gray-600">Independent cybersecurity news, analysis, and tutorials.</p>
+          </div>
+          <div>
+            <h5 className="font-semibold mb-3">Sections</h5>
+            <ul className="space-y-2 text-sm text-gray-600"><li><a href="#" className="hover:underline">Malware</a></li><li><a href="#" className="hover:underline">Vulnerabilities</a></li><li><a href="#" className="hover:underline">Threat Intelligence</a></li><li><a href="#" className="hover:underline">Privacy</a></li></ul>
+          </div>
+          <div>
+            <h5 className="font-semibold mb-3">Resources</h5>
+            <ul className="space-y-2 text-sm text-gray-600"><li><a href="#" className="hover:underline">RSS Feed</a></li><li><a href="#" className="hover:underline">Newsletter Archive</a></li><li><a href="#" className="hover:underline">Advertise</a></li><li><a href="#" className="hover:underline">Contact</a></li></ul>
+          </div>
+          <div>
+            <h5 className="font-semibold mb-3">Legal</h5>
+            <ul className="space-y-2 text-sm text-gray-600"><li><a href="#" className="hover:underline">Terms</a></li><li><a href="#" className="hover:underline">Privacy</a></li><li><a href="#" className="hover:underline">Cookie Policy</a></li></ul>
+          </div>
+        </div>
+        <div className="py-4 text-center text-xs text-gray-500">© {new Date().getFullYear()} CyberSec Daily — Live Brief</div>
+      </footer>
+    );
+
+    const App = () => {
+      const { data, loading, error } = useFeed('feed.json');
+      const items = (data && data.items) || [];
+      return (
+        <div className="min-h-screen">
+          <Header />
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+            <Featured items={items} />
+            {loading && <div className="mt-6 rounded-xl border bg-white p-6 text-sm text-gray-600">Loading latest stories…</div>}
+            {error && <div className="mt-6 rounded-xl border bg-red-50 p-6 text-sm text-red-700">Failed to load feed.json — {String(error)}</div>}
+            <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <section className="lg:col-span-2 space-y-6">
+                <div className="grid sm:grid-cols-2 gap-6">{items.slice(0,4).map((it,i)=><Card key={i} item={it}/>)}</div>
+                <div className="grid sm:grid-cols-3 gap-6">{items.slice(4,10).map((it,i)=><Card key={i} item={it}/>)}</div>
+                <div className="flex justify-center"><a href="archive/" className="inline-flex items-center gap-2 rounded-full border px-5 py-2 text-sm bg-white hover:bg-gray-50">See archive ›</a></div>
+              </section>
+              <aside className="space-y-6">
+                <div className="rounded-2xl border p-5 bg-white"><div className="flex items-center gap-2 mb-3"><span className="w-5 h-5 rounded bg-black inline-block"></span><h4 className="font-semibold">Popular This Week</h4></div><ul className="space-y-3">{items.slice(0,4).map((p,i)=>(<li key={i} className="text-sm"><a className="font-medium hover:underline" href={p.url} target="_blank" rel="noopener">{p.title}</a><div className="text-xs text-gray-500">{formatDate(p.published)}</div></li>))}</ul></div>
+                <div className="rounded-2xl border p-5 bg-white"><div className="flex items-center gap-2 mb-3"><span className="w-5 h-5 rounded bg-black inline-block"></span><h4 className="font-semibold">Tags</h4></div><div className="flex flex-wrap gap-2">{Array.from(new Set((items||[]).flatMap(i=>i.topics||[]))).slice(0,20).map(t=> <a key={t} href="#" className="rounded-lg border px-2 py-1 text-xs hover:bg-gray-50">#{t}</a>)}</div></div>
+              </aside>
+            </div>
+          </main>
+          <Footer />
+        </div>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
 </body>
 </html>
