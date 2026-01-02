@@ -156,9 +156,12 @@ SEARCH_QUERIES = [
     # ---------------------------------------------------------
     # TOPIC-BASED SEARCHES - General Cyber (with 24h freshness)
     # ---------------------------------------------------------
+    ("cyber when:24h", "Cyber"),
     ("cybersecurity news when:24h", "Cybersecurity"),
     ("hackers breach when:24h", "Hackers"),
     ("cyber attack today when:24h", "Cyber Attacks"),
+    ("sanctions when:24h", "Sanctions"),
+    ("critical infrastructure when:24h", "Critical Infrastructure"),
 
     # ---------------------------------------------------------
     # TOPIC-BASED SEARCHES - Emerging Tech (with 24h freshness)
