@@ -474,17 +474,17 @@ class MultiSearchGoogleNews:
                         continue
                     seen_titles.add(title_key)
                     
-                    print(f"  ✓ [{article['date']}] {article['title'][:55]}...")
+                    print(f"  + [{article['date']}] {article['title'][:55]}...")
                     out.append(article)
                     
                     if len(out) >= 8:
                         break
 
-            print(f"  → {len(out)} articles within {self.hours}h")
+            print(f"  -> {len(out)} articles within {self.hours}h")
             return out
 
         except Exception as e:
-            print(f"  ✗ Error: {e}")
+            print(f"  x Error: {e}")
             return []
 
     def run_all_searches(self, queries=None):
@@ -510,7 +510,7 @@ class MultiSearchGoogleNews:
         unique_articles.sort(key=lambda x: x.get('datetime') or datetime.min, reverse=True)
 
         print(f"\n{'='*60}")
-        print(f"RESULTS: {len(all_articles)} total → {len(unique_articles)} unique")
+        print(f"RESULTS: {len(all_articles)} total -> {len(unique_articles)} unique")
         print(f"{'='*60}")
 
         # Category breakdown
@@ -634,7 +634,7 @@ def main(hours=48):
 
         if news:
             save_to_csv(news)
-            print(f"\n✓ Successfully processed {len(news)} unique articles")
+            print(f"\nSuccessfully processed {len(news)} unique articles")
 
             print(f"\n{'='*60}")
             print("LATEST ARTICLES:")
