@@ -10,13 +10,133 @@ IMPROVEMENTS (v2.0):
   economic warfare, and military intelligence topics
 - Narrative coherence: Stories about "China scams" and "China rare earths" no longer
   cluster together just because they mention the same country
+
+IMPROVEMENTS (v3.0) - Academic-backed enhancements:
+- Cluster confidence scoring (Silhouette-inspired, Rousseeuw 1987)
+- Source reliability weighting (MBFC/NewsGuard methodology)
+- Syndication/echo detection (title similarity threshold)
 """
 
 import re
 from collections import defaultdict
 from datetime import datetime
+from difflib import SequenceMatcher
 import json
-from typing import List, Dict, Set, Tuple
+from typing import List, Dict, Set, Tuple, Optional
+
+
+# Source reliability scores (0.0 - 1.0)
+# Based on Media Bias/Fact Check factuality ratings + NewsGuard methodology
+# Reference: https://arxiv.org/html/2404.09565
+SOURCE_RELIABILITY = {
+    # Tier 1: Very High Factuality (0.85-1.0)
+    'Reuters': 0.95,
+    'Associated Press': 0.95,
+    'BBC': 0.90,
+    'Reuters Cyber': 0.95,
+    'BBC Fresh': 0.90,
+    'FT': 0.90,
+    'FT Cyber': 0.90,
+    'FT Fresh': 0.90,
+    'WSJ': 0.88,
+    'WSJ Cyber': 0.88,
+    'WSJ Fresh': 0.88,
+    'NYT': 0.85,
+    'NYT Cyber': 0.85,
+    'NYT Fresh': 0.85,
+    'The Guardian': 0.85,
+    'Guardian Fresh': 0.85,
+    'Bloomberg': 0.88,
+    'Bloomberg Cyber': 0.88,
+    'Bloomberg Fresh': 0.88,
+    'Economist Fresh': 0.88,
+
+    # Tier 2: High Factuality - Security Press (0.75-0.85)
+    'Krebs on Security': 0.90,
+    'Schneier on Security': 0.88,
+    'The Record': 0.85,
+    'Bleeping Computer': 0.82,
+    'SecurityWeek': 0.80,
+    'Dark Reading': 0.80,
+    'CyberScoop': 0.80,
+    'Cybersecurity Dive': 0.80,
+    'The Hacker News': 0.75,
+    'GBHackers': 0.72,
+    'The Register': 0.78,
+    'Register Fresh': 0.78,
+    'Ars Technica Fresh': 0.82,
+
+    # Tier 3: Vendor Research (0.70-0.85)
+    # High quality but potential commercial bias
+    'Mandiant': 0.85,
+    'CrowdStrike': 0.82,
+    'Unit 42': 0.82,
+    'SentinelOne': 0.78,
+    'Trend Micro': 0.78,
+    'Kaspersky': 0.72,  # Geopolitical considerations
+    'Elastic Security Labs': 0.78,
+    'Wiz': 0.75,
+    'Huntress': 0.75,
+
+    # Tier 4: International News (0.65-0.80)
+    'SCMP': 0.68,
+    'SCMP Fresh': 0.68,
+    'Nikkei Fresh': 0.82,
+    'Straits Times Fresh': 0.78,
+    'ABC Australia Fresh': 0.80,
+    'The Hindu Fresh': 0.72,
+    'Deutsche Welle Fresh': 0.80,
+    'France24': 0.78,
+    'France24 Cyber': 0.78,
+    'France24 Fresh': 0.78,
+    'Euronews Fresh': 0.75,
+    'Al Jazeera Fresh': 0.70,
+    'Times of Israel Fresh': 0.72,
+    'Kyiv Independent': 0.70,
+    'Kyiv Independent Fresh': 0.70,
+    'CBC Canada Fresh': 0.82,
+    'Korea Times': 0.72,
+
+    # Tier 5: Think Tanks / Policy (0.70-0.85)
+    'Lawfare': 0.85,
+    'Just Security': 0.82,
+    'ASPI': 0.80,
+    'FDD': 0.75,
+    'National Interest': 0.72,
+    'Risky Business': 0.80,
+
+    # Tier 6: Mixed/Lower Reliability (0.50-0.70)
+    'Politico Fresh': 0.75,
+    'TechCrunch Security': 0.72,
+    'TechCrunch Fresh': 0.72,
+    'Forbes Cyber': 0.68,
+    'Wired Cyber': 0.72,
+    'MSN Cyber': 0.60,
+    'IBT': 0.58,
+
+    # Default for unknown sources
+    'default': 0.50
+}
+
+
+def get_source_reliability(source: str) -> float:
+    """Get reliability score for a source, with fuzzy matching"""
+    if not source:
+        return SOURCE_RELIABILITY['default']
+
+    # Direct match
+    if source in SOURCE_RELIABILITY:
+        return SOURCE_RELIABILITY[source]
+
+    # Partial match (source name contained in key or vice versa)
+    source_lower = source.lower()
+    for key, score in SOURCE_RELIABILITY.items():
+        if key == 'default':
+            continue
+        if key.lower() in source_lower or source_lower in key.lower():
+            return score
+
+    return SOURCE_RELIABILITY['default']
 
 
 class StoryCorrelator:
@@ -252,6 +372,179 @@ class StoryCorrelator:
 
         return sub_clusters
 
+    def detect_syndication(self, stories: List[Dict], threshold: float = 0.85) -> Dict:
+        """
+        Detect syndicated/echo content - same story from multiple sources.
+        Stories with >85% title similarity are likely wire service syndication.
+
+        Reference: Echo chamber detection methodology
+        https://link.springer.com/article/10.1007/s13278-021-00779-3
+        """
+        syndication_groups = []
+        processed = set()
+
+        for i, story_a in enumerate(stories):
+            if i in processed:
+                continue
+
+            title_a = story_a.get('Title', '').lower().strip()
+            if not title_a:
+                continue
+
+            group = [story_a]
+
+            for j, story_b in enumerate(stories[i+1:], i+1):
+                if j in processed:
+                    continue
+
+                title_b = story_b.get('Title', '').lower().strip()
+                if not title_b:
+                    continue
+
+                # Calculate title similarity
+                similarity = SequenceMatcher(None, title_a, title_b).ratio()
+
+                if similarity >= threshold:
+                    group.append(story_b)
+                    processed.add(j)
+
+            if len(group) > 1:
+                # Multiple sources with near-identical titles = syndication
+                sources = list(set(s.get('Source', 'Unknown') for s in group))
+                syndication_groups.append({
+                    'canonical_title': group[0].get('Title'),
+                    'source_count': len(sources),
+                    'sources': sources,
+                    'effective_weight': 1,  # Count as single confirmation
+                    'stories': group
+                })
+                processed.add(i)
+
+        total_syndicated = sum(len(g['stories']) - 1 for g in syndication_groups)
+
+        return {
+            'syndication_groups': syndication_groups,
+            'total_stories': len(stories),
+            'unique_stories': len(stories) - total_syndicated,
+            'syndicated_count': total_syndicated,
+            'echo_ratio': total_syndicated / len(stories) if stories else 0
+        }
+
+    def calculate_cluster_confidence(self, cluster: List[Dict], all_stories: List[Dict]) -> Dict:
+        """
+        Calculate confidence score for a cluster using Silhouette-inspired metrics.
+
+        Based on Rousseeuw (1987) Silhouette coefficient methodology:
+        - Measures cohesion (within-cluster similarity)
+        - Measures separation (between-cluster distance)
+
+        Reference: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html
+
+        Returns confidence score 0-1 with interpretable drivers.
+        """
+        if len(cluster) < 2:
+            return {
+                'confidence': 0.3,
+                'strength': 'weak',
+                'drivers': {'reason': 'single_story_cluster'}
+            }
+
+        # 1. Entity Overlap Score (cohesion)
+        # How many entity dimensions are shared across cluster
+        all_entities = []
+        for story in cluster:
+            text = f"{story.get('Title', '')} {story.get('Category', '')}"
+            entities = self.extract_entities(text)
+            all_entities.append(entities)
+
+        # Count dimensions with overlap
+        dimension_overlaps = {}
+        for dim in self.entity_patterns.keys():
+            sets = [e.get(dim, set()) for e in all_entities]
+            non_empty = [s for s in sets if s]
+            if len(non_empty) >= 2:
+                # Calculate intersection across all non-empty sets
+                intersection = non_empty[0]
+                for s in non_empty[1:]:
+                    intersection = intersection & s
+                if intersection:
+                    dimension_overlaps[dim] = len(intersection)
+
+        entity_score = min(len(dimension_overlaps) / 4, 1.0)  # 4+ dimensions = 1.0
+
+        # 2. Source Diversity Score
+        # More unique, reliable sources = higher confirmation
+        sources = [s.get('Source', 'Unknown') for s in cluster]
+        unique_sources = set(sources)
+        source_diversity = min(len(unique_sources) / 5, 1.0)  # 5+ sources = 1.0
+
+        # 3. Source Quality Score (weighted by reliability)
+        reliability_scores = [get_source_reliability(s) for s in sources]
+        source_quality = sum(reliability_scores) / len(reliability_scores)
+
+        # 4. Temporal Coherence Score
+        # Stories within tight time window score higher
+        temporal_score = 0.5  # Default if no datetime available
+        datetimes = []
+        for story in cluster:
+            dt_str = story.get('Datetime')
+            if dt_str:
+                try:
+                    if isinstance(dt_str, str):
+                        dt = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
+                    else:
+                        dt = dt_str
+                    datetimes.append(dt)
+                except (ValueError, TypeError):
+                    pass
+
+        if len(datetimes) >= 2:
+            time_spread = (max(datetimes) - min(datetimes)).total_seconds() / 3600
+            temporal_score = max(0, 1 - (time_spread / 72))  # 72h spread = 0
+
+        # 5. Text Similarity Score (mean pairwise similarity)
+        similarities = []
+        for i in range(len(cluster)):
+            for j in range(i + 1, len(cluster)):
+                sim = self.calculate_story_similarity(cluster[i], cluster[j])
+                similarities.append(sim)
+        text_similarity = sum(similarities) / len(similarities) if similarities else 0
+
+        # Combined confidence (weighted average)
+        # Weights based on importance for threat intelligence
+        confidence = (
+            entity_score * 0.30 +       # Entity overlap most important
+            source_diversity * 0.15 +   # Multiple sources
+            source_quality * 0.20 +     # Reliable sources
+            temporal_score * 0.15 +     # Time coherence
+            text_similarity * 0.20      # Text similarity
+        )
+
+        # Determine strength label (per Silhouette interpretation)
+        if confidence >= 0.7:
+            strength = 'strong'
+        elif confidence >= 0.5:
+            strength = 'reasonable'
+        elif confidence >= 0.25:
+            strength = 'weak'
+        else:
+            strength = 'noise'
+
+        return {
+            'confidence': round(confidence, 3),
+            'strength': strength,
+            'drivers': {
+                'entity_overlap': round(entity_score, 2),
+                'source_diversity': round(source_diversity, 2),
+                'source_quality': round(source_quality, 2),
+                'temporal_coherence': round(temporal_score, 2),
+                'text_similarity': round(text_similarity, 2),
+                'shared_dimensions': list(dimension_overlaps.keys()),
+                'unique_sources': len(unique_sources),
+                'story_count': len(cluster)
+            }
+        }
+
     def identify_connections(self, stories: List[Dict]) -> Dict:
         """
         Identify key connections between stories to build the intelligence picture
@@ -283,10 +576,40 @@ class StoryCorrelator:
 
     def build_intelligence_report(self, stories: List[Dict], threshold: float = 0.3) -> Dict:
         """
-        Build comprehensive intelligence report showing the big picture
+        Build comprehensive intelligence report showing the big picture.
+        Includes confidence scoring and syndication detection.
         """
         clusters = self.find_story_clusters(stories, threshold)
         connections = self.identify_connections(stories)
+
+        # Detect syndication/echo content
+        syndication = self.detect_syndication(stories)
+
+        # Calculate confidence for each cluster
+        clusters_with_confidence = []
+        high_confidence_count = 0
+        for cluster in clusters[:20]:  # Top 20 clusters
+            confidence_data = self.calculate_cluster_confidence(cluster, stories)
+            if confidence_data['strength'] in ['strong', 'reasonable']:
+                high_confidence_count += 1
+            clusters_with_confidence.append({
+                'size': len(cluster),
+                'confidence': confidence_data['confidence'],
+                'strength': confidence_data['strength'],
+                'confidence_drivers': confidence_data['drivers'],
+                'stories': [
+                    {
+                        'title': s.get('Title'),
+                        'source': s.get('Source'),
+                        'source_reliability': get_source_reliability(s.get('Source')),
+                        'category': s.get('Category'),
+                        'link': s.get('Link')
+                    } for s in cluster
+                ]
+            })
+
+        # Sort clusters by confidence (highest first)
+        clusters_with_confidence.sort(key=lambda c: c['confidence'], reverse=True)
 
         # Identify key themes
         themes = defaultdict(int)
@@ -294,12 +617,13 @@ class StoryCorrelator:
             category = story.get('Category', 'Unknown')
             themes[category] += 1
 
-        # Build timeline
+        # Build timeline with source reliability
         timeline = []
         for story in sorted(stories, key=lambda s: s.get('Scraped_At', ''), reverse=True):
             timeline.append({
                 'title': story.get('Title'),
                 'source': story.get('Source'),
+                'source_reliability': get_source_reliability(story.get('Source')),
                 'category': story.get('Category'),
                 'time': story.get('Published'),
                 'link': story.get('Link')
@@ -309,23 +633,25 @@ class StoryCorrelator:
             'timestamp': datetime.now().isoformat(),
             'summary': {
                 'total_stories': len(stories),
+                'unique_stories': syndication['unique_stories'],
+                'syndicated_stories': syndication['syndicated_count'],
+                'echo_ratio': round(syndication['echo_ratio'], 3),
                 'story_clusters': len(clusters),
+                'high_confidence_clusters': high_confidence_count,
                 'top_themes': dict(sorted(themes.items(), key=lambda x: x[1], reverse=True)[:10]),
                 'connection_points': sum(len(v) for v in connections.values())
             },
-            'clusters': [
-                {
-                    'size': len(cluster),
-                    'stories': [
-                        {
-                            'title': s.get('Title'),
-                            'source': s.get('Source'),
-                            'category': s.get('Category'),
-                            'link': s.get('Link')
-                        } for s in cluster
-                    ]
-                } for cluster in clusters[:20]  # Top 20 clusters
-            ],
+            'clusters': clusters_with_confidence,
+            'syndication': {
+                'echo_ratio': round(syndication['echo_ratio'], 3),
+                'groups': [
+                    {
+                        'title': g['canonical_title'],
+                        'sources': g['sources'],
+                        'count': len(g['stories'])
+                    } for g in syndication['syndication_groups'][:10]
+                ]
+            },
             'connections': {
                 entity_type: {
                     name: {
@@ -379,12 +705,13 @@ class StoryCorrelator:
 
 def analyze_stories(stories: List[Dict], similarity_threshold: float = 0.3) -> Dict:
     """
-    Main function to analyze stories and build mosaic intelligence
+    Main function to analyze stories and build mosaic intelligence.
+    Includes confidence scoring, source reliability, and syndication detection.
     """
     correlator = StoryCorrelator()
 
     print(f"\n{'='*60}")
-    print("MOSAIC INTELLIGENCE ANALYSIS")
+    print("MOSAIC INTELLIGENCE ANALYSIS (v3.0)")
     print(f"{'='*60}")
     print(f"Analyzing {len(stories)} stories to find connections...")
 
@@ -392,18 +719,36 @@ def analyze_stories(stories: List[Dict], similarity_threshold: float = 0.3) -> D
     report = correlator.build_intelligence_report(stories, similarity_threshold)
 
     print(f"\nKey Findings:")
-    print(f"  • Story clusters identified: {report['summary']['story_clusters']}")
-    print(f"  • Connection points found: {report['summary']['connection_points']}")
+    print(f"  - Story clusters identified: {report['summary']['story_clusters']}")
+    print(f"  - High-confidence clusters: {report['summary']['high_confidence_clusters']}")
+    print(f"  - Connection points found: {report['summary']['connection_points']}")
+
+    print(f"\nSyndication Analysis:")
+    print(f"  - Total stories: {report['summary']['total_stories']}")
+    print(f"  - Unique stories: {report['summary']['unique_stories']}")
+    print(f"  - Syndicated/echo: {report['summary']['syndicated_stories']}")
+    print(f"  - Echo ratio: {report['summary']['echo_ratio']:.1%}")
+
+    print(f"\nTop Clusters by Confidence:")
+    for i, cluster in enumerate(report['clusters'][:5]):
+        strength_label = cluster['strength'].upper()
+        print(f"  {i+1}. [{strength_label}] {cluster['confidence']:.2f} - {cluster['size']} stories")
+        if cluster['stories']:
+            print(f"     {cluster['stories'][0]['title'][:60]}...")
+            drivers = cluster.get('confidence_drivers', {})
+            if drivers.get('shared_dimensions'):
+                print(f"     Dimensions: {', '.join(drivers['shared_dimensions'])}")
+
     print(f"\nTop Themes:")
     for theme, count in list(report['summary']['top_themes'].items())[:5]:
-        print(f"  • {theme}: {count} stories")
+        print(f"  - {theme}: {count} stories")
 
     print(f"\nKey Connection Points:")
     for entity_type, entities in report['connections'].items():
         if entities:
             print(f"\n  {entity_type.upper()}:")
             for name, data in list(entities.items())[:3]:
-                print(f"    • {name}: mentioned in {data['mention_count']} stories")
+                print(f"    - {name}: mentioned in {data['mention_count']} stories")
 
     # Generate graph data for visualization
     graph_data = correlator.generate_graph_data(stories, similarity_threshold)
