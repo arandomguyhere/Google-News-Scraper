@@ -47,30 +47,58 @@ def load_stories() -> List[Dict]:
     """Load stories from scraper output"""
     data = []
 
-    # Try primary source
+    # Try primary source (scraper output)
     if LATEST_JSON.exists():
         try:
             raw = json.loads(LATEST_JSON.read_text(encoding="utf-8"))
-            if isinstance(raw, dict) and "items" in raw:
-                raw = raw["items"]
-            data = raw
+            if isinstance(raw, list):
+                data = raw
+            elif isinstance(raw, dict) and "items" in raw:
+                data = raw["items"]
             print(f"Loaded {len(data)} stories from {LATEST_JSON}")
         except Exception as e:
             print(f"Error loading {LATEST_JSON}: {e}")
 
-    # Fallback to feed.json
+    # Fallback to feed.json - handle both old and new formats
     if not data and FEED_JSON_INPUT.exists():
         try:
             raw = json.loads(FEED_JSON_INPUT.read_text(encoding="utf-8"))
-            if isinstance(raw, dict) and "items" in raw:
-                raw = raw["items"]
-            data = raw
+
+            if isinstance(raw, list):
+                data = raw
+            elif isinstance(raw, dict):
+                # New clustered format - extract from clusters and timeline
+                if "clusters" in raw:
+                    for cluster in raw.get("clusters", []):
+                        data.extend(cluster.get("stories", []))
+                    # Also add timeline stories
+                    for item in raw.get("timeline", []):
+                        if isinstance(item, dict):
+                            data.append(item)
+                # Old format with items array
+                elif "items" in raw:
+                    data = raw["items"]
+
             print(f"Loaded {len(data)} stories from {FEED_JSON_INPUT}")
         except Exception as e:
             print(f"Error loading {FEED_JSON_INPUT}: {e}")
 
-    # Normalize all stories
-    return [normalize_story(s) for s in data]
+    # Filter and normalize stories
+    normalized = []
+    for s in data:
+        if isinstance(s, dict):
+            normalized.append(normalize_story(s))
+
+    # Deduplicate by title
+    seen_titles = set()
+    unique = []
+    for s in normalized:
+        title = s.get('Title', '').lower()
+        if title and title not in seen_titles:
+            seen_titles.add(title)
+            unique.append(s)
+
+    return unique
 
 
 def detect_early_signals(stories: List[Dict], correlator: StoryCorrelator) -> List[Dict]:

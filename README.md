@@ -1,233 +1,139 @@
-# 🔒 Bob's Daily Brief
+# Bob's Daily Brief
 
-> **Automated cybersecurity news aggregation and intelligence reporting system**
+Automated cybersecurity news aggregation with mosaic intelligence clustering.
 
 [![Scraping Status](https://github.com/arandomguyhere/Google-News-Scraper/actions/workflows/scrape-news.yml/badge.svg)](https://github.com/arandomguyhere/Google-News-Scraper/actions/workflows/scrape-news.yml)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://arandomguyhere.github.io/Google-News-Scraper/)
 
-An automated system that continuously monitors cybersecurity news sources, processes intelligence data, and generates comprehensive reports deployed as a live newsletter.
+## What It Does
 
-## 🌟 Features
+Continuously monitors 40+ cybersecurity news sources, clusters related stories to reveal the bigger picture, and deploys a live intelligence brief via GitHub Pages.
 
-- **🤖 Fully Automated**: Runs every 6 hours and weekday mornings
-- **📰 Multi-Source Scraping**: Aggregates from leading cybersecurity news sources
-- **📊 Advanced Analytics**: Tracks metrics, source performance, and trending topics
-- **🗂️ Historical Archives**: Maintains timestamped data archives
-- **📱 Live Newsletter**: Auto-deployed HTML newsletter via GitHub Pages
-- **📈 Performance Tracking**: Query optimization and source reliability metrics
-- **🔄 Version Controlled**: All data automatically committed to repository
+**Live Brief**: [arandomguyhere.github.io/Google-News-Scraper](https://arandomguyhere.github.io/Google-News-Scraper/)
 
-## 🚀 Live Demo
+## Features
 
-**🌐 View the latest intelligence brief**: [Live Newsletter](https://arandomguyhere.github.io/Google-News-Scraper/)
+- **Multi-source scraping**: 103 targeted search queries across mainstream media, security publications, threat intel vendors, and international sources
+- **Mosaic intelligence**: Clusters related stories using multi-dimensional entity matching (countries, threat actors, sectors, techniques)
+- **Threat actor tracking**: 60+ named APT groups, ransomware gangs, and nation-state actors
+- **Early signal detection**: Surfaces stories gaining traction internationally before US mainstream coverage
+- **Historical archives**: Timestamped snapshots for trend analysis
 
-## 📋 How It Works
-
-### Automation Schedule
-- **Every 6 hours**: `0 */6 * * *` - Continuous monitoring
-- **Weekday mornings**: `0 9 * * 1-5` - Enhanced coverage during business days
-- **Manual trigger**: Available via GitHub Actions interface
-
-### Processing Pipeline
-
-1. **🔍 Data Collection**
-   - Multi-source web scraping
-   - Content validation and filtering
-   - Duplicate detection and removal
-
-2. **📊 Analytics & Metrics**
-   - Source performance tracking
-   - Category-based analysis
-   - Search query optimization
-   - Historical trend analysis
-
-3. **🗄️ Archival System**
-   - Timestamped data snapshots
-   - Long-term data retention
-   - Version-controlled storage
-
-4. **📄 Report Generation**
-   - HTML newsletter creation
-   - Metadata compilation
-   - Performance summaries
-
-5. **🚀 Deployment**
-   - Automatic GitHub Pages deployment
-   - Repository file updates
-   - Artifact generation
-
-## 📁 Repository Structure
+## How It Works
 
 ```
-cyber-intelligence-brief/
-├── 📄 README.md                    # This file
-├── 🔧 .github/workflows/
-│   └── scrape-news.yml            # Automation workflow
-├── 🐍 scraper.py                  # Main scraping engine
-├── 🎨 generate_html.py            # Newsletter generator
-├── 📊 metrics_tracker.py          # Analytics and metrics
-├── 🗂️ archive_manager.py          # Data archival system
-├── 🔍 search_query_tracker.py     # Query optimization
-├── 📁 data/                       # Generated data files
-│   ├── latest_news.json          # Current news data
-│   ├── metrics_tracking.json     # Performance metrics
-│   ├── source_statistics.json    # Source analytics
-│   ├── category_performance.json # Category insights
-│   └── exports/                  # Exported reports
-├── 🌐 docs/                       # GitHub Pages content
-│   ├── index.html                # Newsletter webpage
-│   └── metadata.json             # Deployment info
-└── 🗄️ archives/                   # Historical data
-    └── YYYYMMDD_HHMMSS/          # Timestamped archives
+scraper.py              103 queries (with when:24h freshness), 300+ stories per run
+    |
+    v
+generate_mosaic.py      Story clustering + entity extraction
+    |
+    +-- StoryCorrelator
+    |     - Entity extraction (regex patterns)
+    |     - Multi-dimensional matching (2+ dimensions required)
+    |     - TF-IDF word overlap scoring
+    |
+    v
+docs/index.html         Clustered intelligence brief
+docs/feed.json          Structured data (clusters, connections, timeline)
 ```
 
-## 📊 Generated Content
+## Schedule
 
-### Real-time Data (`data/` folder)
-- **`latest_news.json`** - Current cybersecurity news articles
-- **`metrics_tracking.json`** - System performance metrics
-- **`source_statistics.json`** - Source reliability data
-- **`category_performance.json`** - Topic trending analysis
-- **`search_query_stats.json`** - Query optimization data
+- Every 6 hours: `0 */6 * * *`
+- Weekday mornings: `0 9 * * 1-5`
+- Manual: GitHub Actions workflow dispatch
 
-### Reports
-- **`metrics_report.txt`** - Comprehensive analytics summary
-- **`query_performance_report.txt`** - Search optimization insights
+## Repository Structure
 
-### Archives (`archives/` folder)
-Timestamped snapshots for historical analysis and data recovery.
-
-## 🛠️ Setup & Configuration
-
-### Prerequisites
-- GitHub repository with Actions enabled
-- GitHub Pages enabled in repository settings
-
-### Installation
-
-1. **Fork or clone this repository**
-2. **Enable GitHub Actions**:
-   - Go to your repository → Actions tab
-   - Enable workflows if prompted
-
-3. **Configure GitHub Pages**:
-   - Repository Settings → Pages
-   - Source: "GitHub Actions"
-
-4. **Customize sources** (optional):
-   - Edit `scraper.py` to add/modify news sources
-   - Update search queries and filters
-
-### Running the System
-
-**Automatic**: The system runs automatically according to the schedule
-
-**Manual trigger**:
-1. Go to Actions tab in your repository
-2. Select "Cyber Intelligence Brief - Automated Scraping"
-3. Click "Run workflow"
-4. Optionally enable debug mode for detailed logs
-
-## 📈 Monitoring & Analytics
-
-### Access Methods
-
-1. **Live Newsletter**: Visit your GitHub Pages URL
-2. **Raw Data**: Browse the `data/` folder in your repository
-3. **Historical Data**: Check the `archives/` folder
-4. **Detailed Reports**: Download artifacts from Actions runs
-
-### Performance Metrics
-
-The system tracks:
-- Articles collected per session
-- Source reliability and response times
-- Content categorization accuracy
-- Query performance optimization
-- System uptime and error rates
-
-## 🔧 Advanced Configuration
-
-### Debug Mode
-Enable debug mode for detailed logging:
-- Manual workflow trigger → Enable "debug mode"
-- Downloads additional logs and data files
-- 7-day artifact retention for troubleshooting
-
-### Customization Options
-
-**Scraping Sources**: Modify `scraper.py`
-```python
-# Add new sources or modify existing ones
-sources = [
-    "https://example-cyber-news.com",
-    # Add your sources here
-]
+```
+.
+├── scraper.py              # Main scraping engine
+├── generate_mosaic.py      # Mosaic intelligence generator
+├── requirements.txt        # Python dependencies
+├── src/
+│   └── processors/
+│       ├── story_correlator.py   # Clustering engine
+│       └── nlp_processor.py      # NLP utilities (spaCy optional)
+├── data/                   # Scraper output (gitignored)
+├── docs/                   # GitHub Pages content
+│   ├── index.html          # Live newsletter
+│   └── feed.json           # Clustered data
+└── archives/               # Historical snapshots
 ```
 
-**Report Styling**: Edit `generate_html.py`
-```python
-# Customize HTML template and styling
-template = """
-<!-- Your custom HTML template -->
-"""
+## Tracked Entities
+
+### Threat Actors (60+)
+
+| Origin | Groups |
+|--------|--------|
+| Chinese | Salt/Volt/Flax Typhoon, Mustang Panda, Winnti, Hafnium, APT1/10/27/40/41 |
+| Russian | Fancy/Cozy Bear, Sandworm, Turla, Star/Midnight Blizzard, APT28/29 |
+| North Korean | Lazarus, Kimsuky, Andariel, BlueNoroff, APT37/38 |
+| Iranian | Charming Kitten, MuddyWater, OilRig, Mint/Peach Sandstorm, APT33/34/35 |
+| Ransomware | LockBit, BlackCat/ALPHV, Clop, Akira, Rhysida, Black Basta, Play |
+| Financial | FIN7/11/12, Scattered Spider, LAPSUS$ |
+
+### Other Patterns
+
+- **Countries**: China, Russia, Iran, North Korea, Ukraine, Taiwan, Israel, + 10 more
+- **Sectors**: Healthcare, financial, telecom, energy, defense, government, aerospace
+- **Techniques**: Phishing, lateral movement, C2, credential stuffing, living off the land
+- **Vulnerabilities**: CVE patterns, zero-day, RCE, privilege escalation
+
+## Clustering Algorithm
+
+Stories are grouped when they share 2+ entity dimensions:
+
+```
+Example: "China APT telecom" + "China APT infrastructure"
+  - Shared: countries (China), threat_actors (APT)
+  - Result: Clustered together
+
+Example: "China scams" + "China rare earths"
+  - Shared: countries only (China)
+  - Result: NOT clustered (only 1 dimension)
 ```
 
-**Metrics Tracking**: Configure `metrics_tracker.py`
-```python
-# Adjust tracking parameters
-tracking_config = {
-    "retention_days": 90,
-    "alert_thresholds": {...}
-}
+This prevents overly broad groupings while connecting genuinely related stories.
+
+## Dependencies
+
+```
+requests>=2.28.0
+beautifulsoup4>=4.12.0
+pandas>=2.0.0
+lxml>=4.9.0
+scikit-learn>=1.3.0
+numpy>=1.20.0,<2.0.0
 ```
 
-## 📊 Data Retention
+Optional: `spacy` with `en_core_web_sm` for enhanced NER (falls back to regex)
 
-- **Repository data**: Permanent (version controlled)
-- **GitHub Pages**: Live until next deployment
-- **Artifacts**: 
-  - Metrics reports: 365 days
-  - Archives: 90 days
-  - Debug logs: 7 days
+## Setup
 
-## 🤝 Contributing
+1. Fork/clone the repository
+2. Enable GitHub Actions
+3. Configure GitHub Pages (source: GitHub Actions)
+4. Run workflow manually or wait for scheduled run
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test with debug mode enabled
-5. Submit a pull request
+## Debug Mode
 
-## 📄 License
+Enable via workflow dispatch for:
+- Detailed scraper logs
+- Extended artifact retention
+- Additional diagnostics
 
-This project is open source. See the repository for license details.
+## Data Retention
 
-## 🆘 Support
-
-### Troubleshooting
-
-**Workflow not running?**
-- Check Actions are enabled in repository settings
-- Verify GITHUB_TOKEN permissions
-
-**No data appearing?**
-- Check workflow logs in Actions tab
-- Enable debug mode for detailed diagnostics
-
-**GitHub Pages not updating?**
-- Verify Pages is configured for "GitHub Actions"
-- Check deployment status in Actions tab
-
-### Getting Help
-
-- **Issues**: Open a GitHub issue
-- **Discussions**: Use GitHub Discussions
-- **Documentation**: Check GitHub Actions documentation
+| Type | Retention |
+|------|-----------|
+| Repository data | Permanent (git) |
+| GitHub Pages | Until next deployment |
+| Metrics artifacts | 365 days |
+| Archives | 90 days |
+| Debug logs | 7 days |
 
 ---
 
-**🔄 Last Updated**: Auto-generated during deployment  
-**📊 System Status**: [![Build Status](https://github.com/arandomguyhere/Google-News-Scraper/actions/workflows/scrape-news.yml/badge.svg)](https://github.com/arandomguyhere/Google-News-Scraper/actions)
-
-*Powered by GitHub Actions, Python, and cybersecurity intelligence*
+*Powered by GitHub Actions and mosaic intelligence clustering*

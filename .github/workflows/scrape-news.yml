@@ -75,7 +75,7 @@ jobs:
         echo "=== KEY STATISTICS ==="
         ARTICLE_COUNT=$(python -c "import json; data=json.load(open('data/latest_news.json')); print(len(data))" 2>/dev/null || echo "0")
         echo "Articles in this session: $ARTICLE_COUNT"
-        echo "✅ Metrics updated and reports generated"
+        echo "Metrics updated and reports generated"
     
     - name: Generate query performance report
       run: |
@@ -151,15 +151,15 @@ jobs:
           ARTICLE_COUNT=$(python -c "import json; data=json.load(open('data/latest_news.json')); print(len(data))" 2>/dev/null || echo "0")
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
           
-          git commit -m "🤖 Auto-update cyber intelligence data - $TIMESTAMP
-          
-          📊 Articles collected: $ARTICLE_COUNT
-          🔄 Updated: metrics, archives, HTML newsletter
-          🚀 Deployed via GitHub Actions"
-          
+          git commit -m "Auto-update cyber intelligence data - $TIMESTAMP
+
+          Articles collected: $ARTICLE_COUNT
+          Updated: metrics, archives, HTML newsletter
+          Deployed via GitHub Actions"
+
           # Push changes
           git push
-          echo "✅ Successfully committed and pushed changes to repository"
+          echo "Successfully committed and pushed changes to repository"
         fi
       continue-on-error: true  # Don't fail the entire workflow if git operations fail
     
@@ -234,4 +234,4 @@ jobs:
     - name: Check site accessibility
       run: |
         echo "Checking site accessibility..."
-        echo "✅ Health check completed"
+        echo "Health check completed"

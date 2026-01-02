@@ -29,17 +29,44 @@ class StoryCorrelator:
         # Common entities that might connect stories
         # These patterns help distinguish different story types for coherent clustering
         self.entity_patterns = {
-            'countries': r'\b(China|Chinese|Russia|Russian|Iran|Iranian|Israel|Ukraine|Taiwan|North Korea|DPRK|United States|USA|US|Myanmar|India|European Union|EU)\b',
-            'threat_actors': r'\b(APT\d*|Lazarus|Cozy Bear|Fancy Bear|Salt Typhoon|Volt Typhoon|Sandworm|Kimsuky|state-sponsored|nation-state)\b',
-            'malware': r'\b(ransomware|malware|trojan|backdoor|rootkit|spyware|wiper)\b',
-            'vulnerabilities': r'\b(CVE-\d{4}-\d{4,7}|zero-day|zero day|0day|vulnerability|exploit)\b',
-            'techniques': r'\b(phishing|spear-phishing|social engineering|watering hole|DDoS|credential stuffing|attack|breach|hack|intrusion)\b',
-            'sectors': r'\b(healthcare|financial|infrastructure|energy|telecom|telecommunications|government|defense|military)\b',
-            'tech': r'\b(Ivanti|VMware|Cisco|Microsoft|Google|Apple|Huawei|5G|AI)\b',
-            'cyber_ops': r'\b(cyber attack|cyber espionage|cyber[\s-]?threat|data breach|network intrusion|hacking campaign|compromise)\b',
-            'supply_chain': r'\b(semiconductor|chip|TSMC|rare[\s-]?earths?|lithium|cobalt|gallium|germanium|supply chain|fab|foundry|wafer)\b',
+            'countries': r'\b(China|Chinese|Russia|Russian|Iran|Iranian|Israel|Israeli|Ukraine|Ukrainian|Taiwan|Taiwanese|North Korea|DPRK|United States|USA|US|Myanmar|India|European Union|EU|Pakistan|Turkey|Belarus|Vietnam|Philippines|Japan|South Korea)\b',
+            'threat_actors': r'\b(' + '|'.join([
+                # Generic APT pattern
+                r'APT\d+',
+                # Chinese threat actors
+                'Salt Typhoon', 'Volt Typhoon', 'Flax Typhoon', 'Charcoal Typhoon', 'Raspberry Typhoon',
+                'Mustang Panda', 'Winnti', 'Hafnium', 'Naikon', 'Emissary Panda', 'Stone Panda',
+                'Comment Crew', 'Double Dragon', 'Wicked Panda', 'Aquatic Panda', 'Earth Lusca',
+                # Russian threat actors
+                'Fancy Bear', 'Cozy Bear', 'Sandworm', 'Turla', 'Gamaredon', 'Ember Bear',
+                'Star Blizzard', 'Midnight Blizzard', 'Forest Blizzard', 'Seashell Blizzard',
+                'Voodoo Bear', 'Venomous Bear', 'Primitive Bear', 'Gossamer Bear',
+                # North Korean threat actors
+                'Lazarus', 'Kimsuky', 'Andariel', 'BlueNoroff', 'Stardust Chollima',
+                'Labyrinth Chollima', 'Ricochet Chollima', 'Silent Chollima', 'Velvet Chollima',
+                # Iranian threat actors
+                'Charming Kitten', 'Magic Hound', 'MuddyWater', 'Phosphorus', 'Nemesis Kitten',
+                'Mint Sandstorm', 'Peach Sandstorm', 'Cotton Sandstorm', 'Crimson Sandstorm',
+                'OilRig', 'Tortoiseshell', 'Imperial Kitten',
+                # Ransomware groups
+                'LockBit', 'BlackCat', 'ALPHV', r'Cl0p', 'Clop', 'REvil', 'Conti', 'Hive',
+                'Black Basta', 'Royal', 'Play', 'Akira', 'Rhysida', 'Medusa', 'BianLian',
+                'Vice Society', 'Cuba', 'Ragnar Locker', 'BlackMatter', 'DarkSide',
+                # Financial/other threat actors
+                'FIN7', 'FIN11', 'FIN12', 'Scattered Spider', r'LAPSUS\$', 'Lapsus',
+                'UNC1878', 'UNC2452', 'UNC3886', 'UNC4841',
+                # Generic terms
+                'state-sponsored', 'nation-state', 'threat actor', 'threat group',
+            ]) + r')\b',
+            'malware': r'\b(ransomware|malware|trojan|backdoor|rootkit|spyware|wiper|infostealer|stealer|RAT|remote access|botnet|cryptominer|miner|loader|dropper|implant)\b',
+            'vulnerabilities': r'\b(CVE-\d{4}-\d{4,7}|zero-day|zero day|0day|vulnerability|exploit|RCE|remote code execution|privilege escalation|authentication bypass)\b',
+            'techniques': r'\b(phishing|spear-phishing|spearphishing|social engineering|watering hole|DDoS|credential stuffing|brute force|password spray|lateral movement|persistence|exfiltration|C2|command and control|living off the land|LOTL)\b',
+            'sectors': r'\b(healthcare|hospital|financial|bank|banking|infrastructure|critical infrastructure|energy|power grid|telecom|telecommunications|government|defense|military|aerospace|manufacturing|retail|education|university|legal|law firm)\b',
+            'tech': r'\b(Ivanti|VMware|Cisco|Microsoft|Fortinet|Palo Alto|CrowdStrike|SentinelOne|Mandiant|Google|Apple|Huawei|Citrix|F5|Barracuda|MOVEit|SolarWinds|Okta|LastPass|3CX)\b',
+            'cyber_ops': r'\b(cyber attack|cyber espionage|cyber[\s-]?threat|data breach|network intrusion|hacking campaign|compromise|incident|targeted attack)\b',
+            'supply_chain': r'\b(semiconductor|chip|TSMC|rare[\s-]?earths?|lithium|cobalt|gallium|germanium|supply chain|fab|foundry|wafer|npm|pypi|software supply chain)\b',
             'economic': r'\b(sanctions|sanction|tariff|export control|trade war|trade spat|CFIUS|Entity List|forced technology transfer|economic warfare)\b',
-            'military': r'\b(drone|UAV|UAS|missile|satellite|ASAT|military operation|combat|military warfare|space warfare)\b',
+            'military': r'\b(drone|UAV|UAS|missile|satellite|ASAT|military operation|combat|military warfare|space warfare|hypersonic)\b',
         }
 
         # Cyber campaign indicators
