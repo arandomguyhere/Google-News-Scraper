@@ -106,69 +106,90 @@ SEARCH_QUERIES = [
     ("site:lawfaremedia.org", "Lawfare"),
 
     # ---------------------------------------------------------
-    # TOPIC-BASED SEARCHES - Nation State Actors
+    # TOPIC-BASED SEARCHES - Nation State Actors (with 24h freshness)
     # ---------------------------------------------------------
-    ("China cyber attack", "China Cyber"),
-    ("Russia cyber attack", "Russia Cyber"),
-    ("DPRK cyber", "DPRK Cyber"),
-    ("North Korea hackers", "North Korea Cyber"),
-    ("Iran cyber", "Iran Cyber"),
-    ("state-sponsored hackers", "State-Sponsored Cyber"),
+    ("China cyber attack when:24h", "China Cyber"),
+    ("China cyber when:24h", "China Cyber"),
+    ("Russia cyber attack when:24h", "Russia Cyber"),
+    ("Russia cyber when:24h", "Russia Cyber"),
+    ("DPRK cyber when:24h", "DPRK Cyber"),
+    ("North Korea hackers when:24h", "North Korea Cyber"),
+    ("Iran cyber when:24h", "Iran Cyber"),
+    ("state-sponsored hackers when:24h", "State-Sponsored Cyber"),
 
     # ---------------------------------------------------------
-    # TOPIC-BASED SEARCHES - Threat Types
+    # TOPIC-BASED SEARCHES - Named Threat Actors (with 24h freshness)
     # ---------------------------------------------------------
-    ("ransomware attack", "Ransomware"),
-    ("zero day exploit", "Zero Days"),
-    ("CVE vulnerability", "Vulnerabilities"),
-    ("APT threat actor", "APT Groups"),
-    ("Advanced Persistent Threat", "Advanced Threats"),
-    ("Salt Typhoon", "Salt Typhoon"),
-    ("Volt Typhoon", "Volt Typhoon"),
-    ("phishing attack", "Phishing"),
-    ("malware campaign", "Malware"),
-    ("data breach", "Data Breach"),
+    ("Salt Typhoon when:24h", "Salt Typhoon"),
+    ("Volt Typhoon when:24h", "Volt Typhoon"),
+    ("Flax Typhoon when:24h", "Flax Typhoon"),
+    ("Mustang Panda when:24h", "Mustang Panda"),
+    ("Fancy Bear APT28 when:24h", "Fancy Bear"),
+    ("Cozy Bear APT29 when:24h", "Cozy Bear"),
+    ("Sandworm when:24h", "Sandworm"),
+    ("Lazarus Group when:24h", "Lazarus"),
+    ("Kimsuky when:24h", "Kimsuky"),
+    ("Charming Kitten when:24h", "Charming Kitten"),
+    ("LockBit ransomware when:24h", "LockBit"),
+    ("BlackCat ALPHV when:24h", "BlackCat"),
+    ("Scattered Spider when:24h", "Scattered Spider"),
 
     # ---------------------------------------------------------
-    # TOPIC-BASED SEARCHES - Infrastructure & Supply Chain
+    # TOPIC-BASED SEARCHES - Threat Types (with 24h freshness)
     # ---------------------------------------------------------
-    ("critical infrastructure cyber", "Critical Infrastructure"),
-    ("supply chain attack", "Supply Chain"),
-    ("power grid cyber", "Energy Security"),
+    ("ransomware attack when:24h", "Ransomware"),
+    ("zero day exploit when:24h", "Zero Days"),
+    ("CVE vulnerability when:24h", "Vulnerabilities"),
+    ("APT threat actor when:24h", "APT Groups"),
+    ("Advanced Persistent Threat when:24h", "Advanced Threats"),
+    ("phishing attack when:24h", "Phishing"),
+    ("malware campaign when:24h", "Malware"),
+    ("data breach when:24h", "Data Breach"),
 
     # ---------------------------------------------------------
-    # TOPIC-BASED SEARCHES - General Cyber
+    # TOPIC-BASED SEARCHES - Infrastructure & Supply Chain (with 24h freshness)
     # ---------------------------------------------------------
-    ("cybersecurity news", "Cybersecurity"),
-    ("hackers breach", "Hackers"),
-    ("cyber attack today", "Cyber Attacks"),
+    ("critical infrastructure cyber when:24h", "Critical Infrastructure"),
+    ("supply chain attack when:24h", "Supply Chain"),
+    ("power grid cyber when:24h", "Energy Security"),
 
     # ---------------------------------------------------------
-    # TOPIC-BASED SEARCHES - Emerging Tech
+    # TOPIC-BASED SEARCHES - General Cyber (with 24h freshness)
     # ---------------------------------------------------------
-    ("AI security threat", "AI Security"),
-    ("quantum computing cyber", "Quantum Threats"),
+    ("cybersecurity news when:24h", "Cybersecurity"),
+    ("hackers breach when:24h", "Hackers"),
+    ("cyber attack today when:24h", "Cyber Attacks"),
 
     # ---------------------------------------------------------
-    # TOPIC-BASED SEARCHES - Geopolitical
+    # TOPIC-BASED SEARCHES - Emerging Tech (with 24h freshness)
     # ---------------------------------------------------------
-    ("Taiwan cyber attack", "Taiwan Security"),
-    ("Ukraine cyber war", "Ukraine Conflict"),
-    ("Israel cyber attack", "Middle East Cyber"),
+    ("AI security threat when:24h", "AI Security"),
+    ("quantum computing cyber when:24h", "Quantum Threats"),
 
     # ---------------------------------------------------------
-    # TOPIC-BASED SEARCHES - Industry Sectors
+    # TOPIC-BASED SEARCHES - Geopolitical (with 24h freshness)
     # ---------------------------------------------------------
-    ("healthcare cyber attack", "Healthcare Security"),
-    ("bank cyber attack", "Financial Security"),
-    ("telecom cyber attack", "Telecom Security"),
+    ("Taiwan cyber attack when:24h", "Taiwan Security"),
+    ("Ukraine cyber war when:24h", "Ukraine Conflict"),
+    ("Israel cyber attack when:24h", "Middle East Cyber"),
 
     # ---------------------------------------------------------
-    # TOPIC-BASED SEARCHES - Technology Targets
+    # TOPIC-BASED SEARCHES - Industry Sectors (with 24h freshness)
     # ---------------------------------------------------------
-    ("Ivanti vulnerability", "VPN Security"),
-    ("Fortinet vulnerability", "Firewall Security"),
-    ("Cisco vulnerability", "Network Security"),
+    ("healthcare cyber attack when:24h", "Healthcare Security"),
+    ("bank cyber attack when:24h", "Financial Security"),
+    ("telecom cyber attack when:24h", "Telecom Security"),
+    ("defense contractor cyber when:24h", "Defense Security"),
+    ("government cyber attack when:24h", "Government Security"),
+
+    # ---------------------------------------------------------
+    # TOPIC-BASED SEARCHES - Technology Targets (with 24h freshness)
+    # ---------------------------------------------------------
+    ("Ivanti vulnerability when:24h", "VPN Security"),
+    ("Fortinet vulnerability when:24h", "Firewall Security"),
+    ("Cisco vulnerability when:24h", "Network Security"),
+    ("Microsoft vulnerability when:24h", "Microsoft Security"),
+    ("VMware vulnerability when:24h", "VMware Security"),
 ]
 
 # ---------------------------------------------------------

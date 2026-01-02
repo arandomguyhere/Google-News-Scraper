@@ -13,7 +13,7 @@ Continuously monitors 40+ cybersecurity news sources, clusters related stories t
 
 ## Features
 
-- **Multi-source scraping**: 78 targeted search queries across mainstream media, security publications, threat intel vendors, and international sources
+- **Multi-source scraping**: 100 targeted search queries across mainstream media, security publications, threat intel vendors, and international sources
 - **Mosaic intelligence**: Clusters related stories using multi-dimensional entity matching (countries, threat actors, sectors, techniques)
 - **Threat actor tracking**: 60+ named APT groups, ransomware gangs, and nation-state actors
 - **Early signal detection**: Surfaces stories gaining traction internationally before US mainstream coverage
@@ -22,7 +22,7 @@ Continuously monitors 40+ cybersecurity news sources, clusters related stories t
 ## How It Works
 
 ```
-scraper.py              78 queries, 280+ stories per run
+scraper.py              100 queries (with when:24h freshness), 300+ stories per run
     |
     v
 generate_mosaic.py      Story clustering + entity extraction
