@@ -15,6 +15,9 @@ Continuously monitors 40+ cybersecurity news sources, clusters related stories t
 
 - **Multi-source scraping**: 126 targeted search queries across mainstream media, security publications, threat intel vendors, and international sources
 - **Mosaic intelligence**: Clusters related stories using multi-dimensional entity matching (countries, threat actors, sectors, techniques)
+- **Cluster confidence scoring**: Academic-backed scoring (Silhouette-inspired) rates cluster quality as strong/reasonable/weak
+- **Source reliability weighting**: 50+ sources rated using MBFC/NewsGuard methodology
+- **Syndication detection**: Identifies echo/duplicate content to prevent false confirmation
 - **Threat actor tracking**: 60+ named APT groups, ransomware gangs, and nation-state actors
 - **Early signal detection**: Surfaces stories gaining traction internationally before US mainstream coverage
 - **Historical archives**: Timestamped snapshots for trend analysis
@@ -27,10 +30,12 @@ scraper.py              126 queries (with when:24h freshness), 350+ stories per 
     v
 generate_mosaic.py      Story clustering + entity extraction
     |
-    +-- StoryCorrelator
+    +-- StoryCorrelator (v3.0)
     |     - Entity extraction (regex patterns)
     |     - Multi-dimensional matching (2+ dimensions required)
-    |     - TF-IDF word overlap scoring
+    |     - Cluster confidence scoring (5-factor weighted)
+    |     - Source reliability weighting (MBFC/NewsGuard)
+    |     - Syndication/echo detection (85% title similarity)
     |
     v
 docs/index.html         Clustered intelligence brief
@@ -96,6 +101,36 @@ Example: "China scams" + "China rare earths"
 ```
 
 This prevents overly broad groupings while connecting genuinely related stories.
+
+## Cluster Confidence Scoring (v3.0)
+
+Each cluster receives a confidence score (0-1) based on five factors:
+
+| Factor | Weight | Description |
+|--------|--------|-------------|
+| Entity overlap | 30% | Shared dimensions (countries, actors, sectors) |
+| Source quality | 20% | Average reliability of sources in cluster |
+| Text similarity | 20% | TF-IDF word overlap between stories |
+| Source diversity | 15% | Number of unique sources confirming |
+| Temporal coherence | 15% | Stories within tight time window |
+
+**Strength thresholds** (per Silhouette methodology):
+- `>0.7` = strong (high-confidence cluster)
+- `>0.5` = reasonable
+- `>0.25` = weak
+- `<0.25` = noise
+
+## Source Reliability
+
+Sources rated 0.0-1.0 based on Media Bias/Fact Check and NewsGuard methodology:
+
+| Tier | Score | Examples |
+|------|-------|----------|
+| 1 | 0.85-1.0 | Reuters, BBC, FT, WSJ, Bloomberg |
+| 2 | 0.75-0.85 | Krebs, The Record, Bleeping Computer, CyberScoop |
+| 3 | 0.70-0.85 | Mandiant, CrowdStrike, Unit 42 (vendor research) |
+| 4 | 0.65-0.80 | SCMP, Nikkei, Al Jazeera (international) |
+| 5 | 0.50-0.70 | Mixed reliability sources |
 
 ## Dependencies
 
