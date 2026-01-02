@@ -171,4 +171,29 @@ Enable via workflow dispatch for:
 
 ---
 
+## References
+
+Academic research supporting the v3.0 implementation:
+
+**Cluster Confidence Scoring**
+- Rousseeuw, P.J. (1987). "Silhouettes: A graphical aid to the interpretation and validation of cluster analysis." Journal of Computational and Applied Mathematics, 20, 53-65.
+- [scikit-learn Silhouette Score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html)
+
+**Source Reliability Methodology**
+- [Reliability Estimation of News Media Sources: Birds of a Feather Flock Together](https://arxiv.org/html/2404.09565) - arXiv 2024
+- [Political audience diversity and news reliability in algorithmic ranking](https://www.nature.com/articles/s41562-021-01276-5) - Nature Human Behaviour 2021
+- Media Bias/Fact Check (MBFC) factuality ratings
+- NewsGuard journalist credibility scores
+
+**Syndication/Echo Detection**
+- [Echo Chamber Detection and Analysis](https://link.springer.com/article/10.1007/s13278-021-00779-3) - Social Network Analysis and Mining 2021
+- [A Survey on Echo Chambers on Social Media](https://arxiv.org/abs/2112.05084) - arXiv 2021
+
+**News Event Clustering**
+- [LLM Enhanced Clustering for News Event Detection](https://arxiv.org/abs/2406.10552) - arXiv 2024
+- [Event Detection in Finance Using Hierarchical Clustering](https://pmc.ncbi.nlm.nih.gov/articles/PMC8157256/) - PMC 2021
+- [Temporal-Semantic Clustering of Newspaper Articles](https://www.researchgate.net/publication/221382977) - ResearchGate
+
+---
+
 *Powered by GitHub Actions and mosaic intelligence clustering*
