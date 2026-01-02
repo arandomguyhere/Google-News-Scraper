@@ -106,6 +106,45 @@ SEARCH_QUERIES = [
     ("site:lawfaremedia.org", "Lawfare"),
 
     # ---------------------------------------------------------
+    # FRESH NEWS - Major sites with 24h freshness filter
+    # ---------------------------------------------------------
+    # US/UK Business Press
+    ("site:wsj.com when:24h", "WSJ Fresh"),
+    ("site:ft.com when:24h", "FT Fresh"),
+    ("site:bloomberg.com when:24h", "Bloomberg Fresh"),
+    ("site:reuters.com when:24h", "Reuters Fresh"),
+    ("site:economist.com when:24h", "Economist Fresh"),
+
+    # US/UK News
+    ("site:theguardian.com when:24h", "Guardian Fresh"),
+    ("site:bbc.com when:24h", "BBC Fresh"),
+    ("site:nytimes.com when:24h", "NYT Fresh"),
+    ("site:politico.com when:24h", "Politico Fresh"),
+
+    # Tech Press
+    ("site:theregister.com when:24h", "Register Fresh"),
+    ("site:arstechnica.com when:24h", "Ars Technica Fresh"),
+    ("site:techcrunch.com when:24h", "TechCrunch Fresh"),
+
+    # Asia Pacific
+    ("site:scmp.com when:24h", "SCMP Fresh"),
+    ("site:nikkei.com when:24h", "Nikkei Fresh"),
+    ("site:straitstimes.com when:24h", "Straits Times Fresh"),
+    ("site:abc.net.au when:24h", "ABC Australia Fresh"),
+    ("site:thehindu.com when:24h", "The Hindu Fresh"),
+
+    # Europe
+    ("site:dw.com when:24h", "Deutsche Welle Fresh"),
+    ("site:france24.com when:24h", "France24 Fresh"),
+    ("site:euronews.com when:24h", "Euronews Fresh"),
+
+    # Middle East / Other
+    ("site:aljazeera.com when:24h", "Al Jazeera Fresh"),
+    ("site:timesofisrael.com when:24h", "Times of Israel Fresh"),
+    ("site:kyivindependent.com when:24h", "Kyiv Independent Fresh"),
+    ("site:cbc.ca when:24h", "CBC Canada Fresh"),
+
+    # ---------------------------------------------------------
     # TOPIC-BASED SEARCHES - Nation State Actors (with 24h freshness)
     # ---------------------------------------------------------
     ("China cyber attack when:24h", "China Cyber"),
