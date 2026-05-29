@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-05-29T09:45:59.079779+00:00",
+  "generated_at": "2026-05-29T12:03:55.297250+00:00",
   "summary": {
-    "total_stories": 610,
-    "unique_stories": 609,
+    "total_stories": 593,
+    "unique_stories": 592,
     "syndicated_stories": 1,
     "echo_ratio": 0.002,
-    "story_clusters": 583,
+    "story_clusters": 564,
     "high_confidence_clusters": 4,
     "top_themes": {
       "Critical Infrastructure": 10,
-      "China Cyber": 9,
-      "Malware": 8,
-      "Reuters Fresh": 8,
+      "China Cyber": 10,
+      "ITPro": 8,
+      "CSO Online": 8,
       "The Register": 8,
-      "Forbes Cyber": 8,
-      "Chosun Cyber": 8,
-      "Quantum Threats": 7,
-      "NYT Fresh": 7,
-      "Euronews Fresh": 7
+      "Sanctions": 7,
+      "WSJ Fresh": 7,
+      "Supply Chain": 7,
+      "Bloomberg Fresh": 7,
+      "Bank Info Security": 7
     },
-    "connection_points": 63
+    "connection_points": 59
   },
   "early_signals": [],
   "clusters": [
@@ -58,43 +58,77 @@
       ]
     },
     {
-      "size": 3,
-      "confidence": 0.51,
+      "size": 2,
+      "confidence": 0.516,
       "strength": "reasonable",
       "confidence_drivers": {
         "entity_overlap": 0.5,
         "source_diversity": 0.2,
         "source_quality": 0.5,
         "temporal_coherence": 0.5,
-        "text_similarity": 0.78,
+        "text_similarity": 0.81,
         "shared_dimensions": [
-          "vulnerabilities",
+          "malware",
           "tech"
+        ],
+        "unique_sources": 1,
+        "story_count": 2
+      },
+      "stories": [
+        {
+          "title": "Microsoft warns GPU mining malware is being spread to users through SEO poisoning and AI chatbots — cryptojacking campaign targets gamers and high-end PC users with downloads disguised as popular PC utilities",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Zero Days",
+          "link": "https://news.google.com/read/CBMi1AFBVV95cUxPUVBYNFlqbjNuUUJrTG1JNGdlTFhTY2JWa2JKX2xqRUZuSEp2NXlBSlpYdVNpY3pGVkkwdVIxV0RrRlJIdXZDc0JyRHU2eHhwcFJKMlVhZ1BmVUYyU28wTGpUYzdDT1hiY3dHVGpydlVIOVVSa2laNlQ5ZmdrWHFVWDV3RUR4MlNKelFsZU1FcHVPcjhhNEVCNFE1R3kyOW5rMjBSNG96NXpBbjVWNHFJT3lrTWFBeHJXandFYUF5WTMzdWNvV09HM2pWRjJFd1ZsUEpUXw"
+        },
+        {
+          "title": "Microsoft warns AI chatbots are luring users to cryptojacking malware disguised as trusted PC utility downloads",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Malware",
+          "link": "https://news.google.com/read/CBMi8gFBVV95cUxOQTNIZ2owSko4cVF0Q0Fpb0ljbzc5dkV3Mi1uMzdDQWdadThyWmpacnFCVkozdDhDR3hCTGN0Qm5uc1d2cHVBLTFrX2paeGFrU3IyZGZYYTJ0eWVOLWEybVBDaVV4RXpFSEZHXy1MN3J3cnMzWnZ2ZGdtYkFvVmJXS0d1cVI5bHlvYmx4czNsVXE0eER1LXpoMEZHNG0tcy1fZVBYeU9CY1hhZWdLWmNGd3pFOVhKR3lXbUR1VkdpZTF5RG1pU3lhb2xqcjkxeGpyTlRoZDgwX3lreWRDQ0ZiYnBsSkpIdWxGcTJyTy10R0VaUQ"
+        }
+      ]
+    },
+    {
+      "size": 3,
+      "confidence": 0.508,
+      "strength": "reasonable",
+      "confidence_drivers": {
+        "entity_overlap": 0.5,
+        "source_diversity": 0.2,
+        "source_quality": 0.5,
+        "temporal_coherence": 0.5,
+        "text_similarity": 0.77,
+        "shared_dimensions": [
+          "malware",
+          "supply_chain"
         ],
         "unique_sources": 1,
         "story_count": 3
       },
       "stories": [
         {
-          "title": "Microsoft Threatens Legal Action Over Zero-Day Leaks",
+          "title": "AI-Generated npm Malware Accidentally Exposes Threat Actor’s Private GitHub Token",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Microsoft Security",
-          "link": "https://news.google.com/read/CBMimAFBVV95cUxQRE51Z3NwczRUUFpLaUI3TlEzOWkwcnJ4cEFkOWVHY3V3NDA2WUk1b3d5X29mN1J0R0V5d2lGMFh4b3N1ajY5bHgzYTQzLTA4NFBXZnJZUG5udHNOcGN5dUU0bHM3TlBXSkN2aEVWX2k2c0ZCTmFnRVRmVzdPRmhxM3FSeVVhMEZlUUZWNUtFU3pnckJIakJXdA"
+          "category": "APT Groups",
+          "link": "https://news.google.com/read/CBMiqgFBVV95cUxPOFR1UDJQT05Vam1INmpNaFhtRUFPNjNoYV9Mbkg5b08wdmJ2ck1maUhlNzd1TnlUaXNrLVJLQXRBcUFNMWNaaFYzQm4tRzNCYVBSVy1hOG5nTnRCbXAxLTRNOXJpbWQ1aTZBTlVXbGlWZXJQQ3VJMDdUQ3gwYndwTWQ5OEpwMDlXOGZZeS1sSTNCZFc2V2d0Rm1rU2gxMTEwaEpuZUZoVTJ0dw"
         },
         {
-          "title": "Microsoft Slams Public Zero-Day Disclosures Amid GitHub Researcher Account Removal",
+          "title": "Inside a 176-Package npm Campaign Built to Beat Your Internal Dependencies",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Zero Days",
-          "link": "https://news.google.com/read/CBMiekFVX3lxTE1NdUJnYjRiYzJZTTk2THZpRnNtR0F2QkZOSm03MVVGT1lfOXRzRUVxbG0zV1R2Mmx4bWZHNzRSWjIxaXB0TzNyLTJIeEdtUFN0OUF4SGpjNnNyZGxFVHJnSFppamZGd2tkVGc2MkpJVTU1TnZlMkR4MHNB"
+          "category": "Malware",
+          "link": "https://news.google.com/read/CBMipwFBVV95cUxOY05wV25XMHd5Tnk3Wkp1cGxQQmJZT2J3NHlhcTVQaFVlbHo3MXR6ZHF0LU1RMzRyV1lrVTFSdEpESnVCVS1SNURkZF9qMFJzdjR1V3lLcGtoZ3lFbjBGLXg1d3JtaC1pS2c4Y3IzbUJIc2FwU2lmR09OZXRFUlNQQ2JjcGFCTXlnRWhWdDFGaUxsSkQwV1JKZTh3T3E5QjBudm5CRW9ONNIBtwFBVV95cUxPSHlZTWJSTEl5bE0wYlljX3JzV1M1azBObFpBeG9xOWJ1Q2VuXzFBTlZkQ0VfUERHLXQtdk54MS0wOWJQMnQ4SUZQNkpqSEgtZjRuRzBzSHhtMDFTM0ZGSXhNeDhIeVdCSTE4MElMYXZMRlBLMEVPUTlFcDQxNkpTWHBjanpFXzFQLVloZ2pvZEdaVUlLdTZ0TkNhbk95Zmx5NmNlWkxyVUlydGJFNkpOT1lhNURQdEk"
         },
         {
-          "title": "Microsoft Condemns \"Uncoordinated\" Zero Day Disclosures",
+          "title": "AI-Generated npm Malware Leaks Hacker’s Private GitHub Token",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Zero Days",
-          "link": "https://news.google.com/read/CBMigAFBVV95cUxQODJiNlVHajhLNEtTdUI4QXlnckN5LW5Cc19oZEN5RU1JZ0hZcnNGTlNlVzVCSnBlaUJGMkgwNmN2Qlk0ZVZhU19ZdkhHdFVIWFliNmp3dVNWa0J4VUVyeTY3MlRCZk9iUU5SMFVvZWVCdmgyS1NlbEwzN1lwUExhcw"
+          "category": "GBHackers",
+          "link": "https://news.google.com/read/CBMiW0FVX3lxTFBZWTJSUkd2UktHbG9oMzVLRm05R3ZDV0NtanlrQWtOaFBsRkpyaldRU3UtZGJCVDBULVFBMW1zQWkxRlNXeW5KcGpfS01LeERyVkg0VUd5TWNvUjA"
         }
       ]
     },
@@ -109,60 +143,74 @@
         "temporal_coherence": 0.5,
         "text_similarity": 0.76,
         "shared_dimensions": [
-          "countries",
-          "military"
+          "vulnerabilities",
+          "tech"
         ],
         "unique_sources": 1,
         "story_count": 3
       },
       "stories": [
         {
-          "title": "Nato condemns Russian 'recklessness' after drone hits Romanian apartment block",
+          "title": "Microsoft Faces Fallout from Nightmare Eclipse’s Threats Amid Ongoing Zero-Day Saga",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "BBC Fresh",
-          "link": "https://news.google.com/read/CBMiWkFVX3lxTE5fSWM1MEhJTE1kMWM5a1pocVBEQzFoUG1VSjlUT2pVTTItdDRiVWhGMFN6a2NrX0dsaWFDOEJWU2ZjT3NiOVhLdFNTOG0xWXBDOXhzMGlieDJDQQ"
+          "category": "Advanced Threats",
+          "link": "https://news.google.com/read/CBMirgFBVV95cUxNOThBdUxRenlTVDEwSUt6QWxHa2JLMzRKZUVnXzZPXzRXQW9OZWQ2REpzR2R6WU5wVnQ3Wkc0Tzh6SE05QzY4Vmdkc292SFpBOVhkOWtPMEtreFNRb1B6X1hWSXBXWldxZ2h4U2dpYzlyektkSUw0Z1h0ckQzUW5VZUVzbUdNWXlFUmthNmozN0RXWGx4SGI2bXR1VWFXYXJYaVI3bERBRUFaQ0ZDbUE"
         },
         {
-          "title": "NATO member Romania says Russian drone hit block of flats, injuring two",
+          "title": "Microsoft Threatens Legal Action Over Zero-Day Leaks",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Reuters Fresh",
-          "link": "https://news.google.com/read/CBMixwFBVV95cUxPY0FxTTNJMUZNTG1PVnRLd2daS2VBbUl4S2lPZjNLUFlRTnItSWlrdW5SQU03T3lsc0VrTm1NVVVMUUt4ODNyOU9ld0FqTEFOQkJjSG9rTUg0SlJTNzE1UC1KaWtTT0IyZTlwTzhLTjBqbUdMeC1iYWxUeGJxZW9vSU9UaU1GbDQyVVcwWUFjcGtmVTdSaWpzWWl5QjV4S1Bwemw0QjI5dG1mZmhuZ0FpME9zbkdqSFdHUkExS2N3blhNSlZYcTdF"
+          "category": "Zero Days",
+          "link": "https://news.google.com/read/CBMimAFBVV95cUxQRE51Z3NwczRUUFpLaUI3TlEzOWkwcnJ4cEFkOWVHY3V3NDA2WUk1b3d5X29mN1J0R0V5d2lGMFh4b3N1ajY5bHgzYTQzLTA4NFBXZnJZUG5udHNOcGN5dUU0bHM3TlBXSkN2aEVWX2k2c0ZCTmFnRVRmVzdPRmhxM3FSeVVhMEZlUUZWNUtFU3pnckJIakJXdA"
         },
         {
-          "title": "Russian drone strike on Romanian residential building 'serious and irresponsible escalation'",
+          "title": "Microsoft Slams Public Zero-Day Disclosures Amid GitHub Researcher Account Removal",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Kyiv Independent Fresh",
-          "link": "https://news.google.com/read/CBMipgFBVV95cUxNRUUwQ0VKTVk5SS1wWlBENXpQcHluSEQ3bWRmQmZNNTBHN0s3NXhOcmFRXzFXdmd1dVdJaExnVXBmbXlqbExrVU9XRXpnNk1nZDF0Z1BiY0ctcXNleXlQVldQMkdjbmVuQTJJN0MzZkJNSnFjME9rcUZFenBxMFNnX2s0YWxqSC1wLTl3aGNDOGFUbWJEdEZWNmRjanJZQmx1VnNzU2F3"
+          "category": "Zero Days",
+          "link": "https://news.google.com/read/CBMiekFVX3lxTE1NdUJnYjRiYzJZTTk2THZpRnNtR0F2QkZOSm03MVVGT1lfOXRzRUVxbG0zV1R2Mmx4bWZHNzRSWjIxaXB0TzNyLTJIeEdtUFN0OUF4SGpjNnNyZGxFVHJnSFppamZGd2tkVGc2MkpJVTU1TnZlMkR4MHNB"
         }
       ]
     },
     {
-      "size": 4,
-      "confidence": 0.506,
-      "strength": "reasonable",
+      "size": 6,
+      "confidence": 0.493,
+      "strength": "weak",
       "confidence_drivers": {
         "entity_overlap": 0.5,
         "source_diversity": 0.2,
         "source_quality": 0.5,
         "temporal_coherence": 0.5,
-        "text_similarity": 0.75,
+        "text_similarity": 0.69,
         "shared_dimensions": [
           "techniques",
           "tech"
         ],
         "unique_sources": 1,
-        "story_count": 4
+        "story_count": 6
       },
       "stories": [
+        {
+          "title": "Fake Party Invitation Phishing Scam Spoofs Google and Microsoft OAuth Logins: FTC Warns",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Phishing",
+          "link": "https://news.google.com/read/CBMi0wFBVV95cUxPWTMzOXRtX2NxRmd1SnVVWEk4VVozaUFsbGtsRG9hTjVNMURCaUlCb2lENXhIcEdFeGhVODdTejRQWU9XVG9ocTNHZm1qak9JY3YxeVhZMkhvakYwZ0JPUzhlbmltSmlTTmI2UzF0Vm5JZlUyRGlVeTdPS1VWOVBpNGd0eWlIYks0NmxDQV8zTWVSWUNmRmU3aFlYOTBhLWVpUldJRU41WjA1aHlEVzVNZnZGNFNVSGNqVnJWRktPMkxQdk05czAxajlDbU9yRTdNT0Yw"
+        },
         {
           "title": "The FBI Just Issued an Urgent Warning for Anyone Using Microsoft Teams, Outlook, or OneDrive Over a New Phishing Scheme",
           "source": "More",
           "source_reliability": 0.5,
           "category": "Phishing",
           "link": "https://news.google.com/read/CBMitgFBVV95cUxQT2g1MXdWS3hudjd5OWdKOTRvdUhZQ3dlZkdJXy1xaEFCRUhGdkh6b2ZkeVBQd201VzIzV0kzdU14UE5zX2E3Skw2SllESk1wZVRVZTVqWHZEVFRaVXZuUFNNLWEwYzQteVo1LUhheHpuNTFaeHpsTmV2bmR5SW9GaG9Cc096aU4zQTVBT2lidHJxRUNCeFRHWlUwOFlteFJPQnQ2aUNqeFJNMmlqMlVpVkt0YTNTQQ"
+        },
+        {
+          "title": "FBI warns Microsoft 365 is being bombarded with new phishing emails",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Phishing",
+          "link": "https://news.google.com/read/CBMi9gFBVV95cUxNQzl2VDBmaF9vVDFzeDNYOEk1Z2ZGV0E2MFgxZXl3VUtzeldobEZPQkFGTkR3S0Q1Tml6TEw2Q3ZIeEF4ZmtvQktuLUJmSlo5aGZ4MXRUaUxXOVlHeVo4bnBtaF9sbWgtdU1yUFV6Q1pZM040SHlUaHpwNE9BMzYzdDRPZ1VsQVBZY0ZwVWhfdUlGbUhOTVN0amlPMXNVbkxWaHQ0MVZqUk55NTVSRnd6MUF4VEhwTEtMM1IzR21ZblZtWlE1WWUzdGNZUzFuekU2bFFCR21ZcC1zeVVyMDREaDRhc1IyUWpFbzViVHBlR3RHeHM0Nmc"
         },
         {
           "title": "FBI Issues Urgent Warning For Microsoft 365 Users: Kali365 Phishing Kit Bypasses MFA",
@@ -188,56 +236,8 @@
       ]
     },
     {
-      "size": 4,
-      "confidence": 0.488,
-      "strength": "weak",
-      "confidence_drivers": {
-        "entity_overlap": 0.5,
-        "source_diversity": 0.2,
-        "source_quality": 0.5,
-        "temporal_coherence": 0.5,
-        "text_similarity": 0.66,
-        "shared_dimensions": [
-          "malware",
-          "supply_chain"
-        ],
-        "unique_sources": 1,
-        "story_count": 4
-      },
-      "stories": [
-        {
-          "title": "Inside a 176-Package npm Campaign Built to Beat Your Internal Dependencies",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Malware",
-          "link": "https://news.google.com/read/CBMiswFBVV95cUxPQ1BqdmJwVjRSVHBQYXkzR01INHFFQmpvczJ3bW9mZ1dmUTRPaUhMeG5adHBaQW40X3k2WUxyZ0FFRVRmVTlZSTVOQjgwcElhcjhnNndRbWhDSmduRUdYR19TX2p3VFJFMlNnU0ZORnY0OW9EX251Y2FONWJiRmNzSXpiYUJQZnJIb1hBNzR4N3RFN3A0YkxoRlhVV19BcklvQVJvTlYwY2pRdjNuV2VJbF9QYw"
-        },
-        {
-          "title": "AI-Generated npm Malware Accidentally Exposes Threat Actor’s Private GitHub Token",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "APT Groups",
-          "link": "https://news.google.com/read/CBMiqgFBVV95cUxPOFR1UDJQT05Vam1INmpNaFhtRUFPNjNoYV9Mbkg5b08wdmJ2ck1maUhlNzd1TnlUaXNrLVJLQXRBcUFNMWNaaFYzQm4tRzNCYVBSVy1hOG5nTnRCbXAxLTRNOXJpbWQ1aTZBTlVXbGlWZXJQQ3VJMDdUQ3gwYndwTWQ5OEpwMDlXOGZZeS1sSTNCZFc2V2d0Rm1rU2gxMTEwaEpuZUZoVTJ0dw"
-        },
-        {
-          "title": "GlassWorm Malware Takedown: Disruption of Developer Supply Chain Attacks Targeting VSCode, npm, Python, and GitHub",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Malware",
-          "link": "https://news.google.com/read/CBMi1gFBVV95cUxQZ09admU4ckhMX181bEVtRUNfMGxiTnZxRXotSVgxT3R4UXBNUWRiVW9uU1Zfb092MHBMUnBQS3hTczhxVE5ueXhBSl9KaWZ3MmpwS3hMWV9KYUgwUTJuQWRwdlRvSUQ1UFIwQWpyODdERFdrTFpqTmplUGRjQUZDcm1CYkRHbUc5Sm5LOG52T2VtUjNNV0FYcFhnRXA3TW9uTEluVE9OZHdzM0FmNlJFbDNPaG5YWE5laWRwVEVQT3lheEVkeWlaRjBmRzVFa0hLQ3k4LWJn"
-        },
-        {
-          "title": "AI-Generated npm Malware Leaks Hacker’s Private GitHub Token",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "GBHackers",
-          "link": "https://news.google.com/read/CBMiW0FVX3lxTFBZWTJSUkd2UktHbG9oMzVLRm05R3ZDV0NtanlrQWtOaFBsRkpyaldRU3UtZGJCVDBULVFBMW1zQWkxRlNXeW5KcGpfS01LeERyVkg0VUd5TWNvUjA"
-        }
-      ]
-    },
-    {
-      "size": 4,
-      "confidence": 0.486,
+      "size": 6,
+      "confidence": 0.487,
       "strength": "weak",
       "confidence_drivers": {
         "entity_overlap": 0.5,
@@ -247,73 +247,53 @@
         "text_similarity": 0.66,
         "shared_dimensions": [
           "countries",
-          "economic"
+          "military"
         ],
         "unique_sources": 1,
-        "story_count": 4
+        "story_count": 6
       },
       "stories": [
         {
-          "title": "US adds UN Palestine expert back to sanctions list",
+          "title": "Russian drone crashes into Romanian apartment block, sparking outcry",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Sanctions",
-          "link": "https://news.google.com/read/CBMikAFBVV95cUxNanFlNEMtSVFPU3BMQ0lTd1I5Y3BzeXNiQkhnSXhfWUdGNzhibGlLbG9xc0x5VHV3VTRjRk5rSTRUckoxMGRGeTE2RFVMT3VqX3hVMll1Y2x0SXpoYWcyS0F5QUM5cmRNZFo1NFlqb0U4MnRyYUlPbGdTZDVNSm51b0RhWXVMZ29VMjFLOFB6LVo"
+          "category": "Euronews Fresh",
+          "link": "https://news.google.com/read/CBMixwFBVV95cUxOdDJHQjk4cHItSktGMk1ZcU9uWWk1Tmgxa1MxOUZNcW0tWlE4elNfUTNDX1dBSlIxTDZlQlAxZ2RNQzc3d1Z4OVpvZEppc0pUVnhUeVA4SUNpY3FSTzdHRUV1MDE4b0puN1ktRnhxQXI5czZIZUFuc1llaW1mZGRrTGZscFptQkl5YXBFNTIyM0FrOG5CckE3YWRDM3BjTnlrOWJvQnYtdUFrNE1GbllmTmlocE85Y1R5RHZFZHk4MnkxZXlKN1o4"
         },
         {
-          "title": "Huawei bets on speed over shrinking transistors to sidestep US chip sanctions",
+          "title": "Romania: Russian drone strikes Galati apartment building",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Reuters Fresh",
-          "link": "https://news.google.com/read/CBMiuwFBVV95cUxNNTF0aFdWRThWajFHMkhDSk1na25UREdhcWc5WVZOSkFHNjJYa1kzVTVlVVotaTNkb0U4aGsyWFhmVy12RmdrY25GNkhsc0tEQkxEa1VQRy1lZk1pcUpjTzIzcUlhTzRJcEQ4Nk4xX25Nby1sVFpza3AzWUxndVRDXzNTZHZSQzhVSmVmY2xlNlc3WUdzZC1paHVVb01RS0hMWnJILUxKdkFQeGJTZ2JDMmhybFhESWFRdmJF"
+          "category": "Deutsche Welle Fresh",
+          "link": "https://news.google.com/read/CBMijwFBVV95cUxNR1ZMUkRBVXo1VTUtcV9TNW5mWjBCNWNtYXB3WUV4aDV3ejcwNVRGZ3V4WjJpbkhVV1RKck9qbzhrelRqQnk5RXFKWkd0eTV0OVJhbVpPbUc5X2tUVkJ3dnFUUlFhamtRcVRxRkNuRExIcTlCUFdQRGhiY2VMbDdja1EyUVBveGRzejhlQ2l0b9IBjwFBVV95cUxQVnRmaGNJMXdySTZnTVVEQ2lXU1ZWX2xEaXptWDN5Z0hRT1JfRm9DZEV6d1RreTI5TUdkZEFlZEZ3MWdLVU5Qd2lPZHJFdlB4SHgxUXoyRXl1dmpIZml2QWdyeG9BV0hOenpyQmRZNjdQTjlkV1FJT1FwRE83NmE3ekhBWUJRY0VsNF9KV0ZOYw"
         },
         {
-          "title": "US Treasury threatens Oman with sanctions over Hormuz Strait",
+          "title": "Nato ready to defend ‘every inch’ of territory as Russian drone hits Romania",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Sanctions",
-          "link": "https://news.google.com/read/CBMiowFBVV95cUxNcXVLY3pST3lxcHV4R3d5SWNCRklQTVgtRmpSN1ZLaXhtYms3Q2Z4NXI4N3hTOUlrbW8tQnFmQWFqQUFKcWZ4MExOMGpYVDJkM2hMNDhYTUF0ZlBKUDNDaEZ3VDhVS3JTZWhKdWI2Ym5melBuWUNKNDhrSk9hQ1VKQmdGdE9teEdYQlM0aElXUmNjVVlnVVN2cDA3anpKQ0tMOXhr0gGoAUFVX3lxTE0wM2NWeDRDYTkwVGROem1TQzhtQktDR09McGtzNXUzQXZFbThwUFFVZHNxZkxmNUhXblFrY3FLdXhjNk13TUVhZUlHcFZzY0U3c2d5bDlIbTlkQ2FzSzlaQ3VtWlFKSmpXNkpoNGRnLXVwSEV2dmZTNHN3bmZ3MVo3OHlIUGFETTFfTUdTR3FHZ2lsMlRUTWV4bXVfbWJLcnVjUWQzQTZaSQ"
+          "category": "Guardian Fresh",
+          "link": "https://news.google.com/read/CBMiuAFBVV95cUxQRzRKX09nOW40djZPRWhLN05Mc25JalhzX1ZTVTNlQkJJZ2pSYXNMdENQM1BYUmtQQTduUkpMYmhWTE1DUm9PR0xPSnV0UkxKTVM0MERiUU1NWG5TMEl1NFdqaHVOYl82aG1QWG52WjJiOGFRMmo1WnJXNi11T2d3SlRUOEllYU5lcHdGSW40RTBqV3NrSjNSeFZnNnJGcDlEUlBTTHRUcEdxbGkxMFR2MXlEZzJZS3pu"
         },
         {
-          "title": "US imposes fresh sanctions on Iran's military oil sales, Treasury says",
+          "title": "Russian drone strikes residential building in Romania, injuring two",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Sanctions",
-          "link": "https://news.google.com/read/CBMiswFBVV95cUxOTGN5U0hILU5zdG9XalBqazFVZGtCQXZmTnY5SlZ3Y1g2d293c0tGaXM0QnpXUkRGNWxMclNJSl96YmFPYnNRd3V0aEhKSDd0eEtBcmlTX1B6VXNRZlNic0ZRMGF5dmtsU3RZdDczS1FTWFRCS2FnTEZfMkxZRnhENHVEMDh0N2VtYjl4WXhIUGV0RnVJNk80TGNBdm1xbTQzUG1pNmhySjcwVXAyNVYtSjVTaw"
-        }
-      ]
-    },
-    {
-      "size": 2,
-      "confidence": 0.478,
-      "strength": "weak",
-      "confidence_drivers": {
-        "entity_overlap": 0.5,
-        "source_diversity": 0.2,
-        "source_quality": 0.5,
-        "temporal_coherence": 0.5,
-        "text_similarity": 0.61,
-        "shared_dimensions": [
-          "countries",
-          "sectors"
-        ],
-        "unique_sources": 1,
-        "story_count": 2
-      },
-      "stories": [
-        {
-          "title": "Russia just passed a law allowing its central bank to down drones",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Financial Security",
-          "link": "https://news.google.com/read/CBMi2gFBVV95cUxQd1Z5QmJ4T2Jma0JuMGprUUYyejZZbXNidUtpMVJWVWlMamc0Q0tqZGFEcVdFYk50eUZNVXBHZkM3X3FuZjA5akwwcGJkRDJiMUhxdWFGNkFTcmg4ZE9ub2VxdmVwT285Y3RMbldOMDRkeVUxRnpMWkpZa2FIQXJxMDVmQTgzcDQ3T0ZOUnhncGNJRDJaWUJCY3p6QXUxTGNwa01DQlBkYjJ5T25aM1dCSU0xU2FrX1VNdE5oNU5UbFlnUnhnY2FEZ0dTNjJ6VzdRSTVydkJ2S0NsUQ"
+          "category": "Kyiv Independent Fresh",
+          "link": "https://news.google.com/read/CBMijgFBVV95cUxQYWNDenhIWUFYcm9NdDd1UU9Ma3RzdXF4R19GNkREa2FIbVN6NDU4TFEtUDlHeGVEemRyb25yc2RUTFdDX2MxcXd4eU03UmM2R0RRN0tSWDZTNVVjMmh1NGtCcE1IaTRzZ1FQbWhZUjNhRGtjYTVESE5tNnY4VzM0UmUzdWZUMjF4R2xUVEpn"
         },
         {
-          "title": "Russia to allow its central bank to down drones as Moscow struggles to defend against attacks",
+          "title": "Russian Troops Face “Logistics Lockdown” Under Ukrainian Drone Barrages",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Russia Cyber",
-          "link": "https://news.google.com/read/CBMihANBVV95cUxQcXl5dWY1VlpsR2xiZVdBRVFlVVdVaFViR3JramZ0aDhaWUxzdFZRcWNkbFM4djZWeGNGSWplWGFYX0hfWnVMWnFodjl0d1YyWm1ISXl2Y29JQURGRjR3V1ZFc2tGRmt4MWNxamtLU2RjTnFJaFB1ZEF3ZFNlTWRMRmpSZVl0ck9sd0ZOSmliMUFEWThKdGxRMGJ3Tk5QazlyclhmVUhGWnpIbXhfcllleHBOMVRqczJPQVZSSk9yRlVELU9PZUVjdDR2Y1BpQS1sMFdnVEhHc3BjQkpmLTVWSXoxMkFZMzhnWklKRFpvenhLWW9iV0VmdXEtU0hVTGVPXzdxTWRGQnlwU1VHU0xHS3c0bGtxZ0U4MnJsT1JjdUVsX1d4R0VrTjBjbzQxaXY0dWQybDE1aHM2UFRDQlhLZ3I5RkFieHpudWdjX05teEtNNlRfRW9wcXBzSko1Z3Zudlg2RWE3LXZNS3ZUUElCVmVFQ3kyVUtscm1OQzhrWmdaMEJD"
+          "category": "United 24",
+          "link": "https://news.google.com/read/CBMitwFBVV95cUxQUmg4c2ZrcUdQVGtCZWEybVZIMjFmMGNwWlhxYVBPaFpFTWtLLWpwTzF2Ul9keVVQc0haYnRFMnpUY3dIT1RNcnRaZC1lbjk4NlQzZ3JLd3ltT2xuV3ZuaWttZURfVTBtcFEtTDNXYU5tamgxSlVsV191NjFhRkxLNjA0U1c1RXRfbWJEU1lTRjlfZ2ZCMUVPbXJMbTlxY2E2ZUg2MGg2dHl4TGVKc3VjaFluWHJHSXM"
+        },
+        {
+          "title": "The Ukrainian allies tested by Russian incursions after drone hits flat in Romania",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Independent Cyber",
+          "link": "https://news.google.com/read/CBMiqAFBVV95cUxQQzM5NWhHQzd2ejlwRHcwakVmekxUcmNKUUVMUkVMZVlTLXFtaldVVHhvWG1sS2JIbWp5UVdrSTVWX0ROYmNJNDliSzNaME1IN2pWamM2UHd1Vl9zOVJabTFpam1mVFBLZFNvb252azR1UXNJam5BZWxMNEl0Z3N0d3pkLXpDcWVDN2oxX0x0eHRBZUNTWnh2RFhtb3hQbGxEQ05KeFhxeUY"
         }
       ]
     },
@@ -348,87 +328,6 @@
           "source_reliability": 0.5,
           "category": "CyberScoop",
           "link": "https://news.google.com/read/CBMibkFVX3lxTFA1RzJZYXplNlFjV3RCQzE1XzVlaVlfazBYNS1fczZIZk5rN0psZHRjYm1CYjI5cnNlallzQmhicTA1eHljZVVMWDVhb1VCVG9uSnJ2YmtGcmJpUnViaVVQMl8xVFhwMHN5SHdDeXNB"
-        }
-      ]
-    },
-    {
-      "size": 4,
-      "confidence": 0.466,
-      "strength": "weak",
-      "confidence_drivers": {
-        "entity_overlap": 0.5,
-        "source_diversity": 0.2,
-        "source_quality": 0.5,
-        "temporal_coherence": 0.5,
-        "text_similarity": 0.55,
-        "shared_dimensions": [
-          "countries",
-          "sectors"
-        ],
-        "unique_sources": 1,
-        "story_count": 4
-      },
-      "stories": [
-        {
-          "title": "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "China Cyber",
-          "link": "https://news.google.com/read/CBMiggFBVV95cUxORWRXTkJaTHg5Nl9pSzlNaHZXZ3FSVkh4eC16Z1VfbE53eVRPSlFETVVXeHUxTlhGbEdwNFd6WGpnbUY3bGhLVU0zdkNCYUY5LU5zZXNMdl9CU0o5TTBEUEk0Sk51RFpDbE1wVlBVUnZoME91STg1ajUtNExrcHczelV3"
-        },
-        {
-          "title": "Iran War: Oil Shortages Threaten Global Energy Security - DW News",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Deutsche Welle Fresh",
-          "link": "https://news.google.com/read/CBMijwFBVV95cUxNR1ZMUkRBVXo1VTUtcV9TNW5mWjBCNWNtYXB3WUV4aDV3ejcwNVRGZ3V4WjJpbkhVV1RKck9qbzhrelRqQnk5RXFKWkd0eTV0OVJhbVpPbUc5X2tUVkJ3dnFUUlFhamtRcVRxRkNuRExIcTlCUFdQRGhiY2VMbDdja1EyUVBveGRzejhlQ2l0b9IBjwFBVV95cUxQVnRmaGNJMXdySTZnTVVEQ2lXU1ZWX2xEaXptWDN5Z0hRT1JfRm9DZEV6d1RreTI5TUdkZEFlZEZ3MWdLVU5Qd2lPZHJFdlB4SHgxUXoyRXl1dmpIZml2QWdyeG9BV0hOenpyQmRZNjdQTjlkV1FJT1FwRE83NmE3ekhBWUJRY0VsNF9KV0ZOYw"
-        },
-        {
-          "title": "Hitachi Energy Q&A: The US-Israel-Iran War's Energy Impact",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Energy Security",
-          "link": "https://news.google.com/read/CBMikgFBVV95cUxQMFI4TS0tTWpVaUdkM2x3THZ1akFpa3dZNjBSTE93MnVtUF9GWHNwV1JneGVfeE1icGU2M1NPVnhEcXh6ZVp0U2g1UEtZdzhEQmM5YWlocFJXR0RxbllTM2NaYVlrRUt4Yy1vUm9JWnh2YWN5MXRJd3lIdldrYTFWNWVmbUxDQm9Jb0RYaEduUU5Qdw"
-        },
-        {
-          "title": "Germany eyes heat pumps as Iran war drives energy costs up",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Deutsche Welle Fresh",
-          "link": "https://news.google.com/read/CBMilgFBVV95cUxORjJPQ1BLM3BCUjRsZnpodEFlUkZ3SktrcmdseUJINmFibUhkQmJmMkFGVkRXeVMtQjUxNnJPQ2JVX3lkcXFJZ1ZieGh2ZHU1OVRqY013LVgtU3pTVTd5VU1HVjZyTWFmbFd0Q2I4U3FWYUVTZ0lQSTRhenMzVl9MSGNSVGV0a1Z6dTFBbEZ0a2JFUDhSOWfSAZYBQVVfeXFMUFExX0E5U21kZzEzbjFEcFdPdHRheElTRjlZM3NpTnBONFV6elpsSjdLdTVQT3hDbG5nNTJxbGpzcWxGc211TC0xS2lxMGt5QzlQTnZ6alM0RzA0YlktZXRud1ZGcjhmZHdrS1lNVmNLVFgwa3Y3eVZwNGtKamxOSE9BX0c1Ym52aUFtVTFZSkxsSHM2b0dn"
-        }
-      ]
-    },
-    {
-      "size": 2,
-      "confidence": 0.465,
-      "strength": "weak",
-      "confidence_drivers": {
-        "entity_overlap": 0.25,
-        "source_diversity": 0.2,
-        "source_quality": 0.5,
-        "temporal_coherence": 0.5,
-        "text_similarity": 0.92,
-        "shared_dimensions": [
-          "countries"
-        ],
-        "unique_sources": 1,
-        "story_count": 2
-      },
-      "stories": [
-        {
-          "title": "'Will never happen': North Korea rejects Quad's call for denuclearisation",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "DPRK Cyber",
-          "link": "https://news.google.com/read/CBMiywFBVV95cUxPbnpBLUZpTmRWWGJiOFRFVUNTTk1zVWo3cjZET1dPbWt6MjUtN3NiazRoNzRQb0c5LS1ucTc2M05PYWxFdE9DNmluTnUxVlVIelp0LU9pLVFkNXhKYUllVEhodFNvbVlkZlUwcU5OUXIwSUVlU3NzT09wTGk2emJkWlF5ZVhqeFpaWmprQ0swSU9hNkVKRjFBVzFHZkJZY2JzaEo5bVpuTFVtSl9SelNyUk1yZTYwRGlPZFNNc3V3bmpSd1hPN0NvWGZhYw"
-        },
-        {
-          "title": "North Korea rejects Quad’s call for denuclearisation",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "DPRK Cyber",
-          "link": "https://news.google.com/read/CBMijwFBVV95cUxOT3dITEdpc0VJeEFmWGFibkxJdnVERktBeGFtekJyN1pCNG8zTUNMeW1IQ1dTWEVSZF9DRG02TFlnd0hkSGU1bEZ3aWxDckNDN1QxcVdqM3lVYUp1TUwtaFhtZjVtc3BvalhtTHZWM1JFbkhiT0FRdU85RHhlSzVpS3MxZG1RR29fWGRnaC1YWQ"
         }
       ]
     },
@@ -484,18 +383,84 @@
       },
       "stories": [
         {
-          "title": "'500,000 Russian soldiers killed' in Putin’s war on Ukraine",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Salt Typhoon",
-          "link": "https://news.google.com/read/CBMinAFBVV95cUxOclpCai1ISGNjX2dIWThMa2MzRFc2SkVSc2QteUZCRktWMlVoMXdaeE1WMjIycDFsOXdYQ3piUHFyWHl1bjFZWVlDYldnQnBZY3g2MHNESDhLdWJ2VnNjU0VUdkJwdjhqSndFQ0NFSGJjcmN6OURoZFRYWnFhV0hXWHoyeUFoWUJ1N2E5d3BwUXNIeE5qcktTZlRNNTM"
-        },
-        {
           "title": "500,000 Russian soldiers killed in Putin’s war on Ukraine, says GCHQ",
           "source": "More",
           "source_reliability": 0.5,
           "category": "Independent Cyber",
           "link": "https://news.google.com/read/CBMisgFBVV95cUxOZTl6WVNYZXZpdEN1VktiWEN3cndFb0YxdEZ6LW50NUZWUTIydk4yazdUN2owMkFPZlFVZ1V1SGFlSFR1YkxBV2lRTjlYel9vaHZkV1hMS01pTXVGUzI3UU4yTGpRMGlrZUwwUjl6cERUNlpkdDZOUWpRUVpkVy1rY05jTEpabjZab0NHUFgxVkFmMC1XY3NCemNjWmR4Y3E3SUZmZ0NFXzRsWXVsNkpjMlBB"
+        },
+        {
+          "title": "'500,000 Russian soldiers killed' in Putin’s war on Ukraine",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Salt Typhoon",
+          "link": "https://news.google.com/read/CBMinAFBVV95cUxOclpCai1ISGNjX2dIWThMa2MzRFc2SkVSc2QteUZCRktWMlVoMXdaeE1WMjIycDFsOXdYQ3piUHFyWHl1bjFZWVlDYldnQnBZY3g2MHNESDhLdWJ2VnNjU0VUdkJwdjhqSndFQ0NFSGJjcmN6OURoZFRYWnFhV0hXWHoyeUFoWUJ1N2E5d3BwUXNIeE5qcktTZlRNNTM"
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "confidence": 0.455,
+      "strength": "weak",
+      "confidence_drivers": {
+        "entity_overlap": 0.25,
+        "source_diversity": 0.2,
+        "source_quality": 0.5,
+        "temporal_coherence": 0.5,
+        "text_similarity": 0.88,
+        "shared_dimensions": [
+          "countries"
+        ],
+        "unique_sources": 1,
+        "story_count": 2
+      },
+      "stories": [
+        {
+          "title": "North Korea Rejects Quad’s Denuclearisation Demand, Says Nuclear Programme ‘Will Never End’",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "DPRK Cyber",
+          "link": "https://news.google.com/read/CBMigAJBVV95cUxPZGh3aUY3TWt5YmI3bHFlNWhrVFk0RmFGVFZfcjVFUndzYkhDRmRxYm1ZbFFocmFxd09qc3NFT3NCbEpxdTR3eFI4M0xZZVQzQ05FanBVaVV0NzJaRTVwRFBjdENrNHh2S0hTQlMtUTVRLXJKNDdkSHhxTWVsMWhpZjZDaTlhMks2RklWLVh4U25TNUtRWUtHY0h4TzVGR3JqX3NOdlVyS0VPX0QxZkVoclBGaVY1dVIzRDdFNzlkaDBibU5XYVRERlBlcWc3cEtEVUQxbGpHVjNNczQ1akRIS2JOWE80STdKR3lpVnRuejB1eUlUdE5qeDQyNnVOb2VM"
+        },
+        {
+          "title": "'Will never happen': North Korea rejects Quad's call for denuclearisation",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "DPRK Cyber",
+          "link": "https://news.google.com/read/CBMiywFBVV95cUxPbnpBLUZpTmRWWGJiOFRFVUNTTk1zVWo3cjZET1dPbWt6MjUtN3NiazRoNzRQb0c5LS1ucTc2M05PYWxFdE9DNmluTnUxVlVIelp0LU9pLVFkNXhKYUllVEhodFNvbVlkZlUwcU5OUXIwSUVlU3NzT09wTGk2emJkWlF5ZVhqeFpaWmprQ0swSU9hNkVKRjFBVzFHZkJZY2JzaEo5bVpuTFVtSl9SelNyUk1yZTYwRGlPZFNNc3V3bmpSd1hPN0NvWGZhYw"
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "confidence": 0.454,
+      "strength": "weak",
+      "confidence_drivers": {
+        "entity_overlap": 0.25,
+        "source_diversity": 0.2,
+        "source_quality": 0.5,
+        "temporal_coherence": 0.5,
+        "text_similarity": 0.87,
+        "shared_dimensions": [
+          "countries"
+        ],
+        "unique_sources": 1,
+        "story_count": 2
+      },
+      "stories": [
+        {
+          "title": "US, Iran Reach Deal on Extended Ceasefire Pending Trump Approval",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Bloomberg Fresh",
+          "link": "https://news.google.com/read/CBMitAFBVV95cUxNMVIyaWJsVzF3R2FBdlB6UzV6SkRsRUM0Qnl6Z3Y4MHdqUWM1cGgzMW5jeEdOaE5adnBiVHJXOFNwR1JKWnRxejNxUFF3WHhoRVNBWDhzRXhQdGwweTcwU1hNUVBROW53bXBlYm1DZ2VjcGNsVWR5M2JyU0VuZVNvUGhRS2ExLU1mZWI2VXFZSWZmUmpiVE9XREtWZElYYkhkOFQ5RkpNSGtOcjBnTXJObkJHaTA"
+        },
+        {
+          "title": "US and Iran reach tentative deal, pending Trump's approval",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Euronews Fresh",
+          "link": "https://news.google.com/read/CBMilwFBVV95cUxNUTZWVzY3bm9UY3ZWaHNqb2V4b1FnZEVacWowbXBkZVNFTVVrdHU4WmsyTUFtWTBMalZEbFVGYWhETWdqYS12Z0themE3a0FZSUJPQXByOWZzdmFGOEhYbFJjdldldjBLbk1rUlF1U0RuRFFQY2tXaU16WFVaUnc0Q2RvaVY1bDkwVHNwOGpWUWpEdUstaTA0"
         }
       ]
     },
@@ -533,21 +498,108 @@
       ]
     },
     {
-      "size": 5,
-      "confidence": 0.417,
+      "size": 2,
+      "confidence": 0.449,
       "strength": "weak",
       "confidence_drivers": {
         "entity_overlap": 0.5,
         "source_diversity": 0.2,
         "source_quality": 0.5,
         "temporal_coherence": 0.5,
-        "text_similarity": 0.31,
+        "text_similarity": 0.47,
         "shared_dimensions": [
-          "sectors",
-          "military"
+          "countries",
+          "sectors"
+        ],
+        "unique_sources": 1,
+        "story_count": 2
+      },
+      "stories": [
+        {
+          "title": "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "China Cyber",
+          "link": "https://news.google.com/read/CBMiggFBVV95cUxORWRXTkJaTHg5Nl9pSzlNaHZXZ3FSVkh4eC16Z1VfbE53eVRPSlFETVVXeHUxTlhGbEdwNFd6WGpnbUY3bGhLVU0zdkNCYUY5LU5zZXNMdl9CU0o5TTBEUEk0Sk51RFpDbE1wVlBVUnZoME91STg1ajUtNExrcHczelV3"
+        },
+        {
+          "title": "Hitachi Energy Q&A: The US-Israel-Iran War's Energy Impact",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Energy Security",
+          "link": "https://news.google.com/read/CBMikgFBVV95cUxQMFI4TS0tTWpVaUdkM2x3THZ1akFpa3dZNjBSTE93MnVtUF9GWHNwV1JneGVfeE1icGU2M1NPVnhEcXh6ZVp0U2g1UEtZdzhEQmM5YWlocFJXR0RxbllTM2NaYVlrRUt4Yy1vUm9JWnh2YWN5MXRJd3lIdldrYTFWNWVmbUxDQm9Jb0RYaEduUU5Qdw"
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "confidence": 0.359,
+      "strength": "weak",
+      "confidence_drivers": {
+        "entity_overlap": 0.25,
+        "source_diversity": 0.2,
+        "source_quality": 0.5,
+        "temporal_coherence": 0.5,
+        "text_similarity": 0.39,
+        "shared_dimensions": [
+          "countries"
         ],
         "unique_sources": 1,
         "story_count": 5
+      },
+      "stories": [
+        {
+          "title": "Pentagon says US military personnel are reportedly being targeted using location data",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Defense Security",
+          "link": "https://news.google.com/read/CBMi5wFBVV95cUxNYXl1RlZzRXFES21Vdk52U01PNVRXRE81UUZ6M2RfdnZFOUFOY2RGWVhycVBwSkE1eTFIc2lQZ0V5MjFTeVhsSW9COF9KYThQdjFkVFRpcDlPa1hIMUhzTTRId2syOHpYYjN2MnBqc1U2R1E5Q0kwYXJVc25FdVpqOWJnbXhZWk1RRU5PWkVoaDJENFJ5Y2hvRlRUekdpQ1NYdkNjNHFmTVBqMFVQLVlDX3F3U2tscnh0MW1kdUt6U0hJdHV5SE9vN08xODBZTFZ0Q2wzM3gzWW1VdXlPZ2dfS1RlYnBwN1E"
+        },
+        {
+          "title": "Bulgaria to cut US military aircraft stay over visa issue, PM Radev says",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Reuters Fresh",
+          "link": "https://news.google.com/read/CBMiywFBVV95cUxPR2xuQkk5WERHTDRDUm9CN0R6R2FpRjNkNk9JZzl4bzFYd2h6SXZZY1g0UTNNZjNCbkFtUG5uUDdobXJ4UFRkdC1iamJ1TVRWc00yZ1BqZlYzT1o0UHh4azBaNTdXbDVlWDViVklOeEJjV3duTkNSMTZLNzRZOXJIMmp3NFlwbmNZd2FmYUNXQm1BSGZidjVRd2NpWm5nd0pXdGtXanlqbUxDZ2FPM3g0bk00bk5KdUZVcjIzTEN3MVJIeEZMSVVEUmlXbw"
+        },
+        {
+          "title": "Canada to Buy Planes From Sweden Over US Military Suppliers",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "WION News",
+          "link": "https://news.google.com/read/CBMipwFBVV95cUxNZmk0eU5sY3B3MWFmYjJranRJb0k5aVI5akpnZkYzSElkX1FHcldVWGtoM2VpbGZVX3R4OTQtdHZvOVRyX2NjbFBJTktPVTFKanlHX2taOWRtV0FySXZMM3EyYjQ0R1FHVzBCNl9tcVRTU3ROYnFnYlhSWFJPUXZFS3phTTdKdF9NSm1DR1VwdXUwLURkaExtTV9Cc1NIbTBvYVdoUUV6Y9IBrAFBVV95cUxQMUpvMlIyNWV3ZWJmR0lUZDY1ZGpPZ05PTUpfMGx5QzFIdVhBbnQxdHNuSFQ5SHdabHlmVjJKME1wQ193cnYtNThKaWRJZlJ2OGVYXzN1U0JXcHk3TDg3U29BcUdtWG5nSlBZdGdud2VWNjhYZ3dkaThlekx6S0JGSk55SXFHc3dnTnlyYlpzQjA4cnV0dElhNVlsVFpFNzYtQmVybktzbFZpdDg2"
+        },
+        {
+          "title": "US imposes fresh sanctions on Iran's military oil sales, Treasury says",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Sanctions",
+          "link": "https://news.google.com/read/CBMiswFBVV95cUxOTGN5U0hILU5zdG9XalBqazFVZGtCQXZmTnY5SlZ3Y1g2d293c0tGaXM0QnpXUkRGNWxMclNJSl96YmFPYnNRd3V0aEhKSDd0eEtBcmlTX1B6VXNRZlNic0ZRMGF5dmtsU3RZdDczS1FTWFRCS2FnTEZfMkxZRnhENHVEMDh0N2VtYjl4WXhIUGV0RnVJNk80TGNBdm1xbTQzUG1pNmhySjcwVXAyNVYtSjVTaw"
+        },
+        {
+          "title": "US Army Evaluates New Command-Networked Drone Interceptor for Europe Defense",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Defense Post",
+          "link": "https://news.google.com/read/CBMickFVX3lxTE5NdmM2S1FLbVZRcnNvcGM0LTFlSjdwRUg4QjFjUUZoOXFRUTI2bklhS01kdFdpanNSTmVCLTI2OGV2Yl9KdUpPZFgyVHY2TUI0SURtWVozZ0lXN1pVZUgzVGMydVhIcWtkZ0NOVmN6YzVDUdIBd0FVX3lxTE9kRFk4NjQtTXJ1ZFFPRVhjNUVSMlZsX0dibmR0MjBPS21iUGRUN3FjQzQ2dUR0bldvNWhmVzB5S2g1QUNaSVhXQVU3c3dybFpFelVEeDNtZmM3N1NQSmRRVTR2clktWnJNZS1lUzdyYmRiY0Z0OHpB"
+        }
+      ]
+    },
+    {
+      "size": 3,
+      "confidence": 0.355,
+      "strength": "weak",
+      "confidence_drivers": {
+        "entity_overlap": 0.25,
+        "source_diversity": 0.2,
+        "source_quality": 0.5,
+        "temporal_coherence": 0.5,
+        "text_similarity": 0.37,
+        "shared_dimensions": [
+          "military"
+        ],
+        "unique_sources": 1,
+        "story_count": 3
       },
       "stories": [
         {
@@ -556,13 +608,6 @@
           "source_reliability": 0.5,
           "category": "Kyiv Independent Fresh",
           "link": "https://news.google.com/read/CBMirAFBVV95cUxNUm11VkI4aUdvckI1WlFZNXZUZWZkRWZBeFVmSEs0Z1MxN2NCNTMyX0xkRFdvNWNHbE9ET3p6cXZLM3lhZ2dJX3Y0UlFDdExkZGtqMEdkQ1dHZ25tZUNaT2c3UEVxQXM5YWw4Xy04NTRnUW80MnViejdjOVllQmg3Rlgta25zVEluRmZrM1ROTndDaklPblhwRmFWQ0plY3J5NjNEWmhxUFJrVGc5"
-        },
-        {
-          "title": "US Army Evaluates New Command-Networked Drone Interceptor for Europe Defense",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Defense Post",
-          "link": "https://news.google.com/read/CBMickFVX3lxTE5NdmM2S1FLbVZRcnNvcGM0LTFlSjdwRUg4QjFjUUZoOXFRUTI2bklhS01kdFdpanNSTmVCLTI2OGV2Yl9KdUpPZFgyVHY2TUI0SURtWVozZ0lXN1pVZUgzVGMydVhIcWtkZ0NOVmN6YzVDUdIBd0FVX3lxTE9kRFk4NjQtTXJ1ZFFPRVhjNUVSMlZsX0dibmR0MjBPS21iUGRUN3FjQzQ2dUR0bldvNWhmVzB5S2g1QUNaSVhXQVU3c3dybFpFelVEeDNtZmM3N1NQSmRRVTR2clktWnJNZS1lUzdyYmRiY0Z0OHpB"
         },
         {
           "title": "Russia deploys new Pantsir systems on Moscow rooftops as Ukrainian drone threat grows",
@@ -577,13 +622,6 @@
           "source_reliability": 0.5,
           "category": "Intelligence Online",
           "link": "https://news.google.com/read/CBMi1AFBVV95cUxNdk16a25rVUNvOFFNcGdmdy05N1JVb2VCd1RmRGp1Rk5OejZSVW1pY2tTa3Z3SGJtVmZxLUVXXzJScy1JeDlGU19JcHJFa3JRc0NVbWVENmFZVm9ZXzRJMUVqTUE5Zmk2VWZJNkRGUmVFX1lHeHhDdDZpLTBuMk4zdHV3NW5qZWpMTzRHRHJCVkhYZGFreVd0U0E3ZkMtbjVwTHhObnVjMnc5YzAwMlBCUWdPQlZMNU9MTzRnOUx4cFc1dmZnQ3FHVW5DbFFqTlZfZDBsTw"
-        },
-        {
-          "title": "New Video Reveals Ukraine’s Secret October Drone Strike on Russia’s Grad Missile Warship",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "United 24",
-          "link": "https://news.google.com/read/CBMizgFBVV95cUxQSWs4dDNCTzFIVWFHMlJ6dUZzSm44UTk5VFI4ZkRQUWQyQ1RYeDNXS256aXNZbWlqRDNWWlhuNjd1Rmp2Q0tPOG50S1hadEFkVUFmQmRYLWV6U1hKUUZhT29EcFQwUUsxR3JRNHltSEdIeTBQWTBQNk9WWjlFUzRpN0hIeTk2TlhKUzl0clhfQjB1eVdvbjdtNmVMQVNSV0tkd2x4aURGS2NSZE9sZ1ljUl8xSC13OVpNV012RE1FNGJyYVRZY1VNN1lGODlEdw"
         }
       ]
     },
@@ -596,11 +634,11 @@
       },
       "stories": [
         {
-          "title": "ENISA report shows cybersecurity gains across EU critical sectors ...",
+          "title": "Randy Oglesby talks about starring in ‘Spider-Noir’ live-action series, working with Brendan Gleeson",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Critical Infrastructure",
-          "link": "https://news.google.com/read/CBMinwFBVV95cUxPWnY3SFN2RUtHMzVfcHdMQTdBVUpEbzN2aTh6SUNuSndsUk81NVoyckItLVhkRHFIYlJwLUw3U1c2SXRUTTRMbnhnMWxkVnhaZmdKNWpaYlVDTDNiX0VwMmNtSlFJMUxYazFFaVVmbV9qTzZEMUNleUdFd2JZWklPUTJYWmZwTFJWWlhQczdiQnB4ckU5WFVJZ0xYbkNOU00"
+          "category": "Scattered Spider",
+          "link": "https://news.google.com/read/CBMilgFBVV95cUxQSWcxMjJlLUQtQVVLbUV6OFpMYWN5ZWdSMXUzbV84WDE3bk45ZkZwSXdnQUZKT3dWUW85TVhDSHBmN0sxZnVTenoyUWtBaGcwRkV0bmF3cUoyMHRuZEFMcE9kdjkxR1lOZFJkWWdVM2ZZdmRvRHdWQ1hZRUg0RkxEY2dTME1Ebm9OUC1TV1NVTnRweE9DWUE"
         }
       ]
     },
@@ -613,11 +651,11 @@
       },
       "stories": [
         {
-          "title": "Pueblo commissioners support grants for new projects at PuebloPlex",
+          "title": "European Council adopts further sanctions against Israel extremist groups",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Critical Infrastructure",
-          "link": "https://news.google.com/read/CBMiwAFBVV95cUxPUlQxMVNZS213WXR0T25NY2V4bGxtTHg2RVZ1ZWpQb09UTzFZblRQWGtjLUF6RFVpN0lGQ0tvNDA5VkRGcFFfbVVKb3FDcXp3VnFxR3ZhWmtxa3oteGdKVjktdkxwWFBnNV9RU0pVeWJxa2tBUmw1QVQ1c2VpWGZPUjVPaWxTZzliUkVqaG1fby1xOWc2VmpONjJ1RnNtaVAtaHBiNGZMblBBOWRFek5KMm9TVlVOZ1otaTZkRDFMcTY"
+          "category": "Sanctions",
+          "link": "https://news.google.com/read/CBMirwFBVV95cUxQSGNjd2l5T2sza0Q4bnpDN1pEajRYcHE2dzlZWlcwQjBTQXJpVnNWT002RTV0MExaQ2QzMlllRHNLdkhWbC1BbHF4d0ZDTkVCOU5FQ2hLdjRtYU9RSnFaTXFYNmhGMlhOM0duSzl3SGRsZ0h0Z05kVnBKVVQ1WVozdWdTRlEyZmVDVk85UktWdWJmams4eVZSNUZYNDUtUXBBd3hGZ0ZrWWdDSEVJbHZJ"
         }
       ]
     },
@@ -630,45 +668,11 @@
       },
       "stories": [
         {
-          "title": "MicroAlgo Inc. Develops Quantum Encryption Technology Based on Lattice Cryptography, Integrating into LSQb Algorithm's Process of Information Hiding and Transmission to Achieve Anti-Quantum Attack Strategies Enhancement",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Quantum Threats",
-          "link": "https://news.google.com/read/CBMiogFBVV95cUxQek5EemViQTdySmgwN25tXzBGTE5YUkR5MDFtV3VnSmVEYUpmVWxpZEFFajN2a0haWEVzLUdqUnZxeUR6RmFCdFNqQVB5QXg4TE0wOF9QRlNSY0ozajlJVE9SYlJkbzB5LWVDOFlaZjVTUUgxTEo3R3N4bUtyeVVjdlN6S2tLa25kaU9iblZwX1ViblA0RmktSW0wZTRRZWw3a3c"
-        }
-      ]
-    },
-    {
-      "size": 1,
-      "confidence": 0.3,
-      "strength": "weak",
-      "confidence_drivers": {
-        "reason": "single_story_cluster"
-      },
-      "stories": [
-        {
-          "title": "Microsoft warns GPU mining malware is being spread to users through SEO poisoning and AI chatbots — cryptojacking campaign targets gamers and high-end PC users with downloads disguised as popular PC utilities",
-          "source": "More",
-          "source_reliability": 0.5,
-          "category": "Malware",
-          "link": "https://news.google.com/read/CBMiiANBVV95cUxOa2UwQ0drRExYdktOdjFaLU0ydGhoN3Jfc01NUDMzUmdoRVJkUmc0eGdUS2tRTlp6ajhLbjBNaDFlVENtbTMxeDc0X25PUDhabVQ4UmZibTdFdS11RGVNY1RIbVBmYm9Mckh6dUV2a2NoWlFJMmFPcVV3ZE9JeWtZSklPeHBLVVVzaHpqdzlSa0V4NEpJNFp2UEEyd21RS2tvbmJ1OVdzRWU3R2F6Sl95YUhxUUctWk9WbjlOTzFoc2NzYzY5bm03NmRtdGF2TnFKdU1ya0FxbWFDazBtZ2ZVRzJMQUo4R25EbW9JcGpOUkt5bWs5Nmc3S2pwT2RxSEh2WTlxYWNsYlZYVl9kcUxLdVk3NVI5V0tPM3VNeGFRMEJQb1hjX1c3YW1OZlVEV2wyckZEUXFHMGFOZHlQdGpCZWNtMXFLVmoyMFlIblRzeTZhSmF2NVE1SzMzd3VlSG5saFhpS1JPWnVMZU4zb1ZLTnp6VWp4cGQ3QW14dEhkamRfN1VMYk5nRw"
-        }
-      ]
-    },
-    {
-      "size": 1,
-      "confidence": 0.3,
-      "strength": "weak",
-      "confidence_drivers": {
-        "reason": "single_story_cluster"
-      },
-      "stories": [
-        {
-          "title": "Cyber insurers question whether the soft market is sustainable",
+          "title": "Independent cyber audit finds zero malware or backdoors in DJI drones — U.S. firm's hardware analysis challenges FCC ban amid ongoing $1.56 billion legal battle",
           "source": "More",
           "source_reliability": 0.5,
           "category": "Cyber",
-          "link": "https://news.google.com/read/CBMiwwFBVV95cUxQLVZreGdJX0VMUlFySTNtY2QzZ1pCSWEwUlVaT1lWdVJpSmtWbzVXVVJMM1BNdDdoR0doc1djenhRUURRLU1ZQXBSRWpmUkE3SzF6R0F5TVBSWE9Rcmg4eDh6enVFTllFVHozTWJsbWFza000N0ktdVF2TXV2Mk1BS1JOVzF4c1lGTFhiRGxNQy1MR3RJNWYtQ1NwU2FaTFVRTHVkRjNPcElvSzc4YnlDcFFkZUpzZ0M3NGFyc3phT3JPdDg"
+          "link": "https://news.google.com/read/CBMiyAFBVV95cUxPR2ROWE8xMHpYSmVBa0hseWUzS0lMbWVLT1BpTDZzOFk5U2xtQ2toZ0thNFBVYlplYTQ1Y2xHcW1vbS0ybjI5Umk2Z1ktMjA1S181anVTdm5rN1dwMW9oR0w3TUdkZnpZY3BQVUJfX2haaV9NQVdDQVlxUlp1a1J2blJYSUtIaXZvdkpMX0lYaTlMaWhMT2NzeXBhcEhCaGVPR0hFVmRLamJldmFjZW1nZHhrRkRqc3N3Q1Fsckc2T2U2TFd5WmpQSA"
         }
       ]
     },
@@ -681,115 +685,235 @@
       },
       "stories": [
         {
-          "title": "Hub Cyber Security Surges 70% In Pre-Market Trading: Here's Why",
+          "title": "CVC to Buy IFF’s Food-Ingredients Unit in $4.3 Billion Deal",
           "source": "More",
           "source_reliability": 0.5,
-          "category": "Cyber",
-          "link": "https://news.google.com/read/CBMiuAFBVV95cUxQUWJQSjFWb18zRkpfVGE2YWdIYVVaQTNlMHNfckFjcktPVnJJR1dxc1lKa0hxSFZnMzFTa2txSlJVS2NqRTZUOEVPRlNJSTJRNHBqaThrQmVPX1VLMFRMZnNnWjNwMVcwOE8xVFZscG9fV0hLb0otcXljX3JsSFZ3RVRCTE95Q1RhVHFNb282WExNUzR5aWhxbndsMm9lci1nNXZIV3ZDb3MzeEZOeW5XTTdiSE4yQlZI"
+          "category": "WSJ Fresh",
+          "link": "https://news.google.com/read/CBMivwFBVV95cUxNTEQwVzVQaDlwM1hhZmRJazJWUEFKTDRNTkVOeUg3bDdYMFBXeTh6SHZleVlrY3pRUEVtNUNhQTJkZU5wUFlfeExPUUptXzd6Q201UUwyekptb3pRLXh6UFp3MXM2Skczd3ZvSmUxVkxCTXdKQVJIQjJBb3hIMUNyRG5FXzg4WG5KNmdRc0tLMXFYdHhtN2VrZ3ZnRlFZcUg4X2k3UE9PS1BqbldDblphR1VvMGhCOHRCRVNOOG5SRQ"
+        }
+      ]
+    },
+    {
+      "size": 1,
+      "confidence": 0.3,
+      "strength": "weak",
+      "confidence_drivers": {
+        "reason": "single_story_cluster"
+      },
+      "stories": [
+        {
+          "title": "SANS finds funding gaps and staffing shortages are slowing government cybersecurity modernization",
+          "source": "More",
+          "source_reliability": 0.5,
+          "category": "Advanced Threats",
+          "link": "https://news.google.com/read/CBMi3wFBVV95cUxQRXNHWmZQcFRadE83cEFOYzdhczVIUDVsMG1qM3VKcnBvM1FjcGRWOEl5eWhnazNrYlRSVWxBNjM1R184TW9jS1U3bGd0OVI1Z3pEVk9tNlp2Vlg3dkJHbXM3THFCWFlENVZVYm5OaHJFQVAwRlA2dGRoaTBHb3AtRkM0QzZHRkx5V0JCV3hTaFN2UjIyUGx0aE1za3R3ek1OcDZrN05uOFMzNkRoN2JqOWxzeUdxVlM1TlBaa0M1Y29SX01CZ1p5Z2czNElfUFZSN2Jta2lkT3dteENCY1VB"
         }
       ]
     }
   ],
   "connections": {
+    "threat_actors": {
+      "LAZARUS": {
+        "mention_count": 6,
+        "story_titles": [
+          "Ankur Jain says Bilt is building the ‘Shopify for housing’—and the company’s card is only the beginning",
+          "Atomic Wallet Review: Features, Security & Is It Safe?",
+          "The Group Rep’s A Time to Kill Is Gripping Theatre",
+          "Gabelli 18th Annual Sports & Media Symposium to Convene Industry Leaders in One Week",
+          "NSFOCUS Monthly APT Insights – March 2026"
+        ]
+      },
+      "SALT TYPHOON": {
+        "mention_count": 5,
+        "story_titles": [
+          "ShinyHunters adds Charter to trophy shelf after 4.9M customer records leak",
+          "Commentary: Five trends that stood out at Plug and Play's Silicon Valley May Summit",
+          "Ottawa agrees to soften its police surveillance bill",
+          "'500,000 Russian soldiers killed' in Putin’s war on Ukraine",
+          "COL (R) Candice Frost Briefs Senior Leaders on Agentic AI and the Changing Face of Cyber Warfare"
+        ]
+      },
+      "SCATTERED SPIDER": {
+        "mention_count": 4,
+        "story_titles": [
+          "Randy Oglesby talks about starring in ‘Spider-Noir’ live-action series, working with Brendan Gleeson",
+          "Chinese Phishers Use Live MFA Interception for Digital Wallet Fraud",
+          "CERT-In's AI-Era Cyber Rules Test Enterprise Reality",
+          "FBI sounds alarm on phishing tool that steals Microsoft 365 accounts without passwords"
+        ]
+      },
+      "STATE SPONSORED": {
+        "mention_count": 3,
+        "story_titles": [
+          "Notepad++ patches critical bugs: “shortest path” to malware execution",
+          "It's time for a Cyber Monroe Doctrine",
+          "GAO sounds alarm on cybersecurity gaps across US water networks"
+        ]
+      },
+      "SANDWORM": {
+        "mention_count": 2,
+        "story_titles": [
+          "'Beetlejuice' review — surrender to the hellish mayhem of this musical spectacular",
+          "Beetlejuice review – Tim Burton’s super creep reanimated as a shock jock in ghoulish musical"
+        ]
+      },
+      "THREAT ACTOR": {
+        "mention_count": 2,
+        "story_titles": [
+          "AI-Generated npm Malware Accidentally Exposes Threat Actor’s Private GitHub Token",
+          "ShinyHunters Threat Actor Profile: TTPs, IoCs & Attacks"
+        ]
+      }
+    },
     "countries": {
       "US": {
-        "mention_count": 32,
+        "mention_count": 30,
         "story_titles": [
-          "US adds UN Palestine expert back to sanctions list",
-          "Kenyan court orders suspension of US plan for Ebola quarantine facility",
-          "US prosecutor denies launching criminal investigation into E Jean Carroll",
-          "Huawei bets on speed over shrinking transistors to sidestep US chip sanctions",
-          "Canada to Buy Planes From Sweden Over US Military Suppliers"
+          "Pentagon says US military personnel are reportedly being targeted using location data",
+          "Class action lawsuits are all the rage in the US",
+          "Bulgaria to cut US military aircraft stay over visa issue, PM Radev says",
+          "Kenya court halts opening of US Ebola quarantine facility in the country",
+          "US, Iran Reach Deal on Extended Ceasefire Pending Trump Approval"
         ]
       },
       "RUSSIA": {
-        "mention_count": 29,
+        "mention_count": 23,
         "story_titles": [
-          "Covert cyber ops, imported voters: How an election in Europe has become Trump-vs-Putin ‘spymania’ | World News",
+          "Russia-linked threat group put ChatGPT to work from lure to payload",
+          "Russia is 'on the back foot,' as 'the dynamics of the war are shifting in Ukraine's favour,' EU's foreign policy chief says",
+          "The algorithmic vanguard of transatlantic defence: shifting protocols of hybrid warfare",
           "Exclusive: Imported voters, fake websites: Russia's covert efforts to stop Armenia's pivot West",
-          "Russia Heads for Showdown With Armenia Over European Ambitions",
-          "Russia’s ‘Tradecraft, Tactics, and Dirty Tricks,’ with Sean Wiswesser",
-          "Spy chief to warn of ‘relentless’ Russian cyber attacks on UK and Europe"
+          "Ukraine war briefing: Gripen fighter jet deal ramps up after Zelenskyy visit to Sweden"
         ]
       },
       "CHINA": {
         "mention_count": 23,
         "story_titles": [
+          "Opinion | How America can remain the world’s AI superpower",
+          "Frontier AI Risk Trends Are Splitting Apart: Misuse Safeguards Improve while Loss-of-control Safety Stagnates",
           "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
-          "China Central Television documentary series reveals sophisticated cyber espionage campaigns targeting nation’s institutions",
-          "China is building launch pads near its nuclear missile silos",
-          "China • Beijing fights back against foreign extraterritorial laws",
-          "How China is breaking apart a people and its culture"
-        ]
-      },
-      "IRAN": {
-        "mention_count": 22,
-        "story_titles": [
-          "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
-          "Iran War: Oil Shortages Threaten Global Energy Security - DW News",
-          "Iranian International Affairs Expert Mostafa Khoshcheshm: IRGC Threatens Retaliation 'Beyond The Region' — In The U.S.; America Is Vulnerable To Fires, Explosions In Petrochemical Plants; Iran Could Build Tactical Nuclear Bomb, Use Cyber And Biological",
-          "How Iran has unified Israel’s regional rivals",
-          "US-Iran MoU said to include Lebanon ceasefire, Iran vows not to seek nukes, pledge to discuss uranium stockpile as soon as MoU takes effect"
-        ]
-      },
-      "UKRAINE": {
-        "mention_count": 20,
-        "story_titles": [
-          "'500,000 Russian soldiers killed' in Putin’s war on Ukraine",
-          "Ukraine's social protection reform to be bolstered by $880 million from the World Bank",
-          "Ukraine war briefing: Gripen fighter jet deal ramps up after Zelenskyy visit to Sweden",
-          "Estonia and Ukraine Sign Memorandum on Critical Infrastructure Protection",
-          "Ukraine, Estonia strengthen cooperation on critical infrastructure protection"
+          "Chapter 1: Fighting Lens: Military Doctrine and the Future of Warfare in Asia",
+          "China Central Television documentary series reveals sophisticated cyber espionage campaigns targeting nation’s institutions"
         ]
       },
       "RUSSIAN": {
+        "mention_count": 20,
+        "story_titles": [
+          "Russian drone crashes into Romanian apartment block, sparking outcry",
+          "500,000 Russian soldiers killed in Putin’s war on Ukraine, says GCHQ",
+          "'500,000 Russian soldiers killed' in Putin’s war on Ukraine",
+          "Romania: Russian drone strikes Galati apartment building",
+          "Nato ready to defend ‘every inch’ of territory as Russian drone hits Romania"
+        ]
+      },
+      "UKRAINE": {
         "mention_count": 16,
         "story_titles": [
+          "Russia is 'on the back foot,' as 'the dynamics of the war are shifting in Ukraine's favour,' EU's foreign policy chief says",
+          "500,000 Russian soldiers killed in Putin’s war on Ukraine, says GCHQ",
           "'500,000 Russian soldiers killed' in Putin’s war on Ukraine",
-          "Nato condemns Russian 'recklessness' after drone hits Romanian apartment block",
-          "Russian oil refinery reportedly struck by Ukrainian drones in Volgograd",
-          "NATO member Romania says Russian drone hit block of flats, injuring two",
-          "Spy chief to warn of ‘relentless’ Russian cyber attacks on UK and Europe"
+          "Ukraine's social protection reform to be bolstered by $880 million from the World Bank",
+          "Ukraine war briefing: Gripen fighter jet deal ramps up after Zelenskyy visit to Sweden"
+        ]
+      },
+      "IRAN": {
+        "mention_count": 15,
+        "story_titles": [
+          "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
+          "Gujarat Cyber Crime Branch Arrests Man For Uploading Obscene Photos, Videos Of Woman And Her Mother On Social Media",
+          "How Iran has unified Israel’s regional rivals",
+          "US, Iran Reach Deal on Extended Ceasefire Pending Trump Approval",
+          "US-Iran MoU said to include Lebanon ceasefire, Iran vows not to seek nukes, pledge to discuss uranium stockpile as soon as MoU takes effect"
         ]
       },
       "ISRAEL": {
-        "mention_count": 13,
+        "mention_count": 14,
         "story_titles": [
+          "European Council adopts further sanctions against Israel extremist groups",
           "Israel Launches AI Unit to Support Frontline Ops",
+          "UN to place Israel on sexual violence in conflict blacklist, Israeli envoy says",
           "How Iran has unified Israel’s regional rivals",
-          "Mamdani slammed after revealing why he’s boycotting NYC’s Israel Day Parade: ‘I’ve made my views clear’",
-          "US-Iran MoU said to include Lebanon ceasefire, Iran vows not to seek nukes, pledge to discuss uranium stockpile as soon as MoU takes effect",
+          "IDF confirms it has been operating beyond borders of its southern Lebanon security zone"
+        ]
+      },
+      "ISRAELI": {
+        "mention_count": 10,
+        "story_titles": [
+          "UN to place Israel on sexual violence in conflict blacklist, Israeli envoy says",
+          "Israeli and Russian forces added to UN blacklist for sexual violence in conflict zones",
+          "Iranian hackers responsible for Los Angeles transit system breach, Israeli researchers say",
+          "Benjamin Netanyahu orders Israeli forces to take control of 70% of Gaza",
           "Israeli military strikes southern suburb of Beirut before crucial Lebanon-Israel talks in Washington"
         ]
       },
       "EU": {
-        "mention_count": 11,
+        "mention_count": 9,
         "story_titles": [
+          "Russia is 'on the back foot,' as 'the dynamics of the war are shifting in Ukraine's favour,' EU's foreign policy chief says",
           "ENISA report shows cybersecurity gains across EU critical sectors ...",
           "Hungary is on a 'very clear and steadfast' path to restore rule of law, EU justice commissioner says",
           "Call center in Kharkiv defrauded EU citizens of over €100,000 through investment schemes; operation exposed – Prosecutor General",
-          "Norway Presses EU to Drop Ban on Arctic Drilling of Oil and Gas",
-          "Russia is 'on the back foot,' as 'the dynamics of the war are shifting in Ukraine's favour,' EU's foreign policy chief says"
-        ]
-      },
-      "INDIA": {
-        "mention_count": 7,
-        "story_titles": [
-          "Vulnerability of India’s Critical Infrastructure: Cybersecurity Risks, Challenges & Government Measures",
-          "India’s CERT-In Asks Organizations to Patch Vulnerabilities in Systems Within 12 hours",
-          "The Man Turning the Cockroach Into a Gen-Z Movement in India",
-          "Vaibhav Sooryavanshi’s open-and-shut case for India T20I call-up",
-          "What the 2025 India-Pakistan Conflict Revealed about Modern Warfare"
+          "EU fines Temu €200M over unsafe toys, non-compliant products"
         ]
       },
       "NORTH KOREA": {
-        "mention_count": 7,
+        "mention_count": 8,
         "story_titles": [
+          "OpenAI gives Japan banks access to latest model, Japan’s finance minister says",
+          "Class action lawsuits are all the rage in the US",
+          "Kimsuky Deploys HTTPSpy, Expands Arsenal with HelloDoor and VS Code Tunnels",
           "MPC Markets selects HeirWealth Atlas for reporting",
-          "'Will never happen': North Korea rejects Quad's call for denuclearisation",
-          "North Korea not keen on external engagement, says Vivian after Pyongyang visit",
-          "North Korea rejects Quad’s call for denuclearisation",
-          "North Korea rejects Quad denuclearisation call, says nuclear weapons stay 'forever'"
+          "North Korea Rejects Quad’s Denuclearisation Demand, Says Nuclear Programme ‘Will Never End’"
+        ]
+      }
+    },
+    "economic": {
+      "SANCTIONS": {
+        "mention_count": 9,
+        "story_titles": [
+          "European Council adopts further sanctions against Israel extremist groups",
+          "Supreme Court amends rules to address AI use in court filings",
+          "Trump's Oman outburst throws 'Switzerland of the Middle East' into the spotlight",
+          "US Treasury threatens Oman with sanctions over Hormuz Strait",
+          "US imposes fresh sanctions on Iran's military oil sales, Treasury says"
+        ]
+      }
+    },
+    "malware": {
+      "MALWARE": {
+        "mention_count": 14,
+        "story_titles": [
+          "Independent cyber audit finds zero malware or backdoors in DJI drones — U.S. firm's hardware analysis challenges FCC ban amid ongoing $1.56 billion legal battle",
+          "Microsoft warns GPU mining malware is being spread to users through SEO poisoning and AI chatbots — cryptojacking campaign targets gamers and high-end PC users with downloads disguised as popular PC utilities",
+          "Notepad++ patches critical bugs: “shortest path” to malware execution",
+          "Megalodon cyberattack infects 5,500 GitHub open-source repositories with malware, researchers say",
+          "Breach Roundup: US Troops Tracked With Cell Phone Data"
+        ]
+      },
+      "RANSOMWARE": {
+        "mention_count": 8,
+        "story_titles": [
+          "How Ransomware Gangs Operate in 2026: From Phishing to Physical Intrusions in Law Firms and Hospitals",
+          "Exclusive: Accounting firm Kennedy McLaughlin confirms ‘cyber incident’ following Qilin ransomware attack",
+          "2026 Mexican Government Data Breach Analysis: Chronus Group Attack Exposes 36 Million Citizens via Legacy and Third-Party Systems",
+          "House Republicans press FBI Director Patel to intensify fight against hospital ransomware",
+          "The Gentlemen ransomware: Dissecting a self-propagating Go encryptor"
+        ]
+      },
+      "BOTNET": {
+        "mention_count": 4,
+        "story_titles": [
+          "Glassworm botnet shattered, China overhauls surveillance, Charter confirms ShinyHunters breach",
+          "CrowdStrike and Google take down botnet used by hackers to target open source software developers",
+          "Coordinated operation takes down Glassworm botnet",
+          "CrowdStrike disrupts Glassworm botnet that preyed on open-source supply chain"
+        ]
+      },
+      "RAT": {
+        "mention_count": 2,
+        "story_titles": [
+          "BTMOB RAT Spreads Across Brazil, LatAm Via MaaS Model",
+          "Grandoreiro Malware and BTMOB RAT Campaigns Target Windows and Android Users"
         ]
       }
     },
@@ -797,164 +921,191 @@
       "DEFENSE": {
         "mention_count": 17,
         "story_titles": [
-          "Israel Launches AI Unit to Support Frontline Ops",
+          "A Trump–Lai Call Could Strengthen Deterrence – or Make Taiwan Look Tradable",
           "Socket Raises $60M for Wider Software Supply-Chain Defense",
-          "GCHQ debuts world-first AI cyber defense system to detect threats across critical national infrastructure, airlines, telecoms, and major companies",
-          "Ukraine war latest: Russia bolsters Moscow air defense as drone threat increases",
-          "5 ways to mount a strong defense in the AI era | perspective | SC Media"
+          "Pentagon says US military personnel are reportedly being targeted using location data",
+          "Israel Launches AI Unit to Support Frontline Ops",
+          "GCHQ debuts world-first AI cyber defense system to detect threats across critical national infrastructure, airlines, telecoms, and major companies"
+        ]
+      },
+      "GOVERNMENT": {
+        "mention_count": 14,
+        "story_titles": [
+          "SANS finds funding gaps and staffing shortages are slowing government cybersecurity modernization",
+          "Are The Increasing Cyber Attacks Creating A Sense Of Apathy Among Businesses?",
+          "Unusual Machines Inc. Shares Surge Premarket on Trump Government Funding Expectations",
+          "Vulnerability of India’s Critical Infrastructure: Cybersecurity Risks, Challenges & Government Measures",
+          "25 Japanese Stocks Related to 'Quantum'! The Next National Strategy After AI? Massive U.S. Government Funding Fuels Surge, Some Stocks Doubling in Price"
         ]
       },
       "CRITICAL INFRASTRUCTURE": {
         "mention_count": 12,
         "story_titles": [
+          "McCrary Institute names former acting NSA Director, USCYBERCOM Commander Joe Hartman to Advisory Board",
+          "Why more cybersecurity laws have not meant lower cyber losses",
           "ENISA report shows cybersecurity gains across EU critical sectors ...",
           "Pueblo commissioners support grants for new projects at PuebloPlex",
-          "Vulnerability of India’s Critical Infrastructure: Cybersecurity Risks, Challenges & Government Measures",
-          "Opinion: Federal permitting reform for infrastructure projects is essential for Colorado’s economic future",
-          "Africa Must Treat AI Like Critical Infrastructure Or Risk Being Left Behind"
-        ]
-      },
-      "BANK": {
-        "mention_count": 11,
-        "story_titles": [
-          "Ukraine's social protection reform to be bolstered by $880 million from the World Bank",
-          "Bank of Canada says financial system has functioned well",
-          "Russia just passed a law allowing its central bank to down drones",
-          "Russia to allow its central bank to down drones as Moscow struggles to defend against attacks",
-          "AI Agents Present Massive New Attack Surface"
-        ]
-      },
-      "ENERGY": {
-        "mention_count": 10,
-        "story_titles": [
-          "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
-          "Schneider Electric Unveils Next-Generation Battery Energy Storage System to enable Scalable, Resilient Energy Transition",
-          "Iran War: Oil Shortages Threaten Global Energy Security - DW News",
-          "Electricity diplomacy: The new power in the Middle East",
-          "Michigan bill would require cybersecurity plans for solar energy"
-        ]
-      },
-      "GOVERNMENT": {
-        "mention_count": 10,
-        "story_titles": [
-          "Vulnerability of India’s Critical Infrastructure: Cybersecurity Risks, Challenges & Government Measures",
-          "25 Japanese Stocks Related to 'Quantum'! The Next National Strategy After AI? Massive U.S. Government Funding Fuels Surge, Some Stocks Doubling in Price",
-          "2026 Mexican Government Data Breach Analysis: Chronus Group Attack Exposes 36 Million Citizens via Legacy and Third-Party Systems",
-          "Israeli researchers link Iran government to LA Metro cyberattack",
-          "Government regulates mechanism for transfer and use of captured military property"
+          "Vulnerability of India’s Critical Infrastructure: Cybersecurity Risks, Challenges & Government Measures"
         ]
       },
       "FINANCIAL": {
-        "mention_count": 8,
+        "mention_count": 9,
         "story_titles": [
-          "One Email Could Give Hackers Access to Your Microsoft Account: FBI Warns They Don't Even Need Your Password",
+          "Claude Mythos, ChatGPT-5.5 And Cybersecurity",
+          "OpenAI gives Japanese banks access to most powerful cyber model",
+          "Why the Chief AI Officer Is Becoming India’s Next Critical Leadership Role, and How FCRF Is Preparing Professionals for It",
           "When AI finds flaws faster than banks can fix them",
-          "ECB pushes banks from ‘andante to presto’ on AI testing risks: ‘the clock is ticking’",
+          "ECB pushes banks from ‘andante to presto’ on AI testing risks: ‘the clock is ticking’"
+        ]
+      },
+      "BANK": {
+        "mention_count": 9,
+        "story_titles": [
+          "Zscaler Targets AI Identity Risk With Symmetry Acquisition",
+          "Sonar Acquires Gitar to Eliminate AI Code Review Gaps",
+          "Ukraine's social protection reform to be bolstered by $880 million from the World Bank",
           "Bank of Canada says financial system has functioned well",
-          "Russia just passed a law allowing its central bank to down drones"
+          "AI Agents Present Massive New Attack Surface"
+        ]
+      },
+      "MILITARY": {
+        "mention_count": 7,
+        "story_titles": [
+          "Pentagon says US military personnel are reportedly being targeted using location data",
+          "Bulgaria to cut US military aircraft stay over visa issue, PM Radev says",
+          "Chapter 1: Fighting Lens: Military Doctrine and the Future of Warfare in Asia",
+          "Canada to Buy Planes From Sweden Over US Military Suppliers",
+          "US imposes fresh sanctions on Iran's military oil sales, Treasury says"
+        ]
+      },
+      "ENERGY": {
+        "mention_count": 7,
+        "story_titles": [
+          "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
+          "Schneider Electric Unveils Next-Generation Battery Energy Storage System to enable Scalable, Resilient Energy Transition",
+          "Assessing Thales (ENXTPA:HO) Valuation After New Finance Chief Appointment",
+          "Electricity diplomacy: The new power in the Middle East",
+          "Your Smart EV Is One Power Outage Away From Being a Paperweight"
         ]
       },
       "TELECOM": {
-        "mention_count": 7,
+        "mention_count": 6,
         "story_titles": [
+          "Bharti Airtel defends ‘Priority Postpaid’ service amid net neutrality concerns",
           "Vulnerability of India’s Critical Infrastructure: Cybersecurity Risks, Challenges & Government Measures",
           "Gamma pitches cloud voice to MSPs to boost retention",
           "India’s CERT-In Asks Organizations to Patch Vulnerabilities in Systems Within 12 hours",
-          "T-Mobile Poland introduces Cyber Threat Intelligence service",
-          "Anthropic’s Mythos AI Finds Decades-Old Open-Source Bugs"
+          "T-Mobile Poland introduces Cyber Threat Intelligence service"
         ]
       },
       "HEALTHCARE": {
         "mention_count": 6,
         "story_titles": [
+          "Industries Under Cyber Siege",
+          "Claroty launches Claire AI agent for cyber-physical systems",
           "Connecticut Medicaid Portal Hack Affects Thousands",
           "US healthcare still stupidly expensive, with pathetic outcomes, study finds",
-          "Healthcare Orgs Lack Confidence in Ability to Defend Against an AI-incited Identity Breach",
-          "Focus on Cyber Insurance: How Quantifying Risk Is Reshaping Security",
-          "Healthcare cyber risk grows as visibility gaps expose third-party threats"
+          "Healthcare Orgs Lack Confidence in Ability to Defend Against an AI-incited Identity Breach"
         ]
       },
       "LEGAL": {
         "mention_count": 4,
         "story_titles": [
-          "Trek 2000 secures new investor as Osim founder Ron Sim drops legal claims against S’pore-listed firm",
+          "Independent cyber audit finds zero malware or backdoors in DJI drones — U.S. firm's hardware analysis challenges FCC ban amid ongoing $1.56 billion legal battle",
           "Microsoft Threatens Legal Action Over Zero-Day Leaks",
           "No legal action if infiltrators go back on their own: Amit Shah",
           "What Is a Cybersecurity Legal Practice, 2.0?"
         ]
+      }
+    },
+    "vulnerabilities": {
+      "VULNERABILITY": {
+        "mention_count": 11,
+        "story_titles": [
+          "New infostealer reaches enterprise devices through FortiClient EMS vulnerability",
+          "Vulnerability of India’s Critical Infrastructure: Cybersecurity Risks, Challenges & Government Measures",
+          "Notepad++ Fixes CVE-2026-48770 RCE Vulnerability",
+          "Warning: Critical information disclosure vulnerability in Dell Container Storage Modules can be used to exfiltrate data and perform lateral movement. Patch Immediately! | CCB Belgium",
+          "Critical Gogs RCE Vulnerability Lets Any Authenticated User Execute Arbitrary Code"
+        ]
       },
-      "MILITARY": {
+      "ZERO DAY": {
         "mention_count": 4,
         "story_titles": [
-          "Canada to Buy Planes From Sweden Over US Military Suppliers",
-          "US imposes fresh sanctions on Iran's military oil sales, Treasury says",
-          "Israeli military strikes southern suburb of Beirut before crucial Lebanon-Israel talks in Washington",
-          "Government regulates mechanism for transfer and use of captured military property"
+          "Microsoft Faces Fallout from Nightmare Eclipse’s Threats Amid Ongoing Zero-Day Saga",
+          "Microsoft Threatens Legal Action Over Zero-Day Leaks",
+          "New Gogs zero-day flaw lets hackers get remote code execution",
+          "Microsoft Slams Public Zero-Day Disclosures Amid GitHub Researcher Account Removal"
+        ]
+      },
+      "RCE": {
+        "mention_count": 3,
+        "story_titles": [
+          "Notepad++ Fixes CVE-2026-48770 RCE Vulnerability",
+          "Critical Gogs RCE Vulnerability Lets Any Authenticated User Execute Arbitrary Code",
+          "Microsoft Fixes SharePoint RCE Vulnerability Affecting On-Prem Servers"
+        ]
+      },
+      "EXPLOIT": {
+        "mention_count": 2,
+        "story_titles": [
+          "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
+          "Threat Actors Exploit Critical FortiClient EMS Flaw to Deploy Credential Stealer"
+        ]
+      },
+      "REMOTE CODE EXECUTION": {
+        "mention_count": 2,
+        "story_titles": [
+          "New Gogs zero-day flaw lets hackers get remote code execution",
+          "Critical Notepad++ Flaw Could Enable Remote Code Execution Attacks"
         ]
       }
     },
-    "malware": {
-      "MALWARE": {
-        "mention_count": 17,
-        "story_titles": [
-          "Microsoft warns GPU mining malware is being spread to users through SEO poisoning and AI chatbots — cryptojacking campaign targets gamers and high-end PC users with downloads disguised as popular PC utilities",
-          "Notepad++ patches critical bugs: “shortest path” to malware execution",
-          "Cockroach Janta Party Malware APK targets Android users via WhatsApp and Telegram",
-          "Inside a 176-Package npm Campaign Built to Beat Your Internal Dependencies",
-          "AI-Generated npm Malware Accidentally Exposes Threat Actor’s Private GitHub Token"
-        ]
-      },
-      "RANSOMWARE": {
+    "supply_chain": {
+      "SUPPLY CHAIN": {
         "mention_count": 8,
         "story_titles": [
-          "How Ransomware Gangs Operate in 2026: From Phishing to Physical Intrusions in Law Firms and Hospitals",
-          "Exclusive: Accounting firm Kennedy McLaughlin confirms “cyber incident” following Qilin ransomware attack",
-          "2026 Mexican Government Data Breach Analysis: Chronus Group Attack Exposes 36 Million Citizens via Legacy and Third-Party Systems",
-          "House Republicans press FBI Director Patel to intensify fight against hospital ransomware",
-          "The Gentlemen ransomware: Dissecting a self-propagating Go encryptor"
+          "How the Glassworm Takedown Secures Digital Supply Chains",
+          "Socket Raises $60M for Wider Software Supply-Chain Defense",
+          "Solana, Sui and Aptos wallet data targeted in TrapDoor package attack",
+          "Typosquatted npm packages used to steal cloud and CI/CD secrets",
+          "The Mini Shai-Hulud Worm and the New Era of CI/CD Exploitation"
         ]
       },
-      "BOTNET": {
+      "NPM": {
         "mention_count": 5,
         "story_titles": [
-          "Cybersecurity News: Glassworm botnet shattered, China overhauls surveillance, Charter confirms ShinyHunters breach",
-          "Dutch police take down giant botnet of 17 million devices",
-          "CrowdStrike and Google take down botnet used by hackers to target open source software developers",
-          "Coordinated operation takes down Glassworm botnet",
-          "CrowdStrike disrupts Glassworm botnet that preyed on open-source supply chain"
+          "Typosquatted npm packages used to steal cloud and CI/CD secrets",
+          "AI-Generated npm Malware Accidentally Exposes Threat Actor’s Private GitHub Token",
+          "Inside a 176-Package npm Campaign Built to Beat Your Internal Dependencies",
+          "AI-Generated npm Malware Leaks Hacker’s Private GitHub Token",
+          "Malicious npm Package Stole Files From Claude AI User Directory via GitHub"
         ]
       },
-      "RAT": {
+      "CHIP": {
         "mention_count": 3,
         "story_titles": [
-          "BTMOB RAT Spreads Across Brazil, LatAm Via MaaS Model",
-          "Active Exploitation Alert: Grandoreiro Banking Trojan and BTMOB RAT Targeting Windows and Android Users in Global Financial Malware Campaigns",
-          "Grandoreiro Malware and BTMOB RAT Campaigns Target Windows and Android Users"
-        ]
-      },
-      "INFOSTEALER": {
-        "mention_count": 2,
-        "story_titles": [
-          "Hackers exploit FortiClient EMS flaw to push infostealer malware",
-          "FortiClient EMS Exploited via CVE-2026-35616 for EKZ Infostealer Deployment"
+          "Taiwan's MediaTek partners with Intel and TSMC for advanced chip packaging",
+          "Samsung AI Chip Workers Secure Massive Bonuses After Strike Threat In South Korea",
+          "Qualcomm unveils first chip for budget PCs amid memory, CPU crunch"
         ]
       }
     },
     "tech": {
       "MICROSOFT": {
-        "mention_count": 17,
+        "mention_count": 18,
         "story_titles": [
           "Microsoft warns GPU mining malware is being spread to users through SEO poisoning and AI chatbots — cryptojacking campaign targets gamers and high-end PC users with downloads disguised as popular PC utilities",
-          "One Email Could Give Hackers Access to Your Microsoft Account: FBI Warns They Don't Even Need Your Password",
-          "Hackers Exploit Microsoft Teams' Collaboration Features to Impersonate IT Helpdesk Staff",
-          "Whakarongorau uses Copilot Studio for faster, more connected telehealth care",
-          "Microsoft Threatens Legal Action Over Zero-Day Leaks"
+          "Fake Party Invitation Phishing Scam Spoofs Google and Microsoft OAuth Logins: FTC Warns",
+          "Microsoft Faces Fallout from Nightmare Eclipse’s Threats Amid Ongoing Zero-Day Saga",
+          "Anthropic launches Opus 4.8 as \"too risky\" Mythos AI used by Amazon, Microsoft, and Apple goes public",
+          "Whakarongorau uses Copilot Studio for faster, more connected telehealth care"
         ]
       },
       "GOOGLE": {
         "mention_count": 7,
         "story_titles": [
-          "Google employee charged with using insider data to rig bets on Polymarket",
+          "Fake Party Invitation Phishing Scam Spoofs Google and Microsoft OAuth Logins: FTC Warns",
           "Google, Canonical team up to certify Ubuntu images for TPU VMs",
           "What is Canada’s online safety bill? Why tech giants like Apple & Google oppose it, what it means for user privacy | WION Decodes",
           "Google Employee Charged With Insider Trading on Polymarket",
@@ -971,104 +1122,38 @@
           "CrowdStrike University SOAR 200 Course Syllabus"
         ]
       },
-      "CISCO": {
+      "APPLE": {
         "mention_count": 3,
         "story_titles": [
-          "Cisco's Security Revenue Growth Set to Pick Up: What's Ahead?",
-          "Cisco study finds major frontier models susceptible to multi-turn prompt injection attacks | news | SC Media",
-          "Cisco: No Frontier AI Model ‘Immune’ to Multi-turn Attacks"
-        ]
-      },
-      "APPLE": {
-        "mention_count": 2,
-        "story_titles": [
+          "Anthropic launches Opus 4.8 as \"too risky\" Mythos AI used by Amazon, Microsoft, and Apple goes public",
           "Apple previews Siri overhaul and iOS 27 features ahead of WWDC",
           "What is Canada’s online safety bill? Why tech giants like Apple & Google oppose it, what it means for user privacy | WION Decodes"
         ]
-      }
-    },
-    "supply_chain": {
-      "SUPPLY CHAIN": {
-        "mention_count": 9,
-        "story_titles": [
-          "Solana, Sui and Aptos wallet data targeted in TrapDoor package attack",
-          "Typosquatted npm packages used to steal cloud and CI/CD secrets",
-          "Socket Raises $60M for Wider Software Supply-Chain Defense",
-          "The Mini Shai-Hulud Worm and the New Era of CI/CD Exploitation",
-          "Plume Security Labs Exposes Hidden Proxy Network Inside SuperBox Streaming Devices that Route Potentially Harmful Traffic over Home Networks"
-        ]
       },
-      "NPM": {
-        "mention_count": 6,
+      "CISCO": {
+        "mention_count": 2,
         "story_titles": [
-          "Typosquatted npm packages used to steal cloud and CI/CD secrets",
-          "Inside a 176-Package npm Campaign Built to Beat Your Internal Dependencies",
-          "AI-Generated npm Malware Accidentally Exposes Threat Actor’s Private GitHub Token",
-          "GlassWorm Malware Takedown: Disruption of Developer Supply Chain Attacks Targeting VSCode, npm, Python, and GitHub",
-          "AI-Generated npm Malware Leaks Hacker’s Private GitHub Token"
-        ]
-      },
-      "CHIP": {
-        "mention_count": 4,
-        "story_titles": [
-          "Huawei bets on speed over shrinking transistors to sidestep US chip sanctions",
-          "Beyond a Single Quantum Chip: Why the Future of Quantum Computing is Modular",
-          "Samsung AI Chip Workers Secure Massive Bonuses After Strike Threat In South Korea",
-          "Qualcomm unveils first chip for budget PCs amid memory, CPU crunch"
+          "Cisco's Security Revenue Growth Set to Pick Up: What's Ahead?",
+          "Cisco study finds major frontier models susceptible to multi-turn prompt injection attacks | news | SC Media"
         ]
       }
     },
-    "threat_actors": {
-      "LAZARUS": {
-        "mention_count": 6,
+    "military": {
+      "DRONE": {
+        "mention_count": 14,
         "story_titles": [
-          "Disney CEO Josh D’Amaro Among New Paley Center’s Board of Trustees",
-          "CVE-2026-41241: Critical Stored XSS in Pretalx Conference Platform Allows Attackers 100% Talk Acceptance (Patched in 2026.1.0)",
-          "Gabelli 18th Annual Sports & Media Symposium to Convene Industry Leaders in One Week",
-          "NSFOCUS Monthly APT Insights – March 2026",
-          "UK Targets HTX Affiliate as Report Flags $7.6B Suspicious Crypto Flows"
+          "Russian drone crashes into Romanian apartment block, sparking outcry",
+          "Romania: Russian drone strikes Galati apartment building",
+          "Nato ready to defend ‘every inch’ of territory as Russian drone hits Romania",
+          "Russian drone strikes residential building in Romania, injuring two",
+          "Ukraine war latest: Russia bolsters Moscow air defense as drone threat increases"
         ]
       },
-      "SALT TYPHOON": {
-        "mention_count": 5,
-        "story_titles": [
-          "Commentary: Five trends that stood out at Plug and Play's Silicon Valley May Summit",
-          "Ottawa agrees to soften its police surveillance bill",
-          "'500,000 Russian soldiers killed' in Putin’s war on Ukraine",
-          "Charter Communications data breach affects 4.9 million accounts",
-          "COL (R) Candice Frost Briefs Senior Leaders on Agentic AI and the Changing Face of Cyber Warfare"
-        ]
-      },
-      "STATE SPONSORED": {
-        "mention_count": 4,
-        "story_titles": [
-          "Notepad++ patches critical bugs: “shortest path” to malware execution",
-          "GAO sounds alarm on cybersecurity gaps across US water networks",
-          "Zero-Day Phone Hacks: How Spyware Slips Into Your Device Before Anyone Knows",
-          "Gitea Container Flaw Exposes Private Images to Attackers"
-        ]
-      },
-      "SCATTERED SPIDER": {
-        "mention_count": 4,
-        "story_titles": [
-          "Breach Roundup: US Troops Tracked With Cell Phone Data",
-          "Randy Oglesby talks about starring in ‘Spider-Noir’ live-action series, working with Brendan Gleeson",
-          "FBI sounds alarm on phishing tool that steals Microsoft 365 accounts without passwords",
-          "Marvel Animation’s 2026 Intro Features 3 Upcoming MCU Disney+ Series"
-        ]
-      },
-      "THREAT ACTOR": {
+      "MISSILE": {
         "mention_count": 2,
         "story_titles": [
-          "AI-Generated npm Malware Accidentally Exposes Threat Actor’s Private GitHub Token",
-          "ShinyHunters Threat Actor Profile: TTPs, IoCs & Attacks"
-        ]
-      },
-      "ROYAL": {
-        "mention_count": 2,
-        "story_titles": [
-          "Prominent Thai opposition figure cleared of royal insult charges",
-          "Thai court acquits opposition politician accused of royal insult"
+          "Iran fires missile at US air base in Kuwait in retaliation for attack",
+          "Ukraine Opened Russia’s Notorious Oreshnik Missile. Here’s What’s Inside"
         ]
       }
     },
@@ -1076,84 +1161,31 @@
       "PHISHING": {
         "mention_count": 9,
         "story_titles": [
+          "Fake Party Invitation Phishing Scam Spoofs Google and Microsoft OAuth Logins: FTC Warns",
           "How Ransomware Gangs Operate in 2026: From Phishing to Physical Intrusions in Law Firms and Hospitals",
           "The FBI Just Issued an Urgent Warning for Anyone Using Microsoft Teams, Outlook, or OneDrive Over a New Phishing Scheme",
-          "FBI Issues Urgent Warning For Microsoft 365 Users: Kali365 Phishing Kit Bypasses MFA",
-          "FBI sounds alarm on phishing tool that steals Microsoft 365 accounts without passwords",
-          "FBI warns of phishing scam targeting Outlook, OneDrive, Teams users"
-        ]
-      }
-    },
-    "vulnerabilities": {
-      "VULNERABILITY": {
-        "mention_count": 12,
-        "story_titles": [
-          "Vulnerability of India’s Critical Infrastructure: Cybersecurity Risks, Challenges & Government Measures",
-          "Notepad++ Fixes CVE-2026-48770 RCE Vulnerability",
-          "Warning: Critical information disclosure vulnerability in Dell Container Storage Modules can be used to exfiltrate data and perform lateral movement. Patch Immediately! | CCB Belgium",
-          "Microsoft Fixes SharePoint RCE Vulnerability Affecting On-Prem Servers",
-          "Critical FortiClient EMS Vulnerability Exploited in Fresh Attacks"
-        ]
-      },
-      "ZERO DAY": {
-        "mention_count": 6,
-        "story_titles": [
-          "Microsoft Threatens Legal Action Over Zero-Day Leaks",
-          "New Gogs zero-day flaw lets hackers get remote code execution",
-          "Microsoft Slams Public Zero-Day Disclosures Amid GitHub Researcher Account Removal",
-          "Zero-Day Phone Hacks: How Spyware Slips Into Your Device Before Anyone Knows",
-          "Microsoft Condemns \"Uncoordinated\" Zero Day Disclosures"
-        ]
-      },
-      "EXPLOIT": {
-        "mention_count": 4,
-        "story_titles": [
-          "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
-          "Hackers Exploit Microsoft Teams' Collaboration Features to Impersonate IT Helpdesk Staff",
-          "Hackers exploit FortiClient EMS flaw to push infostealer malware",
-          "Threat Actors Exploit Critical FortiClient EMS Flaw to Deploy Credential Stealer"
-        ]
-      },
-      "RCE": {
-        "mention_count": 2,
-        "story_titles": [
-          "Notepad++ Fixes CVE-2026-48770 RCE Vulnerability",
-          "Microsoft Fixes SharePoint RCE Vulnerability Affecting On-Prem Servers"
-        ]
-      },
-      "CVE 2026 35616": {
-        "mention_count": 2,
-        "story_titles": [
-          "CVE-2026-35616: FortiClient EMS Flaw Actively Exploited in Malware Attacks",
-          "FortiClient EMS Exploited via CVE-2026-35616 for EKZ Infostealer Deployment"
-        ]
-      },
-      "REMOTE CODE EXECUTION": {
-        "mention_count": 2,
-        "story_titles": [
-          "New Gogs zero-day flaw lets hackers get remote code execution",
-          "Critical Notepad++ Flaw Could Enable Remote Code Execution Attacks"
+          "FBI warns Microsoft 365 is being bombarded with new phishing emails",
+          "FBI Issues Urgent Warning For Microsoft 365 Users: Kali365 Phishing Kit Bypasses MFA"
         ]
       }
     },
     "cyber_ops": {
       "DATA BREACH": {
-        "mention_count": 12,
+        "mention_count": 13,
         "story_titles": [
+          "California AG Files Lawsuit Over 23andMe Data Breach",
           "Inside the Charter data breach: hackers leak 13M+ customer data",
           "Charter Communications data breach affects 4.9 million accounts",
           "California Sues 23andMe Over 2023 Data Breach That Affected 7 Million Users",
-          "Krispy Kreme data breach settlement deadline approaches. Claim $75 to $3,500.",
           "ADT class action lawsuit filed over data breach exposing customer PII"
         ]
       },
       "INCIDENT": {
-        "mention_count": 4,
+        "mention_count": 3,
         "story_titles": [
           "Security professionals want leaders who have already led their organization through a major cyber incident – regardless of how things turned out",
-          "Exclusive: Accounting firm Kennedy McLaughlin confirms “cyber incident” following Qilin ransomware attack",
-          "HK principal resigns after Singapore swearing incident",
-          "3 SOC Steps that Shut Down Incident Risks Early"
+          "Exclusive: Accounting firm Kennedy McLaughlin confirms ‘cyber incident’ following Qilin ransomware attack",
+          "HK principal resigns after Singapore swearing incident"
         ]
       },
       "CYBER THREAT": {
@@ -1163,441 +1195,408 @@
           "T-Mobile Poland introduces Cyber Threat Intelligence service"
         ]
       }
-    },
-    "economic": {
-      "SANCTIONS": {
-        "mention_count": 10,
-        "story_titles": [
-          "US adds UN Palestine expert back to sanctions list",
-          "Trump's Oman outburst throws 'Switzerland of the Middle East' into the spotlight",
-          "Huawei bets on speed over shrinking transistors to sidestep US chip sanctions",
-          "US Treasury threatens Oman with sanctions over Hormuz Strait",
-          "US imposes fresh sanctions on Iran's military oil sales, Treasury says"
-        ]
-      }
-    },
-    "military": {
-      "DRONE": {
-        "mention_count": 12,
-        "story_titles": [
-          "Nato condemns Russian 'recklessness' after drone hits Romanian apartment block",
-          "NATO member Romania says Russian drone hit block of flats, injuring two",
-          "Ukraine war latest: Russia bolsters Moscow air defense as drone threat increases",
-          "Russian drone strike on Romanian residential building 'serious and irresponsible escalation'",
-          "US Army Evaluates New Command-Networked Drone Interceptor for Europe Defense"
-        ]
-      },
-      "MISSILE": {
-        "mention_count": 4,
-        "story_titles": [
-          "China is building launch pads near its nuclear missile silos",
-          "Iran fires missile at US air base in Kuwait in retaliation for attack",
-          "Ukraine Opened Russia’s Notorious Oreshnik Missile. Here’s What’s Inside",
-          "New Video Reveals Ukraine’s Secret October Drone Strike on Russia’s Grad Missile Warship"
-        ]
-      }
     }
   },
   "timeline": [
     {
-      "title": "ENISA report shows cybersecurity gains across EU critical sectors ...",
+      "title": "Randy Oglesby talks about starring in ‘Spider-Noir’ live-action series, working with Brendan Gleeson",
       "source": "More",
       "source_reliability": 0.5,
-      "category": "Critical Infrastructure",
-      "time": "3 minutes ago",
-      "link": "https://news.google.com/read/CBMinwFBVV95cUxPWnY3SFN2RUtHMzVfcHdMQTdBVUpEbzN2aTh6SUNuSndsUk81NVoyckItLVhkRHFIYlJwLUw3U1c2SXRUTTRMbnhnMWxkVnhaZmdKNWpaYlVDTDNiX0VwMmNtSlFJMUxYazFFaVVmbV9qTzZEMUNleUdFd2JZWklPUTJYWmZwTFJWWlhQczdiQnB4ckU5WFVJZ0xYbkNOU00"
+      "category": "Scattered Spider",
+      "time": "2 minutes ago",
+      "link": "https://news.google.com/read/CBMilgFBVV95cUxQSWcxMjJlLUQtQVVLbUV6OFpMYWN5ZWdSMXUzbV84WDE3bk45ZkZwSXdnQUZKT3dWUW85TVhDSHBmN0sxZnVTenoyUWtBaGcwRkV0bmF3cUoyMHRuZEFMcE9kdjkxR1lOZFJkWWdVM2ZZdmRvRHdWQ1hZRUg0RkxEY2dTME1Ebm9OUC1TV1NVTnRweE9DWUE"
     },
     {
-      "title": "Pueblo commissioners support grants for new projects at PuebloPlex",
+      "title": "European Council adopts further sanctions against Israel extremist groups",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Sanctions",
+      "time": "2 minutes ago",
+      "link": "https://news.google.com/read/CBMirwFBVV95cUxQSGNjd2l5T2sza0Q4bnpDN1pEajRYcHE2dzlZWlcwQjBTQXJpVnNWT002RTV0MExaQ2QzMlllRHNLdkhWbC1BbHF4d0ZDTkVCOU5FQ2hLdjRtYU9RSnFaTXFYNmhGMlhOM0duSzl3SGRsZ0h0Z05kVnBKVVQ1WVozdWdTRlEyZmVDVk85UktWdWJmams4eVZSNUZYNDUtUXBBd3hGZ0ZrWWdDSEVJbHZJ"
+    },
+    {
+      "title": "Independent cyber audit finds zero malware or backdoors in DJI drones — U.S. firm's hardware analysis challenges FCC ban amid ongoing $1.56 billion legal battle",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Cyber",
+      "time": "5 minutes ago",
+      "link": "https://news.google.com/read/CBMiyAFBVV95cUxPR2ROWE8xMHpYSmVBa0hseWUzS0lMbWVLT1BpTDZzOFk5U2xtQ2toZ0thNFBVYlplYTQ1Y2xHcW1vbS0ybjI5Umk2Z1ktMjA1S181anVTdm5rN1dwMW9oR0w3TUdkZnpZY3BQVUJfX2haaV9NQVdDQVlxUlp1a1J2blJYSUtIaXZvdkpMX0lYaTlMaWhMT2NzeXBhcEhCaGVPR0hFVmRLamJldmFjZW1nZHhrRkRqc3N3Q1Fsckc2T2U2TFd5WmpQSA"
+    },
+    {
+      "title": "CVC to Buy IFF’s Food-Ingredients Unit in $4.3 Billion Deal",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "WSJ Fresh",
+      "time": "9 minutes ago",
+      "link": "https://news.google.com/read/CBMivwFBVV95cUxNTEQwVzVQaDlwM1hhZmRJazJWUEFKTDRNTkVOeUg3bDdYMFBXeTh6SHZleVlrY3pRUEVtNUNhQTJkZU5wUFlfeExPUUptXzd6Q201UUwyekptb3pRLXh6UFp3MXM2Skczd3ZvSmUxVkxCTXdKQVJIQjJBb3hIMUNyRG5FXzg4WG5KNmdRc0tLMXFYdHhtN2VrZ3ZnRlFZcUg4X2k3UE9PS1BqbldDblphR1VvMGhCOHRCRVNOOG5SRQ"
+    },
+    {
+      "title": "SANS finds funding gaps and staffing shortages are slowing government cybersecurity modernization",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Advanced Threats",
+      "time": "10 minutes ago",
+      "link": "https://news.google.com/read/CBMi3wFBVV95cUxQRXNHWmZQcFRadE83cEFOYzdhczVIUDVsMG1qM3VKcnBvM1FjcGRWOEl5eWhnazNrYlRSVWxBNjM1R184TW9jS1U3bGd0OVI1Z3pEVk9tNlp2Vlg3dkJHbXM3THFCWFlENVZVYm5OaHJFQVAwRlA2dGRoaTBHb3AtRkM0QzZHRkx5V0JCV3hTaFN2UjIyUGx0aE1za3R3ek1OcDZrN05uOFMzNkRoN2JqOWxzeUdxVlM1TlBaa0M1Y29SX01CZ1p5Z2czNElfUFZSN2Jta2lkT3dteENCY1VB"
+    },
+    {
+      "title": "Russia-linked threat group put ChatGPT to work from lure to payload",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Russia Cyber",
+      "time": "12 minutes ago",
+      "link": "https://news.google.com/read/CBMiwAFBVV95cUxOU3lWYTVra3h6YUNrNy12VnpvcS1RazBXbUxvOEhTRHJRVWNYZk1feElpSEl0NzdIVVV0elk2OWc1di1xa2hld3lpczFaY1FpNE5qa29jWnYwVUNISW0zMTMwV2ZKODM1WWMzMFJpS2N4a1RSSkc3R0hzdjVsaWpscFNpek85SFd3cTEyYVhrTzRnSXVSR2poWWVvdnByMU03LW43RU1oSXB4SW1KZURpaTBaTVYwMnpqbXcyYXBXSW8"
+    },
+    {
+      "title": "McCrary Institute names former acting NSA Director, USCYBERCOM Commander Joe Hartman to Advisory Board",
       "source": "More",
       "source_reliability": 0.5,
       "category": "Critical Infrastructure",
       "time": "13 minutes ago",
-      "link": "https://news.google.com/read/CBMiwAFBVV95cUxPUlQxMVNZS213WXR0T25NY2V4bGxtTHg2RVZ1ZWpQb09UTzFZblRQWGtjLUF6RFVpN0lGQ0tvNDA5VkRGcFFfbVVKb3FDcXp3VnFxR3ZhWmtxa3oteGdKVjktdkxwWFBnNV9RU0pVeWJxa2tBUmw1QVQ1c2VpWGZPUjVPaWxTZzliUkVqaG1fby1xOWc2VmpONjJ1RnNtaVAtaHBiNGZMblBBOWRFek5KMm9TVlVOZ1otaTZkRDFMcTY"
+      "link": "https://news.google.com/read/CBMiywFBVV95cUxPb0FTMGU0VHU1d1RtUUQ1TXdIMTJaR3J6VDdQYjZHSnNXdDFKMnFTVHRxa2V3Z3hudmlZU1Q0MFh5enpVSHhHTHdSUk9WdXZBanhwSm82RVlQaEN6OVA4d0JNOUxsX0IzZXBUQkNXSXNDV0NUVHpaMC1RQ1dBTTQ3ZHJtNUV3WERrMlg3LWZTTHVEWEN5NGd3Nlpla0JHVFpuMFUtZTVydzd6VFdrWGVwY1k5TGxzQWJOcVNCUGJINVpLQ0ZmaDlkNnZCSQ"
     },
     {
-      "title": "MicroAlgo Inc. Develops Quantum Encryption Technology Based on Lattice Cryptography, Integrating into LSQb Algorithm's Process of Information Hiding and Transmission to Achieve Anti-Quantum Attack Strategies Enhancement",
+      "title": "Claude Mythos, ChatGPT-5.5 And Cybersecurity",
       "source": "More",
       "source_reliability": 0.5,
-      "category": "Quantum Threats",
-      "time": "13 minutes ago",
-      "link": "https://news.google.com/read/CBMiogFBVV95cUxQek5EemViQTdySmgwN25tXzBGTE5YUkR5MDFtV3VnSmVEYUpmVWxpZEFFajN2a0haWEVzLUdqUnZxeUR6RmFCdFNqQVB5QXg4TE0wOF9QRlNSY0ozajlJVE9SYlJkbzB5LWVDOFlaZjVTUUgxTEo3R3N4bUtyeVVjdlN6S2tLa25kaU9iblZwX1ViblA0RmktSW0wZTRRZWw3a3c"
+      "category": "Financial Security",
+      "time": "17 minutes ago",
+      "link": "https://news.google.com/read/CBMihgFBVV95cUxOb2REVUhGSFpTWHNoOF9XMnNRQzBoRG1kTnFVaWhSVzdTT2czV196MHZNSlgtQjB3Y2hTSmwyYjQ1R1VVSDFpUFllUkxrbF9nZ3pMa1JTQlAtcV9fSHo1NVVZU21lLTBiTmxFQzRYV1RVVWRuWUM4QTZjQjdfMnllTGZBVUFWQQ"
+    },
+    {
+      "title": "New infostealer reaches enterprise devices through FortiClient EMS vulnerability",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Zero Days",
+      "time": "16 minutes ago",
+      "link": "https://news.google.com/read/CBMijgFBVV95cUxPYW1IWWxLb2VEV1VPSkJFS2dLT3pQTzVRNkU4ZWtqQXBkZ1ZyV1ZheExld3FTMDZ4ZFdPdUtCR29xeVUyWTN4NG1Qb09tbWRVTlNEZFkwOGp5Qml2ZFFWMHRiX3JCMjYtODgyLU9Ia19ZcTAyMm55RUxoME5vSHJ4RzU5UzJ4M0drMGdVNGJ3"
+    },
+    {
+      "title": "How the Glassworm Takedown Secures Digital Supply Chains",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Supply Chain",
+      "time": "23 minutes ago",
+      "link": "https://news.google.com/read/CBMilwFBVV95cUxNSTlwNXpfeFZqR2s3aEIySDZycXUtbjQ5VlpfU3gtOXZTVkFsY0NNdUdab2NFWV9RU3FyNm5JV291TkpnM1BNa1BmcEEyYWNxcWZ2LUZTNTBhUjFsZUg4UFE1NUJOMWdyQ2VKQ083SjFTSW5kTnNSVVgyTDEyckdpbzRCWVgwYTlmNk9NTWxtNlRSZFd6UE9J"
+    },
+    {
+      "title": "Print Edition | Wall Street Journal",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "WSJ Fresh",
+      "time": "23 minutes ago",
+      "link": "https://news.google.com/read/CBMiYkFVX3lxTE5RVktuMnZwSjNHYWJiVmlBSV9vSHNUT01YQWhwdWh1RktGNnRxQU82OGtxSWFXem1SUWZ4T0k5eEh5MlhsWWdlalgyWndBeHg5dzNfclRpeXNtUFVXOXF0SXlR"
+    },
+    {
+      "title": "Bharti Airtel defends ‘Priority Postpaid’ service amid net neutrality concerns",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Telecom Security",
+      "time": "25 minutes ago",
+      "link": "https://news.google.com/read/CBMiwgFBVV95cUxQYTJQQUNBYnZBaUEtQ0pCYjBLV3ktUkNXQ1NnZ2xOTFFldkNCYnJZZTU1WkU5TDhsNFZrYmNsWHJQRFY1NkhhZWljUFZJRE9lc19PTXQ2R0NHQ0R5dEFWVGU2ZW5qS0FSaHdlRkpRRHZnOWltbzU5TWdnb0IzWl9tcVlfcTdyenMzdVBSMnIzR2dVMk41UGxnUmYzQUh4NUhGV0NEVUZqeWhOeWJWRi13X0lDajhQd09rOVR0a1cyVlJYUQ"
+    },
+    {
+      "title": "JPY/USD: Japan Used Record $73.6 Billion to Support Yen in Past Month",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Bloomberg Fresh",
+      "time": "26 minutes ago",
+      "link": "https://news.google.com/read/CBMirwFBVV95cUxOa2FHVzVYS1cxaFg5VWt0aTlyeFBUVzZ6bzNyeVU0azlPRVEzVEE4Z2hOeXM4cEtOUE1WVENZS0xtVzRlWHRDN3VKX2hfNkRTYUpIcEc1TjRGMnVYZldheVlaQm9lOExvSEJ4WUw1TEFTaGtVQWNGenROYmVYSURiQ3lMZlhWQnFDZ1ZYa2NEQUNNSThFQzhDei04ODNEN2RKWkVLakFtZTEwQXFOaHNB"
+    },
+    {
+      "title": "Opinion | How America can remain the world’s AI superpower",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "China Cyber",
+      "time": "29 minutes ago",
+      "link": "https://news.google.com/read/CBMiwwFBVV95cUxPTUIwOG9hZTZ3YzU5VExlNFdiekR5T0tYNUJrSWZVRzlNZ3JsUnkyWlM1eWx2eFl3Qm1mUU96djM4MkRRdzZGQVFfMW5wQUNfUHdzLXN6ekQtNE41Y1hkREZqZGFlVTJHLUxPRmhwNWMtQzVhQUhjUGoteVNmYUZUU1lucmN3UlBsR1V3NFQwalhaSWt5bW1wUUxsdnYxWEdzZldHc3ZVV2V3dTh1RzRmblRBU3J1UFQ4dEphYngzMkVjUUU"
+    },
+    {
+      "title": "Russia is 'on the back foot,' as 'the dynamics of the war are shifting in Ukraine's favour,' EU's foreign policy chief says",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Ukraine Conflict",
+      "time": "31 minutes ago",
+      "link": "https://news.google.com/read/CBMif0FVX3lxTE5pUEZEakVQR1JCM3JaUnhXY2tTeEdsbEdZQy1aNjlUU25lWHFRTGFPWndHY2xLX3V1b3A1Q05HMG00WFdsN3B2eU0tSHBBZENoZlRJbDZoM0ZhcUpIRVltQ0JlN0dFTmI4c1RDT3dIcURFdFB6eVVvR1g1cmEzUUE"
+    },
+    {
+      "title": "OpenAI gives Japan banks access to latest model, Japan’s finance minister says",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "North Korea Cyber",
+      "time": "32 minutes ago",
+      "link": "https://news.google.com/read/CBMikgFBVV95cUxPeFNaN0o4b2IyYUo2UHl2OEFpcTRPUnEzRXFnMlJhVXJGSkp0TXZzNnVfeTd6SE1yVGFjcExhd3VfZ3o2M1BKOVNfdGo4TG14Q1dadnBkc0ZMV3htRmUwcnM5US1YdDRUeXRmUV9oTF96Mzk0Nk9Rall0SkFwZEtfeVM4X09MS0hWQ3pzdDc0ZWN5Zw"
+    },
+    {
+      "title": "Exclusive | Replimune Gets Third Try at FDA Approval After Makary Departure",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "WSJ Fresh",
+      "time": "31 minutes ago",
+      "link": "https://news.google.com/read/CBMiqgFBVV95cUxQZU40MnEzLXBNQkNHeHBzSlJmeWZwamllR2NyenNrY2tyWUxpVkhsLWhZOU9qbmZxUXg1QVcxcF91bWM1Z2lhUmJkZzVaM2Y5OEpsenloWmJ2VUVtN0xEUlBrLXV1R1hvU1lmWmxqMmhzUlNsNnEzVk9xM3l0NEdWQVpyNnFBSlFSOEQyTWNVck13V0ZGaUZHRmVFanJlQWtqdl9GLTRzRV91Zw"
     },
     {
       "title": "Microsoft warns GPU mining malware is being spread to users through SEO poisoning and AI chatbots — cryptojacking campaign targets gamers and high-end PC users with downloads disguised as popular PC utilities",
       "source": "More",
       "source_reliability": 0.5,
-      "category": "Malware",
-      "time": "14 minutes ago",
-      "link": "https://news.google.com/read/CBMiiANBVV95cUxOa2UwQ0drRExYdktOdjFaLU0ydGhoN3Jfc01NUDMzUmdoRVJkUmc0eGdUS2tRTlp6ajhLbjBNaDFlVENtbTMxeDc0X25PUDhabVQ4UmZibTdFdS11RGVNY1RIbVBmYm9Mckh6dUV2a2NoWlFJMmFPcVV3ZE9JeWtZSklPeHBLVVVzaHpqdzlSa0V4NEpJNFp2UEEyd21RS2tvbmJ1OVdzRWU3R2F6Sl95YUhxUUctWk9WbjlOTzFoc2NzYzY5bm03NmRtdGF2TnFKdU1ya0FxbWFDazBtZ2ZVRzJMQUo4R25EbW9JcGpOUkt5bWs5Nmc3S2pwT2RxSEh2WTlxYWNsYlZYVl9kcUxLdVk3NVI5V0tPM3VNeGFRMEJQb1hjX1c3YW1OZlVEV2wyckZEUXFHMGFOZHlQdGpCZWNtMXFLVmoyMFlIblRzeTZhSmF2NVE1SzMzd3VlSG5saFhpS1JPWnVMZU4zb1ZLTnp6VWp4cGQ3QW14dEhkamRfN1VMYk5nRw"
+      "category": "Zero Days",
+      "time": "36 minutes ago",
+      "link": "https://news.google.com/read/CBMi1AFBVV95cUxPUVBYNFlqbjNuUUJrTG1JNGdlTFhTY2JWa2JKX2xqRUZuSEp2NXlBSlpYdVNpY3pGVkkwdVIxV0RrRlJIdXZDc0JyRHU2eHhwcFJKMlVhZ1BmVUYyU28wTGpUYzdDT1hiY3dHVGpydlVIOVVSa2laNlQ5ZmdrWHFVWDV3RUR4MlNKelFsZU1FcHVPcjhhNEVCNFE1R3kyOW5rMjBSNG96NXpBbjVWNHFJT3lrTWFBeHJXandFYUF5WTMzdWNvV09HM2pWRjJFd1ZsUEpUXw"
     },
     {
-      "title": "Cyber insurers question whether the soft market is sustainable",
+      "title": "Chinese Phishers Use Live MFA Interception for Digital Wallet Fraud",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Scattered Spider",
+      "time": "41 minutes ago",
+      "link": "https://news.google.com/read/CBMirAFBVV95cUxNN3ZLcnJ6MUxrV0F4dDFFcWpkWjg4a2VlVUY5dXpQQVJJajFteHJ5YUhZTEQxa1hqTGU1NklraXU3M08zOEkzQXBvYTA5RTdzUHR2Ykg2RDJmRzJFUXdHUmFpUXpmbFhudF93QURrZ1h3X2JDSnhvd2RFZTFQNHBZREd3dFhHcGt3S2VuYlY3TkdfRXVMXzZ6cW93SnU1N2g2cGs5T2JTTGdNM21N"
+    },
+    {
+      "title": "Zscaler Targets AI Identity Risk With Symmetry Acquisition",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Bank Info Security",
+      "time": "39 minutes ago",
+      "link": "https://news.google.com/read/CBMimgFBVV95cUxORS1HUkZPZDVST3FQV05wUGxJUmh0LUF4OGNkeG9zWWpXb0QxZnVCUHFnVkdYU0xUUmYwVkd4a08xc2dkeDZoYnRUWnA3bTQyVVpXMVlaRDhuMlAxb2x2MUNiakFfcTN2dnE3bmVqd244NUktTWhoQWc5VFBMdEFCLXI0SWMyNGxldVJ0OXBSSzM1WlZyTGhIZXNB"
+    },
+    {
+      "title": "The algorithmic vanguard of transatlantic defence: shifting protocols of hybrid warfare",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Russia Cyber",
+      "time": "42 minutes ago",
+      "link": "https://news.google.com/read/CBMi4wFBVV95cUxQREhnbXpvZDNDVXFtUEY5Vy1CZm1XdWFjXzFkcUR1RE5QSnVZbS0tOVVfWVFJeXZCbWF3RFBfd2pLdkJPTFVHNjA1cFNpRFA4RWRmNXYxUnhiS2w2VzEyOHJjYmZfQUZlV3JjWm1JR3I4bW5hSW0ydnNyR1hpZjItalpvbHhPZU1HVThOZjFncmFMVFFHblEyY0hwc25jbDdlZ1BmSEE5WEs1YUJFa1lJQmxoRkNnYTRfWkIwSUMtYlRwcHRQVTJyVVYtMFIwOGNSMmNmVjVhekk1X2dUcU53blltcw"
+    },
+    {
+      "title": "Supreme Court amends rules to address AI use in court filings",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Sanctions",
+      "time": "47 minutes ago",
+      "link": "https://news.google.com/read/CBMirwFBVV95cUxQT2V1cE9TZDI4cWwyWC15VlFsYi1uLTJFSkNZY1VldTRnM3pZblM1OUltbEhvOVllZXc1YWpCTUJxZHN4eUpleGhWMlVtU1VWVkVkLU1xSXJGNFpuYkxUdFluMEpzTFUzaXhCdlY5WmU1VzN3cW9ud0cyb1phZzUyY0xHUk5vS0xiWkFMemMzT3QtN1Y3cC1zOEs4MHE1ajcxRG13M2kyTy1JQnRwQ0VJ"
+    },
+    {
+      "title": "A Trump–Lai Call Could Strengthen Deterrence – or Make Taiwan Look Tradable",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Real Clear Defense",
+      "time": "47 minutes ago",
+      "link": "https://news.google.com/read/CBMitAFBVV95cUxOd1didC1ocjZYWnNJTERxaXFFdzE1M2NTeUt0OXY3WEJTclFXR3VlTDBtdVYwU0RfQlhsZnFyVmxVVUtueDNSTDJtUjF2QXpXUmo3X0NGekxYRm53WFNaQkQta2E5dkYtSjVYX0NiYUFmV2VILW5idlpZd3lyVzdEaEpPTjhXZGZZTmZxamV3eTZISW94V0IybDJLMHdVanVHejZCU1ZBbkRIdFJVR0RxczJQQ20"
+    },
+    {
+      "title": "Are The Increasing Cyber Attacks Creating A Sense Of Apathy Among Businesses?",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Government Security",
+      "time": "53 minutes ago",
+      "link": "https://news.google.com/read/CBMigAFBVV95cUxONThkcmVKNTA0QUtTUjQ1ZnF0LWg4bzEtbllGZFhGUjhIcWtIaUNBQmtTMzVVNVE2THg0UndEZzRjdU00OGNPQlQxUGRQWGhhOU5nY1Z1UnhCYXFYYmNlaFE5NDZ2Z2VWTU9UQ2ZLS21Zdmp2OGt0LWVfUXB4aTdDZw"
+    },
+    {
+      "title": "Russian drone crashes into Romanian apartment block, sparking outcry",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Euronews Fresh",
+      "time": "53 minutes ago",
+      "link": "https://news.google.com/read/CBMixwFBVV95cUxOdDJHQjk4cHItSktGMk1ZcU9uWWk1Tmgxa1MxOUZNcW0tWlE4elNfUTNDX1dBSlIxTDZlQlAxZ2RNQzc3d1Z4OVpvZEppc0pUVnhUeVA4SUNpY3FSTzdHRUV1MDE4b0puN1ktRnhxQXI5czZIZUFuc1llaW1mZGRrTGZscFptQkl5YXBFNTIyM0FrOG5CckE3YWRDM3BjTnlrOWJvQnYtdUFrNE1GbllmTmlocE85Y1R5RHZFZHk4MnkxZXlKN1o4"
+    },
+    {
+      "title": "ECB Warning to Euro Banks: AI Security Risk Requires New Cybersecurity Investments",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "CPO Magazine",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMiwwFBVV95cUxQMWdrRTlLSEZYeEV5dEhZQlN4Q0pCekJ4M0NUd21jcTM0anljY0ZiVlQ3Y2FWdXVQUmZlS2dDVEdPVTdDbFJTcDlDRDd2YnczTUw1M3JPYnc2ZS1jSTdJY1dCOVBWdEE3TDQ1VjFLa0ZUYThEdnJoUmk5V3VuNjRDczg3VTRJVzVzeUpoR3FLRmc1T2YyRU5kMGZ6cVQxOTM5MWtYZjNOZUdyRm44ZGdsUGFVQmRMNlhfamd4UFBqblJmLTg"
+    },
+    {
+      "title": "KnowBe4 Launches a New Family Hub Providing Cyber Safety Training for Children and Adults",
       "source": "More",
       "source_reliability": 0.5,
       "category": "Cyber",
-      "time": "17 minutes ago",
-      "link": "https://news.google.com/read/CBMiwwFBVV95cUxQLVZreGdJX0VMUlFySTNtY2QzZ1pCSWEwUlVaT1lWdVJpSmtWbzVXVVJMM1BNdDdoR0doc1djenhRUURRLU1ZQXBSRWpmUkE3SzF6R0F5TVBSWE9Rcmg4eDh6enVFTllFVHozTWJsbWFza000N0ktdVF2TXV2Mk1BS1JOVzF4c1lGTFhiRGxNQy1MR3RJNWYtQ1NwU2FaTFVRTHVkRjNPcElvSzc4YnlDcFFkZUpzZ0M3NGFyc3phT3JPdDg"
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMi3wFBVV95cUxPWVlJbjFtNmNCZThIR054UzlXbkFXLU12cklLWW1MU1hFb2pHc1FVT0FvaldsWHl6cUNFc1EteURWYk1ybVpqVlJyWER3cS1uZENfRGVUSGNBMlUxS2QyNkhwNV80T2c5RnRGNndfc1ZjZmY2LVZYcmU0SzlCZ05XQWd2MTNpci15Z0w4TVdoWGlfamJLWTFWY1dHRkJxR1UzRFBkTE03N2w2YXh5aGFMUVo1QjExWU5JVlRCOFlDVU9ES0JjRnZrbGVlTm9HMWFSbW1TandNeE5OSzh6ZU00"
     },
     {
-      "title": "Hub Cyber Security Surges 70% In Pre-Market Trading: Here's Why",
+      "title": "Fake Party Invitation Phishing Scam Spoofs Google and Microsoft OAuth Logins: FTC Warns",
       "source": "More",
       "source_reliability": 0.5,
-      "category": "Cyber",
-      "time": "20 minutes ago",
-      "link": "https://news.google.com/read/CBMiuAFBVV95cUxQUWJQSjFWb18zRkpfVGE2YWdIYVVaQTNlMHNfckFjcktPVnJJR1dxc1lKa0hxSFZnMzFTa2txSlJVS2NqRTZUOEVPRlNJSTJRNHBqaThrQmVPX1VLMFRMZnNnWjNwMVcwOE8xVFZscG9fV0hLb0otcXljX3JsSFZ3RVRCTE95Q1RhVHFNb282WExNUzR5aWhxbndsMm9lci1nNXZIV3ZDb3MzeEZOeW5XTTdiSE4yQlZI"
+      "category": "Phishing",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMi0wFBVV95cUxPWTMzOXRtX2NxRmd1SnVVWEk4VVozaUFsbGtsRG9hTjVNMURCaUlCb2lENXhIcEdFeGhVODdTejRQWU9XVG9ocTNHZm1qak9JY3YxeVhZMkhvakYwZ0JPUzhlbmltSmlTTmI2UzF0Vm5JZlUyRGlVeTdPS1VWOVBpNGd0eWlIYks0NmxDQV8zTWVSWUNmRmU3aFlYOTBhLWVpUldJRU41WjA1aHlEVzVNZnZGNFNVSGNqVnJWRktPMkxQdk05czAxajlDbU9yRTdNT0Yw"
     },
     {
-      "title": "Solana, Sui and Aptos wallet data targeted in TrapDoor package attack",
+      "title": "500,000 Russian soldiers killed in Putin’s war on Ukraine, says GCHQ",
       "source": "More",
       "source_reliability": 0.5,
-      "category": "Supply Chain",
-      "time": "26 minutes ago",
-      "link": "https://news.google.com/read/CBMirgFBVV95cUxOeEFEZnhQQ2FkWllXVW8tQ3JXczgzMlBmS293TVJSQTVOYkJLVEVxdk5qNDdpa3UtQUVGcEg0U1BJQlBmbS1QZXlTY3VtM2FOcUxHcDRBa01mUGpSQmtHem1hZjRoaTFlQmtwcnRoTVg3aWZCVzdkdHliamV1LXVLeGNkTFpfZzdsNEx1d1NUNGlFY0dzb2VOSm53U1N0UDV0Z0xQZXktV2gtb3gyUVE"
+      "category": "Independent Cyber",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMisgFBVV95cUxOZTl6WVNYZXZpdEN1VktiWEN3cndFb0YxdEZ6LW50NUZWUTIydk4yazdUN2owMkFPZlFVZ1V1SGFlSFR1YkxBV2lRTjlYel9vaHZkV1hMS01pTXVGUzI3UU4yTGpRMGlrZUwwUjl6cERUNlpkdDZOUWpRUVpkVy1rY05jTEpabjZab0NHUFgxVkFmMC1XY3NCemNjWmR4Y3E3SUZmZ0NFXzRsWXVsNkpjMlBB"
+    },
+    {
+      "title": "Malaysia, Saudi advance cooperation in security and enforcement",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "New Straits Times",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMiwgFBVV95cUxOa2JfQXJqQldoanhfdjItckdOYzRBamJTNXNzOFNOQzFkWFc1dkVLbnFSaDFjajVXS1d1aDctbkFJaHg1SWdTRnB2TFQ2bTh0VHlzUjFPbXRELXpTSlk4eExfWVNaN0Y2eXQtSmwwQ1pnODhiZDNSQ3ZvQy1TMHcyUVBxTy0xSjRtbmNvbWdqQkVrTDBqdEtxV25MXzRvVTlJNWRaQVg4LU15QzlqaGdDaE11T3FReF9XMmhtMGtxTGxCd9IBtAFBVV95cUxQbnNqWTdaMXJIY2dQTnNGWVJFZElBMHhqWkhUeXpKazVvUFBBdnI2Sy1LTTJjZ21Bb3R1LUhGUHJCMF9Fa0x5WWNXRzFlMnh3dm9PQnhoeGdfYnJXV190ZVVHS1FuMkluRVFybUMwa1c2YzlMMWt1NjJ4WXAwMWFBM1pvOHhkTWZ1MThXQ3QzOG11ZGp0dnpqckQxcU8zcWtnZ1c3TGdBQ3N0cVFrWE9HbVphaEg"
     },
     {
       "title": "The Novels Everyone Will Be Reading This Summer",
       "source": "More",
       "source_reliability": 0.5,
       "category": "NYT Fresh",
-      "time": "28 minutes ago",
+      "time": "1 hour ago",
       "link": "https://news.google.com/read/CBMigAFBVV95cUxPYzMzLURPZXIyYl9YdlBWcFBLUHZHNHIxbThDbktFU1BRd0FRdHFwZGt0RnZjdTNWQ0VpZHk0OUE4WFA0ZWRhS3ZhMkdobkRUakh2akZLckdMck9fXzNfYWFYWXkyaXlvcDNqaElTeG4zOVM4SnVlbjV3RTNLOFk0cA"
     },
     {
-      "title": "Commentary: Five trends that stood out at Plug and Play's Silicon Valley May Summit",
+      "title": "Critical Notepad++ Vulnerabilities Allow Attackers to Execute Arbitrary Code",
       "source": "More",
       "source_reliability": 0.5,
-      "category": "Salt Typhoon",
-      "time": "31 minutes ago",
-      "link": "https://news.google.com/read/CBMipAFBVV95cUxOT1hRclRzd3lubXlWNEhoVnlPdm5jMDR1QWRHN2ZQMGo2MzByYmpUdmdjZ201aV9GY2UxaU9XWnJBbU1ubFRDSWlaYmhQUmYtV1lBOE02ejJsZ0NLMHY4MEw0ZUN1eGVLTnVlTDk4REFtOUZZcVJYaV9EMlMtQjQxem85MXV6SmdHMmhRQ3VNbUI0ZDZkRnZOb0toeGZTdklWWkpTNQ"
-    },
-    {
-      "title": "How Ransomware Gangs Operate in 2026: From Phishing to Physical Intrusions in Law Firms and Hospitals",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Ransomware",
-      "time": "33 minutes ago",
-      "link": "https://news.google.com/read/CBMi0wFBVV95cUxNVWNmcm5CYS1HTW1zTElKYnh5eE0zS2UtS1JGWmN3SkQtOHBodkRJLXNSUlBKTmRzOUhKcUlfY2tyM0xmOHdpVUJLVDFiQVBaajlLMEJ3QXk4ZnVkX2Q3eE1RWEo5azdjMWl3Sk5iNzNKaC1yZmdPQ2gzWnF3QmlrUGd2SHBvWU5TVTROMjVhUi1hY0p1QzExcU94NnpkaC1JMkV3UXJxZnlhZGFGbmY5NHp2QW9QRUVDSWdWVmZIN2hIZXlpb1luRVBNOTlyMFFYbGtN"
-    },
-    {
-      "title": "Hungary is on a 'very clear and steadfast' path to restore rule of law, EU justice commissioner says",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Euronews Fresh",
-      "time": "37 minutes ago",
-      "link": "https://news.google.com/read/CBMixwFBVV95cUxOdDJHQjk4cHItSktGMk1ZcU9uWWk1Tmgxa1MxOUZNcW0tWlE4elNfUTNDX1dBSlIxTDZlQlAxZ2RNQzc3d1Z4OVpvZEppc0pUVnhUeVA4SUNpY3FSTzdHRUV1MDE4b0puN1ktRnhxQXI5czZIZUFuc1llaW1mZGRrTGZscFptQkl5YXBFNTIyM0FrOG5CckE3YWRDM3BjTnlrOWJvQnYtdUFrNE1GbllmTmlocE85Y1R5RHZFZHk4MnkxZXlKN1o4"
-    },
-    {
-      "title": "Cybersecurity trends in SEC filings",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "CSO Online",
-      "time": "38 minutes ago",
-      "link": "https://news.google.com/read/CBMiigFBVV95cUxObFgxMGVfV0hDbHBQWHNFOFB5aGF5dVV1SDRPdjZUMFV3WkJGWjhqS1VyLWlrWDlMWVZHczhMTjktRmpoT1hYMVVKM29uSEtEbUFxSE42NGZFLWo2eEktaU5ZbVUxNV9Sb0JPdDgwVDk0VDFSYXdEQldZVGY5LVJ4NnNJOWFaQkdjMXc"
-    },
-    {
-      "title": "Notepad++ patches critical bugs: “shortest path” to malware execution",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "State-Sponsored Cyber",
-      "time": "42 minutes ago",
-      "link": "https://news.google.com/read/CBMinAFBVV95cUxQaDNLa1dFZFJqU2JXcjBJeUdtOFV0OGRlNUxtMERVUlVrOXBrQXQ4X1YzMEVPZGRxUEV3VG94eTlPNkkyeGVTNGNqZUdLMThkZXo4U3FaWDcwcE90WE1PZ2tKNTAtN1Z4RXpEZGNySVlrVUdsX0hMVXVjR18wRFRkWkxRbFMxRHFOeU9hQjFzb3pzdm45UTZUTTRzRzc"
-    },
-    {
-      "title": "Ottawa agrees to soften its police surveillance bill",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Salt Typhoon",
-      "time": "42 minutes ago",
-      "link": "https://news.google.com/read/CBMiigFBVV95cUxQTV90VnNPMDFFUjAzWjVEaGI1bzI1eEZTTmpHWk1iVTlVcUYxaVJtSXdFaWJQMGtUNGx4bE1na21yUUhmQTFDb0hZTDctenZ3ZmVYbVJaNm9ZVUNrU1dhWExud1lxbTJ4NDY2Z3MwUldpeVR3SURQOXVLblVidmt6cjF6bThnUmdITVE"
-    },
-    {
-      "title": "'500,000 Russian soldiers killed' in Putin’s war on Ukraine",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Salt Typhoon",
-      "time": "43 minutes ago",
-      "link": "https://news.google.com/read/CBMinAFBVV95cUxOclpCai1ISGNjX2dIWThMa2MzRFc2SkVSc2QteUZCRktWMlVoMXdaeE1WMjIycDFsOXdYQ3piUHFyWHl1bjFZWVlDYldnQnBZY3g2MHNESDhLdWJ2VnNjU0VUdkJwdjhqSndFQ0NFSGJjcmN6OURoZFRYWnFhV0hXWHoyeUFoWUJ1N2E5d3BwUXNIeE5qcktTZlRNNTM"
-    },
-    {
-      "title": "Chinese Hackers Exploit Iran War to Target Maritime and Energy Firms",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "China Cyber",
-      "time": "43 minutes ago",
-      "link": "https://news.google.com/read/CBMiggFBVV95cUxORWRXTkJaTHg5Nl9pSzlNaHZXZ3FSVkh4eC16Z1VfbE53eVRPSlFETVVXeHUxTlhGbEdwNFd6WGpnbUY3bGhLVU0zdkNCYUY5LU5zZXNMdl9CU0o5TTBEUEk0Sk51RFpDbE1wVlBVUnZoME91STg1ajUtNExrcHczelV3"
-    },
-    {
-      "title": "Inside the Charter data breach: hackers leak 13M+ customer data",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Data Breach",
-      "time": "44 minutes ago",
-      "link": "https://news.google.com/read/CBMigwFBVV95cUxQcHlKdDZ3VG5jaUFFYzBQblB3TEcyYjBwdm5La3Q1WkJtNU43anRkYmd6WmlMNjJkVll3UlVxU3htREhwV2xvdHpld1Q0QXdCdGxWcVRlT09zRWhOQnlOYnp2M2Nzc0lKVWkxeWtVbmJteElqRFI1cTlBOUZKeGxBMkZKOA"
-    },
-    {
-      "title": "Check Point Software Launches Agentic Exposure Validation to Counter Frontier AI Models Now Capable of Autonomous Exploitation",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Cyber Attacks",
-      "time": "44 minutes ago",
-      "link": "https://news.google.com/read/CBMi7gFBVV95cUxPTWFjRkF5M1B2UTZzQ3p1SVFQTWpPdmVsUXI5cER1Mi0xZ1hFRDN3akREUmlzcGRZOFdoZHY0TFRZaklsZVF2aV9QUmk1VUpLb2paTTMxV0FLUGQ2dThPbV9iSU1iRXdwM1hRQXRiRF9IbXRUOXVRaXdSellaNGlTQWJ0RmxFX0EwX002TFdLLVdsMXl2T1VNcmp5ZzJRZ2ZiaDZqdmZiM3N2LU5XM3A0RFRNRXR1YUJLV1hrUEp0UVpwMk1JdmhrSXZPMHpFenNBU0JtMDhkdmtySnFnbElYT1BmNVhwemdhMGRyckRR"
-    },
-    {
-      "title": "US adds UN Palestine expert back to sanctions list",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Sanctions",
+      "category": "Vulnerabilities",
       "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMikAFBVV95cUxNanFlNEMtSVFPU3BMQ0lTd1I5Y3BzeXNiQkhnSXhfWUdGNzhibGlLbG9xc0x5VHV3VTRjRk5rSTRUckoxMGRGeTE2RFVMT3VqX3hVMll1Y2x0SXpoYWcyS0F5QUM5cmRNZFo1NFlqb0U4MnRyYUlPbGdTZDVNSm51b0RhWXVMZ29VMjFLOFB6LVo"
+      "link": "https://news.google.com/read/CBMicEFVX3lxTFBDNV80aklZNzBOT1lXOHpwdUtTb1FSUWN5NFo2SWxMd3JfejNuR3JXaF94bFY1V0d0LU5yWmdYelY3akFvU3ZudHhaVDVQaUhnX1dVV214NFZtYmtwRTU5T3BfQ2JLZS1oLVhXSEI5WVjSAXZBVV95cUxQTzNxN2l4UGZrWHpVd3NfWm15Q0E4MUVzZmNqbEhXa2dEbWpYNU5pREJ0dXdFd1owcWFsWEd5clo0aXp3cGhjSjRpMTY1N3RkWnBUSmJBMEhXR01od2RHSXJobWp3bGZTRUdVYkVWdkp1VXRRclR3"
     },
     {
-      "title": "Schneider Electric Unveils Next-Generation Battery Energy Storage System to enable Scalable, Resilient Energy Transition",
+      "title": "Frontier AI Risk Trends Are Splitting Apart: Misuse Safeguards Improve while Loss-of-control Safety Stagnates",
       "source": "More",
       "source_reliability": 0.5,
-      "category": "Energy Security",
+      "category": "AI Safety China",
       "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMisAFBVV95cUxQVjU0ZWdHX2ZiQXRsMnhDdV9pNk1Vbm1lWXIyekNiQXZCdmRRd24ySlBJdWpWbXBDQlJFa1NZMU83YWFVQlo3c0tKNWs2MTBFOEtuTHBfYThMYk5HMFpOVWdqaUNTX0N5UDFEZlVwZ2c0ajBRSmkzMXpzQ0VBeHNtZGpfdVZaTlBXTDVYTXVMVFk4VktFaUo5d2dtblRReXdQSDFDUTdiNDRhVEN1NXRFYw"
+      "link": "https://news.google.com/read/CBMif0FVX3lxTE9CNW5BSVdzbEU4QWlObFgzZkNFOWp1XzJ0UUE1dGlzVXpNSndFTXVjRVlMUXN4VC1kUllYanYyemRkck5GYUFheGYxMEpRNEdpNXFFcFgtLUduWEw0Y1F4dl9weFFyR3ZKZW9JWlV1eE04NWMxZi12NWMzeFFoVUE"
     },
     {
-      "title": "This month in security with Tony Anscombe – May 2026 edition",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Zero Days",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMihgFBVV95cUxQVjZpajdpZ3RNT2l1MmRVSVpya1RCRUViLWhkVkNTV0s1a1NPV3gzdUpWNUlic01fc2NYaWVyc3hKeV9NRmVqTmsyUE91X0RvTEowSHFlOGc0SXA0V2o1TzYycUJyNFp1Zk9YUHJtY1dBMWJNNV85elRpWWZOSUx1UkZEMklLQQ"
-    },
-    {
-      "title": "Exclusive | Sen. Warren Asks Bilt for Data on Rocky Relaunch of Rewards-for-Rent Card",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "WSJ Fresh",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMiYkFVX3lxTE5RVktuMnZwSjNHYWJiVmlBSV9vSHNUT01YQWhwdWh1RktGNnRxQU82OGtxSWFXem1SUWZ4T0k5eEh5MlhsWWdlalgyWndBeHg5dzNfclRpeXNtUFVXOXF0SXlR"
-    },
-    {
-      "title": "Covert cyber ops, imported voters: How an election in Europe has become Trump-vs-Putin ‘spymania’ | World News",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Russia Cyber",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMi7AFBVV95cUxPN3pwa1ZDMFY2ckNzVU5uMlEzZGhrTHlsNDJnSG9tMHZLbzlXTlM1WFNqcXRKMXQ0ZHU0OVhDUFNIaWIyVHNpWFp1cVhzbjNhbDkwNVp0OXZJTUlNTTlWRnRjQjU1MlRHcGxJbGpxUjNUa2xJQmpIbURlMFRFR2huSzZkaUtyU0NpOENOYmpEdmhhRFdtNmdBYU1CRlNXQmVINGlmUEZjbWhVUEEySDV6LWtTdzltQmEwaDhHME1QS2dDOENGeTdVVjhyS1lNbHE3UW9BSWlSa185RndCUWplOTFLd3ltdk9feFc4eNIB8gFBVV95cUxOdE5xYng4R21CM3NBZVdlZ2RpY2pwRF9Pc0gySWNFVHI0U1FNX1VhczdXZHF2eFVtb3JRdnhhbDJZeGJuRHk0WW5XcDYtdmc3QUlZMXlPci1Mbnh3Rm9EMWxlNWZwY0F5M0YyZndfclRncUhrVWU2eVhLb3NoWTRDNVIxZnhNajg3V1dabGdENndJVXNBUkduSzUwNkNDZHYzSzNJbGIxSTkzVXpBcm9sX2NOQVBzS0tMUGNqazI3VVRoRlhrUGNvdE9lRkFKYTFmb0Q1czA0ai1qR3FtS0NQZmd3eFRJNHl0UFp4MU5RWExsUQ"
-    },
-    {
-      "title": "Trump's Oman outburst throws 'Switzerland of the Middle East' into the spotlight",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Sanctions",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMif0FVX3lxTFBSY0VWYTdnQjZ6UDNQUlZhNDRidnVkMXlzSFdZOTBUSFNJVl9vMVU4NkNUdFR4ZDlGUGFtZUNRaGZNSEFiVTJfRURKV29wRE9LTTdRT3dhNE82M2xYdWhTSGZ5Zkg3OGhZb3AzMUlQWnpybG1XZkVJaUtsVV9lOUnSAYQBQVVfeXFMTkFDYzhRMFlXcmRBZnFnSXFmcS14Z3NvaXloaUtYYlc0WDYzV29kaGxWTlpsekJnYVF3Ujh6ck9DeGV0MktyaXVidHNoZ1JtTF95dlRUTDBFRGlGSk44YXNUM2tCUnlCcWhUa0FrVXV6cGlMYWdoSlMwc01LRnZHRUViU1RL"
-    },
-    {
-      "title": "Heritage experts say this Water Street eyesore is the ideal site for an interpretation centre",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "CBC Canada Fresh",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMinAFBVV95cUxQb0p4TWt4WTRIQ1FMbWVhVzJLLTRMV0RZT2JXUzVncEN4dlNGaWZ5UFFVeUVMbmRNT0c1MEJ2YWlRaHRsVHRTSUhmZUdGMjF4X29MX09GS2R2a2F6emwzQ0tIV1doTUJKS09HazY2aWNSOUc2S0xVZG5VUzBFakI5MVBMalVtZUd4YmdSdnpmWXQyVUYxSVJ0bWlvYkU"
-    },
-    {
-      "title": "Charter Communications data breach affects 4.9 million accounts",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Salt Typhoon",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMirwFBVV95cUxNY09WSzFfckhaRUQ4aDNhSTdOLUFrT1d2OWZpaGtzcnlHSzR4bERQVTB5RTFMS3p0VkVZc2ozV2xLa3RJUmljLU9PVTRiQko0VVIwNkhtbVExU2dzdlJkNFhxdlBXQUVPNUdHczFsb0dXRlV6Y3hpSFREbXAwSm5UdFZFS3FCYllPQ21wYlI1MWtLbHZjWFJud2x4bHlSeXhSUGY0SjVWbnN0dkdpc0s40gG0AUFVX3lxTE9jM3lRMlhvVGR5aTFKbTFVNHhfVXZiQTRvVDBldTJnTFZpbG96ZDZUaEFyd2lfZXRaMWE5Q3dfVHpXSi1xdW9xWld4TnR5alJRb2YyYjhyNkx6UEt6MjI3RkdjdWp3ODdzeWpSeUJDbl94SFRJNkw0bS1LODl1WmdwamtfSGx4M1F4VWo0YXhxV1hPclV0OEx5Y3B1ZG84VDlUQ0FhZzQwbzVFTEUwcXVMUWFteA"
-    },
-    {
-      "title": "Some Japanese Banks to Get Access to Latest OpenAI Model",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Bloomberg Cyber",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMiqwFBVV95cUxPVnRvQWhfeS1jT25fdmxoWWlyVkxUN0NXekgzbGhMYzc1TDh2OGJidlYtbnV6VDQzdWZ0aWY1d2E0clZOMGZNQk1SOGE2cjlCbkdtTHBaTTF2eHFHYVo3eFp4Z2F5eklXdUF2SjFlN09tWnBlaGE3U2VTay1RZUhUOEFNbjJLLWxybmVTbXdXUEVKVkdLVzh4TmNtOXR4TGpFOHFqbmh0alBuNlE"
-    },
-    {
-      "title": "Trek 2000 secures new investor as Osim founder Ron Sim drops legal claims against S’pore-listed firm",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Straits Times Fresh",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMixgFBVV95cUxQZm1VVG96SkltbXlrdWYwWTFGeG1aNXZiUHRVZFB5RUxDTHZOLVdfSHZjWmp3WDFTNno2eXNZR01ySTJQMFUxUVlaRG1abXlaZk5LOEwtaUtxdDY1empBT2ZQUUpvSnV0Ymp5d3ZDNzliSE41SjJTRG1aTkhqU1B4UHVFX2ZmNWpyX0FNZVZpYkdhMGpWNmhpa1pTVWdGc3dCS3F6Y3g2ZnFINFJvWlBJbFBjMWJWRUd6R1BRRzFaVE9jS09va1E"
-    },
-    {
-      "title": "Israel Launches AI Unit to Support Frontline Ops",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Defense Post",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMickFVX3lxTFBNdXNlOVlmY3VfaFlURlFGMFhPaVJpMU5zRU1pUlNSd0xkZzVxZGJ3RE4wbkF4d2NPMzRtUDlKbjBGa2huUUhudURNNi1IYV9lNUpLT0tiamswaUxZU2gxLW9QZmJkcXFJbVlRUkM1cV9fQdIBd0FVX3lxTE94clN3X3kxaUJ6X3JGcmxVdWNxN3p1ekgzWFBFaGJ4cUZkb25ZNzBFYmZwM1RyOUZ6LUJrSnh2VENPbm1IdUlGRHFKQ2U5Xzg2VnZEWWtxV0w4QnhtSUw4dDJZZEIzc21lQzN1ODY2RjBVS2plTnkw"
-    },
-    {
-      "title": "Hacking for Fun, Profit—and Now, Wagers",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Hackers",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMiggFBVV95cUxNeUlMdm9YLU12cDJqX09WVDRxY1pxR3U2cWJBS2hpaEs3YWUxR3VoaXNQUVFTQTZ4WmpwLVJmWmpWcjJCUDNoYzRKbURCYnd6Smh2Yk4xeHl2QmdoMll1cm5vX2pPc2pEQUtKYVRxYUttSkVNb1d1Q2V2Y19zM2xVN29R"
-    },
-    {
-      "title": "Vulnerability of India’s Critical Infrastructure: Cybersecurity Risks, Challenges & Government Measures",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Telecom Security",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMiuwFBVV95cUxNeUZ4RWd5M1FrZDNaSjgtOG5sRF94MWRIcHlYX09IVE1OT2hqMDZoQ1ZPbFU1Qm5pUmJfYms4TVpmazJPNWpxNXN1bTJoZmxRTDRfaDdOdVZWMHp1cUdaSzU3S19PZ0lqblZXV1gyOGJwTGl1a2draXV3RHRXQ2JISy13bTVwdTU1TlJGelNFZ0s0b2VqcV9qZGh6WFh6S3FiYjBYVTBFRjlpNHh5TFIwVU1zc3lKY1dvSVNJ"
-    },
-    {
-      "title": "Call center in Kharkiv defrauded EU citizens of over €100,000 through investment schemes; operation exposed – Prosecutor General",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "UNN",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMi5AFBVV95cUxPSDJyYVhVS2hKaEZ1TmgxQWhUWUVrNVEta0NxUXRucWVNclQ1cGJ1alNYbmlNd1dQc2hBTTVSTXVvT1dPeDJFcFZ4V2M4NHBFQ3NDZDU4MXRSeHdCYTlIZDVaNjVaSG1zOVI3M3dSc19jdGxTSFROdlRRS0JDUVZxWTZ1dmZZanNUYm5PV29YeGN5UlNsazFVZEpKVXZRMHFsQ2szaF9Xa1JNODhERldKSDE1WmdVcVN3OHZzRk1sald6REh5MFNnbnBha1JJSFVZUm40dkdOeG9pZTY3U1ZwVi04TVLSAeMBQVVfeXFMTTRwUmlyUkJKZVJLUHIwYmVoelMtOU92NHpQbUt3Y0VCdHZ2aXkzTFNpWnNMeWM3VVhjdkFvZ2RjdG5TVVdTTDJRSGwxWWMtQVR5UUlDVi1pZWZEbkd0VG10cjg1Tm8tYmluNXZxMnp1TzVCc3NuYkRMcnhuZ0tKNXNoN21MSXpmOFdsS0IxanlGakVIeDRoNUpmcnMzODVYZVZtcmFjWWo4Ulg5U1d4Yzh3S2owUVFiTlhFSGxvYjFSUENrWEFncTVkVTdTX2htODJYWFI5d29KSHJlV2RjNXFndEU"
-    },
-    {
-      "title": "'It's scary': Fire code violations, unpaid bills at Ontario seniors' building on sale have tenants worried",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "CBC Canada Fresh",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMigwFBVV95cUxNVktPZS1HcXFDcE55QnJtUlJza0V4ZHFKUmw2b2FQVXdGSGRyQ0cxZHJUWVg1Y2xzYTNvQkhFakJLdERublBlNFVxVl9UaFhVdC00cWFIUWNTUUJOUDVDa0JEc2xEblVtcHdxZGVFZGI4d3NLS25Dc1Jnd0czN0N3d0hXbw"
-    },
-    {
-      "title": "California Sues 23andMe Over 2023 Data Breach That Affected 7 Million Users",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Data Breach",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMifEFVX3lxTE5pX1E0VHptMnM1a2h2ZjE3MUNVb2lPNTgwRmV1cXJmekZZOTFDZ3lhcU8tcWNST2VyT2ctSHpNa1o3T1ZYeG1JYWRqdE1CcnVFdXIzZlhxTERqbl9CYnRxMlB4U3JXdGl0VVYzcUVfOUtDUTh5Z3ZnTGlHRFg"
-    },
-    {
-      "title": "Iran War: Oil Shortages Threaten Global Energy Security - DW News",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Deutsche Welle Fresh",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMijwFBVV95cUxNR1ZMUkRBVXo1VTUtcV9TNW5mWjBCNWNtYXB3WUV4aDV3ejcwNVRGZ3V4WjJpbkhVV1RKck9qbzhrelRqQnk5RXFKWkd0eTV0OVJhbVpPbUc5X2tUVkJ3dnFUUlFhamtRcVRxRkNuRExIcTlCUFdQRGhiY2VMbDdja1EyUVBveGRzejhlQ2l0b9IBjwFBVV95cUxQVnRmaGNJMXdySTZnTVVEQ2lXU1ZWX2xEaXptWDN5Z0hRT1JfRm9DZEV6d1RreTI5TUdkZEFlZEZ3MWdLVU5Qd2lPZHJFdlB4SHgxUXoyRXl1dmpIZml2QWdyeG9BV0hOenpyQmRZNjdQTjlkV1FJT1FwRE83NmE3ekhBWUJRY0VsNF9KV0ZOYw"
-    },
-    {
-      "title": "Cockroach Janta Party Malware APK targets Android users via WhatsApp and Telegram",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Malware",
-      "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMiZ0FVX3lxTE16c3BqdGNmX2RlQW9RcENHTWtFZS1lT3lYMXRxRF83bi1mRXVoSW5tSkpZVjFtLWlGblFHREp2a2tmaEtpbHluZktrN2JWM3NNa2JKSGRyTXZGOEFGaVRxRWlsME5qWFE"
-    },
-    {
-      "title": "How to prepare your Quantum readiness - a step-by-step guide for enterprises",
+      "title": "DMU researchers join international quantum and AI initiative",
       "source": "More",
       "source_reliability": 0.5,
       "category": "Quantum Threats",
       "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMisgFBVV95cUxPT0l1SnhENHFROWF6VExFMGN2RGFBMk1iQlVWRnBZVW5LamZubHhIVW1iOUFRV2pScmZ0MTItcjUxU2lfQTczWTB0bDI3TzRmVEVRUlNXWmdYUFV3Q1oyYVVzQkg5TlhxLXZBZkpGMkNEU1hkREE5X1FKZGlZNDRyM0ZzSUV4aXBHZTJOZllFLWhFX2xFcFg3UXZGZ19vb3c5MC1SQTJLVk5DQ0M0a2dwVFdn"
+      "link": "https://news.google.com/read/CBMisAFBVV95cUxQcEZQMFpIMGc1NXFMcjNlSTlXZmFVajR1SXRMOWZVcU9xek9kb24wcUdYbk84RUFneXM2TGdmcnk0eXlFYkljTWd1TlVQQ1JEYUlTMENxa3VLRE5VUnpPZ19wZDFEUjkya3IzM0I4dXRDUTI3bGF2TGMtS2lyVmZoM19ZM1pmWFk0Y2hVWjZhUTB1MmczQzVRWGVjdElPUzVFNEJjbXVWcWR6b0dVcjVqSQ"
     },
     {
-      "title": "One Email Could Give Hackers Access to Your Microsoft Account: FBI Warns They Don't Even Need Your Password",
+      "title": "Industries Under Cyber Siege",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Healthcare Security",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMiakFVX3lxTFBXR3FlUDVxOG1Fa3JPdnJjMFQ5cWs0ZTVpTVRxUUp4ZVlmUjdJNU5wd3VMX2M0WWgxR3ZUWi15ak1JZW1hbWp2N3NDQjFzUGNTUkQ4MjZIc0pNNlZUYkhSOEhuSnRtMXU4aHc"
+    },
+    {
+      "title": "O’Melveny & Myers enables AI data security business acquisition",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "ICLG",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMiiwFBVV95cUxNc1NoRjJmWEJZckxIcFItOE1aakl2bTNSOXZRN205NVA3MnRnMk9CeEFmajRyOFdCOFJ3aTRGNHJYWGJRWFJOYWl5TnJrc25udlJ5eWluYmMydk11Qjl5REpuUEw3Rl9RWXdBaWNJNTRjVnlEREk0cTNmSTNka1dOSEdGTm5hNmQ0eDZn"
+    },
+    {
+      "title": "Sonar Acquires Gitar to Eliminate AI Code Review Gaps",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Bank Info Security",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMimgFBVV95cUxQcTlodk80TXJVdEhub1lkeGlPd3dMOWl5VU0wa2dJcUVJWEp5cnZ2YWdVeWM4SEw5RlhPTEpnZnptaXBkVVBZNHNLVWowRUZDaEYtY29IQVZlYUpva29RQTNUUmJ6Zjg5ZFk2QjlfeW1OekNSS2ZhU2Y0WThCUUxSNHhpQ0g2YWdWUVVvaml1UU9tUWR6NV92SndB"
+    },
+    {
+      "title": "Socket Raises $60M for Wider Software Supply-Chain Defense",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Supply Chain",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMinwFBVV95cUxPYWhwOFcxVVJLUkZhYm00Sjg0Nl9fcmkxUlhYTHBiWmhpN2xtZmNjVDdnT1I5dExzdU5kY0NoVF9mWENyb1FoQy1LcURRS3dSb25CaTNWWWZNRDkwNWRLRDJyU3dYcXZJN2FyOUV2WFBLdUViZHBNQmxzanBxTWc2UkZLNzFUcm1qcHFIdjdHbGdkcE1VcEhOSUNnNGU1aTg"
+    },
+    {
+      "title": "French Open 2026 results: Jannik Sinner hit by injury in shock second-round loss to Juan Manuel Cerundolo",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "BBC Fresh",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMiWkFVX3lxTE1MUTRMTGwxMmZtSS1mV19QX2MtMlVxa1FNcjg5eUxOdkpJZW5LRW54anRweUcyQjBBYjRqQ3AyV2c4emE4OTJiQVFBdno0RHkxbVd0YXVKSV91UQ"
+    },
+    {
+      "title": "California AG Files Lawsuit Over 23andMe Data Breach",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Data Breach",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMie0FVX3lxTE5DMGlUU3hCMHZPTTEtQzFZQjZ2SEFabG9peWxlSjJiQjRXY2E0VlBFdXJNSnJ2YUdqNkJNbFc3OTQ5LVg3X0c5UEVzQXRsUXlSUjNWYUlVMlpnNDB0alNHVGllSllsN1I2SFJlbTZxM2NwN2p5cTFTRGRiQQ"
+    },
+    {
+      "title": "OpenAI gives Japanese banks access to most powerful cyber model",
       "source": "More",
       "source_reliability": 0.5,
       "category": "Financial Security",
       "time": "1 hour ago",
-      "link": "https://news.google.com/read/CBMirAFBVV95cUxNSzk4dFVfRVRpUThHX0xfeHpycTB0akdlalJSVmtVNklUOTd4TjlwbkxrUlRNRzdSV3FmZ2JJWTdDMjFDUlFlbFluX0lEZ1lqSDlQLTVHS0VQR0JVbTV4NHF5TE9rdFhCMTJ2bG50N3VjbzVGd0FEWFo5TExzT2xPLTMtcEM5UmhsMTV6X2dhanRPYmVobzdqNjJLVWFWTmpBeFhEdllFV1V3MWNs"
+      "link": "https://news.google.com/read/CBMinAFBVV95cUxNRkl2cVJ1OXZDd0dPdHFVU2ptalotbGlyd3U1b2FNTDR0d3pjTnFrX1JKVXdyaG9wR2RSMzdHZVgzcUVqa1A4UzFjckJWU0tRaVRIY0x2WGNadURFaTg2OXRZTzItZlpXYkZNaUVVdjlPcmpMdE9hb1d4dzBrYjZGbWRXbzg0NUFsbFBTSXRRanhjbklYWElYbENZVzE"
     },
     {
-      "title": "When AI finds flaws faster than banks can fix them",
+      "title": "Fried Chicken Cutlet Chain Zhengxin Food Is Said to Consider Hong Kong IPO",
       "source": "More",
       "source_reliability": 0.5,
-      "category": "Financial Security",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMinwFBVV95cUxPZEU3VU9ZcGdjSTFiaWF6eDhPYWhMQkQ2NThySlJMWXN6Q2tpUzBGYnEwRnJGa0tETllrZ05KdWZGbG00SWN2Q0pEejNvdjI4aXJjaEhLSXZHWUxXQVJRTExvcnk4Vk9KT3lBekM1dFppRkRfMTdnS2xfdHl6NUxjRHFJeW9pVFhIMk9VYlJpVVNQT3JRVHRTVUFsQjk5UXM"
+      "category": "Bloomberg Fresh",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMitAFBVV95cUxPNEh0aXA4SnFpaFh6LXYxSDFzZ1Noa3E4V2RfSlhhcEpDZEJ4ZWpEbmp6cGwyR1VjVHVwamlKWEdINmpjU3IyaGF4MlBzbFhmdkVKdXRKeFdPMl84cEFKcWQzNUJyQ0pvbXljSjBjeXN2TlNFTVIyUGhIMm00Sk9OUmlKdHA0RVBuc2g4TllwSDB3TVBmcnVGaHByZEs4cmdJa1JfeDJiM2VlWDBSVmV2TXdwWXc"
     },
     {
-      "title": "Iranian International Affairs Expert Mostafa Khoshcheshm: IRGC Threatens Retaliation 'Beyond The Region' — In The U.S.; America Is Vulnerable To Fires, Explosions In Petrochemical Plants; Iran Could Build Tactical Nuclear Bomb, Use Cyber And Biological",
+      "title": "ShinyHunters adds Charter to trophy shelf after 4.9M customer records leak",
       "source": "More",
       "source_reliability": 0.5,
-      "category": "Iran Cyber",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMiakFVX3lxTE1HUURwWEpEZEUteW1yYU5scVlEY3p3UDFPQkVPV3ZFTGVfQlhBSGtBek9LZ1FaTDNyaEZvNk14d1ZYSEJxYVlBbmRfNFgyOERzMlJYdjlqMlBOTmxNVnQzZDR0NXBQc3dnbmc"
+      "category": "Salt Typhoon",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMizAFBVV95cUxOUXR4ZGRPTG8wZzZuZ1EwT2JFRWs3NXhVZFBjbXYyWUNPXzZDdElKSGN3dUZRMHU3Q28xUk41aDBoaGNfdk9vc21NNWQ5c3dRcG5IRDJJYzZjbi1nNWMwVmFENklXMU9FMEl1czF4RXlxVl80OXdCbklMQ1I3XzFYUjdMVlB0NXFWeVNzRTFZTFhHWllnZmVMcW5KeWE5X3ppVXNiVjR2QkEtdzYtajNqdG5UeXM5RFEzWHlxUWw5V2VNb28xSnczSFlucWs"
     },
     {
-      "title": "Opinion: Federal permitting reform for infrastructure projects is essential for Colorado’s economic future",
+      "title": "IBM and Red Hat believe they have the answer to open source security risks",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "ITPro",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMiqAFBVV95cUxPS3NQc0Z1VHBBdnRFU21XMnhVLTd1VXhHeDhIOXRCeDF1S3hERF9ibHRkbHVGOURSQlRKVmRWWllIT3ZrbDh5djQtWW9tZXNOblB2Q2YxRk9OdnlXemRuU1UtaHUxd3I5SlU3ZkFKYjFiTzlsN0hOQ1NTUi16R2tGQzRjcTRHcTZoUkdEb3p3MHVzbU01RnZqUDZWQW1UUEZmam4zZElYaWM"
+    },
+    {
+      "title": "Ankur Jain says Bilt is building the ‘Shopify for housing’—and the company’s card is only the beginning",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Lazarus",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMikgFBVV95cUxNZVpKNUZuejRxVF9lU09yNFcwdS0yckJZa05DQUF6aTdTblJGVE1NR1ZvX0xLVUhEM0piRGhQRzhaMW5zTHdCVDc1enlLTC1hQW05eWtyNVVTRnNPb3ZhSUkxTHpnaVBKcjlkWmU2RGNOZkROSEJpNEJBcmRYTlk4YUV2bEVjVXNWNDJOQV91VXFQQQ"
+    },
+    {
+      "title": "Karnataka CM Siddaramaiah resigns, but won’t budge from State politics",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "The Hindu Fresh",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMixAFBVV95cUxNNnlPcDJwSm91Z0hNNDlOWk5VRXhxX29tNFJDVXIyeXFyaUpsTU10b2lqQ1NPcnc4bzhvYndzYjJCUE12TEp0V1JDWjZVMHczbHhveUZaRWt6Y1o1eGw1cTJiN1J4b3VFcS05bURQMWpFZlBBNHFuOGMxbWJERjBYRzJFR1dRSWhUSnZuZlQ1d2FEZF9Hak5TazBwYzFiUTNQYmNkYU1LUmxuaXJCNVpkVG11ZnNKcXR6TFFGSnBWTUkzdHph0gHLAUFVX3lxTE5PY2VBa2NjS1p5MW84WEE4UkpJd3dNUzlzN0tzR0RVaXdHUkNOeEpvdngzMkEySnZtZUQwYVczVjBQd2hLWE5MUU9HWWNfSVFPcUdwVlU3Vm9HcXQ3SVlzZFlaSjd1REFKNm1rcEJpLVkzdHc1Q2tSSzJ5M1lxMzFGbzZnSzdnLXJkRU5YMjhWTXZiRDRPYkZXZHk2bmY2Q3RoenhCYm44djZPMGJpU19QYlFyRWZTWlBPMjBMbTZIWEpSZ2NCSXNESEpZ"
+    },
+    {
+      "title": "Dress my age? No thanks: Meet the ‘granfluencers’ redefining style on social media",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Straits Times Fresh",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMiugFBVV95cUxPS3FGSVRKR0FFZzZxb1FLQm91UFJ0MjhKZ2tuVzNETjMxWDZoV0dBbHg3czFfNmZuNU1ZMVdQNmZhR3ZzWUpaX0hYc1RnZ0VETHhWMWJPeW5GZzVzc2xQSTNHaUdEZmhuLTNvYnpFUDJYY0NBS1B6VTM2eW5vazBOeEI3N3ZjNHFHZmRURUN6czVGUm5xbE9oLXd5MHVqdXdIRVVCblpWRENXZl9YazRqbHhqVzNmMmdna2c"
+    },
+    {
+      "title": "Your Retirement Portfolio Might Need a New Kind of Diversification No One Is Talking About",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Cyber",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMiuwFBVV95cUxPcE5xcTdXMk9UQVFVY1JXQVVQdVEzRl9DdUFpanBabFlUSDA2S3ZObWIwQV9ucExIOUpHMXdDMHBfVF80WnNtMi1MdUdsRlJycFZXb3RZaWg2bzlrRlNaenh4Vmp3SzdfVm1idXBPU0RSdmdMVGtWb0pvZnpUR1poY0JwckMwNWcxX2pfby1qZld3dGd3V3lDY0ppMm8wMjZYbG9CNWpoVXY0Y0NzMllBTFVOV3RnWDdRZzd3"
+    },
+    {
+      "title": "Pentagon says US military personnel are reportedly being targeted using location data",
+      "source": "More",
+      "source_reliability": 0.5,
+      "category": "Defense Security",
+      "time": "1 hour ago",
+      "link": "https://news.google.com/read/CBMi5wFBVV95cUxNYXl1RlZzRXFES21Vdk52U01PNVRXRE81UUZ6M2RfdnZFOUFOY2RGWVhycVBwSkE1eTFIc2lQZ0V5MjFTeVhsSW9COF9KYThQdjFkVFRpcDlPa1hIMUhzTTRId2syOHpYYjN2MnBqc1U2R1E5Q0kwYXJVc25FdVpqOWJnbXhZWk1RRU5PWkVoaDJENFJ5Y2hvRlRUekdpQ1NYdkNjNHFmTVBqMFVQLVlDX3F3U2tscnh0MW1kdUt6U0hJdHV5SE9vN08xODBZTFZ0Q2wzM3gzWW1VdXlPZ2dfS1RlYnBwN1E"
+    },
+    {
+      "title": "Why more cybersecurity laws have not meant lower cyber losses",
       "source": "More",
       "source_reliability": 0.5,
       "category": "Critical Infrastructure",
       "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMiogFBVV95cUxPc1hzZFVRX0Vpc0Vpb25raXRFRk9BRFRNcmNlUDdQcF9rV2c3Ry1KamFtVFRPNldUNG5vWm95aGpLTTg3Q0VKZDhELXJfZVVHbEpud3VXYjhrc1BnOC15RVlCRFBBVzhnenE5d0lGeVRJa280Rl9nQkRhWW1rZlpjU0NtcVNFNzM4d09mcGs0TTFQZ05JVlRnUmF5amIxTkRSWnc"
-    },
-    {
-      "title": "Gamma pitches cloud voice to MSPs to boost retention",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Telecom Security",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMihwFBVV95cUxNWFZGWUU5UWdUeDFvcFBZdVJYR05lclZncnA4YnEwMFIzUDBTc2ZHWHlvcGx1R1J5cEUzSnVVbS1rVUhobE1oaHRhUXUxM0NWYV9NVkhOS1hFT0Vwb180V1lWY3p6U2NaaFk3WDg1aVpTb19hcWZhLW9XMGtUSnVTNVM0djlfSWM"
-    },
-    {
-      "title": "Blue Origin New Glenn Rocket Explodes on Launchpad Before Flight",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Bloomberg Fresh",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMirwFBVV95cUxNUFFMLXQ3SmdqOFRSaHYtRVVPV3h3NUt5Z0tMWFdERjZXcGdKdWxLTVV0UThfMjZhdUkxNXlOTFNGVHFtZ2xmRnR5bU9BalUxQ3Y3V1pscnhqR3Y0Q1k4encxcHFvNjNOZXFMdWdhSHp5YmpwUVkyRlBmejlsUHpyNzVzNTBoNUNQTmFmeldJOXotM3dncGpveWdleWlCbEphX21TM3NPYTZlbnhxbWpV"
-    },
-    {
-      "title": "Kim Soo-hyun case signals dangerous new era of AI cybercrime",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Korea Times",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMiwwFBVV95cUxNU2JTcDBmVnJuSHFhV0tRakNOQTlQZk4wODV6TTZMRllXNGg3SlRoUjFkay1ra19HNkRhSnZCNnB0dDE4SjV6M1NoYXVwX0ZNV1YxN0tvUWxBbW04YVJVY3NwRG83Y0Zqc0UzNnlsNnoxLVRGaHJuOUYzcDA4NF80RzR2UVRWbVNtWDV2cExab3lGRXlzTXhkYWZkTWRwTmEyY3IzTExKUU1iUkpUbFFYVEdkSkgxMWZXaXVlNTRfeERlOGPSAcgBQVVfeXFMUHFBV29fWlVqOWVoZzJRWEJZSE5PVzJneVIybTdXLUYyVnhxUkJFcFdDdmZ1VzNSalpiZHQ4Rl9YNkk1LU5PMXY2b2JIdXpwT3hpaUhuWXZXRXo2RHY5YnBIUEltbjJxX3R1Tjh2SklSMUotcVJTU0NvOG9saE56anVjV2t0VjFWTEgtazBiOXBRUlFJSTViXzViM01Xa0g1MUE3Y3dyWnhteGhxYU5pdTA4ZmJkWWhkSUJQbnlOalJ2YXBGdWxkdmQ"
-    },
-    {
-      "title": "Notepad++ Fixes CVE-2026-48770 RCE Vulnerability",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Vulnerabilities",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMic0FVX3lxTE9tTGlrV1kxR1FrZTNzU2o3SE9Ba2F4ckhLWTR5TU9CVGdYQjE4T0RHVTlsaXNqdmlHdUdFcmlKcWdleVdTQzN3NHRzaWNpMHBGWUtwbXRpSTVlM3VBaWpQQTN2eVlPTmozWkJtcFNWRjdUemfSAXNBVV95cUxPbUxpa1dZMUdRa2Uzc1NqN0hPQWtheHJIS1k0eU1PQlRnWEIxOE9ER1U5bGlzanZpR3VHRXJpSnFnZXlXU0MzdzR0c2ljaTBwRllLcG10aUk1ZTN1QWlqUEEzdnlZT05qM1pCbXBTVkY3VHpn"
-    },
-    {
-      "title": "Exclusive: Imported voters, fake websites: Russia's covert efforts to stop Armenia's pivot West",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Reuters Fresh",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMiuwFBVV95cUxNcWtocUNFR1R2bWM4WnhldC1jcURaME1jSkJnd0lUSW5fWnVtejhKX2h1azhBU1dYejZCclFYcVJDYW5iUW5IanpNX1FIMkk4Nk5rX2ktS1FibzZYS2RKeE9TbHlUV3JtOWNOYkE0bVo5cm9mQUxqbHB6SW9KX2Q3ZFJpTnpuQy13MGJZLVZXdFFnMFc4Z1I5NXVPZmM4Vldnc2dZazg4eG85c2hkWXFTcWlDODJSaWZUcHJn"
-    },
-    {
-      "title": "‘Unjust to Remain Neutral’: On Pope’s Algorithmic Peace and Middle East’s Real Wars",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Middle East Cyber",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMitAFBVV95cUxQVzRnZV9WNnh3VzJtS01waGRRVmVIR3R0VUNfQ2dqYkdIemdTMkFBc3o5WEhSZzNEeGx1aVpNNGV3S0ZIeHptT3BIR3oydUpvTkYzN05xLUp0WTItUTJwOHVJX0xEd1Q0emJjbEZnTGlWVEpubS05NHloSTV5U2U0STUwMm1YYmpjRExWZTBxSkxRMHR0Uko5WTY3SEtrVmlPcjB6UjhBQ3lfY3Q5MUV4dkUzeS0"
-    },
-    {
-      "title": "Nato condemns Russian 'recklessness' after drone hits Romanian apartment block",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "BBC Fresh",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMiWkFVX3lxTE5fSWM1MEhJTE1kMWM5a1pocVBEQzFoUG1VSjlUT2pVTTItdDRiVWhGMFN6a2NrX0dsaWFDOEJWU2ZjT3NiOVhLdFNTOG0xWXBDOXhzMGlieDJDQQ"
-    },
-    {
-      "title": "Post-cloud strategy: What Comes After Hyperscale?",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "ITPro",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMilgFBVV95cUxNZmR6MmFrQ3VkM3ZsWmE1aWVJT201ZVlqNzE2QjN2TzcwOHpHTlVmaFNrd283dkROenFIb2xtZlNrZFprc1BhWk50bjlLS1QwenQ2SVRKR2tKMjZBTHRkM3QyNDdtWGl2M3FsdnVXamFVRXF4X1FzWEJoSTJBaVN0YkVDTDRzMzVjajRxUTRWSTBTQmUzN0E"
-    },
-    {
-      "title": "How Iran has unified Israel’s regional rivals",
-      "source": "More",
-      "source_reliability": 0.5,
-      "category": "Iran Cyber",
-      "time": "2 hours ago",
-      "link": "https://news.google.com/read/CBMihwFBVV95cUxQVTJvbnMtMEhIX3RDbW9tZkRsZVpSZ2l1VkQ5UHpPRFU3V2liV0x2U0RUWlVCOFA3VVkxeGZTRHE0XzVTUENxbUVqb0R3Nk1aUnJULVcxeUVES3E5QjNTMWFIRFYybWtsUXZXRUZRb250M3lPWS1DSlRNejhQQ0dtb0lJeEdWZzQ"
+      "link": "https://news.google.com/read/CBMilwFBVV95cUxQY2xjcFU4Y290TUc4QkdiaDR6OXpxWDBNaEdOM2xwTDJ5aXkzZFpqb2tlaFZ3RXJVNk1BVkRDMUNiNUlMakUxQ0FIampKZ0lIdjNfMDY0MVZ1RkN1VGVPdURoQnNUNmo3UjYwT2RueWlrZlNyTnQzY29FTGl4Q2ZCTUt2TWxaRENJdXZNWDNaNnBpUWRFaGVr"
     }
   ]
 }
